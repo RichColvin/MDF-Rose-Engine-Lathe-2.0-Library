@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
+
+<!-- ################################################### -->
+<!-- Style Sheet for header image max size                                         -->
+<style>
+    img.Image { max-width: 500px;}
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for Horizontal Rule - Style 0                                       -->
+ <style>
+    hr.style0 {
+        border: 0;
+        height: 1px;
+        background-image: linear-gradient(to right,
+                rgba(184,134,11, 2),
+                rgba(184,134,11, 2),
+                rgba(184,134,11, 2));
+    }
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for Horizontal Rule - Style 1                                       -->
+ <style>
+    hr.style1 {
+        border: 0;
+        height: 3px;
+        background-image: linear-gradient(to right,
+            rgba(0, 0, 0, 0),
+                rgba(184,134,11, 2),
+            rgba(0, 0, 0, 0));
+    }
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for Horizontal Rule - Style 2                                       -->
+ <style>
+    hr.style2 {
+        border: 0;
+        height: 6px;
+        background-image: linear-gradient(to right,
+            rgba(0, 0, 0, 0),
+                rgba(184,134,11, 2),
+            rgba(0, 0, 0, 0));
+    }
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for indented paragraphs                                             -->
+<style>
+    .indented { padding-left: 33pt; padding-right: 33pt; }
+</style>
+
+<!-- ################################################### -->
+<!-- Header                                                                                           -->
+<!-- ################################################### -->
+
+<head bgcolor=#E6E6E6>
+<title>MDF Rose Engine 2.0</title>
+<link rel="shortcut icon" type="image/ico" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="Images/favicon.png">
+
+<font face="Georgia">
+
+<table width="100%" border=0>
+        <col width="10%">
+        <col width="*">
+        <col width="10%">
+
+    <tr valign="bottom">
+        <td align="left">
+            <a href = "javascript:history.back()"><img src="Images/BackButton.png" width="30px"></a>
+        </td>
+        <td align="center" valign="top">
+            <a href="NextionUserGuide.html"><font color="DarkBlue" size="6"><b>
+                Nextion Multiple Stepper Control User's Guide</a>
+                <br>
+                System Upgrade Procedure
+                </font>
+                <br>
+                <font color="DarkRed" size="6">
+                &beta; Code Version 19
+            </b></font>
+        </td>
+        <td align="right">
+            <a href="index.html"><img src="Images/Books.png" width="50px" class="Image"></a>
+        </td>
+    </tr>
+</table>
+
+<hr class="style0">
+</head>
+
+<!-- ################################################### -->
+<!-- Body                                                                                               -->
+<!-- ################################################### -->
+
+<body bgcolor=#E6E6E6>
+<font face="Georgia">
+
+<table width="100%" border=0>
+    <col width="*">
+    <col width="200px">
+    
+<!-- ################################################### -->
+<!-- Step 1 -->
+    <tr>
+        <td valign="top">
+            <font color="DarkBlue" size="5"><b>
+            Step 1 - Get a copy of the Teensy program file
+            </b></font>
+
+            <p>Download <b>4Rose.hex</b> to your computer.  
+            
+            <p>You can click on the image or the file name to the right and save that file.
+        </td>
+
+        <td align="center" valign="top">
+            <a href="NextionUpgrade/4Rose.hex" download><img src="NextionUpgrade/Download2.png" width="100px"></a>
+            
+            <font color="DarkBlue" size="3"><b>
+            <p style="margin-top: 0;"><a href="NextionUpgrade/Beta/4Rose.hex" download>4Rose.hex</a>
+            </b></font>
+            
+            <p style="margin-bottom: 0; margin-top: 0;">
+            <mark style="background-color:yellow">&nbsp;This is &beta; code&nbsp;</mark>
+        </td>
+    </tr>
+
+<!-- ################################################### -->
+<!-- Step 2 -->
+    <tr>
+        <td colspan=999>
+            <hr class="style2">
+        </td>
+    </tr>
+
+    <tr>
+        <td valign="top">
+            <font color="DarkBlue" size="5"><b>
+            Step 2 - Get a copy of the Nextion configuration file
+            </b></font>
+
+            <p>Download <b>RoseEngine_N19.tft</b> and put it in the root folder of a microSD card.
+            
+            <p>You can click on the image or the file name to the right and save that file.
+
+            <p><b><u>Notes</u>:</b>
+                <ol>
+                    <li>You can only have one file on this card which is a .TFT file.  The upgrade will not work if there is a 2d one.</b>
+
+                    <br>
+                    <li>You need to check for hidden files on the microSD card.  I found that hard to do on macOS (which created a hidden TFT file) and had to do this on a Raspberry Pi.</b>
+                </ol>
+
+        </td>
+
+        <td align="center" valign="top">
+            <a href="NextionUpgrade/Beta/RoseEngine_N19.tft" download><img src="NextionUpgrade/Download2.png" width="100px"></a>
+            
+            <font color="DarkBlue" size="3"><b>
+            <p style="margin-top: 0;"><a href="NextionUpgrade/RoseEngine_N19.tft" download>RoseEngine_19.tft</a>
+            </b></font>
+            
+            <p style="margin-bottom: 0; margin-top: 0;">
+            <mark style="background-color:yellow">&nbsp;This is &beta; code&nbsp;</mark>
+
+<!--
+            <p style="margin-bottom: 0; margin-top: 0;">
+                <mark style="background-color:gray"><font color="white">&nbsp;This has not changed&nbsp;</font></mark>
+                <br>
+                <mark style="background-color:gray"><font color="white">&nbsp;Step 5 can be skipped&nbsp;</font></mark>
+-->
+        </td>
+    </tr>
+
+<!-- ################################################### -->
+<!-- Step 3 -->
+    <tr>
+        <td colspan=999>
+            <hr class="style2">
+        </td>
+    </tr>
+
+    <tr>
+        <td valign="top">
+            <font color="DarkBlue" size="5"><b>
+            Step 3 - Get a copy of the 4Axes.ini settings file
+            </b></font>
+
+            <p>Download 4Axes.ini, and put it in the root of a microSD card.  This can be the same microSD card as in step #2.
+            
+            <p>You can click on the image or the file name to the right and save that file.
+        </td>
+
+        <td align="center" valign="top">
+            <a href="NextionUpgrade/4Axes.ini" download><img src="NextionUpgrade/Download2-bw.png" width="100px"></a>
+            
+            <font color="DarkBlue" size="3"><b>
+            <p style="margin-top: 0;"><a href="NextionUpgrade/4Axes.ini" download>4Axes.ini</a>
+            </b></font>
+            
+            <p style="margin-bottom: 0; margin-top: 0;">
+            <mark style="background-color:gray"><font color="white">&nbsp;This has not changed&nbsp;</font></mark>
+            <br>
+            <mark style="background-color:yellow">&nbsp;But it does have to &nbsp;</mark>
+            <br>
+            <mark style="background-color:yellow">&nbsp;be re-loaded in step 6&nbsp;</mark>
+        </td>
+    </tr>
+
+<!-- ################################################### -->
+<!-- Step 4 -->
+    <tr>
+        <td colspan=999>
+            <hr class="style2">
+        </td>
+    </tr>
+
+    <tr>
+        <td valign="top" colspan=2>
+            <font color="DarkBlue" size="5"><b>
+            Step 4 - Upgrade the Teensy
+            </b></font>
+        </td>
+    </tr>
+
+    <tr>
+        <td valign="top" colspan=2>
+            <p><font color="DarkBlue" size="4"><b>
+            Step 4a
+            </b></font>
+            
+            <p><div style="float: right; width: 350px; margin: 5px 5px 5px 5px; padding: 5px; border: 1px solid DarkGray; text-align: center; background-color:White">
+                <a href="NextionUpgrade/Teensy35-1.jpg" target="_new"><img src="NextionUpgrade/Teensy35-1.jpg" width="100%" /></a>
+            </div>
+
+            Connect the computer to the Teensy.
+                <ul>
+                    <li>The cable end connected to the Teensy uses a MicroUSB connector.</li>
+                    <li>The Teensy's jack is noted in the picture to the right.</li>
+                </ul>
+
+            <p><b><u>Note</u>:</b>
+                <ol>
+                    <li>Be sure you have a good MicroUSB cable.  Some are only used for charging a device (and they are usually longer).  These will often not work.</b>
+                </ol>
+
+        </td>
+    </tr>
+
+    <tr>
+        <td colspan=999>
+            <hr class="style1">
+        </td>
+    </tr>
+
+    <tr>
+        <td valign="top" colspan=2>
+            <p><font color="DarkBlue" size="4"><b>
+            Step 4b
+            </b></font>
+            
+            On the Computer, start the <b>Teensy Loader</b>. 
+
+            <p><b><u>Note</u>:</b>
+                <ol>
+                    <li>1.	If you don't have the <b>Teensy Loader</b>, you can get it from <a href="https://www.pjrc.com/teensy/loader.html" target="_new">https://www.pjrc.com/teensy/loader.html</a>.</b>
+                </ol>
+
+        </td>
+    </tr>
+
+    <tr>
+        <td colspan=999>
+            <hr class="style1">
+        </td>
+    </tr>
+
+    <tr>
+        <td valign="top" colspan=2>
+            <p><font color="DarkBlue" size="4"><b>
+            Step 4c
+            </b></font>
+            
+            <p><div style="float: right; width: 200px; margin: 5px 5px 5px 5px; padding: 5px; border: 0px solid DarkGray; text-align: center;">
+                <a href="NextionUpgrade/TeensyLoader.png" target="_new"><img src="NextionUpgrade/TeensyLoader.png" width="100%" /></a>
+            </div>
+
+            <p>Be sure the system shows that the Teensy is connected.  This is evident when the Auto button is illuminated green.  As noted in step 4a above, if your USB cable is bad, this won’t light.
+
+            <p>The default for the CPU selected won’t handle the whole 4Rose.hex file, so if you try to open it, you will get the message as shown at the bottom of the picture to the right.
+            
+             <p class="indented"><b>4Rose.hex (too large!)
+        </td>
+    </tr>
+
+    <tr>
+        <td colspan=999>
+            <hr class="style1">
+        </td>
+    </tr>
+
+    <tr>
+        <td valign="top" colspan=2>
+            <p><font color="DarkBlue" size="4"><b>
+            Step 4d
+            </b></font>
+            
+            <p><div style="float: right; width: 350px; margin: 5px 5px 5px 5px; padding: 5px; border: 1px solid DarkGray; text-align: center; background-color:White">
+                <a href="NextionUpgrade/Teensy35-2.jpeg" target="_new"><img src="NextionUpgrade/Teensy35-2.jpeg" width="100%" /></a>
+            </div>
+
+            <p>Press the button on the Teensy to get the Teensy loader to recognize which CPU you are using.
+        </td>
+    </tr>
+
+    <tr>
+        <td colspan=999>
+            <hr class="style1">
+        </td>
+    </tr>
+
+    <tr>
+        <td valign="top" colspan=2>
+            <p><font color="DarkBlue" size="4"><b>
+            Step 4e
+            </b></font>
+            
+            <p>Back on the Computer, using the <b>Teensy Loader</b>, open <b>4Rose.hex</b>. 
+
+            <p>Once this is loaded, the bottom message will change to reflect the file size. 
+        </td>
+    </tr>
+
+    <tr>
+        <td colspan=999>
+            <hr class="style1">
+        </td>
+    </tr>
+
+    <tr>
+        <td valign="top" colspan=2>
+            <p><font color="DarkBlue" size="4"><b>
+            Step 4f
+            </b></font>
+            
+            <p><div style="float: right; width: 350px; margin: 5px 5px 5px 5px; padding: 5px; border: 1px solid DarkGray; text-align: center; background-color:White">
+                <a href="NextionUpgrade/Teensy35-2.jpeg" target="_new"><img src="NextionUpgrade/Teensy35-2.jpeg" width="100%" /></a>
+            </div>
+
+            <p>Press the button on the Teensy to load the program file.
+            
+            <p>Disconnect the computer from the Teensy, and then reboot the Teensy.
+        </td>
+    </tr>
+
+<!-- ################################################### -->
+<!-- Step 5 -->
+    <tr>
+        <td colspan=999>
+            <hr class="style2">
+        </td>
+    </tr>
+
+    <tr>
+        <td valign="top" colspan=999>
+            <font color="DarkBlue" size="5"><b>
+            Step 5 - Upgrade the Nextion
+            </b></font>
+
+            <p><div style="float: right; width: 350px; margin: 5px 5px 5px 5px; padding: 5px; border: 1px solid DarkGray; text-align: center; background-color:White">
+                <a href="NextionUpgrade/Nextion.png" target="_new"><img src="NextionUpgrade/Nextion.png" width="100%" /></a>
+            </div>
+
+            <p>Secure the microSD card which has the Nextion configuration file (from step 2).  Put this microSD card into the Nextion's microSD card slot. 
+
+            <p>Reboot the Teensy again.
+
+            <p>If this works as expected, the Nextion display will read (upside down, by the way) 
+
+             <p class="indented">Check Data . . . 100%
+             <p class="indented">Updated Successed!
+
+            <p>(guess that is a bad translation from Chinese).
+
+            <p>After that message appear, remove the microSD card from the Nextion, and reboot the Teensy again.
+        </td>
+    </tr>
+
+<!-- ################################################### -->
+<!-- Step 6 -->
+    <tr>
+        <td colspan=999>
+            <hr class="style2">
+        </td>
+    </tr>
+
+    <tr>
+        <td valign="top" colspan=999>
+            <font color="DarkBlue" size="5"><b>
+            Step 6 - Load the .ini file
+            </b></font>
+
+            <p><div style="float: right; width: 350px; margin: 5px 5px 5px 5px; padding: 5px; border: 1px solid DarkGray; text-align: center; background-color:White">
+                <a href="NextionUpgrade/Teensy35-3.jpg" target="_new"><img src="NextionUpgrade/Teensy35-3.jpg" width="100%" /></a>
+            </div>
+
+            <p>Secure the microSD card which has the 4Axes.ini settings file (from step 3). Put this microSD card into the Teensy's microSD card slot.
+        </td>
+    </tr>
+
+    <tr>
+        <td valign="top" colspan=999>
+            <p><div style="float: right; width: 350px; margin: 5px 5px 5px 5px; padding: 5px; border: 0px solid DarkGray; text-align: center; ">
+                <a href="NextionUpgrade/NextionSplash1.png" target="_new"><img src="NextionUpgrade/NextionSplash1.png" width="100%" /></a>
+            </div>
+
+            <p>Start the system and click the <b>Load ini</b> button.
+
+            <p>Once completed, a message will appear saying 
+
+             <p class="indented">Done - Restart may be needed.
+
+            <p>Reboot the system one last time.
+        </td>
+    </tr>
+
+<!-- ################################################### -->
+<!-- Step 7 -->
+    <tr>
+        <td colspan=999>
+            <hr class="style2">
+        </td>
+    </tr>
+
+    <tr>
+        <td valign="top">
+            <font color="DarkBlue" size="5"><b>
+            Step 7 - Verify the Settings
+            </b></font>
+
+            <p>It's a good practice to verify all of the settings once you've completed the steps.
+
+                <ol> 
+                    <li>Touch the Config button on each page and verify the Teensy column is populated with the same numbers as the Nextion column.  Repeat for each axis on each page.</li>
+                    
+                    <br>
+                    <li>Next verify the Preferences are correct for the Spindle, Axes, Limits, and Returns.</li>
+                    
+                    <br>
+                    <li>Select the Main page, then the '...' (Preferences) page.  
+                    <br>Select the More page. 
+                    <br>Touch EEPROM.  
+                    
+                    <p>Repeat for each page and axis on the page.  This will show all of the settings for the selected page.</li>
+                </ol> 
+
+            <p>Click on the file to the right to see a copy of the settings file.
+        </td>
+
+        <td align="center" valign="top">
+            <a href="NextionUpgrade/ConfigFileSettings.pdf" download><img src="NextionUpgrade/PDF-File.png" width="60px"></a>
+            
+            <br><a href="NextionUpgrade/ConfigFileSettings.pdf" download>Contents of 4Axes.ini</a>
+        </td>
+    </tr>
+</table>
+
+<!-- ################################################### -->
+<!-- Footer                                                                                             -->
+<!-- ################################################### -->
+<hr class="style0">
+<font size="3">
+<table width="100%">
+    <col width="67%">
+    <col width="33%">
+
+    <tr valign="top">
+        <td align="left">
+            Questions or comments?  Contact us at
+            <br><a href="mailto:ColvinTools@Gmail.com?Subject=General" target="_new">ColvinTools@Gmail.com</a>
+        </td>
+        <td align="right">
+            <a href="../index-Disclaimers.html">Disclaimers</a>
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>

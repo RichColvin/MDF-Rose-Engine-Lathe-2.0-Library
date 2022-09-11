@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
+
+<!-- ################################################### -->
+<!-- Style Sheet for MathJax                                                                 -->
+<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+
+<!-- ################################################### -->
+<!-- Style Sheet for Horizontal Rule - Style 0                                       -->
+ <style>
+    hr.style0 {
+        border: 0;
+        height: 1px;
+        background-image: linear-gradient(to right,
+                rgba(184,134,11, 2),
+                rgba(184,134,11, 2),
+                rgba(184,134,11, 2));
+    }
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for Horizontal Rule - Style 1                                       -->
+ <style>
+    hr.style1 {
+        border: 0;
+        height: 3px;
+        background-image: linear-gradient(to right,
+            rgba(0, 0, 0, 0),
+                rgba(184,134,11, 2),
+            rgba(0, 0, 0, 0));
+    }
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for Horizontal Rule - Style 2                                       -->
+ <style>
+    hr.style2 {
+        border: 0;
+        height: 6px;
+        background-image: linear-gradient(to right,
+            rgba(0, 0, 0, 0),
+                rgba(184,134,11, 2),
+            rgba(0, 0, 0, 0));
+    }
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for indented paragraphs                                             -->
+<style>
+    .indented { padding-left: 33pt; padding-right: 33pt; }
+</style>
+
+<!-- ################################################### -->
+<!-- <body background="Images/Background.png"> -->
+	<font face="Georgia">
+
+<!-- ################################################### -->
+<!-- Style Sheet for header image max size                                         -->
+<!-- ################################################### -->
+<style>
+    img.Image { max-width: 500px;}
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for split screen                                                            -->
+<!-- ################################################### -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+    body {
+        font-family: Georgia;
+    }
+
+.split1 {
+  height: calc(260px);
+  min-width: 450px;
+  max-width: 450px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.split2 {
+  height: calc(100% - 130px);
+  width: calc(100% - 490px);
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.split3 {
+  height: calc(100% - 400px);
+  min-width: 450px;
+  max-width: 450px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 280px;
+}
+
+.left {
+  left: 0;
+  background-color: #111;
+}
+
+.right {
+  right: 0;
+  background-color: blue;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.centered img {
+  width: 150px;
+  border-radius: 50%;
+}
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for footer                                                                     -->
+<!-- ################################################### -->
+<style>
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: #E6E6E6;
+   text-align: center;
+}
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for collapsible section                                                 -->
+<!-- ################################################### -->
+<style>
+.collapsible {
+  background-color: #E6E6E6;
+  color: DarkBlue;
+  cursor: pointer;
+  padding: 3px;
+  width: calc(100%-450px);
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.active, .collapsible:hover {
+  background-color:#3980C0;
+  color: white;
+}
+
+.collapsible:after {
+  content: '\002B';
+  color: black;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2212";
+  color: black;
+}
+
+.content {
+  padding: 0 3px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #f1f1f1;
+}
+</style>
+
+<!-- ################################################### -->
+<!-- Header                                                                                           -->
+<!-- ################################################### -->
+
+<head bgcolor=#E6E6E6>
+    <title>MDF Rose Engine Lathe 2.0</title>
+    <link rel="shortcut icon" type="image/ico" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="Images/favicon.png">
+
+<font face="Georgia">
+
+<table width="100%" border=0>
+        <col width="10%">
+        <col width="*">
+        <col width="10%">
+
+    <tr valign="bottom">
+        <td align="left">
+            <a href = "javascript:history.back()"><img src="Images/BackButton.png" width="30px"></a>
+        </td>
+        <td align="center" valign="top">
+            <a href="MSMCS.html"><font color="DarkBlue" size="6"><b>
+                Control System for Multiple Stepper Motors</a>
+            </b></font>
+        </td>
+        <td align="right">
+            <a href="index.html"><img src="Images/Books.png" width="50px" class="Image"></a>
+        </td>
+    </tr>
+</table>
+
+</head>
+
+<!-- ################################################### -->
+<!-- Body - Right Side of the Screen                                                     -->
+<!-- ################################################### -->
+
+<body bgcolor=#E6E6E6 background="Images/DevBackground.png">
+
+    <div style="margin: 60px 5px 5px 5px; padding: 5px; border: 0px solid black; text-align: left;  background-color:#E6E6E6; background-image: url(Images/DevBackground.png);" class="split1 right" >
+    
+        <img src = "Images/Screens/MultiSync2.jpg" width = "450px" class = "Image" usemap="#html1">
+
+<!-- area map based on an image size of 450px wide -->
+        <map name = "html1">
+
+<!-- Main Screen -->
+            <area shape = "rect" coords = "1,1,53,39" 
+                href = "MSMCS-Main.html"
+                target = "_self" 
+                title="Main Screen"
+                />
+
+<!-- One Screen -->
+            <area shape = "rect" coords = "55,1,102,39" 
+                href = "MSMCS-Multi.html"
+                target = "_self" 
+                title="One Screen"
+                />
+
+<!-- Index Screen -->
+            <area shape = "rect" coords = "104,1,154,39" 
+                href = "MSMCS-Ind.html"
+                target = "_self" 
+                title="Index Screen"
+                />
+
+<!-- Move Screen -->
+            <area shape = "rect" coords = "156,1,206,39" 
+                href = "MSMCS-Mov.html"
+                target = "_self" 
+                title="Move Screen"
+                />
+
+<!-- Sync Screen -->
+            <area shape = "rect" coords = "208,1,259,39" 
+                href = "MSMCS-Sync.html"
+                target = "_self" 
+                title="Syncronization Screen"
+                />
+
+<!-- Reciprocation Screen -->
+            <area shape = "rect" coords = "261,1,311,39" 
+                href = "MSMCS-Rec.html"
+                target = "_self" 
+                title="Reciprocation Screen"
+                />
+
+<!-- Advanced Screen -->
+            <area shape = "rect" coords = "313,1,364,39" 
+                href = "MSMCS-Adv.html"
+                target = "_self" 
+                title="Advanced Screen"
+                />
+
+<!-- Preferences Screen -->
+            <area shape = "rect" coords = "409,1,449,39" 
+                href = "MSMCS-Config-More.html"
+                target = "_self" 
+                title="Preferences Screen"
+                />
+
+<!-- Config Screen -->
+            <area shape = "rect" coords = "59,45,132,70" 
+                href = "MSMCS-Config.html"
+                target = "_self" 
+                title="Config Screen"
+                />
+
+<!-- Axis Screen -->
+            <area shape = "circle" coords = "283,92,13" 
+                href = "MSMCS-Multi2.html"
+                target = "_self" 
+                title="Axis Screen"
+                />
+            <area shape = "circle" coords = "283,126,13" 
+                href = "MSMCS-Multi2.html"
+                target = "_self" 
+                title="Axis Screen"
+                />
+            <area shape = "circle" coords = "283,160,13" 
+                href = "MSMCS-Multi2.html"
+                target = "_self" 
+                title="Axis Screen"
+                />
+
+<!-- Spindle Screen -->
+            <area shape = "circle" coords = "133,126,13" 
+                href = "MSMCS-Multi.html"
+                target = "_self" 
+                title="Axis Screen"
+                />
+
+<!-- Speed Settings - Right -->
+            <area shape = "rect" coords = "399,42,450,60" 
+                href = "MSMCS-NumberPad.html"
+                target = "_self" 
+                title="Config Screen"
+                />
+            <area shape = "rect" coords = "399,234,450,253" 
+                href = "MSMCS-NumberPad.html"
+                target = "_self" 
+                title="Config Screen"
+                />
+
+        </map>
+    </div>
+    
+    <div style="margin: 330px 5px 5px 5px; padding: 5px; border: 1px solid black; text-align: left;  background-color:#E6E6E6; background-image: url(Images/DevBackground.png);" class="split3 right" >
+
+        <table>
+            <tr valign="Top">
+                <td>
+                    <img src="Images/ButtonGreen2-In.jpg" width="50px">
+                </td>
+                <td>
+                    Used to initiate movement in the indicated direction on an axis.  Movement continues until <b>Stop</b> is pushed.
+                </td>
+            </tr>
+        </table>
+
+        <hr>
+        <table width="100%">
+            <tr valign="Top">
+                <td>
+                    <img src="Images/ButtonGreen2-Stop.jpg" width="50px">
+                </td>
+                <td>
+                    Used to stop the motion of the stepper motor.
+                    
+                    <p>Also resets any Enabled stepper motors to Disabled.
+                    
+                    <table align="center">
+                        <tr valign="middle">
+                            <td align="center">
+                                <table align="Center" border="0">
+                                    <tr height="30px">
+                                        <td align="Center" bgcolor="#28C68B" width="85px">
+                                            <font color="White" size="2" face="Arial">Enabled</font>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td align="center">
+                                <font size=6>&rArr;</font>
+                            </td>
+                            <td align="center">
+                                <table align="Center" border="0">
+                                    <tr height="30px">
+                                        <td align="Center" bgcolor="#CD3C21" width="85px">
+                                            <font color="Black" size="2" face="Arial">Disabled</font>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+
+        <hr>
+        <table width="100%">
+            <tr valign="Top">
+                <td>
+                    <img src="Images/ButtonGreen2-Return.jpg" width="50px">
+                </td>
+                <td>
+                    Used to return the spindle or the selected axis to the start point of the previous operation.
+                    
+                    <p>When using this function, Be sure to stop and retract the cutter from the cut first.  The return path does not always follow the same path as the initial cut.  (Backlash and other factors come into play here.)
+                    
+                    <p style="margin-bottom: 0;">The speed of the return action is set in the <a href="MSMCS-Config-Returns.html">Preferences | Returns</a> screen.
+                </td>
+            </tr>
+        </table>
+
+        <hr>
+        <table width="100%">
+            <tr valign="Top">
+                <td>
+                    <img src="Images/ButtonGreen2-Out.jpg" width="50px">
+                </td>
+                <td>
+                    Used to initiate movement in the indicated direction on an axis.  Movement continues until <b>Stop</b> is pushed.
+                </td>
+            </tr>
+        </table>
+
+        <hr>
+        <table width="100%">
+            <tr valign="Top">
+                <td>
+                    <table align="Center" border="0">
+                        <tr height="30px">
+                            <td align="Center" bgcolor="#28C68B" width="85px">
+                                <font color="Black" size="2" face="Arial"><b>Config</b></font>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                <td>
+                    <div style="float: right; width: 150px; margin: 5px 5px 5px 5px; padding: 5px; border: 1px solid black; text-align: left; background-color:#28C68B">
+                        <font color="Black" size="2">Touch <b>Config</b> on the screen image above to see the details for this screen.</font>
+                    </div>
+
+                    This is used to display or edit the configuration settings for the MaxSpeed and the Acceleration for the respective stepper motors.
+                </td>
+            </tr>
+        </table>
+    </div>
+
+<!-- ################################################### -->
+<!-- Body - Left Side of the Screen                                                       -->
+<!-- ################################################### -->
+
+    <div style="float: left; margin: 60px 5px 5px 5px; padding: 5px; border: 0px solid black; text-align: left;  background-color:#E6E6E6; background-image: url(Images/DevBackground.png);" class="split2 left" >
+                <table align="Center" border="0">
+        	        <tr height="35px">
+                	    <td align="Center" bgcolor="#28C68B" width="300px">
+                	        <font color="Black" size="4"><b>One Screen
+                	        <br>Axis Movement</b></font>
+                	    </td>
+        	        </tr>
+                </table>
+
+            <p><div style="float: right; width: 200px; margin: 5px 5px 5px 5px; padding: 5px; border: 1px solid black; text-align: left; background-color:#28C68B">
+                <font color="Black" size="2">Touch <b>Spindle</b> on the screen image to the right to see the details for the spindle control.</font>
+            </div>
+
+            <b>Purpose:</b>  This screen allows for independent movement along of a single axis.  It is useful for  higher or lower speed movement than the Main Screen (e.g., quickly moving the cutter to one end of the linear slide).
+
+    <table width="100%">
+        <col width="125px">
+        <col width="*">
+
+<!-- ################################################### -->
+<!-- Stepper Motor Controls   -->
+
+        <tr>
+            <td colspan=999>
+                <hr class="style2">
+            </td>
+        </tr>
+
+        <tr valign="top">
+            <td align="center">
+                <img src = "Images/CircleChecked.png" width = "20px">
+            </td>
+            <td>
+                This selects the axis of movement.  In this case, the X axis' motion is performed using the buttons at the bottom of the screen.
+                <br>
+                <center>
+                    <img src="Images/ButtonGreen2-In.jpg" width="35px">
+                    <img src="Images/ButtonGreen2-Stop.jpg" width="35px">
+                    <img src="Images/ButtonGreen2-Return.jpg" width="35px">
+                    <img src="Images/ButtonGreen2-Out.jpg" width="35px">
+                </center>
+
+                <p style="margin-bottom: 0;"><mark style="background-color:#A9E2F3;">Only one axis of movement may be selected at a time.</mark>
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan=999>
+                &nbsp;
+            </td>
+        </tr>
+
+        <tr valign="top">
+            <td align="center">
+                <img src = "Images/CircleUnChecked.png" width = "20px">
+            </td>
+            <td>
+                These axes of movement are not selected.
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan=999>
+                <hr class="style1">
+            </td>
+        </tr>
+
+        <tr valign="top">
+            <td align="center">
+                <table align="Center" border="0">
+                    <tr height="30px">
+                        <td align="Center" bgcolor="#28C68B" width="85px">
+                            <font color="White" size="2" face="Arial">Enabled</font>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td>
+                Enabling a stepper motor locks it into place, preventing motion along the relevant axis.  One use for this would be to lock the spindle whilst changing a rosette.  Or in this case, the Z axis movement is locked whilst the cutter is moved along the X axis.
+                
+                <p>The stepper motor on a given axis may be enabled even if that is not the axis of movement.
+                 
+                <p>When the Stop button is selected, the stepper motor on this axis is reset to be disabled.
+                 
+                <p style="margin-bottom: 0;">More than one stepper motor may be enabled at a time.
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan=999>
+                &nbsp;
+            </td>
+        </tr>
+
+        <tr valign="top">
+            <td align="center">
+                <table align="Center" border="0">
+                    <tr height="30px">
+                        <td align="Center" bgcolor="#CD3C21" width="85px">
+                            <font color="Black" size="2" face="Arial">Disabled</font>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td>
+                This stepper motor is disabled, allowing for manual adjustment (e.g., manually rotating the spindle).
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan=999>
+                <hr class="style1">
+            </td>
+        </tr>
+
+        <tr valign="top">
+            <td>
+                <b>Speed</b>
+            </td>
+            <td>
+                The controls on the right side of the screen are for controlling the respective stepper motor's speed and acceleration.
+
+                <p>To change the Max Speed, touch the number, and you will be presented with the <a href="MSMCS-NumberPad.html">Number Pad Screen</a>.</p>
+
+                <p>The slider is a red bar that can be moved up to increase the speed, or down to decrease it.
+                
+                <p style="margin-bottom: 0;"><b>Want to understand this better?</b>  More details about the stepper motor speeds are on <a href="MSMCS-Speed.html">this page</a>.
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan=999>
+                &nbsp;
+            </td>
+        </tr>
+
+        <tr valign="top">
+            <td>
+                <b>Acceleration</b>
+            </td>
+            <td>
+                The bottom number (4000) is the acceleration for the stepper motor.
+
+                <p>To change this value, touch the number, and you will be presented with the <a href="MSMCS-NumberPad.html">Number Pad Screen</a>.
+
+            </td>
+        </tr>
+    </table>
+
+<!-- ################################################### -->
+<!-- Limit Switches -->
+
+    <hr class="style2">
+    <p><font color="DarkBlue" size="4"><b><a name="LimitSwitches">Limit Switches</a></font></b>
+    <p>Limit switches can be used with this function.  The pins used for this are configured on the <a href="MSMCS-Config-Limits.html">Limit Switches Configuration Screen</a>.  (More information about the implementation of limit switches is on that page.)
+
+</div>
+
+<!-- ################################################### -->
+<!-- Footer                                                                                             -->
+<!-- ################################################### -->
+<div class="footer">
+    <hr class="style0">
+    <font size="3">
+    <table width="100%">
+        <col width="75%">
+        <col width="25%">
+
+        <tr valign="top">
+            <td align="left">
+                Questions or comments?  Contact us at
+                <br><a href="mailto:ColvinTools@Gmail.com?Subject=General" >ColvinTools@Gmail.com</a>
+            </td>
+            <td align="right">
+                <a href="../index-Disclaimers.html">Disclaimers</a>
+            </td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

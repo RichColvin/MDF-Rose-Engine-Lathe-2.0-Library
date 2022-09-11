@@ -1,0 +1,1827 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
+
+<!-- ################################################### -->
+<!-- Style Sheet for header image max size                                         -->
+<style>
+    img.Image { max-width: 500px;}
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for Horizontal Rule - Style 0                                       -->
+ <style>
+    hr.style0 {
+        border: 0;
+        height: 1px;
+        background-image: linear-gradient(to right,
+                rgba(184,134,11, 2),
+                rgba(184,134,11, 2),
+                rgba(184,134,11, 2));
+    }
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for Horizontal Rule - Style 1                                       -->
+ <style>
+    hr.style1 {
+        border: 0;
+        height: 3px;
+        background-image: linear-gradient(to right,
+            rgba(0, 0, 0, 0),
+                rgba(184,134,11, 2),
+            rgba(0, 0, 0, 0));
+    }
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for Horizontal Rule - Style 2                                       -->
+ <style>
+    hr.style2 {
+        border: 0;
+        height: 6px;
+        background-image: linear-gradient(to right,
+            rgba(0, 0, 0, 0),
+                rgba(184,134,11, 2),
+            rgba(0, 0, 0, 0));
+    }
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for indented paragraphs                                             -->
+<style>
+    .indented { padding-left: 33pt; padding-right: 33pt; }
+</style>
+
+<!-- ################################################### -->
+<!-- Header                                                                                           -->
+<!-- ################################################### -->
+
+<head bgcolor=#E6E6E6>
+<title>MDF Rose Engine Lathe 2.0</title>
+<link rel="shortcut icon" type="image/ico" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="Images/favicon.png">
+
+<font face="Georgia">
+
+<table width="100%" border=0>
+        <col width="10%">
+        <col width="*">
+        <col width="10%">
+
+    <tr valign="bottom">
+        <td align="left">
+            <a href = "javascript:history.back()"><img src="Images/BackButton.png" width="30px"></a>
+        </td>
+        <td align="center" valign="top">
+            <a href="MSMCS.html"><font color="DarkBlue" size="6"><b>
+                Control System for Multiple Stepper Motors</a>
+                <br>
+                About the <b>RE30.ini</b> File
+                </font>
+            </b></font>
+        </td>
+        <td align="right">
+            <a href="index.html"><img src="Images/Books.png" width="50px" class="Image"></a>
+        </td>
+    </tr>
+</table>
+</head>
+<hr>
+
+<!-- ################################################### -->
+<!-- Body                                                                                               -->
+<!-- ################################################### -->
+
+<body bgcolor=#E6E6E6 background="Images/DevBackground.png">
+<font face="Georgia">
+
+<div style="float: right; width: 400px; margin: 5px 5px 5px 5px; padding: 5px; border: 1px solid Darkgray; text-align: left;">
+	<a href = "MSMCS-Upgrading.html" target="_new"><IMG SRC="Images/Book-MSMCS-4.png" width="100%"></a>
+	
+	<br>Manual for installing or upgrading the control system software
+	<br><center><font size=2><I>Click on the image to open the book to open it</I></font></center>
+</div>
+
+<p>The <b>RE30.ini</b> file is used to set the initial settings for the system.  These are the starting values, and re-loading this file will over-ride many settings you have in your system.
+
+<p>The contents of the file changes sometimes with new releases, so it is a good practice to get the latest copy and compare it to your current copy.  You can get one from the <a href="index.html">MDF Rose Engine Lathe 2.0 Library</a>, or by opening the book shown by the picture to the right.
+
+<p>One key change with version 3.0 is the ability to have multiple INI files.  This allows the turner to have a base file for setting up the system, and more specific files for each piece of equipment.
+
+<div style="float: left; width: 350px; margin: 5px 5px 5px 5px; padding: 5px; border: 0px solid DarkGray; text-align: center; ">
+    <a href="Images/Screens/Pref_LoadIni.jpg" target="_new"><img src="Images/Screens/Pref_LoadIni.jpg" width="100%" /></a>
+</div>
+
+<p>When loading the RE30.ini file, check to ensure that each of the keys in your file gets loaded.  Watch the Key field on that screen as the values are loaded to ensure each of the following are loaded.  If one or more is not, those values will not be set, and the system will probably not work correctly, or at least as expected.
+
+<p style="margin-bottom: 0;">The key in <font color="Red">red</font> below is needed for setup and should have its values set.  The others are not as critical.
+
+<table border=0 width="450px">
+    <col width="25%">
+    <col width="25%">
+    <col width="25%">
+    <col width="25%">
+
+    <tr valign="top">
+        <td width="150px">
+            <ol start="1">
+                <li style="color: red;"><b>Preferences</b></li>
+                <li><b>Limits</b></li>
+                <li><b>Returns</b></li>
+                <li><b>Main</b></li>
+            </ol>
+        </td>
+        <td width="150px">
+            <ol start="5">
+                <li><b>One_Multi</b></li>
+                <li><b>Index</b></li>
+                <li><b>Move</b></li>
+            </ol>
+        </td>
+        <td width="150px">
+            <ol start="8">
+                <li><b>Shared</b></li>
+                <li><b>Sync</b></li>
+                <li><b>Recip</b></li>
+            </ol>
+        </td>
+        <td width="150px">
+            <ol start="11">
+                <li><b>GreekKey</b></li>
+                <li><b>Program</b></li>
+                <li><b>Rose</b></li>
+            </ol>
+        </td>
+    </tr>
+</table>
+</font>
+
+
+<hr>
+<p>Some comments about the Keys and some of the key Settings are below.
+
+
+Settings typically used on the MDF Rose Engine Lathe 2.0 are highlighted in <span style="background-color: #d8ecff" >light blue</span>.
+
+
+<table border=1 width="100%">
+    <col width="100px">
+    <col width="150px">
+	<col width="*">
+
+    <tr bgcolor="Moccasin">
+        <th valign="bottom">
+            <font color="DarkBlue"><b>
+            Key
+            </b></font>
+        </th>
+        <th valign="bottom">
+            <font color="DarkBlue"><b>
+            Setting
+            </b></font>
+        </th>
+        <th valign="bottom" colspan=2>
+            <font color="DarkBlue"><b>
+            Comments
+            </b></font>
+        </th>
+    </tr>
+            
+<!-- ################################################### -->
+<!-- [Setup] -->
+<!-- ################################################### -->
+    <tr bgcolor="white">
+        <td valign="top" colspan=2>
+            <b>
+            [Preferences]
+            </b>
+        </td>
+        <td valign="top" colspan=2>
+            These are the general settings
+        </td>
+    </tr>
+            
+    <tr bgcolor="white">
+        <td valign="top">
+        </td>
+        <td valign="top">
+            VendorId
+        </td>
+        <td valign="top">
+            <div style="float: right; width: 350px; margin: 0px 0px 0px 0px; padding: 5px; border: 0px solid Darkgray; text-align: left; ">
+                <table border=1>
+                    <tr bgcolor="LightGray">
+                        <td align="center">
+                            <font color="darkblue">
+                            <b>Value</b>
+                            </font>
+                        </td>
+                        <td align="center">
+                            <font color="darkblue">
+                            <b>Purpose</b>
+                            </font>
+                        </td>
+                    </tr>
+
+                    <tr bgcolor="#d8ecff" >
+                        <td align="center" valign="top" width="25px">
+                            3
+                        </td>
+                        <td style="padding: 0 5px; ">
+                            MDF Rose Engine 2.0
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center" valign="top">
+                            4
+                        </td>
+                        <td style="padding: 0 5px; ">
+                            Ed French's rose engine lathe, as modeled in Fusion 360
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center" valign="top">
+                            5
+                        </td>
+                        <td style="padding: 0 5px; ">
+                            Armbruster Mark II
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            
+            This is used to set the splash screen seen at startup.
+            
+            <p>Prior to v3.0, this was &quot;BoardType&quot;.  
+                        
+            <p>No one seems to remember what 1 and 2 were used for.
+            
+            <p style="margin-bottom: 0;"><font color="red"><b><u>Note</u>:</b></font> This value cannot be set via the menus; the ini file is the only option for setting it.
+        </td>
+    </tr>
+
+    <tr bgcolor="white">
+        <td valign="top">
+        </td>
+        <td valign="top">
+            MotorCount
+        </td>
+        <td valign="top">
+            <div style="float: right; width: 350px; margin: 0px 0px 0px 0px; padding: 5px; border: 0px solid Darkgray; text-align: left; ">
+                <table border=1 align="center">
+                    <tr bgcolor="LightGray">
+                        <td valign="bottom" align="center" width="75px" rowspan=2>
+                            <font color="darkblue">
+                            <b>Motor
+                            <br>Count</b>
+                            </font>
+                        </td>
+                        <td align="center" colspan=999>
+                            <font color="darkblue">
+                            <b>Axes Enabled</b>
+                            </font>
+                        </td>
+                    </tr>
+                    <tr bgcolor="LightGray">
+                        <td align="center" width="50px">
+                            <font color="darkblue">
+                            <b>Sp</b>
+                            </font>
+                        </td>
+                        <td align="center" width="50px">
+                            <font color="darkblue">
+                            <b>X</b>
+                            </font>
+                        </td>
+                        <td align="center" width="50px">
+                            <font color="darkblue">
+                            <b>Z</b>
+                            </font>
+                        </td>
+                        <td align="center" width="50px">
+                            <font color="darkblue">
+                            <b>M3</b>
+                            </font>
+                        </td>
+                        <td align="center" width="50px">
+                            <font color="darkblue">
+                            <b>M4</b>
+                            </font>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td align="center">
+                            4
+                        </td>
+                        <td align="center">
+                            <font size=5 color="Green"><b>&#10003;</b></font>
+                        </td>
+                        <td align="center">
+                            <font size=5 color="Green"><b>&#10003;</b></font>
+                        </td>
+                        <td align="center">
+                            <font size=5 color="Green"><b>&#10003;</b></font>
+                        </td>
+                        <td align="center">
+                            <font size=5 color="Green"><b>&#10003;</b></font>
+                        </td>
+                        <td align="center">
+                            <font size=5 color="Red"><b>&#10005;</b></font>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td align="center">
+                            5
+                        </td>
+                        <td align="center">
+                            <font size=5 color="Green"><b>&#10003;</b></font>
+                        </td>
+                        <td align="center">
+                            <font size=5 color="Green"><b>&#10003;</b></font>
+                        </td>
+                        <td align="center">
+                            <font size=5 color="Green"><b>&#10003;</b></font>
+                        </td>
+                        <td align="center">
+                            <font size=5 color="Green"><b>&#10003;</b></font>
+                        </td>
+                        <td align="center">
+                            <font size=5 color="Green"><b>&#10003;</b></font>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <p style="margin-top: 0;">This identifies if the M3 and/or M4 axes are available.  The value is typically 4, but may be 5 if the v3.0 printed circuit board (PCB) is being used.
+
+            <p><font color="red"><b><u>Note regarding the Teensy 3.2</u>:</b></font> If the Teensy 3.2 is being used as the controller, this needs be 4 (regardless of the PCB being used).
+
+            <p style="margin-bottom: 0;"><font color="red"><b><u>Note</u>:</b></font> This value cannot be set via the menus; the ini file is the only option for setting it.
+        </td>
+    </tr>
+
+    <tr bgcolor="white">
+        <td valign="top">
+        </td>
+        <td valign="top">
+            KeepSteppersEnabled
+        </td>
+        <td valign="top">
+            <div style="float: right; width: 150px; margin: 0px 0px 0px 0px; padding: 5px; border: 0px solid Darkgray; text-align: left; ">
+                <table border=1 width="100%">
+                    <tr bgcolor="LightGray">
+                        <td align="center">
+                            <font color="darkblue">
+                            <b>Value</b>
+                            </font>
+                        </td>
+                        <td align="center">
+                            <font color="darkblue">
+                            <b>Purpose</b>
+                            </font>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td align="center" valign="top" width="25px">
+                            0
+                        </td>
+                        <td style="padding: 0 5px; ">
+                            Off
+                        </td>
+                    </tr>
+                    <tr bgcolor="#d8ecff" >
+                        <td align="center" valign="top">
+                            1
+                        </td>
+                        <td style="padding: 0 5px; ">
+                            On
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <p style="margin-top: 0;">This needs to be <b>1</b> when using the <a href="https://www.omc-stepperonline.com/" target="_new">Stepper Online</a> <a href="https://www.omc-stepperonline.com/digital-stepper-driver-1-0-4-2a-20-50vdc-for-nema-17-23-24-stepper-motor-dm542t" target="_new">DM542T Stepper Driver</a>.  The Indexing function needs this.
+            
+             <p style="margin-bottom: 0;">It is less critical when using the <a href="https://www.pololu.com/" target="_new">Pololu</a> <a href="https://www.pololu.com/product/2133" target="_new">DRV8825</a> stepper driver.
+        </td>
+    </tr>
+
+<!-- ################################################### -->
+<!-- Spindle -->
+    <tr bgcolor="white">
+        <td valign="top">
+        </td>
+        <td valign="top" colspan=999 bgcolor="LightGray">
+            <b>Spindle</b>
+    </tr>
+
+    <tr bgcolor="white">
+        <td valign="top">
+        </td>
+        <td valign="top">
+            Microsteps_Spindle
+        </td>
+        <td valign="top">
+            Set to <b>32</b> on the MDF Rose Engine Lathe 2.0.
+        </td>
+    </tr>
+
+    <tr bgcolor="white">
+        <td valign="top">
+        </td>
+        <td valign="top">
+            StepsPer360_Spindle
+        </td>
+        <td valign="top">
+            Set to <b>200</b> on the MDF Rose Engine Lathe 2.0.
+        </td>
+    </tr>
+
+    <tr bgcolor="white">
+        <td valign="top">
+        </td>
+        <td valign="top">
+            GearRatio_Spindle
+        </td>
+        <td valign="top">
+            Set to <b>9</b> on the MDF Rose Engine Lathe 2.0.
+        </td>
+    </tr>
+
+    <tr bgcolor="white">
+        <td valign="top">
+        </td>
+        <td valign="top">
+            Polarity_Spindle
+        </td>
+        <td valign="top">
+            <div style="float: right; width: 150px; margin: 0px 0px 0px 0px; padding: 5px; border: 0px solid Darkgray; text-align: left; ">
+                <table border=1 width="100%">
+                    <tr bgcolor="LightGray">
+                        <td align="center">
+                            <font color="darkblue">
+                            <b>Value</b>
+                            </font>
+                        </td>
+                        <td align="center">
+                            <font color="darkblue">
+                            <b>Purpose</b>
+                            </font>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td align="center" valign="top" width="25px">
+                            0
+                        </td>
+                        <td style="padding: 0 5px; ">
+                            High
+                        </td>
+                    </tr>
+                    <tr bgcolor="#d8ecff" >
+                        <td align="center" valign="top">
+                            1
+                        </td>
+                        <td style="padding: 0 5px; ">
+                            Low
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            Typically set to <b>1</b> on the MDF Rose Engine Lathe 2.0.
+        </td>
+    </tr>
+
+<!-- ################################################### -->
+<!-- Z Axis -->
+
+    <tr bgcolor="white">
+        <td valign="top">
+        </td>
+        <td valign="top" colspan=999 bgcolor="LightGray">
+            <b>Z Axis</b>
+    </tr>
+
+    <tr bgcolor="white">
+        <td valign="top">
+        </td>
+        <td valign="top">
+            Microsteps_Z
+        </td>
+        <td valign="top">
+            Set to <b>32</b> on the MDF Rose Engine Lathe 2.0.
+        </td>
+    </tr>
+
+    <tr bgcolor="white">
+        <td valign="top">
+        </td>
+        <td valign="top">
+            StepsPer360_Z
+        </td>
+        <td valign="top">
+            Set to <b>200</b> on the MDF Rose Engine Lathe 2.0.
+        </td>
+    </tr>
+
+    <tr bgcolor="white">
+        <td valign="top">
+        </td>
+        <td valign="top">
+            DistancePer360_Z
+        </td>
+        <td valign="top">
+            This is the distance the linear slide moves for each revolution of the stepper motor when using the designated axis for movement.  The value is based on the linear slide being used.
+        </td>
+    </tr>
+
+    <tr bgcolor="white">
+        <td valign="top">
+        </td>
+        <td valign="top">
+            Polarity_Z
+        </td>
+        <td valign="top">
+            <div style="float: right; width: 150px; margin: 0px 0px 0px 0px; padding: 5px; border: 0px solid Darkgray; text-align: left; ">
+                <table border=1 width="100%">
+                    <tr bgcolor="LightGray">
+                        <td align="center">
+                            <font color="darkblue">
+                            <b>Value</b>
+                            </font>
+                        </td>
+                        <td align="center">
+                            <font color="darkblue">
+                            <b>Purpose</b>
+                            </font>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td align="center" valign="top" width="25px">
+                            0
+                        </td>
+                        <td style="padding: 0 5px; ">
+                            High
+                        </td>
+                    </tr>
+                    <tr bgcolor="#d8ecff" >
+                        <td align="center" valign="top">
+                            1
+                        </td>
+                        <td style="padding: 0 5px; ">
+                            Low
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            Typically set to <b>1</b> on the MDF Rose Engine Lathe 2.0.
+        </td>
+    </tr>
+
+    <tr bgcolor="white">
+        <td valign="top">
+        </td>
+        <td valign="top">
+            Leadscrew_Hand_Z
+        </td>
+        <td valign="top">
+            <div style="float: right; width: 150px; margin: 0px 0px 0px 0px; padding: 5px; border: 0px solid Darkgray; text-align: left; ">
+                <table border=1 width="100%">
+                    <tr bgcolor="LightGray">
+                        <td align="center">
+                            <font color="darkblue">
+                            <b>Value</b>
+                            </font>
+                        </td>
+                        <td align="center">
+                            <font color="darkblue">
+                            <b>Purpose</b>
+                            </font>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td align="center" valign="top" width="25px">
+                            0
+                        </td>
+                        <td style="padding: 0 5px; ">
+                            Left
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center" valign="top">
+                            1
+                        </td>
+                        <td style="padding: 0 5px; ">
+                            Right
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            The value is based on the linear slide being used.
+        </td>
+    </tr>
+
+<!-- ################################################### -->
+<!-- X Axis -->
+
+    <tr bgcolor="white">
+        <td valign="top">
+        </td>
+        <td valign="top" colspan=999 bgcolor="LightGray">
+            <b>X Axis</b>
+    </tr>
+
+    <tr bgcolor="white">
+        <td valign="top">
+        </td>
+        <td valign="top">
+            XorAltXSelected
+        </td>
+        <td valign="top">
+            <div style="float: right; width: 150px; margin: 0px 0px 0px 0px; padding: 5px; border: 0px solid Darkgray; text-align: left; ">
+                <table border=1 width="100%">
+                    <tr bgcolor="LightGray">
+                        <td align="center">
+                            <font color="darkblue">
+                            <b>Value</b>
+                            </font>
+                        </td>
+                        <td align="center">
+                            <font color="darkblue">
+                            <b>Purpose</b>
+                            </font>
+                        </td>
+                    </tr>
+
+                    <tr bgcolor="#d8ecff" >
+                        <td align="center" valign="top" width="25px">
+                            0
+                        </td>
+                        <td style="padding: 0 5px; ">
+                            X
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center" valign="top">
+                            1
+                        </td>
+                        <td style="padding: 0 5px; ">
+                            AltX
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            Sets the initial selection.
+        </td>
+    </tr>
+
+    <tr bgcolor="white">
+        <td valign="top">
+        </td>
+        <td valign="top">
+            Microsteps_X
+        </td>
+        <td valign="top">
+            Set to <b>32</b> on the MDF Rose Engine Lathe 2.0.
+        </td>
+    </tr>
+
+    <tr bgcolor="white">
+        <td valign="top">
+        </td>
+        <td valign="top">
+            StepsPer360_X
+        </td>
+        <td valign="top">
+            Set to <b>200</b> on the MDF Rose Engine Lathe 2.0.
+        </td>
+    </tr>
+
+    <tr bgcolor="white">
+        <td valign="top">
+        </td>
+        <td valign="top">
+            DistancePer360_X
+        </td>
+        <td valign="top">
+            This is the distance the linear slide moves for each revolution of the stepper motor when using the designated axis for movement.  The value is based on the linear slide being used.
+        </td>
+    </tr>
+
+    <tr bgcolor="white">
+        <td valign="top">
+        </td>
+        <td valign="top">
+            Polarity_X
+        </td>
+        <td valign="top">
+            <div style="float: right; width: 150px; margin: 0px 0px 0px 0px; padding: 5px; border: 0px solid Darkgray; text-align: left; ">
+                <table border=1 width="100%">
+                    <tr bgcolor="LightGray">
+                        <td align="center">
+                            <font color="darkblue">
+                            <b>Value</b>
+                            </font>
+                        </td>
+                        <td align="center">
+                            <font color="darkblue">
+                            <b>Purpose</b>
+                            </font>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td align="center" valign="top" width="25px">
+                            0
+                        </td>
+                        <td style="padding: 0 5px; ">
+                            High
+                        </td>
+                    </tr>
+                    <tr bgcolor="#d8ecff" >
+                        <td align="center" valign="top">
+                            1
+                        </td>
+                        <td style="padding: 0 5px; ">
+                            Low
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            Typically set to <b>1</b> on the MDF Rose Engine Lathe 2.0.
+        </td>
+    </tr>
+
+    <tr bgcolor="white">
+        <td valign="top">
+        </td>
+        <td valign="top">
+            Leadscrew_Hand_X
+        </td>
+        <td valign="top">
+            <div style="float: right; width: 150px; margin: 0px 0px 0px 0px; padding: 5px; border: 0px solid Darkgray; text-align: left; ">
+                <table border=1 width="100%">
+                    <tr bgcolor="LightGray">
+                        <td align="center">
+                            <font color="darkblue">
+                            <b>Value</b>
+                            </font>
+                        </td>
+                        <td align="center">
+                            <font color="darkblue">
+                            <b>Purpose</b>
+                            </font>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td align="center" valign="top" width="25px">
+                            0
+                        </td>
+                        <td style="padding: 0 5px; ">
+                            Left
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center" valign="top">
+                            1
+                        </td>
+                        <td style="padding: 0 5px; ">
+                            Right
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            The value is based on the linear slide being used.
+        </td>
+    </tr>
+
+<!-- ################################################### -->
+<!-- AltX Axis -->
+
+    <tr bgcolor="white">
+        <td valign="top">
+        </td>
+        <td valign="top" colspan=999 bgcolor="LightGray">
+            <b>Alternate X Axis</b>
+    </tr>
+
+    <tr bgcolor="white">
+        <td valign="top">
+        </td>
+        <td valign="top">
+            Microsteps_AltX
+        </td>
+        <td valign="top">
+            Set to <b>32</b> on the MDF Rose Engine Lathe 2.0.
+        </td>
+    </tr>
+
+    <tr bgcolor="white">
+        <td valign="top">
+        </td>
+        <td valign="top">
+            StepsPer360_AltX
+        </td>
+        <td valign="top">
+            Set to <b>200</b> on the MDF Rose Engine Lathe 2.0.
+        </td>
+    </tr>
+
+    <tr bgcolor="white">
+        <td valign="top">
+        </td>
+        <td valign="top">
+            DistancePer360_AltX
+        </td>
+        <td valign="top">
+            This is the distance the linear slide moves for each revolution of the stepper motor when using the designated axis for movement.  The value is based on the linear slide being used.
+        </td>
+    </tr>
+
+    <tr bgcolor="white">
+        <td valign="top">
+        </td>
+        <td valign="top">
+            Polarity_AltX
+        </td>
+        <td valign="top">
+            <div style="float: right; width: 150px; margin: 0px 0px 0px 0px; padding: 5px; border: 0px solid Darkgray; text-align: left; ">
+                <table border=1 width="100%">
+                    <tr bgcolor="LightGray">
+                        <td align="center">
+                            <font color="darkblue">
+                            <b>Value</b>
+                            </font>
+                        </td>
+                        <td align="center">
+                            <font color="darkblue">
+                            <b>Purpose</b>
+                            </font>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td align="center" valign="top" width="25px">
+                            0
+                        </td>
+                        <td style="padding: 0 5px; ">
+                            High
+                        </td>
+                    </tr>
+                    <tr bgcolor="#d8ecff" >
+                        <td align="center" valign="top">
+                            1
+                        </td>
+                        <td style="padding: 0 5px; ">
+                            Low
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            Typically set to <b>1</b> on the MDF Rose Engine Lathe 2.0.
+        </td>
+    </tr>
+
+    <tr bgcolor="white">
+        <td valign="top">
+        </td>
+        <td valign="top">
+            Leadscrew_Hand_AltX
+        </td>
+        <td valign="top">
+            <div style="float: right; width: 150px; margin: 0px 0px 0px 0px; padding: 5px; border: 0px solid Darkgray; text-align: left; ">
+                <table border=1 width="100%">
+                    <tr bgcolor="LightGray">
+                        <td align="center">
+                            <font color="darkblue">
+                            <b>Value</b>
+                            </font>
+                        </td>
+                        <td align="center">
+                            <font color="darkblue">
+                            <b>Purpose</b>
+                            </font>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td align="center" valign="top" width="25px">
+                            0
+                        </td>
+                        <td style="padding: 0 5px; ">
+                            Left
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center" valign="top">
+                            1
+                        </td>
+                        <td style="padding: 0 5px; ">
+                            Right
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            The value is based on the linear slide being used.
+        </td>
+    </tr>
+
+<!-- ################################################### -->
+<!-- M3 Axis -->
+
+    <tr bgcolor="white">
+        <td valign="top">
+        </td>
+        <td valign="top" colspan=999 bgcolor="LightGray">
+            <b>M3 Axis</b>
+    </tr>
+
+    <tr bgcolor="white">
+        <td valign="top">
+        </td>
+        <td valign="top">
+            Microsteps_M3
+        </td>
+        <td valign="top">
+            Set to <b>32</b> on the MDF Rose Engine Lathe 2.0.
+        </td>
+    </tr>
+
+    <tr bgcolor="white">
+        <td valign="top">
+        </td>
+        <td valign="top">
+            StepsPer360_M3
+        </td>
+        <td valign="top">
+            Set to <b>200</b> on the MDF Rose Engine Lathe 2.0.
+        </td>
+    </tr>
+
+    <tr bgcolor="white">
+        <td valign="top">
+        </td>
+        <td valign="top">
+            Polarity_M3
+        </td>
+        <td valign="top">
+            <div style="float: right; width: 150px; margin: 0px 0px 0px 0px; padding: 5px; border: 0px solid Darkgray; text-align: left; ">
+                <table border=1 width="100%">
+                    <tr bgcolor="LightGray">
+                        <td align="center">
+                            <font color="darkblue">
+                            <b>Value</b>
+                            </font>
+                        </td>
+                        <td align="center">
+                            <font color="darkblue">
+                            <b>Purpose</b>
+                            </font>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td align="center" valign="top" width="25px">
+                            0
+                        </td>
+                        <td style="padding: 0 5px; ">
+                            High
+                        </td>
+                    </tr>
+                    <tr bgcolor="#d8ecff" >
+                        <td align="center" valign="top">
+                            1
+                        </td>
+                        <td style="padding: 0 5px; ">
+                            Low
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            Typically set to <b>1</b> on the MDF Rose Engine Lathe 2.0.
+        </td>
+    </tr>
+
+    <tr bgcolor="white">
+        <td valign="top">
+        </td>
+        <td valign="top">
+            RadialOrLineal_M3
+        </td>
+        <td valign="top">
+            <div style="float: right; width: 150px; margin: 0px 0px 0px 0px; padding: 5px; border: 0px solid Darkgray; text-align: left; ">
+                <table border=1 width="100%">
+                    <tr bgcolor="LightGray">
+                        <td align="center">
+                            <font color="darkblue">
+                            <b>Value</b>
+                            </font>
+                        </td>
+                        <td align="center">
+                            <font color="darkblue">
+                            <b>Purpose</b>
+                            </font>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td align="center" valign="top" width="25px">
+                            0
+                        </td>
+                        <td>
+                            Radial
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center" valign="top">
+                            1
+                        </td>
+                        <td>
+                            Linear
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <p style="margin-top: 0;">Sets the M3 axis movement as radial or linear.
+            
+            <p style="margin-bottom: 0;">If the M3 axis is being used for a <a href="https://otbok.info/OT%20-%20LnT-Term-RosettePhaserMultiplier.html" target="_new">Rosette Phaser / Multiplier</a>, this should probably be <b>0</b>.
+        </td>
+    </tr>
+
+    <tr bgcolor="white">
+        <td valign="top">
+        </td>
+        <td valign="top">
+        </td>
+        <td valign="top" colspan=999 bgcolor="DarkGray">
+            <font color="white"><b>Radial or linear slide settings</b></font>
+    </tr>
+
+    <tr bgcolor="white">
+        <td valign="top">
+        </td>
+        <td valign="top">
+            GearRatio_M3
+        </td>
+        <td valign="top">
+            <p style="margin-top: 0;">This is the distance the rotary slide moves for each revolution of the stepper motor when using the designated axis for movement.  The value is based on the screw in the rotary slide being used.
+            
+            <p style="margin-bottom: 0;"><font color="red">Be sure to check this.</font>  If the M3 axis is being used for a <a href="https://otbok.info/OT%20-%20LnT-Term-RosettePhaserMultiplier.html" target="_new">Rosette Phaser / Multiplier</a>, this should probably be <b>9</b> as it will probably use the same drive gear as the spindle drive.  This is not a radial slide; however this setting is needed for that device.
+    </tr>
+
+    <tr bgcolor="white">
+        <td valign="top">
+        </td>
+        <td valign="top">
+        </td>
+        <td valign="top" colspan=999 bgcolor="DarkGray">
+            <font color="white"><b>Linear slide settings</b></font>
+    </tr>
+
+    <tr bgcolor="white">
+        <td valign="top">
+        </td>
+        <td valign="top">
+            DistancePer360_M3
+        </td>
+        <td valign="top">
+            This is the distance the linear slide moves for each revolution of the stepper motor when using the designated axis for movement.  The value is based on the linear slide being used.
+    </tr>
+
+    <tr bgcolor="white">
+        <td valign="top">
+        </td>
+        <td valign="top">
+            Leadscrew_Hand_M3
+        </td>
+        <td valign="top">
+            <div style="float: right; width: 150px; margin: 0px 0px 0px 0px; padding: 5px; border: 0px solid Darkgray; text-align: left; ">
+                <table border=1 width="100%">
+                    <tr bgcolor="LightGray">
+                        <td align="center">
+                            <font color="darkblue">
+                            <b>Value</b>
+                            </font>
+                        </td>
+                        <td align="center">
+                            <font color="darkblue">
+                            <b>Purpose</b>
+                            </font>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td align="center" valign="top" width="25px">
+                            0
+                        </td>
+                        <td style="padding: 0 5px; ">
+                            Left
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center" valign="top">
+                            1
+                        </td>
+                        <td style="padding: 0 5px; ">
+                            Right
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            The value is based on the linear slide being used.
+        </td>
+    </tr>
+
+    <tr bgcolor="white">
+        <td valign="top">
+        </td>
+        <td valign="top">
+        </td>
+        <td valign="top" colspan=999 bgcolor="DarkGray">
+            <font color="white"><b>Radial settings</b></font>
+    </tr>
+
+    <tr bgcolor="white">
+        <td valign="top">
+        </td>
+        <td valign="top">
+            M3Radius
+        </td>
+        <td valign="top">
+            This is the radius of the cutter.  The value is based on the screw in the rotary slide being used.
+    </tr>
+
+
+<!-- ################################################### -->
+<!-- M4 Axis -->
+
+    <tr bgcolor="white">
+        <td valign="top">
+        </td>
+        <td valign="top" colspan=999 bgcolor="LightGray">
+            <b>M4 Axis</b>
+    </tr>
+
+    <tr bgcolor="white">
+        <td valign="top">
+        </td>
+        <td valign="top">
+            Microsteps_M4
+        </td>
+        <td valign="top">
+            Set to <b>32</b> on the MDF Rose Engine Lathe 2.0.
+        </td>
+    </tr>
+
+    <tr bgcolor="white">
+        <td valign="top">
+        </td>
+        <td valign="top">
+            StepsPer360_M4
+        </td>
+        <td valign="top">
+            Set to <b>200</b> on the MDF Rose Engine Lathe 2.0.
+        </td>
+    </tr>
+
+    <tr bgcolor="white">
+        <td valign="top">
+        </td>
+        <td valign="top">
+            Polarity_M4
+        </td>
+        <td valign="top">
+            <div style="float: right; width: 150px; margin: 0px 0px 0px 0px; padding: 5px; border: 0px solid Darkgray; text-align: left; ">
+                <table border=1 width="100%">
+                    <tr bgcolor="LightGray">
+                        <td align="center">
+                            <font color="darkblue">
+                            <b>Value</b>
+                            </font>
+                        </td>
+                        <td align="center">
+                            <font color="darkblue">
+                            <b>Purpose</b>
+                            </font>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td align="center" valign="top" width="25px">
+                            0
+                        </td>
+                        <td style="padding: 0 5px; ">
+                            High
+                        </td>
+                    </tr>
+                    <tr bgcolor="#d8ecff" >
+                        <td align="center" valign="top">
+                            1
+                        </td>
+                        <td style="padding: 0 5px; ">
+                            Low
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            Typically set to <b>1</b> on the MDF Rose Engine Lathe 2.0.
+        </td>
+    </tr>
+
+    <tr bgcolor="white">
+        <td valign="top">
+        </td>
+        <td valign="top">
+            RadialOrLineal_M4
+        </td>
+        <td valign="top">
+            <div style="float: right; width: 150px; margin: 0px 0px 0px 0px; padding: 5px; border: 0px solid Darkgray; text-align: left; ">
+                <table border=1 width="100%">
+                    <tr bgcolor="LightGray">
+                        <td align="center">
+                            <font color="darkblue">
+                            <b>Value</b>
+                            </font>
+                        </td>
+                        <td align="center">
+                            <font color="darkblue">
+                            <b>Purpose</b>
+                            </font>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td align="center" valign="top" width="25px">
+                            0
+                        </td>
+                        <td>
+                            Radial
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center" valign="top">
+                            1
+                        </td>
+                        <td>
+                            Linear
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            Sets the M4 axis movement as radial or linear
+        </td>
+    </tr>
+
+    <tr bgcolor="white">
+        <td valign="top">
+        </td>
+        <td valign="top">
+        </td>
+        <td valign="top" colspan=999 bgcolor="DarkGray">
+            <font color="white"><b>Radial or linear slide settings</b></font>
+    </tr>
+
+    <tr bgcolor="white">
+        <td valign="top">
+        </td>
+        <td valign="top">
+            GearRatio_M4
+        </td>
+        <td valign="top">
+            This is the distance the rotary slide moves for each revolution of the stepper motor when using the designated axis for movement.  The value is based on the screw in the rotary slide being used.
+    </tr>
+
+    <tr bgcolor="white">
+        <td valign="top">
+        </td>
+        <td valign="top">
+        </td>
+        <td valign="top" colspan=999 bgcolor="DarkGray">
+            <font color="white"><b>Linear slide settings</b></font>
+    </tr>
+
+    <tr bgcolor="white">
+        <td valign="top">
+        </td>
+        <td valign="top">
+            DistancePer360_M4
+        </td>
+        <td valign="top">
+            This is the distance the linear slide moves for each revolution of the stepper motor when using the designated axis for movement.  The value is based on the linear slide being used.
+    </tr>
+
+    <tr bgcolor="white">
+        <td valign="top">
+        </td>
+        <td valign="top">
+            Leadscrew_Hand_M4
+        </td>
+        <td valign="top">
+            <div style="float: right; width: 150px; margin: 0px 0px 0px 0px; padding: 5px; border: 0px solid Darkgray; text-align: left; ">
+                <table border=1 width="100%">
+                    <tr bgcolor="LightGray">
+                        <td align="center">
+                            <font color="darkblue">
+                            <b>Value</b>
+                            </font>
+                        </td>
+                        <td align="center">
+                            <font color="darkblue">
+                            <b>Purpose</b>
+                            </font>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td align="center" valign="top" width="25px">
+                            0
+                        </td>
+                        <td style="padding: 0 5px; ">
+                            High
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center" valign="top">
+                            1
+                        </td>
+                        <td style="padding: 0 5px; ">
+                            Low
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            The value is based on the linear slide being used.
+        </td>
+    </tr>
+
+    <tr bgcolor="white">
+        <td valign="top">
+        </td>
+        <td valign="top">
+        </td>
+        <td valign="top" colspan=999 bgcolor="DarkGray">
+            <font color="white"><b>Radial settings</b></font>
+    </tr>
+
+    <tr bgcolor="white">
+        <td valign="top">
+        </td>
+        <td valign="top">
+            M4Radius
+        </td>
+        <td valign="top">
+            This is the radius of the cutter.  The value is based on the screw in the rotary slide being used.
+    </tr>
+
+ <!-- ################################################### -->
+<!-- [Limits] -->
+<!-- ################################################### -->
+    <tr bgcolor=#F7F2E0>
+        <td valign="top" colspan=2>
+            <b>
+            [Limits]
+            </b>
+        </td>
+        <td valign="top">
+            <div style="float: right; width: 400px; margin: 0px 0px 0px 0px; padding: 5px; border: 0px solid Darkgray; text-align: left; ">
+                <table width="100%" border=1>
+                    <tr bgcolor="LightGray">
+                        <td valign="bottom" align="center" width="75px">
+                            <font color="darkblue">
+                            <b>Type</b>
+                            </font>
+                        </td>
+                        <td valign="bottom" align="center" width="75px">
+                            <font color="darkblue">
+                            <b>Value</b>
+                            </font>
+                        </td>
+                        <td valign="bottom" align="center">
+                            <font color="darkblue">
+                            <b>Used for Movement</b>
+                            </font>
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td align="center" rowspan=2>
+                            <b>Linear</b>
+                        </td>
+                    
+                        <td align="center">
+                            <b>Min_</b><i>x</i>
+                        </td>
+                        <td style="padding: 0 5px; ">
+                            Towards the headstock
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td align="center">
+                            <b>Max_</b><i>x</i>
+                        </td>
+                        <td style="padding: 0 5px; ">
+                            Away from the headstock
+                        </td>
+                    </tr>
+                
+                   <tr>
+                        <td align="center" rowspan=2>
+                            <b>Circular</b>
+                        </td>
+                    
+                        <td align="center">
+                            <b>Min_</b><i>x</i>
+                        </td>
+                        <td style="padding: 0 5px; ">
+                            Counter-Clockwise Rotation
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td align="center">
+                            <b>Max_</b><i>x</i>
+                        </td>
+                        <td style="padding: 0 5px; ">
+                            Clockwise Rotation
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            
+            These are used for setting the limit switches.  The pin numbers used must be greater than 16 on 4 motor board, greater than 24 on 5 motor board.
+            
+            <p style="margin-bottom: 0;"><font color="red">Min_B and Max_B are deprecated keys which are no longer used, starting with version 3.0.</span></font> 
+            Use <b>Min_M3</b> or <b>Max_M3</b> (respectively) instead.
+
+        </td>
+    </tr>
+            
+    <tr bgcolor=#F7F2E0>
+        <td valign="top">
+        </td>
+        <td valign="top">
+            StopSpindle
+        </td>
+        <td valign="top">
+            <div style="float: right; width: 350px; margin: 0px 0px 0px 0px; padding: 5px; border: 0px solid Darkgray; text-align: left; ">
+                <table border=1 width="100%">
+                    <tr bgcolor="LightGray">
+                        <td align="center">
+                            <font color="darkblue">
+                            <b>Value</b>
+                            </font>
+                        </td>
+                        <td align="center">
+                            <font color="darkblue">
+                            <b>Purpose</b>
+                            </font>
+                        </td>
+                    </tr>
+
+                    <tr bgcolor="#d8ecff" >
+                        <td align="center" valign="top" width="25px">
+                            0
+                        </td>
+                        <td style="padding: 0 5px; ">
+                            Stop spindle when limit hit
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center" valign="top">
+                            1
+                        </td>
+                        <td style="padding: 0 5px; ">
+                            Leave spindle running when limit hit
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            Stop the spindle when the limit switch has been engaged (along with the other axis movement).
+            
+            <p style="margin-bottom: 0;">Typically set to <b>0</b> on the MDF Rose Engine Lathe 2.0.
+        </td>
+    </tr>
+
+    <tr bgcolor=#F7F2E0>
+        <td valign="top">
+        </td>
+        <td valign="top">
+            Stop
+        </td>
+        <td valign="top">
+            Pin to use for quick-stop; stops all but the overhead drive.
+        </td>
+    </tr>
+
+    <tr bgcolor=#F7F2E0>
+        <td valign="top">
+        </td>
+        <td valign="top">
+            NC-NO
+        </td>
+        <td valign="top">
+            <div style="float: right; width: 350px; margin: 0px 0px 0px 0px; padding: 5px; border: 0px solid Darkgray; text-align: left; ">
+                <table border=1 width="100%">
+                    <tr bgcolor="LightGray">
+                        <td align="center">
+                            <font color="darkblue">
+                            <b>Value</b>
+                            </font>
+                        </td>
+                        <td align="center">
+                            <font color="darkblue">
+                            <b>Purpose</b>
+                            </font>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td align="center" valign="top" width="25px">
+                            0
+                        </td>
+                        <td style="padding: 0 5px; ">
+                            Normally Closed / Momentary Open
+                        </td>
+                    </tr>
+                    <tr bgcolor="#d8ecff" >
+                        <td align="center" valign="top">
+                            1
+                        </td>
+                        <td style="padding: 0 5px; ">
+                            Normally Open / Momentary Close
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        
+            Limit switch type.  There is a further discussion about this topic at <a href="MSMCS-Config-LimitSwitches.html" target="_new">Limit Switches and the EStop Function</a>.
+            
+            <p style="margin-bottom: 0;">Typically set to <b>1</b> on the MDF Rose Engine Lathe 2.0.
+    </tr>
+    
+ <!-- ################################################### -->
+<!-- [Returns] -->
+<!-- ################################################### -->
+    <tr bgcolor="white">
+        <td valign="top" colspan=2>
+            <b>
+            [Returns]
+            </b>
+        </td>
+        <td valign="top">
+            Speed for return functions.  All speeds and accelerations are in steps per second.
+        </td>
+    </tr>
+    
+ <!-- ################################################### -->
+<!-- [Main] -->
+<!-- ################################################### -->
+    <tr bgcolor=#F7F2E0>
+        <td valign="top" colspan=2>
+            <b>
+            [Main]
+            </b>
+        </td>
+        <td valign="top">
+            Default settings for the Main function.
+        </td>
+    </tr>
+    
+ <!-- ################################################### -->
+<!-- [One] -->
+<!-- ################################################### -->
+    <tr bgcolor="white">
+        <td valign="top" colspan=2>
+            <b>
+            [One]
+            </b>
+        </td>
+        <td valign="top">
+            Default settings for the One function.
+        </td>
+    </tr>
+    
+<!-- ################################################### -->
+<!-- [Index] -->
+<!-- ################################################### -->
+    <tr bgcolor=#F7F2E0>
+        <td valign="top" colspan=2>
+            <b>
+            [Index]
+            </b>
+        </td>
+        <td valign="top">
+            Default settings for the Index function.
+        </td>
+    </tr>
+    
+<!-- ################################################### -->
+<!-- [Move] -->
+<!-- ################################################### -->
+    <tr bgcolor="white">
+        <td valign="top" colspan=2>
+            <b>
+            [Move]
+            </b>
+        </td>
+        <td valign="top">
+            Default settings for the Move function.
+        </td>
+    </tr>
+    
+ <!-- ################################################### -->
+<!-- [BE] -->
+<!-- ################################################### -->
+    <tr bgcolor=#F7F2E0>
+        <td valign="top" colspan=2>
+            <b>
+            [BE]
+            </b>
+        </td>
+        <td valign="top">
+            Default settings for the BE function.
+        </td>
+    </tr>
+    
+ <!-- ################################################### -->
+<!-- [Sync] -->
+<!-- ################################################### -->
+    <tr bgcolor="white">
+        <td valign="top" colspan=2>
+            <b>
+            [Sync]
+            </b>
+        </td>
+        <td valign="top">
+            Default settings for the Sync function.
+        </td>
+    </tr>
+    
+ <!-- ################################################### -->
+<!-- [Recip] -->
+<!-- ################################################### -->
+    <tr bgcolor=#F7F2E0>
+        <td valign="top" colspan=2>
+            <b>
+            [Recip]
+            </b>
+        </td>
+        <td valign="top">
+            Default settings for the Recip function.
+        </td>
+    </tr>
+    
+<!-- ################################################### -->
+<!-- [GreekKey] -->
+<!-- ################################################### -->
+    <tr bgcolor="white">
+        <td valign="top" colspan=2>
+            <b>
+            [GreekKey]
+            </b>
+        </td>
+        <td valign="top">
+            Default settings for the Greek Key function.
+        </td>
+    </tr>
+            
+<!-- ################################################### -->
+<!-- [Rose] -->
+<!-- ################################################### -->
+    <tr bgcolor=#F7F2E0>
+        <td valign="top" colspan=2>
+            <b>
+            [Rose]
+            </b>
+        </td>
+        <td valign="top">
+            Default settings for the Rose function.
+        </td>
+    </tr>
+            
+<!-- ################################################### -->
+<!-- Depricated Keys -->
+<!-- ################################################### -->
+<!-- ################################################### -->
+<!-- [Ind] -->
+<!-- ################################################### -->
+    <tr bgcolor=#f4c2c2>
+        <td valign="top" colspan=2>
+            <font color="red"><strike><i>
+            [Ind]
+            </strike></font></i>
+        </td>
+        <td valign="top">
+            <font color="red">This is a deprecated key which is no longer used, starting with version 25.</span></font> 
+            Use <b>[Index]</b> instead.
+        </td>
+    </tr>
+    
+<!-- ################################################### -->
+<!-- [Mov] -->
+<!-- ################################################### -->
+    <tr bgcolor=#f4c2c2>
+        <td valign="top" colspan=2>
+            <font color="red"><strike><i>
+            [Mov]
+            </strike></font></i>
+        </td>
+        <td valign="top">
+            <font color="red">This is a deprecated key which is no longer used, starting with version 25.</span></font> 
+            Use <b>[Move]</b> instead.
+        </td>
+    </tr>
+    
+ <!-- ################################################### -->
+<!-- [Rec] -->
+<!-- ################################################### -->
+    <tr bgcolor=#f4c2c2>
+        <td valign="top" colspan=2>
+            <font color="red"><strike><i>
+            [Rec]
+            </strike></font></i>
+        </td>
+        <td valign="top">
+            <font color="red">This is a deprecated key which is no longer used, starting with version 25.</span></font> 
+            Use <b>[Recip]</b> instead.
+        </td>
+    </tr>
+    
+<!-- ################################################### -->
+<!-- [Grk] -->
+<!-- ################################################### -->
+    <tr bgcolor=#f4c2c2>
+        <td valign="top" colspan=2>
+            <font color="red"><strike><i>
+            [Grk]
+            </strike></font></i>
+        </td>
+        <td valign="top">
+            <font color="red">This is a deprecated key which is no longer used, starting with version 25.</span></font> 
+            Use <b>[GreekKey]</b> instead.
+        </td>
+    </tr>
+    
+<!-- ################################################### -->
+<!-- [Geo] -->
+<!-- ################################################### -->
+    <tr bgcolor=#f4c2c2>
+        <td valign="top" colspan=2>
+            <font color="red"><strike><i>
+            [Geo]
+            </strike></font></i>
+        </td>
+        <td valign="top">
+            <font color="red">This is a deprecated key which is no longer used, starting with version 25.</span></font> 
+            Use <b>[Rose]</b> instead.
+        </td>
+    </tr>
+    
+</table>            
+
+
+<!-- ################################################### -->
+<!-- Footer                                                                                             -->
+<!-- ################################################### -->
+<hr class="style0">
+<font size="3">
+<table width="100%">
+    <col width="67%">
+    <col width="33%">
+
+    <tr valign="top">
+        <td align="left">
+            Questions or comments?  Contact us at
+            <br><a href="mailto:ColvinTools@Gmail.com?Subject=General" target="_new">ColvinTools@Gmail.com</a>
+        </td>
+        <td align="right">
+            <a href="../index-Disclaimers.html">Disclaimers</a>
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>

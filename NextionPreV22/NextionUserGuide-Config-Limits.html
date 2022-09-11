@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html>
+
+<!-- ################################################### -->
+<!-- Style Sheet for MathJax                                                                 -->
+<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+
+<!-- ################################################### -->
+<!-- Style Sheet for Horizontal Rule - Style 0                                       -->
+ <style>
+    hr.style0 {
+        border: 0;
+        height: 1px;
+        background-image: linear-gradient(to right,
+                rgba(184,134,11, 2),
+                rgba(184,134,11, 2),
+                rgba(184,134,11, 2));
+    }
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for Horizontal Rule - Style 1                                       -->
+ <style>
+    hr.style1 {
+        border: 0;
+        height: 3px;
+        background-image: linear-gradient(to right,
+            rgba(0, 0, 0, 0),
+                rgba(184,134,11, 2),
+            rgba(0, 0, 0, 0));
+    }
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for Horizontal Rule - Style 2                                       -->
+ <style>
+    hr.style2 {
+        border: 0;
+        height: 6px;
+        background-image: linear-gradient(to right,
+            rgba(0, 0, 0, 0),
+                rgba(184,134,11, 2),
+            rgba(0, 0, 0, 0));
+    }
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for indented paragraphs                                             -->
+<style>
+    .indented { padding-left: 33pt; padding-right: 33pt; }
+</style>
+
+<!-- ################################################### -->
+<!-- <body background="Images/Background.png"> -->
+	<font face="Georgia">
+
+<!-- ################################################### -->
+<!-- Style Sheet for header image max size                                         -->
+<!-- ################################################### -->
+<style>
+    img.Image { max-width: 500px;}
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for split screen                                                            -->
+<!-- ################################################### -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+    body {
+        font-family: Georgia;
+    }
+
+.split1 {
+  height: calc(100% - 130px);
+  min-width: 450px;
+  max-width: 450px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.split2 {
+  height: calc(100% - 130px);
+  width: calc(100% - 490px);
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.left {
+  left: 0;
+  background-color: #111;
+}
+
+.right {
+  right: 0;
+  background-color: blue;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.centered img {
+  width: 150px;
+  border-radius: 50%;
+}
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for footer                                                                     -->
+<!-- ################################################### -->
+<style>
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: #E6E6E6;
+   text-align: center;
+}
+</style>
+
+<!-- ################################################### -->
+<!-- Header                                                                                           -->
+<!-- ################################################### -->
+
+<head bgcolor=#E6E6E6>
+    <title>MDF Rose Engine 2.0</title>
+    <link rel="shortcut icon" type="image/ico" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="Images/favicon.png">
+
+<font face="Georgia">
+
+<table width="100%" border=0>
+        <col width="10%">
+        <col width="*">
+        <col width="10%">
+
+    <tr valign="bottom">
+        <td align="left">
+            <a href = "javascript:history.back()"><img src="Images/BackButton.png" width="30px"></a>
+        </td>
+        <td align="center" valign="top">
+            <a href="NextionUserGuide.html"><font color="DarkBlue" size="6"><b>
+                Nextion Multiple Stepper Control User's Guide</a>
+            </b></font>
+        </td>
+        <td align="right">
+            <a href="index.html"><img src="Images/Books.png" width="50px" class="Image"></a>
+        </td>
+    </tr>
+</table>
+
+</head>
+
+<!-- ################################################### -->
+<!-- Body - Right Side of the Screen                                                     -->
+<!-- ################################################### -->
+
+<body bgcolor=#E6E6E6>
+    <div style="margin: 60px 5px 5px 5px; padding: 5px; border: 1px solid black; text-align: left; background-color:#E6E6E6" class="split1 right" >
+                <img src="Images/Nextion-Config-Limits.jpg" width="100%" class="Image" alt="HTML Map" border="0" usemap="#html">
+                <map name = "html">
+                     <area shape = "rect" coords = "3,3,76,35" href = "NextionUserGuide-Config-Spindle.html" target = "_self" />
+                     <area shape = "rect" coords = "3,40,76,72" href = "NextionUserGuide-Config-ZAxis.html" target = "_self" />
+                     <area shape = "rect" coords = "3,77,76,109" href = "NextionUserGuide-Config-XAxis.html" target = "_self" />
+                     <area shape = "rect" coords = "3,113,76,146" href = "NextionUserGuide-Config-BAxis.html" target = "_self" />
+                     <area shape = "rect" coords = "3,150,76,183" href = "NextionUserGuide-Config-Limits.html" target = "_self" />
+                     <area shape = "rect" coords = "3,186,76,220" href = "NextionUserGuide-Config-Returns.html" target = "_self" />
+                     <area shape = "rect" coords = "3,222,76,257" href = "NextionUserGuide-Config-More.html" target = "_self" />
+                     
+                     <area shape = "rect" coords = "374,3,446,33" href = "javascript:history.back()" target = "_self" />
+                </map>
+
+                <br>
+                <p><hr>
+                <p><table>
+                    <tr valign="Top">
+                        <td>
+                            <img src="Images/ButtonSettings-Back.png" width="75px">
+                        </td>
+                        <td>
+                            Used to return to the prior screen.
+                        </td>
+                    </tr>
+                    <tr><td colspan=999><hr></td></tr>
+                    <tr valign="Top">
+                        <td>
+                            <img src="Images/ButtonSettings-Refresh.png" width="75px">
+                        </td>
+                        <td>
+                            Used to refresh the values shown in the gray boxes.
+                        </td>
+                    </tr>
+                </table>
+    </div>
+
+<!-- ################################################### -->
+<!-- Body - Left Side of the Screen                                                       -->
+<!-- ################################################### -->
+
+    <div style="float: left; margin: 60px 5px 5px 5px; padding: 5px; border: 0px solid black; text-align: left; background-color:#E6E6E6" class="split2 left" >
+                <table align="Center" border="0">
+        	        <tr height="35px">
+                	    <td align="Center" bgcolor="#0B3861" width="300px">
+                	        <font color="White" size="4"><b>Preferences Screen</b></font>
+                	    </td>
+        	        </tr>
+                </table>
+
+    <table width="100%">
+        <tr valign="top"><td>
+            <p><div style="float: right; width: 200px; margin: 5px 5px 5px 5px; padding: 5px; border: 1px solid black; text-align: left; background-color:#3980C0">
+                <font color="White" size="2">Touch the buttons on the screen image to the right to see the details for the that screen.</font>
+            </div>
+
+<!-- ################################################### -->
+<!-- Purpose  -->
+            <b>Purpose:</b> Set pin numbers to be used for limit switches.
+            
+            <p>The use of a specific pin (Min or Max) for a given axis is not critical.  Tripping either of the limit switches stops movement.
+            
+            <p>The MDF Rose Engine Lathe 2.0 design has jacks connected to pins <b>34</b> thru <b>39</b>.  (The Teensy microcontroller does allow for pins 25 thru 39 are available to be used, but these are not in the MDF Rose Engine Lathe 2.0 design.)
+            
+            <p>Limit switches can be used with the <a href="NextionUserGuide-Main.html">Main Screen</a> or <a href="NextionUserGuide-One.html">One Screen</a>.  The other screens do not accommodate use of limit switches.
+            
+<!-- 
+            <p>Homing switches are not implemented at this time.   
+-->
+
+            <ul>
+                <li>The values shown in a <span style="background-color: #FFEE9C">&nbsp;tan box&nbsp;</span> show values on the Nextion.  Touching one of the text boxes allows you to edit that value using the <a href="NextionUserGuide-NumberPad.html">Number Pad</a> screen.</li>
+                <br>
+                <li>The values shown in a <span style="background-color: LightGray">&nbsp;gray box&nbsp;</span>  show the ones stored on the Teensy controller.  These are read only and should match the settings on the Nextion.</li>
+            </ul>
+
+        <p><table>
+            <tr>
+                <td>
+                    <img src="Images/ButtonMain-In.png" width="30px">
+                </td>
+                <td>
+                    <b>Min</b> pin is used when moving in the direction towards the headstock
+                </td>
+                <td>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                </td>
+                <td>
+                    <b>Max</b> pin is used when moving in the direction away from the headstock
+                </td>
+                <td>
+                    <img src="Images/ButtonMain-Out.png" width="30px">
+                </td>
+            </tr>
+        </table>
+
+<!-- ################################################### -->
+<!-- Controls   -->
+
+            <table width="100%">
+                <col width="225px">
+                <col width="*">
+
+                <tr>
+                    <td colspan=999>
+                        <hr class="style1">
+                    </td>
+                </tr>
+
+                <tr valign="top">
+                    <td>
+                        <img src="Images/SquareChecked.png" width="20px" height="20px">
+                        <b>Stop Spindle with Axis</b>
+                        </font>
+                    </td>
+                    <td>
+                        This option determines what happens when the limit is triggered.
+                        <br>
+                        <br>
+                        <img src="Images/SquareChecked.png" width="20px" height="20px"> = Stop motion on both the axis (i.e., Z, X, or B) and the spindle when the limit is triggered.
+                        <br>
+                        <br>
+                        <img src="Images/SquareUnChecked.png" width="20px" height="20px"> = Stop motion on the axis only when the limit is triggered (the spindle remains turning).
+                    </td>
+                </tr>
+            </table>
+            
+<!-- ################################################### -->
+<!-- Using  -->
+            <hr class="style2">
+            <p><b>Using Limit Switches:</b> The limit switches are implemented using a switch which is
+            
+            <p><center><b>normally open / momentary close</b></center> 
+            
+            <p>Connecting any of the designated pins to ground triggers the limit.            
+        </td></tr>
+                
+        <tr valign="top"><td>
+<!-- ################################################### -->
+<!-- Release Notes  -->
+            <table width="100%" border=1>
+                <col width="75px">
+                <col width="*">
+
+	        	<thead>
+	    	        <tr  bgcolor="3980C0" valign="bottom">
+    	        	    <th align="center">
+                            <font face="Georgia" color="White"><b>
+                            Version
+                            </b></font>
+                        </th>
+                        <th align="center">
+                            <font face="Georgia" color="White"><b>
+                            How It Works
+                            </b></font>
+                        </th>
+                    </tr>
+	        	</thead>
+
+                <tr valign="top">
+                    <td align="center">
+                        <b>Prior to 17</b>
+                    </td>
+                    <td align="left">
+                        When the limit is triggered, the system stops.
+                        
+                        <br><br>
+                        To restart after a stop, power down the system, and then power it back up.
+                        
+                        <br><br>
+                        The system is setup this way to prevent damage to the machinery if it left unattended for a while.
+                </tr>
+
+                <tr valign="top">
+                    <td align="center">
+                        <b>17+</b>
+                    </td>
+                    <td align="left">
+                        When the limit is triggered, the system stops.  
+                        
+                        <br><br>
+                        <div style="float: right; width: 50px; 5px 5px 5px 5px; padding: 5px; border: 0px solid black; text-align: center; background-color:#E6E6E6">
+                            <img  src="Images/ButtonMain-Stop.png" width="100%">
+                        </div>
+                        To reset after a stop, touch the stop button (shown to the right).  You will have to do this for both the spindle and the axis in use.
+                        
+                        <br><br>
+                        The system is setup this way to prevent damage to the machinery if it left unattended for a while, but also to allow the artist to get to the next operation quicker.
+                    </td>
+                </tr>
+            </table>
+
+<!-- ################################################### -->
+<!-- Physical Stuff  -->
+        <tr valign="top"><td>
+            <hr class="style2">
+             <p><div style="float: right; width: 150px; 5px 5px 5px 5px; padding: 5px; border: 1px solid black; text-align: center; background-color:#E6E6E6">
+                <img  src="Images/3.5mm Plug.png" width="100%">
+                <br>
+                <b>3.5 mm Plug</b>
+            </div>
+
+            The 3.5 mm (<sup>1</sup>/<sub>8</sub>") jack used on the MDF Rose Engine Lathe 2.0 has the plug's tip connected to the respective pin on the Teensy, and the sleeve is connected to ground.  Shorting across these two will cause the limit condition to trigger.
+            
+            <p>Using the sleeve for the ground is key for many reasons, and that is the design outlined in <a href = "Documents/MDF RE 2.0 - Instructions, Stepper Controls.pdf" 
+            target = "_new">Instructions for Building the Stepper Controls</a>.
+            
+        </td></tr>
+        
+        <tr valign="top"><td>
+<!-- 
+            <hr class="style1">
+ -->            
+            <div style="float: right; width: 150px; 5px 5px 5px 5px; padding: 5px; border: 1px solid black; text-align: center; background-color:#E6E6E6">
+                <img  src="Images/LimitSwitch.png" width="100%">
+                <br>
+                <b>Limit Switch</b>
+            </div>
+            
+            With the MDF Rose Engine Lathe 2.0, we have tested using the Miniature Snap-Acting Switch with a Lever Actuator, from <a href="https://www.mcmaster.com/" target="_new">McMaster-Carr</a>, p/n <a href="https://www.mcmaster.com/7779K13/" target="_new">7779K13</a>.  
+            
+            <p>This can be attached to a magnetic base stand, especially one with a <a href="https://www.otbok.info/OT%20-%20LnT-Term-NogaArm.html" target="_new">Noga arm</a>, to position it where needed.
+        </td></tr>
+
+        <tr valign="top"><td>
+<!-- ################################################### -->
+<!-- Using  -->
+            <hr class="style1">
+            <p><b>Diagnostics:</b> If you are experiencing issues using limit switches, below are some diagnostic steps I've found useful.
+            
+            <table width="100%" border=1>
+                <col width="30%">
+                <col width="*">
+
+                <tr valign="top">
+                    <td align="left">
+                        <b>Limit Switches don't stop spindle movement</b>
+                    </td>
+                    <td align="left">
+                        Ensure the option on this screen, "Stop Spindle with Axis",  is enabled.
+
+                        <br><br><u>Recommended Action</u>:  Unless you need to not stop the spindle, leave this option checked as the default for how you use your machine.
+                    </td>
+                </tr>
+
+                <tr valign="top">
+                    <td align="left">
+                        <b>Limit Switches don't stop axis movement</b>
+                    </td>
+                    <td align="left">
+                        Ensure you are using the correct limit switch pins for the respective axis.
+
+                        <br><br><u>Recommended Action</u>:  If you are only going to use one limit switch, set all of these to 34.
+                        
+                        <br><br>If you are going to use two limit switches, set all the Mins 34 and all the Maxes to 35.
+                    </td>
+                </tr>
+
+                <tr valign="top">
+                    <td align="left">
+                        <b>Stepper Motors won't run on Main or One Screens</b>
+                    </td>
+                    <td align="left">
+                        One or more limit switches may be "engaged".  This can happen if they are not wired correctly or there is a short in the limit switch wiring. 
+
+                        <br><br>You can confirm that this is or is not the case by trying to drive the stepper motor motion from the screens which don't use limit switches.  Recommended screens are the <b>Ind</b>, <b>Mov</b>, or <b>Sync</b>.
+                        
+                        <br><br><u>Recommended Action</u>:  Read the instructions regarding limit switch connections in <a href = "Documents/MDF RE 2.0 - Instructions, Stepper Controls.pdf" target = "_new">Instructions for Building the Stepper Controls</a>.
+                    </td>
+                </tr>
+            </table>
+
+        </td></tr>
+
+    </table>
+</div>
+
+<!-- ################################################### -->
+<!-- Footer                                                                                             -->
+<!-- ################################################### -->
+<div class="footer">
+    <hr class="style0">
+    <font size="3">
+    <table width="100%">
+        <col width="75%">
+        <col width="25%">
+
+        <tr valign="top">
+            <td align="left">
+                Questions or comments?  Contact us at
+                <br><a href="mailto:ColvinTools@Gmail.com?Subject=General" target="_new">ColvinTools@Gmail.com</a>
+            </td>
+            <td align="right">
+                <a href="../index-Disclaimers.html">Disclaimers</a>
+            </td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

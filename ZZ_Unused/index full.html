@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
+
+<!-- ################################################### -->
+<!-- Style Sheet for header image max size                                         -->
+<style>
+    img.Image { max-width: 500px;}
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for Horizontal Rule - Style 0                                       -->
+ <style>
+    hr.style0 {
+        border: 0;
+        height: 1px;
+        background-image: linear-gradient(to right,
+                rgba(184,134,11, 2),
+                rgba(184,134,11, 2),
+                rgba(184,134,11, 2));
+    }
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for Horizontal Rule - Style 1                                       -->
+ <style>
+    hr.style1 {
+        border: 0;
+        height: 3px;
+        background-image: linear-gradient(to right,
+            rgba(0, 0, 0, 0),
+                rgba(184,134,11, 2),
+            rgba(0, 0, 0, 0));
+    }
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for Horizontal Rule - Style 2                                       -->
+ <style>
+    hr.style2 {
+        border: 0;
+        height: 6px;
+        background-image: linear-gradient(to right,
+            rgba(0, 0, 0, 0),
+                rgba(184,134,11, 2),
+            rgba(0, 0, 0, 0));
+    }
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for indented paragraphs                                             -->
+<style>
+    .indented { padding-left: 10pt; }
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for footer                                                                     -->
+<style>
+.footer {
+  height: 70px;
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+    background-color: #E6E6E6;
+   text-align: center;
+}
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for collapsible section                                                 -->
+<style>
+.collapsible {
+  background-color: #E6E6E6;
+  color: blue;
+  cursor: pointer;
+  padding: 3px;
+  width: calc(100%-450px);
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.active, .collapsible:hover {
+  background-color:rgba(184,134,11, 2);
+  color: white;
+}
+
+.collapsible:after {
+  content: '\002B';
+  color: black;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2212";
+  color: black;
+}
+
+.content {
+  padding: 0 3px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #f1f1f1;
+}
+</style>
+
+<!-- ################################################### -->
+<!-- Header                                                                                           -->
+<!-- ################################################### -->
+
+<head bgcolor=#E6E6E6>
+<title>MDF Rose Engine 2.0</title>
+<link rel="shortcut icon" type="image/ico" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="Images/favicon.png">
+<font face="Arial">
+
+<table width="100%" border=0>
+    <col width="50px">
+    <col width="*">
+    <tr>
+        <td align="left">
+            <a href="index.html"><img src="Images/Books.png" width="50px" class="Image"></a>
+        </td>
+        <td align="center">
+            <font color="DarkBlue" size="6"><b>
+                MDF Rose Engine Lathe 2.0 Library
+            </b></font>
+        </td>
+    </tr>
+</table>
+
+<hr class="style0">
+
+</head>
+
+<!-- ################################################### -->
+<!-- Body                                                                                               -->
+<!-- ################################################### -->
+<body bgcolor=#E6E6E6>
+<font face="Arial">
+
+<div style="float: right; width: 450px; margin: 5px 5px 5px 5px; padding: 5px; border: 1px solid black; text-align: left; background-color:ivory">
+    <img src="Images/MDF-RE-2.png" width="100%" class="Image">
+</div>
+
+<!-- ################################################### -->
+<!-- User Guides -->
+<font color="DarkBlue" size="4"><b>MDF Rose Engine Lathe 2.0 User Guides</b></font>
+    <ul>
+        <li><a href="NextionUserGuide.html">Nextion Multiple Stepper Control User's Guide</a></li>
+
+        <br>
+        <li><a href="MDF RE Lathe 2.0 Best Practices.html">Best Practices</a></li>
+
+        <br>
+        <li><a href="MDFRE-2.0-OpMan.html">Operating Manual for Key Activities</a></li>
+
+        <br>
+        <li><a href="MDF RE Lathe 2.0 CleaningLubPM.html">Cleaning, Lubrication, and Other Preventative Maintenance</a></li>
+
+        <br>
+        <li><a href="https://www.sharpeninghandbook.info/WW-RoseEngineFlyCutter-Rod.html">Sharpening Rose Engine Fly Cutters</a></li>
+
+    </ul>
+
+<p><hr class="style1">
+<font color="DarkBlue" size="4"><b>About the MDF Rose Engine Lathe 2.0</b></font>
+<br>
+
+<!-- ################################################### -->
+<!-- General Information -->
+<button class="collapsible"><b><font color="darkblue">* General Information</font></b></button>
+<div class="content">
+    <ul>
+        <li><a href="MDF RE Lathe 2.0 What Changed.html">What Changed in the 2.0 machine?</a></li>
+        <li><a href="MDF RE Lathe 2.0 FAQs.html">Frequently Asked Questions</a></li>
+        <li><a href="MDF RE Lathe 2.0 Design Goals.html">Design Goals</a></li>
+        <li><a href="Documents/MDF RE 2.0 - Standards.pdf">Standards</a> <I><font size="2">(PDF document)</font></I></li>
+    </ul>
+</div>
+
+<!-- ################################################### -->
+<!-- Installation and Upgrade Guides -->
+<button class="collapsible"><b><font color="darkblue">* Guides for Building and Upgrading</font></b></button>
+<div class="content">
+    <ul>
+        <li><b>MDF Rose Engine Lathe 2.0 - Instructions for Building</b></li>
+            <ul>
+                <li><a href="Documents/MDF RE 2.0 - Instructions, Case.pdf">Building the base and headstock</a> <I><font size="2">(PDF document)</font></I></li>
+                <li><a href="Documents/MDF RE 2.0 - Instructions, Stepper Controls Part 1.pdf">Building the stepper controls system</a> <I><font size="2">(PDF document)</font></I></li>
+                <li><a href="Documents/MDF RE 2.0 - Instructions, Stepper Controls Part 2.pdf">Installing the stepper controls system</a> <I><font size="2">(PDF document)</font></I></li>
+                <li><a href="Documents/MDF RE 2.0 - Instructions, Overhead Drive.pdf">Building the overhead drive</a> <I><font size="2">(PDF document)</font></I></li>
+            </ul>
+
+        <br>
+        <li><b>MDF Rose Engine Lathe 2.0 - Upgrades</b></li>
+            <ul>
+                <li><a href="Documents/Nextion System Upgrade Procedure.pdf">Nextion Multiple Stepper Control Version 14</a> <I><font size="2">(PDF document)</font></I></li>
+            </ul>
+    </ul>
+</div>
+
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    }
+  });
+}
+</script>
+
+<!-- ################################################### -->
+<!-- General Information -->
+<p><hr class="style1">
+<font color="DarkBlue" size="4"><b>Other Helpful Web Links</b></font>
+
+<table width="100%">
+    <colgroup>
+        <col width="50%">
+        <col width="50%">
+    </colgroup>
+
+    <tr valign="top">
+        <td>
+            <ul>
+                <li><a href="https://www.otbok.info/" target="_new">Ornamental Turning Book of Knowledge</a></li>
+
+                <br>
+                <li>Original <a href="http://www.rogueturner.com/root/MDF_Rose_Engine.html" target="_new">MDF Rose Engine Lathe</a></li>
+            </ul>
+        </td>
+        <td>
+            <ul>
+                <li><a href="Images/MDF Rose Engine Lathe Wallpaper.jpg" target="_new">MDF Rose Engine Lathe 2.0 Wallpaper</a></li>
+
+                <br>
+                <li><a href="https://www.ColvinTools.com/" target="_new">ColvinTools</a> - MDF rose engine lathe kits and parts</li>
+            </ul>
+        </td>
+    </tr>
+
+    </td></tr>
+</table>
+
+</div>
+
+<!-- ################################################### -->
+<!-- Footer                                                                                             -->
+<!-- ################################################### -->
+    <hr class="style0">
+    <font size="3">
+    <table width="100%">
+        <col width="67%">
+        <col width="33%">
+
+        <tr valign="top">
+            <td align="left">
+                    Questions or comments?  Contact us at
+                <br><a href="mailto:ColvinTools@Gmail.com?Subject=General" target="_new">ColvinTools@Gmail.com</a>
+            </td>
+            <td align="right">
+                <a href="../index-Disclaimers.html">Disclaimers</a>
+            </td>
+        </tr>
+    </table>
+
+</body>
+</html>

@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
+
+<!-- ################################################### -->
+<!-- Style Sheet for header image max size                                         -->
+<style>
+    img.Image { max-width: 500px;}
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for Horizontal Rule - Style 0                                       -->
+ <style>
+    hr.style0 {
+        border: 0;
+        height: 1px;
+        background-image: linear-gradient(to right,
+                rgba(184,134,11, 2),
+                rgba(184,134,11, 2),
+                rgba(184,134,11, 2));
+    }
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for Horizontal Rule - Style 1                                       -->
+ <style>
+    hr.style1 {
+        border: 0;
+        height: 3px;
+        background-image: linear-gradient(to right,
+            rgba(0, 0, 0, 0),
+                rgba(184,134,11, 2),
+            rgba(0, 0, 0, 0));
+    }
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for Horizontal Rule - Style 2                                       -->
+ <style>
+    hr.style2 {
+        border: 0;
+        height: 6px;
+        background-image: linear-gradient(to right,
+            rgba(0, 0, 0, 0),
+                rgba(184,134,11, 2),
+            rgba(0, 0, 0, 0));
+    }
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for indented paragraphs                                             -->
+<style>
+    .indented { padding-left: 33pt; padding-right: 33pt; }
+</style>
+
+<!-- ################################################### -->
+<!-- Header                                                                                           -->
+<!-- ################################################### -->
+
+<head bgcolor=#E6E6E6>
+<title>MDF Rose Engine Lathe 2.0</title>
+<link rel="shortcut icon" type="image/ico" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="Images/favicon.png">
+
+<font face="Georgia">
+
+<table width="100%" border=0>
+        <col width="10%">
+        <col width="*">
+        <col width="10%">
+
+    <tr valign="bottom">
+        <td align="left">
+            <a href = "javascript:history.back()"><img src="Images/BackButton.png" width="30px"></a>
+        </td>
+        <td align="center" valign="top">
+            <a href="MSMCS.html"><font color="DarkBlue" size="6"><b>
+                Control System for Multiple Stepper Motors</a>
+                <br>
+                Prior System Versions
+                </font>
+            </b></font>
+        </td>
+        <td align="right">
+            <a href="index.html"><img src="Images/Books.png" width="50px" class="Image"></a>
+        </td>
+    </tr>
+</table>
+</head>
+
+<!-- ################################################### -->
+<!-- Body                                                                                               -->
+<!-- ################################################### -->
+
+<body bgcolor=#E6E6E6 background="Images/DevBackground.png">
+<font face="Georgia">
+
+<table border=1>
+	<col width="100px">
+	
+    <col width="100px">
+    <col width="150px">
+    <col width="200px">
+    <col width="*">
+
+<!-- ################################################### -->
+<!-- Heading -->
+    <tr bgcolor="moccasin">
+        <td valign="bottom">
+            <font color="DarkBlue" size="5"><b>
+            Version
+            </b></font>
+        </td>
+
+        <td align="center" valign="bottom" colspan=2>
+            <font color="DarkBlue" size="5"><b>
+            Description
+            </b></font>
+        </td>
+
+        <td align="center" valign="bottom">
+            <font color="DarkBlue" size="5"><b>
+            File
+            </b></font>
+        </td>
+
+        <td align="center" valign="bottom">
+            <font color="DarkBlue" size="5"><b>
+            Comments
+            </b></font>
+        </td>
+    </tr>
+
+<!-- ################################################### -->
+<!-- Version 26 -->
+    <tr bgcolor="#E6E6E6">
+        <td valign="center" align="middle" rowspan=6>
+            <font color="Black" size="5">
+            26
+            </font>
+        </td>
+
+        <td align="left" valign="middle" rowspan=2>
+            Teensy
+        </td>
+        <td align="left" valign="middle">
+            3.5
+        </td>
+        <td align="center" valign="middle">
+            <a href="NextionUpgrade/V26/Teensy/3.5/4Rose.hex" download>4Rose.hex</a>
+        </td>
+        <td align="left" valign="top">
+            <b>Most commonly used</b>
+        </td>
+    </tr>
+
+    <tr bgcolor="#E6E6E6">
+        <td align="left" valign="middle">
+            3.6
+        </td>
+        <td align="center" valign="middle">
+            <a href="NextionUpgrade/V26/Teensy/3.6/4Rose.hex" download>4Rose.hex</a>
+        </td>
+        <td align="left" valign="top">
+            If using a Nextion Intelligent display, be sure to rewire the display to limit the voltages passed back to the Teensy.  The Intelligent displays can push 5V and the Teensy 3.6 will only accept 3.3V.
+        </td>
+    </tr>
+
+    <tr bgcolor="#E6E6E6">
+        <td align="left" valign="middle" rowspan=4>
+            Nextion
+        </td>
+        <td align="left" valign="middle">
+            4.3&quot; Enhanced
+        </td>
+        <td align="center" valign="top">
+            <a href="NextionUpgrade/V26/Nextion/43E/RoseEngine_N24-43E.tft" download>RoseEngine_N24-43E.tft</a>
+        </td>
+        <td align="left" valign="top">
+            <b>Most commonly used</b>
+        </td>
+    </tr>
+
+    <tr bgcolor="#E6E6E6">
+        <td align="left" valign="middle">
+            4.3&quot; Intelligent
+        </td>
+        <td align="center" valign="middle">
+            <a href="NextionUpgrade/V26/Nextion/43i/RoseEngine_N24-43i.tft" download>RoseEngine_N24-43i.tft</a>
+        </td>
+        <td align="left" valign="top">
+            Not recommended.  No real advantage over the 4.3&quot; Enhanced.
+        </td>
+    </tr>
+
+    <tr bgcolor="#E6E6E6">
+        <td align="left" valign="middle">
+            5.0&quot; Intelligent
+        </td>
+        <td align="center" valign="middle">
+            <a href="NextionUpgrade/V26/Nextion/50i/RoseEngine_N24-50i.tft" download>RoseEngine_N24-50i.tft</a>
+        </td>
+        <td align="left" valign="top">
+            Not recommended.  No real advantage over the 4.3&quot; Enhanced, and the current 3D printed case does not handle this display size.
+        </td>
+    </tr>
+
+    <tr bgcolor="#E6E6E6">
+        <td align="left" valign="middle">
+            7.0&quot; Intelligent
+        </td>
+        <td align="center" valign="middle">
+            <a href="NextionUpgrade/V26/Nextion/70i/RoseEngine_N26-70i.tft" download>RoseEngine_N26-70i.tft</a>
+        </td>
+        <td align="left" valign="top">
+            At this point, it is nice to have more real estate; however the display screens have not been re-formatted to use the space differently.  Stuff is just bigger.
+        </td>
+    </tr>
+
+<!-- ################################################### -->
+<!-- Version 25 -->
+    <tr bgcolor="White">
+        <td valign="center" align="middle" rowspan=6>
+            <font color="Black" size="5">
+            25
+            </font>
+        </td>
+
+        <td align="left" valign="middle" rowspan=2>
+            Teensy
+        </td>
+        <td align="left" valign="middle" bgcolor="White">
+            3.5
+        </td>
+        <td align="center" valign="middle" bgcolor="White">
+            <a href="NextionUpgrade/V25/Teensy/3.5/4Rose.hex" download>4Rose.hex</a>
+        </td>
+        <td align="left" valign="top" bgcolor="White">
+            <b>Most commonly used</b>
+        </td>
+    </tr>
+
+    <tr bgcolor="White">
+        <td align="left" valign="middle">
+            3.6
+        </td>
+        <td align="center" valign="middle">
+            <a href="NextionUpgrade/V25/Teensy/3.6/4Rose.hex" download>4Rose.hex</a>
+        </td>
+        <td align="left" valign="top">
+        </td>
+    </tr>
+
+    <tr bgcolor="White">
+        <td align="left" valign="middle" rowspan=4>
+            Nextion
+        </td>
+        <td align="left" valign="middle" bgcolor="White">
+            4.3&quot; Enhanced
+        </td>
+        <td align="center" valign="top" bgcolor="White">
+            <a href="NextionUpgrade/V25/Nextion/43E/RoseEngine_N25-43E.tft" download>RoseEngine_N25-43E.tft</a>
+        </td>
+        <td align="left" valign="top" bgcolor="White">
+            <b>Most commonly used</b>
+        </td>
+    </tr>
+
+    <tr bgcolor="White">
+        <td align="left" valign="middle">
+            4.3&quot; Intelligent
+        </td>
+        <td align="center" valign="middle">
+            <a href="NextionUpgrade/V25/Nextion/43i/RoseEngine_N25-43i.tft" download>RoseEngine_N25-43i.tft</a>
+        </td>
+        <td align="left" valign="top">
+            Not recommended.  No real advantage over the 4.3&quot; Enhanced.
+        </td>
+    </tr>
+
+    <tr bgcolor="White">
+        <td align="left" valign="middle">
+            5.0&quot; Intelligent
+        </td>
+        <td align="center" valign="middle">
+            <a href="NextionUpgrade/V25/Nextion/50i/RoseEngine_N25-50i.tft" download>RoseEngine_N25-50i.tft</a>
+        </td>
+        <td align="left" valign="top">
+            Not recommended.  No real advantage over the 4.3&quot; Enhanced, and the current 3D printed case does not handle this display size.
+        </td>
+    </tr>
+
+    <tr bgcolor="White">
+        <td align="left" valign="middle">
+            7.0&quot; Intelligent
+        </td>
+        <td align="center" valign="middle">
+            <a href="NextionUpgrade/V25/Nextion/70i/RoseEngine_N25-70i.tft" download>RoseEngine_N25-70i.tft</a>
+        </td>
+        <td align="left" valign="top">
+            At this point, it is nice to have more real estate; however the display screens have not been re-formatted to use the space differently.  Stuff is just bigger.
+        </td>
+    </tr>
+
+<!-- ################################################### -->
+<!-- Version 24 -->
+    <tr>
+        <td valign="center" align="middle" rowspan=5>
+            <font size="5">
+            24
+            </font>
+        </td>
+
+        <td align="left" valign="middle" rowspan=2>
+            Teensy
+        </td>
+        <td align="left" valign="middle">
+            3.5
+        </td>
+        <td align="center" valign="middle">
+            <a href="NextionUpgrade/V24/Teensy/3.5/4Rose.hex" download>4Rose.hex</a>
+        </td>
+        <td align="left" valign="top">
+            Most commonly used
+        </td>
+    </tr>
+
+    <tr>
+        <td align="left" valign="middle">
+            3.6
+        </td>
+        <td align="center" valign="middle">
+            <a href="NextionUpgrade/V24/Teensy/3.6/4Rose.hex" download>4Rose.hex</a>
+        </td>
+        <td align="left" valign="top">
+        </td>
+    </tr>
+
+    <tr>
+        <td align="left" valign="middle" rowspan=3>
+            Nextion
+        </td>
+        <td align="left" valign="middle">
+            4.3&quot; Enhanced
+        </td>
+        <td align="center" valign="top">
+            <a href="NextionUpgrade/V24/Nextion/43E/RoseEngine_N24-43E.tft" download>RoseEngine_N24-43E.tft</a>
+        </td>
+        <td align="left" valign="top">
+            Most commonly used
+        </td>
+    </tr>
+
+    <tr>
+        <td align="left" valign="middle">
+            4.3&quot; Intelligent
+        </td>
+        <td align="center" valign="middle">
+            <a href="NextionUpgrade/V24/Nextion/43i/RoseEngine_N24-43i.tft" download>RoseEngine_N24-43i.tft</a>
+        </td>
+        <td align="left" valign="top">
+        </td>
+    </tr>
+
+    <tr>
+        <td align="left" valign="middle">
+            5.0&quot; Intelligent
+        </td>
+        <td align="center" valign="middle">
+            <a href="NextionUpgrade/V24/Nextion/50i/RoseEngine_N24-50i.tft" download>RoseEngine_N24-50i.tft</a>
+        </td>
+        <td align="left" valign="top">
+            4.3&quot; re-generated for 5.0&quot; display.  Fields are not rearranged to take advanced of bigger size.
+        </td>
+    </tr>
+
+<!-- ################################################### -->
+<!-- Version 23 -->
+    <tr bgcolor="White">
+        <td valign="center" align="middle" rowspan=2>
+            <font color="Black" size="5">
+            23
+            </font>
+        </td>
+
+        <td align="left" valign="bottom">
+            Teensy
+        </td>
+        <td align="left" valign="bottom">
+            3.5
+        </td>
+        <td align="center" valign="top">
+            <a href="NextionUpgrade/V23/4Rose.hex" download>4Rose.hex</a>
+        </td>
+        <td align="left" valign="top" rowspan=2>
+        </td>
+    </tr>
+
+    <tr bgcolor="White">
+        <td align="left" valign="bottom">
+            Nextion
+        </td>
+        <td align="left" valign="bottom">
+            4.3&quot; Enhanced
+        </td>
+        <td align="center" valign="top">
+            <a href="NextionUpgrade/V23/RoseEngine_N23.tft" download>RoseEngine_23.tft</a>
+        </td>
+    </tr>
+
+<!-- ################################################### -->
+<!-- Version 22 -->
+    <tr>
+        <td valign="center" align="middle" rowspan=2>
+            <font color="Black" size="5">
+            22
+            </font>
+        </td>
+
+        <td align="left" valign="bottom">
+            Teensy
+        </td>
+        <td align="left" valign="bottom">
+            3.5
+        </td>
+        <td align="center" valign="top">
+            <a href="NextionUpgrade/V22/4Rose.hex" download>4Rose.hex</a>
+        </td>
+        <td align="left" valign="top" rowspan=2>
+            Pretty significant changes implemented in this version.
+        </td>
+    </tr>
+
+    <tr>
+        <td align="left" valign="bottom">
+            Nextion
+        </td>
+        <td align="left" valign="bottom">
+            4.3&quot; Enhanced
+        </td>
+        <td align="center" valign="top">
+            <a href="NextionUpgrade/V22/RoseEngine_N22.tft" download>RoseEngine_22.tft</a>
+        </td>
+    </tr>
+
+<!-- ################################################### -->
+<!-- Version 21 -->
+    <tr bgcolor="White">
+        <td valign="center" align="middle" rowspan=2>
+            <font color="Black" size="5">
+            21
+            </font>
+        </td>
+
+        <td align="left" valign="bottom">
+            Teensy
+        </td>
+        <td align="left" valign="bottom">
+            3.5
+        </td>
+        <td align="center" valign="top">
+            <a href="NextionUpgrade/V21/4Rose.hex" download>4Rose.hex</a>
+        </td>
+        <td align="left" valign="top" rowspan=2>
+        </td>
+    </tr>
+
+    <tr bgcolor="White">
+        <td align="left" valign="bottom">
+            Nextion
+        </td>
+        <td align="left" valign="bottom">
+            4.3&quot; Enhanced
+        </td>
+        <td align="center" valign="top">
+            <a href="NextionUpgrade/V23/RoseEngine_N21.tft" download>RoseEngine_21.tft</a>
+        </td>
+    </tr>
+
+<!-- ################################################### -->
+<!-- Version 20 -->
+    <tr>
+        <td valign="center" align="middle" rowspan=2>
+            <font color="Black" size="5">
+            20
+            </font>
+        </td>
+
+        <td align="left" valign="bottom">
+            Teensy
+        </td>
+        <td align="left" valign="bottom">
+            3.5
+        </td>
+        <td align="center" valign="top">
+            <a href="NextionUpgrade/V20/4Rose.hex" download>4Rose.hex</a>
+        </td>
+        <td align="left" valign="top" rowspan=2>
+        </td>
+    </tr>
+
+    <tr>
+        <td align="left" valign="bottom">
+            Nextion
+        </td>
+        <td align="left" valign="bottom">
+            4.3&quot; Enhanced
+        </td>
+        <td align="center" valign="top">
+            <a href="NextionUpgrade/V20/RoseEngine_N20.tft" download>RoseEngine_20.tft</a>
+        </td>
+        <td align="left" valign="top" rowspan=2>
+        </td>
+    </tr>
+
+<!-- ################################################### -->
+<!-- Version 19 -->
+    <tr bgcolor="White">
+        <td valign="center" align="middle" rowspan=2>
+            <font color="Black" size="5">
+            19
+            </font>
+        </td>
+
+        <td align="left" valign="bottom">
+            Teensy
+        </td>
+        <td align="left" valign="bottom">
+            3.5
+        </td>
+        <td align="center" valign="top">
+            <a href="NextionUpgrade/V19/4Rose.hex" download>4Rose.hex</a>
+        </td>
+        <td align="left" valign="top" rowspan=2>
+        </td>
+    </tr>
+
+    <tr bgcolor="White">
+        <td align="left" valign="bottom">
+            Nextion
+        </td>
+        <td align="left" valign="bottom">
+            4.3&quot; Enhanced
+        </td>
+        <td align="center" valign="top">
+            <a href="NextionUpgrade/V19/RoseEngine_N19.tft" download>RoseEngine_19.tft</a>
+        </td>
+        <td align="left" valign="top" rowspan=2>
+        </td>
+    </tr>
+
+<!-- ################################################### -->
+<!-- Version 18 -->
+    <tr>
+        <td valign="center" align="middle">
+            <font color="Black" size="5">
+            18
+            </font>
+        </td>
+
+        <td align="center" valign="top">
+            <font color="Gray"><i>n/a</i></font>
+        </td>
+
+        <td align="center" valign="top">
+            <font color="Gray"><i>n/a</i></font>
+        </td>
+
+        <td align="center" valign="top">
+            <font color="Gray"><i>n/a</i></font>
+        </td>
+        <td align="left" valign="top">
+        </td>
+    </tr>
+
+<!-- ################################################### -->
+<!-- Version 17 -->
+    <tr bgcolor="White">
+        <td valign="center" align="middle" rowspan=2>
+            <font color="Black" size="5">
+            17
+            </font>
+        </td>
+
+        <td align="left" valign="bottom">
+            Teensy
+        </td>
+        <td align="left" valign="bottom">
+            3.5
+        </td>
+        <td align="center" valign="top">
+            <a href="NextionUpgrade/V17/4Rose.hex" download>4Rose.hex</a>
+        </td>
+        <td align="left" valign="top" rowspan=2>
+        </td>
+    </tr>
+
+    <tr bgcolor="White">
+        <td align="left" valign="bottom">
+            Nextion
+        </td>
+        <td align="left" valign="bottom">
+            4.3&quot; Enhanced
+        </td>
+        <td align="center" valign="top">
+            <a href="NextionUpgrade/V17/RoseEngine_N17.tft" download>RoseEngine_17.tft</a>
+        </td>
+    </tr>
+</table>
+
+<!-- ################################################### -->
+<!-- Footer                                                                                             -->
+<!-- ################################################### -->
+<hr class="style0">
+<font size="3">
+<table width="100%">
+    <col width="67%">
+    <col width="33%">
+
+    <tr valign="top">
+        <td align="left">
+            Questions or comments?  Contact us at
+            <br><a href="mailto:ColvinTools@Gmail.com?Subject=General" target="_new">ColvinTools@Gmail.com</a>
+        </td>
+        <td align="right">
+            <a href="../index-Disclaimers.html">Disclaimers</a>
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>

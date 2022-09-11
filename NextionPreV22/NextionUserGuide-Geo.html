@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html>
+
+<!-- ################################################### -->
+<!-- Style Sheet for MathJax                                                                 -->
+<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+
+<!-- ################################################### -->
+<!-- Style Sheet for Horizontal Rule - Style 0                                       -->
+ <style>
+    hr.style0 {
+        border: 0;
+        height: 1px;
+        background-image: linear-gradient(to right,
+                rgba(184,134,11, 2),
+                rgba(184,134,11, 2),
+                rgba(184,134,11, 2));
+    }
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for Horizontal Rule - Style 1                                       -->
+ <style>
+    hr.style1 {
+        border: 0;
+        height: 3px;
+        background-image: linear-gradient(to right,
+            rgba(0, 0, 0, 0),
+                rgba(184,134,11, 2),
+            rgba(0, 0, 0, 0));
+    }
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for Horizontal Rule - Style 2                                       -->
+ <style>
+    hr.style2 {
+        border: 0;
+        height: 6px;
+        background-image: linear-gradient(to right,
+            rgba(0, 0, 0, 0),
+                rgba(184,134,11, 2),
+            rgba(0, 0, 0, 0));
+    }
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for indented paragraphs                                             -->
+<style>
+    .indented { padding-left: 33pt; padding-right: 33pt; }
+</style>
+
+<!-- ################################################### -->
+<!-- <body background="Images/Background.png"> -->
+	<font face="Georgia">
+
+<!-- ################################################### -->
+<!-- Style Sheet for header image max size                                         -->
+<!-- ################################################### -->
+<style>
+    img.Image { max-width: 500px;}
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for split screen                                                            -->
+<!-- ################################################### -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+    body {
+        font-family: Georgia;
+    }
+
+.split1 {
+  height: calc(100% - 130px);
+  min-width: 450px;
+  max-width: 450px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.split2 {
+  height: calc(100% - 130px);
+  width: calc(100% - 490px);
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.left {
+  left: 0;
+  background-color: #111;
+}
+
+.right {
+  right: 0;
+  background-color: blue;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.centered img {
+  width: 150px;
+  border-radius: 50%;
+}
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for footer                                                                     -->
+<!-- ################################################### -->
+<style>
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: #E6E6E6;
+   text-align: center;
+}
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for collapsible section                                                 -->
+<!-- ################################################### -->
+<style>
+.collapsible {
+  background-color: #E6E6E6;
+  color: DarkBlue;
+  cursor: pointer;
+  padding: 3px;
+  width: calc(100%-450px);
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.active, .collapsible:hover {
+  background-color:#5718B7;
+  color: white;
+}
+
+.collapsible:after {
+  content: '\002B';
+  color: black;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2212";
+  color: black;
+}
+
+.content {
+  padding: 0 3px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #f1f1f1;
+}
+</style>
+
+<!-- ################################################### -->
+<!-- Header                                                                                           -->
+<!-- ################################################### -->
+
+<head bgcolor=#E6E6E6>
+    <title>MDF Rose Engine 2.0</title>
+    <link rel="shortcut icon" type="image/ico" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="Images/favicon.png">
+
+<font face="Georgia">
+
+<table width="100%" border=0>
+        <col width="10%">
+        <col width="*">
+        <col width="10%">
+
+    <tr valign="bottom">
+        <td align="left">
+            <a href = "javascript:history.back()"><img src="Images/BackButton.png" width="30px"></a>
+        </td>
+        <td align="center" valign="top">
+            <a href="NextionUserGuide.html"><font color="DarkBlue" size="6"><b>
+                Nextion Multiple Stepper Control User's Guide</a>
+            </b></font>
+        </td>
+        <td align="right">
+            <a href="index.html"><img src="Images/Books.png" width="50px" class="Image"></a>
+        </td>
+    </tr>
+</table>
+
+</head>
+
+<!-- ################################################### -->
+<!-- Body - Right Side of the Screen                                                     -->
+<!-- ################################################### -->
+
+<body bgcolor=#E6E6E6>
+    <div style="margin: 60px 5px 5px 5px; padding: 5px; border: 1px solid black; text-align: left; background-color:#E6E6E6" class="split1 right" >
+        <font face="Arial">
+                <table align="Center" border="0">
+        	        <tr height="35px">
+                	    <td align="Center" bgcolor="#5718B7" width="50px">
+                    	    <a href="NextionUserGuide-Main.html" style="color: White"><b>Main</b></a>
+                	    </td>
+                	    <td align="Center" bgcolor="#5718B7" width="45px">
+                    	    <a href="NextionUserGuide-One.html" style="color: White"><b>One</b></a>
+                	    </td>
+        	            <td align="Center" bgcolor="#5718B7" width="45px">
+            	            <a href="NextionUserGuide-Ind.html" style="color: White"><b>Ind</b></a>
+        	            </td>
+                	    <td align="Center" bgcolor="#5718B7" width="45px">
+                	        <a href="NextionUserGuide-Mov.html" style="color: White"><b>Mov</b></a>
+                	    </td>
+                	    <td align="Center" bgcolor="#5718B7" width="45px">
+                    	    <a href="NextionUserGuide-Sync.html" style="color: White"><b>Sync</b></a>
+                	    </td>
+        	            <td align="Center" bgcolor="#5718B7" width="45px">
+        	                <a href="NextionUserGuide-Rec.html" style="color: White"><b> Rec</b></a>
+        	            </td>
+                	    <td align="Center" bgcolor="#5718B7" width="45px">
+                	        <a href="NextionUserGuide-Grk.html" style="color: White"><b>Grk</b></a>
+                	    </td>
+                	    <td align="Center" bgcolor="#58FA58" width="45px">
+                	        <b>Geo</b>
+                	    </td>
+        	            <td align="Center" bgcolor="#0B3861" width="40px">
+        	            </td>
+        	            <td align="Center" bgcolor="#5718B7" width="40px">
+        	                <a href="NextionUserGuide-Config-Spindle.html" style="color: White"><b>. . .</b></a>
+        	            </td>
+        	        </tr>
+                </table>
+        </font>
+
+                <img src="Images/Nextion-Geo2.png" width="100%" class="Image" alt="HTML Map" border="0" usemap="#html">
+                <map name = "html">
+                     <area shape = "rect" coords = "54,4,132,31" href = "NextionUserGuide-Config.html" target = "_self" />
+                </map>
+
+                <br>
+                <p><hr>
+                <p><table>
+                    <tr valign="Top">
+                        <td>
+                            <img src="Images/ButtonGeo-CW.png" width="50px">
+                        </td>
+                        <td>
+                            Used to turn the spindle counter-clockwise. On a traditional lathe, this is considered forward.
+                        </td>
+                    </tr>
+                    <tr><td colspan=999><hr></td></tr>
+                    <tr valign="Top">
+                        <td>
+                            <img src="Images/ButtonMove-Stop.png" width="50px">
+                        </td>
+                        <td>
+                            Used to stop the motion of the stepper motor.
+                        </td>
+                    </tr>
+                    <tr><td colspan=999><hr></td></tr>
+                    <tr valign="Top">
+                        <td>
+                            <img src="Images/ButtonMove-Return.png" width="50px">
+                        </td>
+                        <td>
+                            Used to return the spindle or the selected axis to the start point of the rose pattern.
+                        </td>
+                    </tr>
+                    <tr><td colspan=999><hr></td></tr>
+                    <tr valign="Top">
+                        <td>
+                            <img src="Images/ButtonGeo-CCW.png" width="50px">
+                        </td>
+                        <td>
+                            Used to turn the spindle clockwise. On a traditional lathe, this is considered reverse. To change the direction of the spindle, you must stop it first. You cannot directly swap between clockwise and counter-clockwise.
+                        </td>
+                    </tr>
+                    <tr><td colspan=999><hr></td></tr>
+                    <tr valign="Top">
+                        <td>
+                            <a href = "NextionUserGuide-Config.html" target = "_self" />
+                            <img src="Images/ButtonConfig-Purple.png" width="50px">
+                            </a>
+                        </td>
+                        <td>
+                            <div style="float: right; width: 150px; margin: 5px 5px 5px 5px; padding: 5px; border: 1px solid black; text-align: left; background-color:#5918BB">
+                                <font color="White" size="2">Touch <b>Config</b> on the screen image above to see the details for this screen.</font>
+                            </div>
+
+                            This is used to display or edit the configuration settings for the MaxSpeed and the Acceleration for the respective stepper motors.
+                        </td>
+                    </tr>
+                </table>
+    </div>
+
+<!-- ################################################### -->
+<!-- Body - Left Side of the Screen                                                       -->
+<!-- ################################################### -->
+
+    <div style="float: left; margin: 60px 5px 5px 5px; padding: 5px; border: 0px solid black; text-align: left; background-color:#E6E6E6" class="split2 left" >
+        <table align="Center" border="0">
+            <tr height="35px">
+                <td align="Center" bgcolor="#5918BB" width="300px">
+                    <font color="White" size="4"><b>Geo(metric chuck) Screen</b></font>
+                </td>
+            </tr>
+        </table>
+
+        <p><div style="float: left; width: 100px; margin: 5px 5px 5px 5px; padding: 5px; border: 1px solid DarkGray; text-align: center; background-color:White">
+            <a href = "Images/Nextion-Rose.png" target = "_self" />
+            <img src="Images/Nextion-Rose.png" width="100%" bgcolor="white" border=0>
+            </a>
+        </div>
+
+        <p><b>Purpose:</b>  This screen allows for the creation of a rose or single stage geometric chuck patterns (see also, <a href="https://en.wikipedia.org/wiki/Rose_(mathematics)" target="_new">Wikipedia Rose (mathematics)</a> -- the math explaining how the variables work is explained there).
+
+        <p>The <b>B</b> axis is only available when it is set to <b>Linear</b> in the <a href="NextionUserGuide-Config-Spindle.html">B Axis Configuration page</a>
+        
+        <p>The geometric mathematics behind this movement are explained by <a href="https://en.wikipedia.org/wiki/Frank_Farris" target="_new">Dr. Frank Farris</a> in his "<a href="https://scholarcommons.scu.edu/cgi/viewcontent.cgi?article=1004&context=math_compsci" target="_new">Wheels on Wheels on Wheels-Surprising Symmetry</a>" paper.  There is also a nice <a href="https://mathworld.wolfram.com/Rose.html" target="_new">article on this</a> at <a href="https://mathworld.wolfram.com" target="_new">Wolfram MathWorld</a>.
+
+        <hr class="style1">
+        
+        <p><font color="red"><u>Key Note</u>:</font> There is some pretty heavy duty math going on here, and some of the combinations of <b>n</b> and <b>d</b> get into calculations which can take the Teensy some time.  The result is that it can not be run as fast on the Z axis as with other operations.  
+        
+<!-- ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★  -->
+<!-- Starred Point -->
+
+        <table width="100%" border=0>
+            <tr valign="top">
+                <td width="25px">&nbsp;</td>
+
+                <td width="*">
+                    <div style="float: left; width: 30px; margin: 5px 5px 5px 5px; padding: 5px; border: 0px solid DarkGray; text-align: center;">
+                        <font color="red" size=6><b>&starf;</b></font>
+                    </div>
+                    
+                    <p>200 is the recommended starting point for the Max Speed on the Z axis 
+                    <br>(<I>and also start at 50% on the slider</I>).
+                </td>
+
+                <td width="25px">&nbsp;</td>
+            </tr>
+        </table>
+
+    <table width="100%">
+        <col width="125px">
+        <col width="*">
+
+<!-- ################################################### -->
+<!-- Variables   -->
+        <tr>
+            <td colspan=999>
+                <hr class="style1">
+            </td>
+        </tr>
+
+        <tr valign="top">
+            <td colspan="999">
+                <table width="100%">
+                    <tr valign="top">
+                        <td width="120px">
+                            <span style="background-color: #FFEE9C"><b>
+                            &nbsp;n&nbsp;
+                            </b></span>
+                        </td>
+                        <td>
+                            the numerator
+                        </td>
+                        <td align="center" rowspan="5" width="175px">
+                            <a href = "Images/RoseCurves.png" target = "_self" />
+                            <b>Rose curves for
+                            <br>various values
+                            <br>of n & d</b>
+                            </a>
+                        </td>
+                    </tr>
+
+                    <tr valign="top">
+                        <td colspan=2>
+                            &nbsp;
+                        </td>
+                    </tr>
+
+                    <tr valign="top">
+                        <td>
+                            <span style="background-color: #FFEE9C"><b>&nbsp;d&nbsp;</b></span>
+                        </td>
+                        <td>
+                            the denominator
+                        </td>
+                    </tr>
+
+                    <tr valign="top">
+                        <td colspan=2>
+                            &nbsp;
+                        </td>
+                    </tr>
+
+                    <tr valign="top">
+                        <td>
+                            <span style="background-color: White"><b>&nbsp;k&nbsp;</b></span>
+                        </td>
+                        <td>
+                            the ratio, <sup>n</sup>/<sub>d</sub>
+                        </td>
+                    </tr>
+
+                </table>
+        </tr>
+
+        <tr valign="top">
+            <td colspan=2>
+                &nbsp;
+            </td>
+        </tr>
+
+        <tr valign="top">
+            <td>
+                <span style="background-color: #FFEE9C"><b>&nbsp;Spindle Revolutions&nbsp;</b></span>
+            </td>
+            <td>
+                <div style="float: right; width: 100px; margin: 5px 5px 5px 5px; padding: 5px; border: 1px solid DarkGray; text-align: center; background-color:White">
+                    <a href = "Images/RoseGraph2.png" target = "_self" />
+                    <img src="Images/RoseGraph2.png" width="100%" bgcolor="white" border=0>
+                    </a>
+                </div>
+
+                Number of revolutions the spindle should make before stopping.  This functionality is useful for producing patterns like the one to the right.
+
+                <p>If this is set to zero (0), the movement of the cutter will continue until the stop button is pressed.
+                                
+                <p style="margin-bottom: 0;"><I>This field was introduced in version 19.</I>
+            </td>
+        </tr>
+
+        <tr valign="top">
+            <td colspan=2>
+                &nbsp;
+            </td>
+        </tr>
+
+        <tr valign="top">
+            <td width="121px">
+                <span style="background-color: #FFEE9C"><b>&nbsp;Axis Amplitude&nbsp;</b></span>
+            </td>
+            <td>
+                Sets <b>height</b> (distance along Z or X Axes) of each lobe and is dependent upon value entered in the <a href="NextionUserGuide-Config-Spindle.html">Preferences Screen</a> for <b>Distance/360</b>
+            </td>
+        </tr>
+
+        <tr valign="top">
+            <td colspan=2>
+                &nbsp;
+            </td>
+        </tr>
+
+        <tr valign="top">
+            <td>
+                <span style="background-color: #FFEE9C"><b>&nbsp;B Radius&nbsp;</b></span>
+            </td>
+            <td>
+                This is the distance from the center of rotation to the location where the <a href="https://courses.lumenlearning.com/physics/chapter/10-3-dynamics-of-rotational-motion-rotational-inertia/" target="_new"> force is applied to drive the rotation</a>.
+                
+                <br><br>
+                This field is only visible when moving on the B axis.
+            </td>
+        </tr>
+
+<!-- ################################################### -->
+<!-- Stepper Motor Controls   -->
+
+        <tr>
+            <td colspan=999>
+                <hr class="style1">
+            </td>
+        </tr>
+
+        <tr valign="top">
+            <td>
+                <b>Speed</b>
+            </td>
+            <td>
+                The controls on the left and right side of the screen are for controlling the respective stepper motor's speed and acceleration.
+
+                <p>To change the Max Speed, touch the number, and you will be presented with the <a href="NextionUserGuide-NumberPad.html">Number Pad Screen</a>.</p>
+
+                <p>The slider is a red bar that can be moved up to increase the speed, or down to decrease it.  The percentage shown in the bar (100% on the left, 29% on the right) shows the percentage of the Max Speed at which the stepper motor is set to run.
+
+                <p>There is a slider for the stepper motor on each axis, and they operate independently.
+
+                <p>The top number is the max speed for the respective axis' stepper motor.  This is measured in pulses / second.  The MDF Rose Engine 2.0 are set to 6,400 pulses / revolution, so a max speed of 8500 would equate to
+
+\[
+\begin{align}
+MaxSpindleRPM & = \frac{8,500 \, \frac{\mathrm{pulses}}{\mathrm{sec}} \times \, 60 \, \frac{\mathrm{sec}}{\mathrm{min}}} {6,400 \, \frac{\mathrm{pulses}}{\mathrm{rev}} \times \, 9 \, \frac{\mathrm{motor \, revs}}{\mathrm{spindle \, revs}}} \\
+ & = 8.9 \, \mathrm{RPM}
+\end{align}
+\]
+
+<!--
+                <p>Thusly, at 96%,the spindle's speed is
+\[
+\begin{align}
+SpindleRPM & = MaxSpindleRPM \times \, 0.96 \\
+ & = 1.5 \, \mathrm{RPM}
+\end{align}
+\]
+-->
+
+                <hr class="style1">
+                <p>The other stepper motor (in this case, on the Z axis) directly drives the motion.  Thusly, a max speed of 7200 would equate to
+
+\[
+\begin{align}
+MaxRPM & = \frac{7,200 \, \frac{\mathrm{pulses}}{\mathrm{sec}} \times \, 60 \, \frac{\mathrm{sec}}{\mathrm{min}}} {6,400 \, \frac{\mathrm{pulses}}{\mathrm{rev}}} \\
+ & = 68 \, \mathrm{RPM}
+\end{align}
+\]
+
+                <p>Thusly, at 29%,the motor's speed is
+\[
+\begin{align}
+RPM & = MaxRPM \times \, 0.29 \\
+ & = 20 \, \mathrm{RPM}
+\end{align}
+\]
+
+                <p>And if the lead screw has a pitch of 2mm and 4 starts, it will move 8mm per revolution.  At the set speed, this is
+\[
+\begin{align}
+Movement Speed & = RPM \times \, 8 \frac{\mathrm{mm}}{\mathrm{rev}} \\
+ & = 160 \, \frac{\mathrm{mm}}{\mathrm{min}}
+\end{align}
+\]
+
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan=999>
+                &nbsp;
+            </td>
+        </tr>
+
+        <tr valign="top">
+            <td>
+                <b>Acceleration</b>
+            </td>
+            <td>
+                The bottom number (6000 on the left; 5000 on the right) is the acceleration for the stepper motor.
+
+                <p>To change this value, touch the number, and you will be presented with the <a href="NextionUserGuide-NumberPad.html">Number Pad Screen</a>.
+
+            </td>
+        </tr>
+    </table>
+
+<!-- ################################################### -->
+<!-- Limit Switches -->
+
+    <hr class="style2">
+    <p><font color="DarkBlue" size="4"><b><a name="LimitSwitches">Limit Switches</a></font></b>
+    <p>Limit switches cannot be used with this function.  They can only be used from the <a href="NextionUserGuide-Main.html">Main Screen</a> or <a href="NextionUserGuide-One.html">One Screen</a>.
+
+<!-- ################################################### -->
+<!-- Specific Axis Notes -->
+
+    <hr class="style2">
+    <p><font color="DarkBlue" size="4"><b>Specific Axis Notes</font></b>
+    
+    <table border="1" width="100%" bgcolor="White">
+    <thead>
+        <tr bgcolor="Moccasin" valign="bottom">
+            <th align="center" width="50px">
+                <font face="Georgia" color="Blue">
+                Axis
+                </font>
+            </th>
+            <th align="center">
+                <font face="Georgia" color="Blue">
+                Comments
+                </font>
+            </th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr valign="top" bgcolor="White">
+            <td align="center">
+                <b>Spindle</b>
+            </td>
+            <td>
+                <div style="float: right; width: 40px; 1px 1px 1px 1px; padding: 1px; border: 0px solid black; text-align: center; background-color:#White">
+                    <img  src="Images/ButtonMove-Stop.png" width="100%">
+                </div>
+                
+                Movement continues until the identified movement distance is completed, or the stop button (shown to the right) is used.
+            </td>
+        </tr>
+
+        <tr valign="top" bgcolor=#F7F2E0>
+            <td align="center">
+                <b>Z</b>
+            </td>
+            <td>
+                Movement on this axis is the same as for the spindle.
+            </td>
+        </tr>
+
+        <tr valign="top" bgcolor="White">
+            <td align="center">
+                <b>X</b>
+            </td>
+            <td>
+                Movement on this axis is the same as for the spindle.
+            </td>
+        </tr>
+
+        <tr valign="top" bgcolor=#F7F2E0>
+            <td align="center">
+                <b>B</b>
+            </td>
+            <td>
+                The fields on this screen are used with the fields and settings on the <b><a href="NextionUserGuide-Config-BAxis.html">B Axis Configuration</a></b> screen to calculate how long to run the stepper motor to achieve the desired rotation.
+                
+                <br><br>
+                Movement on this axis is the same as for the spindle.                
+            </td>
+        </tr>
+    </table>
+
+</div>
+
+<!-- ################################################### -->
+<!-- Footer                                                                                             -->
+<!-- ################################################### -->
+<div class="footer">
+    <hr class="style0">
+    <font size="3">
+    <table width="100%">
+        <col width="75%">
+        <col width="25%">
+
+        <tr valign="top">
+            <td align="left">
+                Questions or comments?  Contact us at
+                <br><a href="mailto:ColvinTools@Gmail.com?Subject=General" target="_new">ColvinTools@Gmail.com</a>
+            </td>
+            <td align="right">
+                <a href="../index-Disclaimers.html">Disclaimers</a>
+            </td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

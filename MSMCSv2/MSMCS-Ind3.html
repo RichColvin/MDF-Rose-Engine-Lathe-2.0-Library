@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
+
+<!-- ################################################### -->
+<!-- Style Sheet for MathJax                                                                 -->
+<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+
+<!-- ################################################### -->
+<!-- Style Sheet for Horizontal Rule - Style 0                                       -->
+ <style>
+    hr.style0 {
+        border: 0;
+        height: 1px;
+        background-image: linear-gradient(to right,
+                rgba(184,134,11, 2),
+                rgba(184,134,11, 2),
+                rgba(184,134,11, 2));
+    }
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for Horizontal Rule - Style 1                                       -->
+ <style>
+    hr.style1 {
+        border: 0;
+        height: 3px;
+        background-image: linear-gradient(to right,
+            rgba(0, 0, 0, 0),
+                rgba(184,134,11, 2),
+            rgba(0, 0, 0, 0));
+    }
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for Horizontal Rule - Style 2                                       -->
+ <style>
+    hr.style2 {
+        border: 0;
+        height: 6px;
+        background-image: linear-gradient(to right,
+            rgba(0, 0, 0, 0),
+                rgba(184,134,11, 2),
+            rgba(0, 0, 0, 0));
+    }
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for indented paragraphs                                             -->
+<style>
+    .indented { padding-left: 33pt; padding-right: 33pt; }
+</style>
+
+<!-- ################################################### -->
+<!-- <body background="Images/Background.png"> -->
+	<font face="Georgia">
+
+<!-- ################################################### -->
+<!-- Style Sheet for header image max size                                         -->
+<!-- ################################################### -->
+<style>
+    img.Image { max-width: 500px;}
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for split screen                                                            -->
+<!-- ################################################### -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+    body {
+        font-family: Georgia;
+    }
+
+.split1 {
+  height: calc(260px);
+  min-width: 450px;
+  max-width: 450px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.split2 {
+  height: calc(100% - 130px);
+  width: calc(100% - 490px);
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.split3 {
+  height: calc(100% - 400px);
+  min-width: 450px;
+  max-width: 450px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 280px;
+}
+
+.left {
+  left: 0;
+  background-color: #111;
+}
+
+.right {
+  right: 0;
+  background-color: blue;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.centered img {
+  width: 150px;
+  border-radius: 50%;
+}
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for footer                                                                     -->
+<!-- ################################################### -->
+<style>
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: #E6E6E6;
+   text-align: center;
+}
+</style>
+
+<!-- ################################################### -->
+<!-- Header                                                                                           -->
+<!-- ################################################### -->
+
+<head bgcolor=#E6E6E6>
+    <title>MDF Rose Engine Lathe 2.0</title>
+    <link rel="shortcut icon" type="image/ico" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="Images/favicon.png">
+
+<font face="Georgia">
+
+<table width="100%" border=0>
+        <col width="10%">
+        <col width="*">
+        <col width="10%">
+
+    <tr valign="bottom">
+        <td align="left">
+            <a href = "javascript:history.back()"><img src="Images/BackButton.png" width="30px"></a>
+        </td>
+        <td align="center" valign="top">
+            <a href="MSMCS.html"><font color="DarkBlue" size="6"><b>
+                Control System for Multiple Stepper Motors</a>
+            </b></font>
+        </td>
+        <td align="right">
+            <a href="index.html"><img src="Images/Books.png" width="50px" class="Image"></a>
+        </td>
+    </tr>
+</table>
+
+</head>
+
+<!-- ################################################### -->
+<!-- Body - Right Side of the Screen                                                     -->
+<!-- ################################################### -->
+
+<body bgcolor=#E6E6E6 background="Images/DevBackground.png">
+
+    <div style="margin: 60px 5px 5px 5px; padding: 5px; border: 0px solid black; text-align: left;  background-color:#E6E6E6; background-image: url(Images/DevBackground.png);" class="split1 right" >
+    
+        <img src = "Images/Index_File.jpg" width = "450px" class = "Image" usemap="#html1">
+
+<!-- area map based on an image size of 450px wide -->
+        <map name = "html1">
+
+<!-- Main Screen -->
+            <area shape = "rect" coords = "1,1,53,39" 
+                href = "MSMCS-Main.html"
+                target = "_self" 
+                title="Main Screen"
+                />
+
+<!-- One Screen -->
+            <area shape = "rect" coords = "55,1,102,39" 
+                href = "MSMCS-One.html"
+                target = "_self" 
+                title="One Screen"
+                />
+
+<!-- Index Screen -->
+            <area shape = "rect" coords = "104,1,154,39" 
+                href = "MSMCS-Ind.html"
+                target = "_self" 
+                title="Index Screen"
+                />
+
+<!-- Move Screen -->
+            <area shape = "rect" coords = "156,1,206,39" 
+                href = "MSMCS-Mov.html"
+                target = "_self" 
+                title="Move Screen"
+                />
+
+<!-- Sync Screen -->
+            <area shape = "rect" coords = "208,1,259,39" 
+                href = "MSMCS-Sync.html"
+                target = "_self" 
+                title="Syncronization Screen"
+                />
+
+<!-- Reciprocation Screen -->
+            <area shape = "rect" coords = "261,1,311,39" 
+                href = "MSMCS-Rec.html"
+                target = "_self" 
+                title="Reciprocation Screen"
+                />
+
+<!-- Advanced Screen -->
+            <area shape = "rect" coords = "313,1,364,39" 
+                href = "MSMCS-Adv.html"
+                target = "_self" 
+                title="Advanced Screen"
+                />
+
+<!-- Preferences Screen -->
+            <area shape = "rect" coords = "409,1,449,39" 
+                href = "MSMCS-Config-Spindle.html"
+                target = "_self" 
+                title="Preferences Screen"
+                />
+
+<!-- Config Screen -->
+            <area shape = "rect" coords = "69,45,132,70" 
+                href = "MSMCS-Config.html"
+                target = "_self" 
+                title="Config Screen"
+                />
+
+<!-- Axis Screen -->
+            <area shape = "circle" coords = "117,97,13" 
+                href = "MSMCS-Ind.html"
+                target = "_self" 
+                title="Divisions of a circle"
+                />
+            <area shape = "circle" coords = "183,97,13" 
+                href = "MSMCS-Ind2.html"
+                target = "_self" 
+                title="Degrees"
+                />
+
+<!-- Speed Settings - Left -->
+            <area shape = "rect" coords = "2,78,54,101" 
+                href = "MSMCS-NumberPad.html"
+                target = "_self" 
+                title="Number Pad"
+                />
+            <area shape = "rect" coords = "2,234,54,253" 
+                href = "MSMCS-NumberPad.html"
+                target = "_self" 
+                title="Number Pad"
+                />
+
+<!-- Disabled/Enabled Button  -->
+            <area shape = "rect" coords = "2,45,67,70" 
+                href = '#' onClick="switch_image_function()"
+                target = "_self" 
+                title="Enable stepper motor"
+                />
+
+        </map>
+    </div>
+    
+    <div style="margin: 330px 5px 5px 5px; padding: 5px; border: 1px solid black; text-align: left;  background-color:#E6E6E6; background-image: url(Images/DevBackground.png);" class="split3 right" >
+
+        <table width="100%">
+            <tr valign="Top">
+                <td valign="top">
+                    <table align="Center" border="0">
+                        <tr height="30px">
+                            <td align="Center" bgcolor="#4C877A" width="85px">
+                                <font color="White" size="2" face="Arial"><b>Enabled</b></font>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                <td valign="top" width="45%">
+                    Indicates that the spindle stepper motor is enabled even when not in use.  Touch this to change it to <b>Disabled</b>.
+                </td>
+                <td valign="top" rowspan=3>
+                    The <a href="MSMCS-Config-More.html" target="_self">More</a> screen can be used to set this to be continuously Disabled or Enabled.  These buttons temporarily override that configuration setting.
+
+                    <p style="margin-bottom: 0;"><b><u>Key Note</u>:</b>When using <a href="https://www.omc-stepperonline.com/digital-stepper-driver-10-42a-20-50vdc-for-nema-17-23-24-stepper-motor-dm542t.html" target="_new">DM542T stepper motor drivers</a>, this needs to be <b>Enabled</b> (especially for work using indexing), otherwise the position will be lost and the movement will not be predictable.
+                </td>
+            </tr>
+
+            <tr><td colspan=2><hr></td></tr>
+
+            <tr valign="Top">
+                <td valign="top">
+                    <table align="Center" border="0">
+                        <tr height="30px">
+                            <td align="Center" bgcolor="#CD3C21" width="85px">
+                                <font color="White" size="2" face="Arial"><b>Disabled</b></font>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                <td valign="top">
+                    Indicates that the spindle stepper motor is only enabled when in use, and then disabled.  Touch this to change it to <b>Enabled</b>.
+                </td>
+            </tr>
+        </table>
+
+        <hr>
+        <table width="100%">
+            <tr valign="Top">
+                <td>
+                    <img src="Images/ButtonIndex-CCW.png" width="50px">
+                </td>
+                <td>
+                    Used to index the spindle in a counter clockwise direction.  On a traditional lathe, this is considered forward.
+                </td>
+            </tr>
+        </table>
+
+        <hr>
+        <table width="100%">
+            <tr valign="Top">
+                <td>
+                    <img src="Images/ButtonIndex-Stop.png" width="50px">
+                </td>
+                <td>
+                    Used to stop the motion of the stepper motor.  If the <img src="Images/ButtonIndex-Return.png" width="25px"> button is pressed next, the spindle is returned to the start position.  Otherwise the position is lost.
+                </td>
+            </tr>
+        </table>
+
+        <hr>
+        <table width="100%">
+            <tr valign="Top">
+                <td>
+                    <img src="Images/ButtonIndex-Return.png" width="50px">
+                </td>
+                <td>
+                    Used to return the spindle to the start point of the previous operation.
+                    
+                    <p>When using this function, Be sure to stop and retract the cutter from the cut first.  The return path does not always follow the same path as the initial cut.  (Backlash and other factors come into play here.)
+                    
+                    <p style="margin-bottom: 0;">The speed of the return action is set in the <a href="MSMCS-Config-Returns.html">Preferences | Returns</a> screen.
+                </td>
+            </tr>
+        </table>
+
+        <hr>
+        <table width="100%">
+            <tr valign="Top">
+                <td>
+                    <img src="Images/ButtonIndex-CW.png" width="50px">
+                </td>
+                <td>
+                    Used to index the spindle in a clockwise direction.  On a traditional lathe, this is considered forward.
+                </td>
+            </tr>
+        </table>
+
+        <hr>
+        <table width="100%">
+            <tr valign="Top">
+                <td>
+                    <table align="Center" border="0">
+                        <tr height="30px">
+                            <td align="Center" bgcolor="#4C877A" width="85px">
+                                <font color="White" size="2" face="Arial"><b>Config</b></font>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                <td>
+                    <div style="float: right; width: 150px; margin: 5px 5px 5px 5px; padding: 5px; border: 1px solid black; text-align: left; background-color:#4C877A">
+                        <font color="White" size="2">Touch <b>Config</b> on the screen image above to see the details for this screen.</font>
+                    </div>
+
+                    This is used to display or edit the configuration settings for the MaxSpeed and the Acceleration for the respective stepper motors.
+                </td>
+            </tr>
+        </table>
+    </div>
+
+<!-- ################################################### -->
+<!-- Body - Left Side of the Screen                                                       -->
+<!-- ################################################### -->
+
+    <div style="float: left; margin: 60px 5px 5px 5px; padding: 5px; border: 0px solid black; text-align: left;  background-color:#E6E6E6; background-image: url(Images/DevBackground.png);" class="split2 left" >
+                <table align="Center" border="0">
+        	        <tr height="60px">
+                	    <td align="Center" bgcolor="#4C877A" width="300px">
+                	        <font color="White" size="4"><b>Index Screen</b>
+                	        <br>File Option</font>
+                	    </td>
+        	        </tr>
+                </table>
+
+            <p><b>Purpose:</b>  This screen allows variable index sizes to be retrieved sequentially from a file stored on a microSD card.  This feature could be used to place evenly spaced features (such as barleycorns) around the circumference of an ellipse (i.e.  equal division of the ellipse), with the angular movement in degrees pre-calculated using a CAD program.
+            
+            <p>One example where this is very useful is when cutting barley corns around an oval rosette.  The increments needed change as the piece rotates around the oval.
+
+            <br><div style="float: right; width: 175px; margin: 5px 5px 5px 5px; padding: 5px; border: 1px solid black; text-align: left; background-color:#4C877A">
+                <font color="White" size="2">Touch <b>Div</b> on the screen image to the right to go back to the prior page.</font>
+            </div>
+
+            <p>Selecting the filename text box will open a dropdown list of files located on the microSD card.   Use the Up and Down arrows to traverse the file list. While the dropdown list is active, all other controls on the page are disabled. The dropdown list can be closed either by selecting a file, or by touching the Filename text box.
+
+            <hr class="style1">
+            <p>The file format is ASCII text (numbers, letters, and decimal only) with each number on a new line, saved to the microSD card using a separate computer. Because the SD Card library only supports the <a href="https://en.wikipedia.org/wiki/8.3_filename" >8.3 or Short File Name convention</a>, the file name must be a maximum 8 characters + a period + three-character extension (thus the 8.3); the name is not case sensitive.  It's not necessary to have the extension, but the limit for the name is 8 characters when no extension is used.  Multiple files can be loaded onto the microSD card for use on one or more work pieces as desired.
+
+            <p>When using the <b>File</b> version, each successive index will read successive file numbers off the microSD card (in either </b>Div</b> or </b>Deg</b> as selected on this screen).  When the end of the file is reached, </b>Size</b> will be reset to 0.  The </b>Index</b> value will be increased when indexing clockwise and decreased when indexing counterclockwise.  The read position of the file can also be set by editing the <b>Index</b> value.
+        </td></tr>
+    </table>
+
+<!-- ################################################### -->
+<!-- Variables   -->
+
+    <table width="100%">
+        <col width="125px">
+        <col width="*">
+
+        <tr>
+            <td colspan=999>
+                <hr class="style1">
+            </td>
+        </tr>
+
+        <tr valign="top">
+            <td>
+                <span style="background-color: #FFEE9C"><b>
+               &nbsp; Filename &nbsp;
+                </b></span>
+            </td>
+            <td>
+                <p style="margin-top: 0;">Selecting the filename text box will open a dropdown list of files located on the microSD card. 
+                
+                <p><center><img src="Images/Index_File_DropDown.jpg" width="60%"></center>
+
+                
+                <p>Use the Up and Down arrows to traverse the file list.  The dropdown list can be closed either by selecting a file, or by touching the Filename textbox.
+                
+                <p>While the dropdown list is active, all other controls on the page are disabled. 
+
+                <p>Each Index may have its own file.
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan=999>
+                <hr class="style1">
+            </td>
+        </tr>
+
+        <tr valign="top">
+            <td>
+                <span style="background-color: lightgray"><b>
+               &nbsp; Index &nbsp;
+                </b></span>
+            </td>
+            <td>
+                <p style="margin-top: 0;">This is the number of times the axis has been indexed.  It is decremented each time the spindle is moved counter clockwise, and incremented when moved clockwise.
+            </td>
+        </tr>
+
+        <tr valign="top">
+            <td>
+                <span style="background-color: lightgray"><b>
+                &nbsp; Degrees &nbsp;
+                </b></span>
+            </td>
+            <td>
+                <p style="margin-top: 0;">Displays the number of degrees which the next index will rotate the spindle.
+            </td>
+        </tr>
+
+        <tr valign="top">
+            <td>
+                <span style="background-color: #FFEE9C"><b>
+               &nbsp; Next Index &nbsp;
+                </b></span>
+            </td>
+            <td>
+                <p style="margin-top: 0;">This is the ID number for the next indexing operation.  If this is less than <span style="background-color: lightgray"><b>&nbsp;Index&nbsp;</b></span>, then the Clockwise button was last used; if it is higher, then the Counter Clockwise button was used.
+                
+                <p>Tapping on this does enable the user to reset the index; however that does not affect the position of the spindle.
+            </td>
+        </tr>
+
+    </table>
+
+<!-- ################################################### -->
+<!-- Limit Switches -->
+
+    <hr class="style2">
+    <p><font color="DarkBlue" size="4"><b><a name="LimitSwitches">Limit Switches</a></font></b>
+    <p>Limit switches cannot be used with this function.
+
+<!-- ################################################### -->
+<!-- Specific Axis Notes -->
+
+    <hr class="style2">
+    <p><font color="DarkBlue" size="4"><b><a name="LimitSwitches">Specific Axis Notes</a></font></b>
+    
+    <table border="1" width="100%" bgcolor="White">
+    <thead>
+        <tr bgcolor="Moccasin" valign="bottom">
+            <th align="center" width="50px">
+                <font face="Georgia" color="Blue">
+                Axis
+                </font>
+            </th>
+            <th align="center">
+                <font face="Georgia" color="Blue">
+                Comments
+                </font>
+            </th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr valign="top" bgcolor="White">
+            <td align="center">
+                <b>Spindle</b>
+            </td>
+            <td>
+                <div style="float: right; width: 40px; 1px 1px 1px 1px; padding: 1px; border: 0px solid black; text-align: center; background-color:#White">
+                    <img  src="Images/ButtonIndex-Stop.png" width="100%">
+                </div>
+                
+                Movement continues until the identified movement (i.e., the division of a circle) is completed, or the stop button (shown to the right) is used.
+            </td>
+        </tr>
+
+        <tr valign="top" bgcolor=#F7F2E0>
+            <td align="center">
+                <font color="gray">
+                Z
+                </font>
+            </td>
+            <td>
+                <font color="gray"><center><i>
+                <b>n/a</b> - Indexing only applies to the spindle
+                </i></center></font>
+            </td>
+        </tr>
+
+        <tr valign="top" bgcolor="White">
+            <td align="center">
+                <font color="gray">
+                X
+                </font>
+            </td>
+            <td>
+                <font color="gray"><center><i>
+                <b>n/a</b> - Indexing only applies to the spindle
+                </i></center></font>
+            </td>
+        </tr>
+
+        <tr valign="top" bgcolor=#F7F2E0>
+            <td align="center">
+                <font color="gray">
+                B
+                </font>
+            </td>
+            <td>
+                <font color="gray"><center><i>
+                <b>n/a</b> - Indexing only applies to the spindle
+                </i></center></font>
+            </td>
+        </tr>
+        
+    </tbody>
+    </table>
+
+</div>
+
+<!-- ################################################### -->
+<!-- Footer                                                                                             -->
+<!-- ################################################### -->
+<div class="footer">
+    <hr class="style0">
+    <font size="3">
+    <table width="100%">
+        <col width="75%">
+        <col width="25%">
+
+        <tr valign="top">
+            <td align="left">
+                Questions or comments?  Contact us at
+                <br><a href="mailto:ColvinTools@Gmail.com?Subject=General" >ColvinTools@Gmail.com</a>
+            </td>
+            <td align="right">
+                <a href="../index-Disclaimers.html">Disclaimers</a>
+            </td>
+        </tr>
+    </table>
+
+</body>
+</html>

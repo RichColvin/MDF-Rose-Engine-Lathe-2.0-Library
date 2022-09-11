@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
+
+<!-- ################################################### -->
+<!-- Style Sheet for header image max size                                         -->
+<style>
+    img.Image { max-width: 500px;}
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for Horizontal Rule - Style 0                                       -->
+ <style>
+    hr.style0 {
+        border: 0;
+        height: 1px;
+        background-image: linear-gradient(to right,
+                rgba(184,134,11, 2),
+                rgba(184,134,11, 2),
+                rgba(184,134,11, 2));
+    }
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for Horizontal Rule - Style 1                                       -->
+ <style>
+    hr.style1 {
+        border: 0;
+        height: 3px;
+        background-image: linear-gradient(to right,
+            rgba(0, 0, 0, 0),
+                rgba(184,134,11, 2),
+            rgba(0, 0, 0, 0));
+    }
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for Horizontal Rule - Style 2                                       -->
+ <style>
+    hr.style2 {
+        border: 0;
+        height: 6px;
+        background-image: linear-gradient(to right,
+            rgba(0, 0, 0, 0),
+                rgba(184,134,11, 2),
+            rgba(0, 0, 0, 0));
+    }
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for indented paragraphs                                             -->
+<style>
+    .indented { padding-left: 33pt; padding-right: 33pt; }
+</style>
+
+<!-- ################################################### -->
+<!-- Header                                                                                           -->
+<!-- ################################################### -->
+
+<head bgcolor=#E6E6E6>
+<title>MDF Rose Engine Lathe 2.0</title>
+<link rel="shortcut icon" type="image/ico" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="Images/favicon.png">
+
+<font face="Georgia">
+
+<table width="100%" border=0>
+        <col width="10%">
+        <col width="*">
+        <col width="10%">
+
+    <tr valign="bottom">
+        <td align="left">
+            <a href = "javascript:history.back()"><img src="Images/BackButton.png" width="30px"></a>
+        </td>
+        <td align="center" valign="top">
+            <a href="MSMCS.html"><font color="DarkBlue" size="6"><b>
+                Control System for Multiple Stepper Motors</a>
+                <br>
+                Troubleshooting
+                </font>
+            </b></font>
+        </td>
+        <td align="right">
+            <a href="index.html"><img src="Images/Books.png" width="50px" class="Image"></a>
+        </td>
+    </tr>
+</table>
+</head>
+<hr>
+
+<!-- ################################################### -->
+<!-- Body                                                                                               -->
+<!-- ################################################### -->
+
+<body bgcolor=#E6E6E6 background="Images/DevBackground.png">
+<font face="Georgia">
+
+<p>Common issues are noted below, along with recommended actions to take.
+
+
+<h2><font color="DarkBlue" size="5"><b>Indexing does not work</b></font></h2>
+
+<p>Check that the amount to be indexed is set properly into the Teensy.  Tap the 
+<img src="Images/ButtonGrayGreen-Config.jpg" width="50px" />
+ button and ensure the Nextion and Teensy values are the same.
+
+<p>In the example below, you can see on the left the screen that the user is trying to use a fixed setting of 36&deg; per index, and saving that value in index memory #1.  When the <img src="Images/ButtonGrayGreen-Config.jpg" width="50px" /> button was tapped, it shows the EEPROM settings shown in the screen sample to the right.  
+
+<table width="100%">
+    <tr>
+        <td align="center">
+            <img src="Images/Index_Mismatch.jpg" width="450px" />
+        </td>
+        <td align="center">
+            <img src="Images/EEPROM_Mismatch.jpg" width="450px" />
+        </td>
+    </tr>
+</table>
+
+<p>Notice how the Index ID (the memory #) is different, as are the degrees, and even that it is running Fixed (vs. File).  Any of these 3 would make it not run correctly.
+
+<p>This is quite common when using a memory # / Index ID which you've not used before.
+
+<h3>What to do</h3>
+<p>To fix it, for each setting, select another option, then re-select the one you want.  So, tap the Back button on the EEPROM screen to return to the screen on the left.  In the case noted above, the user needs to,
+    <ol>
+        <li>Select a different memory # (Index ID), then re-select #1.</li>
+        <li>Select File, then Fixed.</li>
+        <li>Select the Degrees, delete the current value, and then re-enter 36.  (For instructions on the NumberPad screen, check <a href="MSMCS-NumberPad.html">this link</a>.</li>
+    </ol>
+
+<p>Don't assume this fixes everything.  Check the EEPROM settings again to be sure.
+
+<h3>Why this can happen</h3>
+<p>First, let me review the two pieces of this puzzle.
+    <ul>
+        <li><b>Nextion</b> - This is the display, and will be showing a value on the screen.  Those values may not have been written down to the Teensy -- they may be relics of when the system was loaded or updated.</li>
+
+        <br>
+        <li><b>Teensy</b> - The Teensy is the controller which performs the calculations and directs the movement(s).  If the value in the Teensy does not match what is shown on the Nextion, then the function won't work as expected.  (In the case above, when the indexing did not "work", it was working as the Teensy was set to run -- 0&deg; per index!</li>
+    </ul>
+
+<p>When the system is initially loaded, not all values are setup in the Teensy.  This can happen for a myriad of reasons, but one of the classic ones is that your <a href="MSMCS-iniFile.html">4Axes.INI file</a> is not setup correctly.  Or it could simply be that the value was just hosed up.
+
+<p>In any regard, if you try to use a function which depends on those settings, it won't work correctly.  Checking the EEPROM settings is a good first practice for whenever things don't work seem correctly.
+
+
+<!-- ################################################### -->
+<!-- Footer                                                                                             -->
+<!-- ################################################### -->
+<hr class="style0">
+<font size="3">
+<table width="100%">
+    <col width="67%">
+    <col width="33%">
+
+    <tr valign="top">
+        <td align="left">
+            Questions or comments?  Contact us at
+            <br><a href="mailto:ColvinTools@Gmail.com?Subject=General" target="_new">ColvinTools@Gmail.com</a>
+        </td>
+        <td align="right">
+            <a href="../index-Disclaimers.html">Disclaimers</a>
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>

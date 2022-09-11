@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
+
+<!-- ################################################### -->
+<!-- Style Sheet for header image max size                                         -->
+<style>
+    img.Image { max-width: 500px;}
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for Horizontal Rule - Style 0                                       -->
+ <style>
+    hr.style0 {
+        border: 0;
+        height: 1px;
+        background-image: linear-gradient(to right,
+                rgba(184,134,11, 2),
+                rgba(184,134,11, 2),
+                rgba(184,134,11, 2));
+    }
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for Horizontal Rule - Style 1                                       -->
+ <style>
+    hr.style1 {
+        border: 0;
+        height: 3px;
+        background-image: linear-gradient(to right,
+            rgba(0, 0, 0, 0),
+                rgba(184,134,11, 2),
+            rgba(0, 0, 0, 0));
+    }
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for Horizontal Rule - Style 2                                       -->
+ <style>
+    hr.style2 {
+        border: 0;
+        height: 6px;
+        background-image: linear-gradient(to right,
+            rgba(0, 0, 0, 0),
+                rgba(184,134,11, 2),
+            rgba(0, 0, 0, 0));
+    }
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for indented paragraphs                                             -->
+<style>
+    .indented { padding-left: 33pt; padding-right: 33pt; }
+</style>
+
+<!-- ################################################### -->
+<!-- Header                                                                                           -->
+<!-- ################################################### -->
+
+<head bgcolor=#E6E6E6>
+<title>MDF Rose Engine Lathe 2.0</title>
+<link rel="shortcut icon" type="image/ico" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="Images/favicon.png">
+
+<font face="Georgia">
+
+<table width="100%" border=0>
+        <col width="10%">
+        <col width="*">
+        <col width="10%">
+
+    <tr valign="bottom">
+        <td align="left">
+            <a href = "javascript:history.back()"><img src="Images/BackButton.png" width="30px"></a>
+        </td>
+        <td align="center" valign="top">
+            <a href="MSMCS.html"><font color="DarkBlue" size="6"><b>
+                Control System for Multiple Stepper Motors</a>
+            </b></font>
+            <br>
+            <font color="DarkBlue" size="5">
+            Code Version 26
+            </b></font>
+        </td>
+        <td align="right">
+            <a href="index.html"><img src="Images/Books.png" width="50px" class="Image"></a>
+        </td>
+    </tr>
+</table>
+
+<hr class="style0">
+</head>
+
+<!-- ################################################### -->
+<!-- Body                                                                                               -->
+<!-- ################################################### -->
+
+<body bgcolor=#E6E6E6 background="Images/DevBackground.png">
+<font face="Georgia">
+<table width="100%">
+<tr><td>
+
+<div style="float: right; width: 455px; margin: 0px 5px 0px 0px; padding: 0px; border: 0px solid black; text-align: center; ">
+    <img src = "Images/Splash_026.jpg" width = "450px" class = "Image" usemap="#html1">
+
+<!-- area map based on an image size of 450px wide -->
+    <map name = "html1">
+
+<!-- Main Screen -->
+        <area shape = "rect" coords = "1,1,53,39" 
+            href = "MSMCS-Main.html"
+            target = "_self" 
+            title="Main Screen"
+            />
+
+<!-- One Screen -->
+        <area shape = "rect" coords = "55,1,102,39" 
+            href = "MSMCS-One.html"
+            target = "_self" 
+            title="One Screen"
+            />
+
+<!-- Index Screen -->
+        <area shape = "rect" coords = "104,1,154,39" 
+            href = "MSMCS-Ind.html"
+            target = "_self" 
+            title="Index Screen"
+            />
+
+<!-- Move Screen -->
+        <area shape = "rect" coords = "156,1,206,39" 
+            href = "MSMCS-Mov.html"
+            target = "_self" 
+            title="Move Screen"
+            />
+
+<!-- Sync Screen -->
+        <area shape = "rect" coords = "208,1,259,39" 
+            href = "MSMCS-Sync.html"
+            target = "_self" 
+            title="Syncronization Screen"
+            />
+
+<!-- Reciprocation Screen -->
+        <area shape = "rect" coords = "261,1,311,39" 
+            href = "MSMCS-Rec.html"
+            target = "_self" 
+            title="Reciprocation Screen"
+            />
+
+<!-- Advanced Screen -->
+        <area shape = "rect" coords = "313,1,364,39" 
+            href = "MSMCS-Adv.html"
+            target = "_self" 
+            title="Advanced Screen"
+            />
+
+<!-- Preferences Screen -->
+        <area shape = "rect" coords = "409,1,449,39" 
+            href = "MSMCS-Config-Spindle.html"
+            target = "_self" 
+            title="Preferences Screen"
+            />
+
+    </map>
+</div>
+
+<p  style="margin-top:0; ">When you start the machine, the splash screen is shown as on the right.  Touching one of the buttons on the top row will take you to that screen.  You can <b><I>click on the respective button on this page</b></I> to get more details on what each does.
+
+<p>This is a sophisticated program, so give it a few minutes to load.
+
+<p>If you are new to using this machine, I recommend you start with the <a href="MSMCS-Main.html"><b>Main</b></a> screen.  You will have a lot to learn there before moving to other screens.
+
+<p style="margin-bottom: 0;">The version you are using shows in the lower left corner of the opening screen.  "v026" is shown here, denoting the use of version 26.  For version upgrades, <a href="https://mdfre2.colvintools.com/MSMCS-Upgrading.html">click here</a>.
+
+</td></tr>
+<tr><td>
+
+<!-- ################################################### -->
+<!-- Index of Activities  -->
+
+<p><hr class="style1">
+
+The links below are intended to help the ornamental turner perform activities which are commonly performed on the MDF Rose Engine lathe. Special thanks to the Nerds of Woodworking for their help in compiling these.  This list will be expanded as time permits for adding the documentation.
+
+<p>The <a href="https://mdfre2.colvintools.com/Documents/MDF%20RE%202.0%20-%20User%20Manual.pdf" target="_new">User Manual</a> for the MDF Rose Engine Lathe 2.0 with Stepper Motor Drive is another useful tool.
+
+<p><font color="DarkBlue" size="4"><b><a name="IndexOfActivities">Index of Activities and Other Key Information</a></font></b>
+
+</td></tr>
+<tr><td>
+
+    <table width="100%">
+        <colgroup>
+            <col width="2%">
+            <col width="24%">
+            <col width="24%">
+            <col width="24%">
+            <col width="24%">
+            <col width="2%">
+        </colgroup>
+
+        <tr valign="top">
+            <td></td>
+
+<!-- ################################################### -->
+<!-- Column 1  -->
+            <td align="left">
+
+            	<table bgcolor=#8A4B08 height="35px" width="40px"><tr><td  align="center" valign="middle"><font face= "Lucida Calligraphy" size="5" color="white"><b>
+            	    A
+            	</b></font></td></tr></table>
+            	    <ul>
+            	        <li><a href="MDFRE-2.0-Activity-AACalc.html">Amplitude Adjustment Calculator</a></li>
+            	    </ul>
+
+            	<table bgcolor=#8A4B08 height="35px" width="40px"><tr><td  align="center" valign="middle"><font face= "Lucida Calligraphy" size="5" color="white"><b>
+            	    F
+            	</b></font></td></tr></table>
+            	    <ul>
+            	        <li><a href="MDFRE-2.0-Activity-Fluting.html">Fluting</a></li>
+            	    </ul>
+
+
+            </td>
+
+<!-- ################################################### -->
+<!-- Column 2  -->
+            <td align="left">
+            	<table bgcolor=#8A4B08 height="35px" width="40px"><tr><td  align="center" valign="middle"><font face= "Lucida Calligraphy" size="5" color="white"><b>
+            	    N
+            	</b></font></td></tr></table>
+            	    <ul>
+            	        <li><a href="MDF-RE-2.0-Nomenclature.html">Nomenclature</a></li>
+            	    </ul>
+
+            	<table bgcolor=#8A4B08 height="35px" width="40px"><tr><td  align="center" valign="middle"><font face= "Lucida Calligraphy" size="5" color="white"><b>
+            	    P
+            	</b></font></td></tr></table>
+            	    <ul>
+            	        <li><a href="MDFRE-2.0-Activity-Pearling.html">Pearling</a></li>
+            	        
+            	        <br>
+            	        <li><a href="MSMCS-Pgm-File-Identifiers.html">Program Function - File Information and File Identifiers</a></li>
+            	    </ul>
+
+            </td>
+
+<!-- ################################################### -->
+<!-- Column 3  -->
+            <td align="left">
+
+            	<table bgcolor=#8A4B08 height="35px" width="40px"><tr><td  align="center" valign="middle"><font face= "Lucida Calligraphy" size="5" color="white"><b>
+            	    S
+            	</b></font></td></tr></table>
+            	    <ul>
+            	        <li><a href="MDFRE-2.0-Activity-SplitT.html">Split T (Meander variant)</a></li>
+            	    </ul>
+
+<!--
+            	<table bgcolor=#c4a583 height="35px" width="90px"><tr><td  align="center" valign="middle"><font face= "Lucida Calligraphy" size="4" color="LightGray"><b>
+            	    P (cont'd)
+            	</b></font></td></tr></table>
+            	    <ul>
+            	    </ul>
+-->
+            	<table bgcolor=#8A4B08 height="35px" width="40px"><tr><td  align="center" valign="middle"><font face= "Lucida Calligraphy" size="5" color="white"><b>
+            	    T
+            	</b></font></td></tr></table>
+            	    <ul>
+            	        <li><a href="MDFRE-2.0-Activity-Threading.html">Threading</a></li>
+            	        
+            	        <br>
+            	        <li><a href="MSMCS-Troubleshooting.html">Troubleshooting</a></li>
+            	    </ul>
+
+            </td>
+
+<!-- ################################################### -->
+<!-- Column 4 -->
+
+            <td align="left">
+            	<table bgcolor=#8A4B08 height="35px" width="40px"><tr><td  align="center" valign="middle"><font face= "Lucida Calligraphy" size="5" color="white"><b>
+            	    4
+            	</b></font></td></tr></table>
+            	    <ul>
+            	        <li><a href="MSMCS-iniFile.html">4Axes.ini</a></li>
+            	    </ul>
+            </td>
+
+            <td></td>
+        </tr>
+    </table>
+
+<!-- ################################################### -->
+<!-- Axis information  -->
+
+<p><hr class="style1">
+
+<p>As you use the controls for operating the MDF Rose Engine Lathe, the axes referenced follow the convention as shown below.
+
+<p>Some have questioned this convention, in particular the <b>Z</b> axis being aligned the way that it is.  But, whilst this may not seem to follow the <a href="https://en.wikipedia.org/wiki/Cartesian_coordinate_system" >Cartesian coordinates</a> you learned in school, it actually does.  This approach is based on the axes as envisioned from the object being turned, not the viewer.  And, more importantly, this is an industry standard for lathe work.
+
+<p><div style="float: left; width: 410px; margin: 5px 5px 5px 5px; padding: 5px; border: 1px solid black; text-align: center; background-color:white">
+    <a href="Images/Axes.png"><img src="Images/Axes.png" width="100%" class="Image"></a>
+    <br><b>Lathe Axes</b>
+</div>
+
+<div style="float: right; width: calc(100% - 460px); margin: 5px 5px 5px 5px; padding: 5px; border: 0px solid black; text-align: left; background-color:#E6E6E6">
+    <table border="1" width="100%" bgcolor="White">
+        <thead>
+            <tr bgcolor="Moccasin" valign="bottom">
+                <th>
+                    <font face="Georgia" color="Blue">Axis</font>
+                </th>
+                <th>
+                    <font face="Georgia" color="Blue">Comments</font>
+                </th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr valign="top" bgcolor="White">
+                <td align="center">
+                    <b>X</b>
+                </td>
+                <td>
+                    Movement on this axis is horizontal movement across the end of the object being shaped on the lathe.
+
+                    <br><br>This movement is accomplished by use of the <a href="https://www.otbok.info/OT%20-%20LnT-Term-CrossSlide.html" >cross slide</a> or other similar mechanism.
+                </td>
+            </tr>
+
+            <tr valign="top" bgcolor=#F7F2E0>
+                <td align="center">
+                    <b>Y</b>
+                </td>
+                <td>
+                    This axis does not typically have movement.  Instead, it is typically a measurement of the vertical placement of the cutter in the <a href="https://www.otbok.info/OT%20-%20LnT-Term-QCTP.html" >quick change tool post</a>.
+
+                    <br><br>Movement on this axis can happen if a <a href="https://www.otbok.info/OT%20-%20LnT-Term-Chuck-Straightline.html" >straight-line chuck</a> is used; however this is pretty advanced stuff.
+
+                    <br><br>Motion on the Y axis is not typically managed by the control system; however, one of the other axes could be used.  For example, if a stepper motor is used on the <a href="https://www.otbok.info/OT%20-%20LnT-Term-Chuck-Straightline.html" >straight-line chuck</a> to move the object up and down, then that stepper motor could be controlled as if it were the X (or Z or B) axis.  The user will just have to manage the change in their thinking as they use the control system.
+                </td>
+            </tr>
+
+            <tr valign="top" bgcolor="White">
+                <td align="center">
+                    <b>Z</b>
+                </td>
+                <td>
+                    Movement on this axis is horizontal movement along the side of the object being shaped on the lathe.
+
+                    <p>This movement is accomplished by use of the <a href="https://www.otbok.info/OT%20-%20LnT-Term-CrossSlide.html" >cross slide</a> or other similar mechanism.
+
+                        <ul>
+                            <li>The spindle rotates about the Z axis.</li>
+                            <li><a href="https://www.otbok.info/OT%20-%20LnT-Term-Pumping.html" >Pumping</a> is movement along the Z axis.</li>
+                        </ul>
+                </td>
+            </tr>
+
+            <tr valign="top" bgcolor=#F7F2E0>
+                <td align="center">
+                    <b>B</b>
+                </td>
+                <td>
+                    This is not truly an axis per se.  Rather, The controls provide for rotation about the <b>Y</b> axis.
+
+                    <br><br>This movement is accomplished by use of the <a href="https://www.otbok.info/OT%20-%20LnT-Term-SphericalSlide.html" >spherical slide</a> or other similar mechanism.
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- ################################################### -->
+<!-- Limit Switches  -->
+
+<p><font color="DarkBlue" size="4"><b><a name="LimitSwitches">Limit Switches</a></font></b>
+
+<p><a href="https://en.wikipedia.org/wiki/Limit_switch" target="_new" >Limit switches</a> can be used for all screens except <a href="MSMCS-One.html" target="_self" >Index</a> and <a href="MSMCS-Grk.html" target="_self" >Greek Key</a>.  
+
+<p>More information about the implementation of limit switches is on the <a href="MSMCS-Config-Limits.html">limit switches config page</a>.
+
+<div style="float: left; width: 300px; margin: 5px 5px 5px 5px; padding: 5px; border: 1px solid black; text-align: left; background-color:#F7F2E0">
+    <font color="DarkRed" size="2"><p  style="margin-top:0; margin-bottom:0; line-height:1"><b>Note:</b>  These pages are setup for split screen viewing to allow for keeping the program's screen image fixed whilst scrolling the textual information.  Because of that, the pages don't work well on small screens like hand phones.</font>
+</div>
+
+
+</td></tr>
+</table>
+
+<!-- ################################################### -->
+<!-- Footer                                                                                             -->
+<!-- ################################################### -->
+<hr class="style0">
+<font size="3">
+<table width="100%">
+    <col width="67%">
+    <col width="33%">
+
+    <tr valign="top">
+        <td align="left">
+            Questions or comments?  Contact us at
+            <br><a href="mailto:ColvinTools@Gmail.com?Subject=General" >ColvinTools@Gmail.com</a>
+        </td>
+        <td align="right">
+            <a href="../index-Disclaimers.html">Disclaimers</a>
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>
