@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
+
+<!-- ################################################### -->
+<!-- Style Sheet for header image max size                                         -->
+<style>
+    img.Image { max-width: 500px;}
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for Horizontal Rule - Style 0                                       -->
+ <style>
+    hr.style0 {
+        border: 0;
+        height: 1px;
+        background-image: linear-gradient(to right,
+                rgba(184,134,11, 2),
+                rgba(184,134,11, 2),
+                rgba(184,134,11, 2));
+    }
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for Horizontal Rule - Style 1                                       -->
+ <style>
+    hr.style1 {
+        border: 0;
+        height: 3px;
+        background-image: linear-gradient(to right,
+            rgba(0, 0, 0, 0),
+                rgba(184,134,11, 2),
+            rgba(0, 0, 0, 0));
+    }
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for Horizontal Rule - Style 2                                       -->
+ <style>
+    hr.style2 {
+        border: 0;
+        height: 6px;
+        background-image: linear-gradient(to right,
+            rgba(0, 0, 0, 0),
+                rgba(184,134,11, 2),
+            rgba(0, 0, 0, 0));
+    }
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for indented paragraphs                                             -->
+<style>
+    .indented { padding-left: 33pt; padding-right: 33pt; }
+</style>
+
+<!-- ################################################### -->
+<!-- Header                                                                                           -->
+<!-- ################################################### -->
+
+<head bgcolor=#E6E6E6>
+    <title>MDF Rose Engine Lathe 2.0</title>
+    <link rel="shortcut icon" type="image/ico" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="Images/favicon.png">
+
+<font face="Georgia">
+
+<table width="100%" border=0>
+        <col width="10%">
+        <col width="*">
+        <col width="10%">
+
+    <tr valign="bottom">
+        <td align="left">
+            <a href = "javascript:history.back()"><img src="Images/BackButton.png" width="30px"></a>
+        </td>
+        <td align="center" valign="top">
+            <font color="DarkBlue" size="6"><b>
+                Design Goals
+            </b></font>
+            <br>
+            <font color="DarkBlue" size="5"><b>
+                for the MDF Rose Engine Lathe 2.0
+            </b></font>
+        </td>
+        <td align="right">
+            <a href="index.html"><img src="Images/Books.png" width="50px" class="Image"></a>
+        </td>
+    </tr>
+</table>
+
+<hr class="style0">
+
+</head>
+
+<!-- ################################################### -->
+<!-- Body                                                                                               -->
+<!-- ################################################### -->
+<body bgcolor=#E6E6E6 background="Images/DevBackground.png">
+	<font face="Georgia">
+    <div style="text-align: left; background-color: #E6E6E6" class="split1 centered">
+
+    <p>This document to outline the design goals around which the machine is specified.
+
+    <p><font color="DarkBlue" size="5"><b>
+    Guiding Principles
+    </b></font>
+
+    <table width="100%">
+
+<!-- ################################################### -->
+<!-- Target User -->
+    <tr><td>
+    <p><font color="DarkBlue" size="4"><b>
+    Target User
+    </b></font>
+
+        <ul>
+             <li>The target user for the MDF rose engine lathe 2.0 is</li>
+                <ul>
+                     <li>An experienced woodturner, with</li>
+                     <li>The basic woodworking skills that would have been garnered in shop class.</li>
+                </ul>
+
+            <br>
+             <li>The design will ensure it can be built by the woodworker</li>
+                <ul>
+                     <li>Using a kit of parts we will provide, or by building their own according to instructions to be published,</li>
+                     <li>Possessing basic woodworking skills, and</li>
+                     <li>Using tools which can reasonably be expected to be available or easily accessible.</li>
+                </ul>
+        </ul>
+    </td></tr>
+
+<!-- ################################################### -->
+<!-- Overall Design -->
+    <tr><td>
+    <p><font color="DarkBlue" size="4"><b>
+    Overall Design
+    </b></font>
+
+        <ul>
+             <li>The intent is to stay consistent with the original overall design outlined by Jon Magill, especially the designs built into the rosettes.</li>
+
+            <br>
+             <li>The design will continue to use MDF as the primary building material for the headstock and base.</li>
+
+            <br>
+             <li>The design will include commonly implemented updates to the original design, including,</li>
+                <ul>
+                     <li>Stepper motor for the spindle drive,</li>
+                     <li>Metal sheet on the lathe's bed,</li>
+                     <li>Magnetic hold-downs (<a href="https://www.otbok.info/OT%20-%20LnT-Term-MagSwitch.html" >MagSwitches</a>) for locking the cross slide into position on the lathe bed,</li>
+                     <li>Front and rear rubbers, and</li>
+                     <li>Amplitude adjusting (front rubbers only).</li>
+                </ul>
+
+            <br>
+             <li>The design will not include previously offered features which would make the new overall design cumbersome or expensive.  In particular, hand cranking capabilities will not be included.</li>
+
+            <br>
+             <li>The design will provision for known future options / expansions, including</li>
+                <ul>
+                     <li>Multiple stepper motors with controls for the multiple stepper motors, and</li>
+                     <li>Pumping on the spindle.</li>
+                </ul>
+        </ul>
+    </td></tr>
+
+<!-- ################################################### -->
+<!-- Kit Offered for Sale -->
+    <tr><td>
+    <p><font color="DarkBlue" size="4"><b>
+    Kit Offered for Sale
+    </b></font>
+
+        <ul>
+             <li>The design should enable a complete rose engine lathe to be built from a kit for less than $2,000.  And the design should be designed to be lower if the user opts to make their own parts.</li>
+
+            <br>
+             <li>The kit offered for sale will provide options which, in total, will supply the hobbyist with all the parts needed (including the MDF).</li>
+                <ul>
+
+                    <br>
+                     <li>Using standard, off-the-shelf parts, with a conscious decision being made when customized parts are to be used,</li>
+
+                    <br>
+                     <li>Sourcing parts from vendors likely to provide the parts for a reasonable time into the future (i.e., minimizing rework of the designs), and</li>
+
+                    <br>
+                     <li>Sourcing more expensive parts from vendors who will accommodate drop-shipments.  This reduces the investment in inventory for the provider of the kits.</li>
+                </ul>
+    </table>
+     </div>
+
+<!-- ################################################### -->
+<!-- Footer                                                                                             -->
+<!-- ################################################### -->
+    <div class="footer">
+        <hr class="style0">
+        <font size="3">
+        <table width="100%">
+            <col width="67%">
+            <col width="33%">
+
+            <tr valign="top">
+                <td align="left">
+                    Questions or comments?  Contact us at
+                    <br><a href="mailto:ColvinTools@Gmail.com?Subject=General" >ColvinTools@Gmail.com</a>
+                </td>
+                <td align="right">
+                    <a href="../index-Disclaimers.html">Disclaimers</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+</body>
+</html>

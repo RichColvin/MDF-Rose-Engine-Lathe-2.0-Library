@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MDF Rose Engine Lathe 2.0</title>
+    <link rel="shortcut icon" type="image/ico" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="Images/favicon.png">
+  </head>
+
+<!-- ################################################### -->
+<!-- Style Sheet for Horizontal Rule - Style 1                                       -->
+ <style>
+    hr.style1 {
+        border: 0;
+        height: 3px;
+        background-image: linear-gradient(to right,
+            rgba(0, 0, 0, 0),
+            rgba(0, 0, 255, 0.75),
+            rgba(0, 0, 0, 0));
+    }
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for indented paragraphs                                             -->
+<style>
+    .indented { padding-left: 33pt; padding-right: 33pt; }
+</style>
+
+
+<!-- ################################################### -->
+<!-- Style Sheet for header image max size               -->
+<!-- ################################################### -->
+    <style>
+    img.Image { max-width: 500px;}
+    </style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for footer                              -->
+<!-- ################################################### -->
+<style>
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: #E6E6E6;
+   text-align: center;
+}
+</style>
+
+<!-- ################################################### -->
+<!-- <body background="Images/Background.png"> -->
+<body style="background-color:#E6E6E6;">
+
+<font face="Georgia" size="3">
+<!-- ################################################### -->
+<!-- Header                                                                                           -->
+<!-- ################################################### -->
+
+<head bgcolor=#E6E6E6>
+    <title>MDF Rose Engine 2.0</title>
+    <link rel="shortcut icon" type="image/ico" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="Images/favicon.png">
+
+<font face="Georgia">
+
+<table width="100%" border=0>
+        <col width="10%">
+        <col width="*">
+        <col width="10%">
+
+    <tr valign="bottom">
+        <td align="left">
+            <a href = "javascript:history.back()"><img src="Images/BackButton.png" width="30px"></a>
+        </td>
+        <td align="center" valign="top">
+            <font color="DarkBlue" size="6"><b>
+            3D Printing Notes
+            </b></font>
+        </td>
+        <td align="right">
+            <a href="index.html"><img src="Images/Books.png" width="50px" class="Image"></a>
+        </td>
+    </tr>
+</table>
+
+<hr class="style0">
+
+</head>
+
+<!-- ################################################### -->
+<!-- Body                                                                                               -->
+<!-- ################################################### -->
+<p><table border="1" width="100%">
+    <col width="30%">
+	<col width="*">
+
+	<tr bgcolor="Moccasin" valign="bottom">
+		<td align="center">
+            <font face= "Georgia" size="4" color=#191970><b>
+		    Step
+		    </b></font>
+		</td>
+		<td align="center">
+            <font face= "Georgia" size="4" color=#191970><b>
+		    Comments
+		    </b></font>
+		</td>
+	</tr>
+
+	<tr bgcolor="LightGray" valign="top">
+		<td align="left">
+    		<ol type="1" start="1" style="margin-top: 0; margin-bottom: 0;">
+		    	<li>
+		    	Warm the environment
+		    	</li>
+		    </ol>
+		</td>
+		<td align="left">
+		    Need to ensure it is not too cold, especially if the outside temperature is under 80 &deg;F.   I shoot for having the enclosure at 105-115 &deg;F.
+		</td>
+	</tr>
+
+	<tr bgcolor="White" valign="top">
+		<td align="left">
+    		<ol type="1" start="2" style="margin-top: 0; margin-bottom: 0;">
+		    	<li>
+				    Clean the bed
+		    	</li>
+    		    <ol type="a" start="1" style="margin-top: 0; margin-bottom: 0;">
+    		        <li>Scrape any residue from the bed</li>
+    		        <li>Clean with isopropyl alcohol, then dry well</li>
+                </ol>
+		    </ol>
+		</td>
+		<td align="left">
+		</td>
+	</tr>
+
+	<tr bgcolor="LightGray" valign="top">
+		<td align="left">
+    		<ol type="1" start="3" style="margin-top: 0; margin-bottom: 0;">
+		    	<li>
+				    Pre-heat for PLA, and verify filament flow.
+		    	</li>
+		    </ol>
+		</td>
+		<td align="left">
+		    Turn the blue indication knob until a continuous stream flows thru the extruder.  I preheat the extruder to 200 &deg;C and the bed to 50 &deg;C.
+		</td>
+	</tr>
+
+	<tr bgcolor="White" valign="top">
+		<td align="left">
+    		<ol type="1" start="4" style="margin-top: 0; margin-bottom: 0;">
+		    	<li>
+				    Level the bed (Auto-level via the BLTouch)
+		    	</li>
+		    </ol>
+		</td>
+		<td align="left">
+		</td>
+	</tr>
+
+	<tr bgcolor="#d8ecff" valign="top">
+		<td align="left">
+    		<ol type="1" start="5" style="margin-top: 0; margin-bottom: 0;">
+		    	<li>
+				    3D Print the part
+		    	</li>
+		    </ol>
+		</td>
+		<td align="left">
+            <table border="1" width="100%">
+                <col width="75px">
+                <col width="75px">
+                <col width="75px">
+                <col width="75px">
+                <col width="75px">
+            	<col width="*">
+
+	            <tr valign="bottom" bgcolor="DarkGray" style="margin-top: 0; margin-bottom: 0;">
+            		<td align="center" rowspan=2>
+            		    <b><font color=#2A1FAA>
+            		    Filament Material
+            		    </b></font>
+            		</td>
+            		<td align="center" colspan=2>
+            		    <b><font color=#2A1FAA>
+            		    Nozzle
+            		    </b></font>
+            		</td>
+            		<td align="center" rowspan=2>
+            		    <b><font color=#2A1FAA>
+            		    Bed Temp
+            		    </b></font>
+            		</td>
+            		<td align="center" rowspan=2>
+            		    <b><font color=#2A1FAA>
+            		    Enclosure Temp
+            		    </b></font>
+            		</td>
+            		<td align="center" rowspan=2>
+            		    <b><font color=#2A1FAA>
+            		    Comments
+            		    </b></font>
+            		</td>
+            	</tr>
+
+	            <tr valign="top" bgcolor="DarkGray" style="margin-top: 0; margin-bottom: 0;">
+            		<td align="center">
+            		    <b><font color=#2A1FAA>
+            		    Size
+            		    </b></font>
+            		</td>
+            		<td align="center">
+            		    <b><font color=#2A1FAA>
+            		    Temp
+            		    </b></font>
+            		</td>
+            	</tr>
+
+	            <tr valign="top" style="margin-top: 0; margin-bottom: 0;">
+            		<td align="center">
+            		    PLA
+            		</td>
+            		<td align="center">
+            		    0.4 mm
+            		</td>
+            		<td align="center">
+            		    200 &deg;C
+            		</td>
+            		<td align="center">
+            		    50 &deg;C
+            		</td>
+            		<td align="center">
+            		    90 &deg;F - 110 &deg;F
+            		</td>
+            		<td>
+            		    Inland brand filament from MicroCenter.  More details on PLA are available at <a href="https://www.raise3d.com/filaments/pla/" target="_new">Raise3D.com</a>.
+            		</td>
+            	</tr>
+
+            </table>
+		</td>
+	</tr>
+
+</table>
+
+<!-- ################################################### -->
+<!-- My machine										                                              -->
+<!-- ################################################### -->
+<p><hr class="style1">
+
+<center><font face= "Georgia" size="5" color=#191970><b>
+My 3D Printing Setup
+</center></b></font>
+
+<p>I use a <a href="https://www.creality3dofficial.com/" target="_new">Creality</a> <a href="https://www.creality3dofficial.com/products/ender-3-v2-3d-printer" target="_new">Ender 3 v2</a>.
+
+	<ul>
+		<li>I have added a <a href="https://www.creality3dofficial.com/products/creality-bl-touch" target="_new">BLTouch auto-leveling sensor</a>.  This matters as the G-code had to be modified in the setup to accommodate this.</li>
+
+		<br>
+		<li><a href="https://en.wikipedia.org/wiki/G-code" target="_new">G-code</a> files are optimized for 3D printing on that machine using PLA filament.</li>
+		
+		<br>
+		<li>Slicing was performed on an Apple iMac using <a href="https://ultimaker.com/" target="_new">Ultimaker</a>'s <a href="https://ultimaker.com/software/ultimaker-cura" target="_new">Cura</a>.</li>
+
+		<br>
+		<li>I monitor the printing process using <a href="https://octoprint.org/" target="_new">OctoPrint</a> on a  <a href="https://www.raspberrypi.org/" target="_new">Raspberry Pi 3B+</a>.</li>
+	</ul>
+
+<p>This is what I found works for me:  You will need to confirm if the same works for you.
+
+And as your 3D printing setup may be different, <a href="https://en.wikipedia.org/wiki/STL_%28file_format%29" target="_new">STL</a> files have been provided to enable you to create your own G-code files.
+
+</body>
+</html>

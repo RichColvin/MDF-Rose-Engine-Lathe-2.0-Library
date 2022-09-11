@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
+
+<!-- ################################################### -->
+<!-- Style Sheet for header image max size                                         -->
+<style>
+    img.Image { max-width: 500px;}
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for Horizontal Rule - Style 0                                       -->
+ <style>
+    hr.style0 {
+        border: 0;
+        height: 1px;
+        background-image: linear-gradient(to right,
+                rgba(184,134,11, 2),
+                rgba(184,134,11, 2),
+                rgba(184,134,11, 2));
+    }
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for Horizontal Rule - Style 1                                       -->
+ <style>
+    hr.style1 {
+        border: 0;
+        height: 3px;
+        background-image: linear-gradient(to right,
+            rgba(0, 0, 0, 0),
+                rgba(184,134,11, 2),
+            rgba(0, 0, 0, 0));
+    }
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for Horizontal Rule - Style 2                                       -->
+ <style>
+    hr.style2 {
+        border: 0;
+        height: 6px;
+        background-image: linear-gradient(to right,
+            rgba(0, 0, 0, 0),
+                rgba(184,134,11, 2),
+            rgba(0, 0, 0, 0));
+    }
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for indented paragraphs                                             -->
+<style>
+    .indented { padding-left: 33pt; padding-right: 33pt; }
+</style>
+
+<!-- ################################################### -->
+<!-- Header                                                                                           -->
+<!-- ################################################### -->
+
+<head bgcolor=#E6E6E6>
+<title>MDF Rose Engine Lathe 2.0</title>
+<link rel="shortcut icon" type="image/ico" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="Images/favicon.png">
+
+<font face="Georgia">
+
+<table width="100%" border=0>
+        <col width="10%">
+        <col width="*">
+        <col width="10%">
+
+    <tr valign="bottom">
+        <td align="left">
+            <a href = "javascript:history.back()"><img src="Images/BackButton.png" width="30px"></a>
+        </td>
+        <td align="center" valign="top">
+            <a href="MSMCS.html"><font color="DarkBlue" size="6"><b>
+                Control System for Multiple Stepper Motors</a>
+            </b></font>
+            <br>
+            <font color="DarkBlue" size="5">
+            Code Version Selection
+            </b></font>
+        </td>
+        <td align="right">
+            <a href="index.html"><img src="Images/Books.png" width="50px" class="Image"></a>
+        </td>
+    </tr>
+</table>
+
+<hr class="style0">
+</head>
+
+<!-- ################################################### -->
+<!-- Body                                                                                               -->
+<!-- ################################################### -->
+
+<body bgcolor=#E6E6E6 background="Images/DevBackground.png">
+<font face="Georgia">
+<table width="100%">
+<tr><td>
+
+<p>Please select the version you are using
+
+<p><table border=1 align="center">
+    <col width="20%">
+    <col width="20%">
+    <col width="*">
+    <col width="25%">
+
+    <tr>
+        <td align="center" valign="bottom" bgcolor="##2E2EFE" colspan=999>
+            <b><font color="White" size="5">Version You are Using</font></b>
+        </td>
+    </tr>
+
+    <tr>
+        <td align="center" valign="middle" bgcolor="Gray">
+            <a href="NextionPreV22/NextionUserGuide.html">
+            <b><font color="white" size="5">
+            <p>21 <I>or prior</I>
+            </font></b>
+            </a>
+        </td>
+
+        <td align="center" valign="middle" bgcolor="#F78181">
+            <a href="MSMCSv2/MSMCS.html" >
+            <b><font color="white" size="5">
+            <p>22 - 25
+            </font></b>
+            </a>
+        </td>
+
+        <td align="center" valign="middle" bgcolor="#04B404">
+            <a href="MSMCSv2/MSMCS.html" >
+            <b><font color="white" size="6">
+            <p>26
+            </font></b>
+            </a>
+        </td>
+
+        <td align="center" valign="middle" bgcolor="#21610B">
+            <a href="MSMCSv3/MSMCS.html">
+            <b><font color="white" size="5">
+            <p>3.0
+            </font></b>
+            </a>
+        </td>
+    </tr>
+
+    <tr>
+        <td valign="top" bgcolor="LightGray">
+                <ul style="list-style-type:square">
+                    <li>Version 21 introduced different program file identifiers.</li>
+                </ul>
+            
+            <p style="margin-bottom: 0;">These versions are deprecated
+            <b>Upgrading to Version 26 is recommended.</b>
+        </td>
+        
+        <td valign="top" bgcolor="#FBEFEF">
+                <ul style="list-style-type:square">
+                    <li>Version 22 introduced new screen designs.</li>
+                    <li>Version 23 introduced standardized program file identifiers.</li>
+                </ul>
+            
+            <p style="margin-bottom: 0;">These versions are deprecated
+            <b>Upgrading to Version 26 is recommended.</b>
+        </td>
+        
+        <td valign="top" bgcolor="#E0F8E0">
+            Version 26 is recommended for those just getting started.  The functionality is very strong, and you can do quite a lot with this version.
+
+            <p style="margin-bottom: 0;">This version is stable and current
+        </td>
+        
+        <td valign="top" bgcolor="#BCF5A9">
+                <ul style="list-style-type:square">
+                    <li>Version 3.0 introduced the abilities to:</li>
+                        <ul style="list-style-type:circle">
+                            <li>Handle a 5th stepper motor, and</li>
+                            <li>Drive more than two stepper motors at one time.</li>
+                        </ul>
+                </ul>
+            
+            <p>This version is in beta testing
+
+            <p style="margin-bottom: 0;"><b>Upgrading to Version 3 is not recommended for new users of this system.</b>  Rather, a great understanding of version 26 is strongly recommended before advancing to this version.
+        </td>
+    </tr>
+</table>
+
+<p><table align="center" border=1 width="150px" bgcolor=#fdfd96>
+    <tr>
+        <td align="center" >
+            <a href="MSMCS-Upgrading.html">For
+            <br>version upgrades
+            <br>click here</a>.
+        </td>
+    </tr>
+</table>
+
+</td></tr>
+</table>
+
+<!-- ################################################### -->
+<!-- Footer                                                                                             -->
+<!-- ################################################### -->
+<hr class="style0">
+<font size="3">
+<table width="100%">
+    <col width="67%">
+    <col width="33%">
+
+    <tr valign="top">
+        <td align="left">
+            Questions or comments?  Contact us at
+            <br><a href="mailto:ColvinTools@Gmail.com?Subject=General" >ColvinTools@Gmail.com</a>
+        </td>
+        <td align="right">
+            <a href="../index-Disclaimers.html">Disclaimers</a>
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>

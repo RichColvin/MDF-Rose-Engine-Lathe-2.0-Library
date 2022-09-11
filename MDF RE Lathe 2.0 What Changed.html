@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
+
+<!-- ################################################### -->
+<!-- Style Sheet for header image max size                                         -->
+<style>
+    img.Image { max-width: 500px;}
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for Horizontal Rule - Style 0                                       -->
+ <style>
+    hr.style0 {
+        border: 0;
+        height: 1px;
+        background-image: linear-gradient(to right,
+                rgba(184,134,11, 2),
+                rgba(184,134,11, 2),
+                rgba(184,134,11, 2));
+    }
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for Horizontal Rule - Style 1                                       -->
+ <style>
+    hr.style1 {
+        border: 0;
+        height: 3px;
+        background-image: linear-gradient(to right,
+            rgba(0, 0, 0, 0),
+                rgba(184,134,11, 2),
+            rgba(0, 0, 0, 0));
+    }
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for Horizontal Rule - Style 2                                       -->
+ <style>
+    hr.style2 {
+        border: 0;
+        height: 6px;
+        background-image: linear-gradient(to right,
+            rgba(0, 0, 0, 0),
+                rgba(184,134,11, 2),
+            rgba(0, 0, 0, 0));
+    }
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for indented paragraphs                                             -->
+<style>
+    .indented { padding-left: 33pt; padding-right: 33pt; }
+</style>
+
+<!-- ################################################### -->
+<!-- Header                                                                                           -->
+<!-- ################################################### -->
+
+<head bgcolor=#E6E6E6>
+    <title>MDF Rose Engine Lathe 2.0</title>
+    <link rel="shortcut icon" type="image/ico" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="Images/favicon.png">
+
+<font face="Georgia">
+
+<table width="100%" border=0>
+        <col width="10%">
+        <col width="*">
+        <col width="10%">
+
+    <tr valign="bottom">
+        <td align="left">
+            <a href = "javascript:history.back()"><img src="Images/BackButton.png" width="30px"></a>
+        </td>
+        <td align="center" valign="top">
+            <font color="DarkBlue" size="6"><b>
+                What Changed
+            </b></font>
+            <br>
+            <font color="DarkBlue" size="5"><b>
+                from the Original MDF Rose Engine Lathe?
+            </b></font>
+            </b></font>
+        </td>
+        <td align="right">
+            <a href="index.html"><img src="Images/Books.png" width="50px" class="Image"></a>
+        </td>
+    </tr>
+</table>
+
+<hr class="style0">
+</head>
+
+<!-- ################################################### -->
+<!-- Body                                                                                               -->
+<!-- ################################################### -->
+<body bgcolor=#E6E6E6 background="Images/DevBackground.png">
+	<font face="Georgia">
+    <div style="text-align: left; background-color: #E6E6E6" class="split1 centered">
+
+    <p><font color="DarkBlue" size="5"><b>
+    What Changed with the MDF Rose Engine Lathe 2.0?
+    </b></font>
+
+    <table width="100%">
+
+<!-- ################################################### -->
+<!-- Target User -->
+    <tr><td>
+
+    <div style="float: right; width: 200px; margin: 5px 5px 5px 5px; padding: 5px; border: 1px solid black; text-align: center; background-color:white">
+        <a href="Images/RubberNear.png"><img src="Images/RubberNear.png" width="100%" class="Image"></a>
+        <br><b>Rubber on Near Column</b>
+
+        <hr>
+        <a href="Images/RubberFar.png"><img src="Images/RubberFar.png" width="100%" class="Image"></a>
+        <br><b>Rubber on Far Column</b>
+
+        <hr>
+        <a href="Images/RubberAA.png"><img src="Images/RubberAA.png" width="100%" class="Image"></a>
+        <br><b>Dual, Independent Amplitude Adjusters</b>
+    </div>
+
+    <p>The changes incorporated into the MDF Rose Engine Lathe 2.0 include:
+
+        <ul>
+             <li>Many of the designs are documented in a <a href="Documents/MDF RE 2.0 - Standards.pdf" >standards document</a> to allow for other components to be made and added to this base design.</li>
+
+            <br>
+            <li>The machine is designed for using a <a href="https://en.wikipedia.org/wiki/Stepper_motor" >stepper motor</a> drive on the spindle.  There is no longer an accommodation for manually turning the spindle.</li>
+
+            <br>
+            <li>This machine has 2&quot; more clearance over the bed.  The center line of the spindle to the top of the bed is now around 8&quot;.</li>
+                <ul>
+                     <li>The distance from the pivot point to the spindle on the headstock is 1&quot; longer, and</li>
+                     <li>The pivot points are set to be 1&quot; higher in the base.</li>
+                </ul>
+
+            <br>
+            <li>This machine comes with a spindle which has a <a href="https://en.m.wikipedia.org/wiki/Machine_taper#Morse" >Morse taper</a> rather than a 1&quot; - 8 TPI threaded end.</li>
+
+            <br>
+            <li>The <a href="https://www.otbok.info/OT%20-%20LnT-Term-Rubber.html" >rubber</a> support tower was completely redesigned:</li>
+                <ul>
+
+                    <br>
+                     <li>There are both near and far rubber support capabilities.</li>
+
+                    <br>
+                     <li>Support is included for the use of at least two different types of amplitude adjusters.</li>
+                            <ul>
+                                 <li>The front rubber support tower was moved further away from the spindle.</li>
+                                 <li>The rubber holder for the near rubber can be flipped and also moved vertically.  This easily accommodates using an <a href="https://www.otbok.info/OT%20-%20LnT-Term-AmplitudeAdjuster.html" >amplitude adjuster</a>.</li>
+                            </ul>
+
+                    <br>
+                     <li>An amplitude adjuster will be available later which will accommodate two <a href="https://www.otbok.info/OT%20-%20LnT-Term-Rosettes.html" >rosettes</a>, each with its own, separate amplitude adjuster (shown installed in the picture to the right).</li>
+                </ul>
+
+            <br>
+            <li>The bed is larger (24&quot; x 24&quot;) and is designed to have a steel sheet on the top where <a href="https://www.otbok.info/OT%20-%20LnT-Term-MagSwitch.html" >magnetic switches</a> can hold the <a href="https://www.otbok.info/OT%20-%20LnT-Term-CrossSlide.html" >cross slide</a> (or other component) in place.</li>
+
+            <br>
+            <li>The controls are being sold as a pre-wired unit that is "plug in, hook up, and go".  Soldering is not required, nor is having to figure out which wires get connected to what and how.  The instructions are also published in case you want to do it yourself or change what was done.</li>
+
+            <div style="float: right; width: 200px; margin: 5px 5px 5px 5px; padding: 5px; border: 1px solid black; text-align: center; background-color:white">
+                <a href="Images/MDFREControls1.png"><img src="Images/MDFREControls1.png" width="100%" class="Image"></a>
+                <br><b>Controls Box under Lathe Bed</b>
+
+                <hr>
+                <a href="Images/MDFREControls2.png"><img src="Images/MDFREControls2.png" width="100%" class="Image"></a>
+                <br><b>Storage Options</b>
+            </div>
+
+            <br>
+            <li>These controls are also designed to be placed under the bed of the MDF rose engine lathe 2.0.  If added to the the original MDF rose engine lathe, it can be set to the side.
+
+            <br><br>
+            The first picture to the right shows the controls under the bed of the MDF rose engine lathe 2.0 (the bed cover has been removed).  This in particular allows the other open areas to be used as the owner wishes.
+
+            <br><br>
+            The second picture to the right shows part of the lathe bed removed (as it was designed to be more of a lid than part of the bed proper), and also part of the front side cut away to allow for storage there also.  The cut out part is certainly something the user can do.</li>
+
+            <br>
+            <li>The controls for the stepper motors are designed for:</li>
+                <ul>
+
+                    <br>
+                     <li>Driving the spindle using a stepper motor.</li>
+
+                    <br>
+                     <li>Simultaneously controlling one additional stepper motor for activities such as driving movement on the cross slide.</li>
+
+                    <br>
+                     <li>Connecting stepper motors with up to 4 amps of current draw.</li>
+
+                    <br>
+                     <li>Incorporating the use of <a href="https://en.wikipedia.org/wiki/Limit_switch" >limit switches</a> (so that cuts can be left to complete when they are taking a while - one user went to dinner and left his running).</li>
+
+                    <div style="float: right; width: 200px; margin: 5px 5px 5px 5px; padding: 5px; border: 1px solid black; text-align: center; background-color:white">
+                        <a href="Images/Axes.png"><img src="Images/Axes.png" width="100%" class="Image"></a>
+                        <br><b>Lathe Axes</b>
+                    </div>
+
+                    <br>
+                     <li>Controlling stepper motors in 4 axes of motion (X, Y, Z, and B).</li>
+
+                    <br>
+                     <li>Delivering user functionality in the controls such as</li>
+                            <ul>
+                                 <li>Indexing,</li>
+                                 <li>Cutting flutes and helices,</li>
+                                 <li>Cutting a Greek key/ meander pattern, and</li>
+                                 <li>Emulating a geometric chuck.</li>
+                            </ul>
+
+                    <br>
+                     <li>Using a touchscreen for managing these movements.</li>
+
+                    <br>
+                     <li>Implementing and <a href="Documents/MDF RE 2.0 - Standards.pdf" >publishing standards</a> for all the connectors, allowing for ease in development and use of future add-ons.  This includes:</li>
+                            <ul>
+                                 <li>Stepper motors - the system accommodates the spindle drive plus connecting up to 3 more,</li>
+                                 <li><a href="https://en.wikipedia.org/wiki/Limit_switch" >Limit switches</a> - the system accommodates 2, and</li>
+                                 <li><a href="https://www.otbok.info/OT%20-%20LnT-Term-Nextion.html" >Nextion touch-screen display</a> for making it easy to control the operation.</li>
+                            </ul>
+                </ul>
+
+            <br>
+            <li>The stepper drive parts and the control box are all available to add to an existing MDF rose engine.</li>
+
+            <br>
+            <li>The headstock has T-Track on the top and back, and the placement of these is set as a standard so others can make add-ons (e.g., a tail stock).</li>
+
+            <div style="float: right; width: 200px; margin: 5px 5px 5px 5px; padding: 5px; border: 1px solid black; text-align: center; background-color:white">
+                <a href="Images/HeadstockDustEvac2.png"><img src="Images/HeadstockDustEvac2.png" width="100%" class="Image"></a>
+                <br><b>Opening to Vacuum Out Dust</b>
+            </div>
+
+            <br>
+            <li>Dust removal is easier.  The headstock allows dust to fall thru to the base, and there is an opening on the back to allow it to be vacuumed out.  (You no longer have to shoot compressed air into the headstock or the space around the headstock whilst keeping your eyes closed.)</li>
+
+            <br>
+            <li>If you already have an MDF rose engine lathe, you can upgrade to the 2.0 version by making the new MDF parts according to the instructions or buying the pre-cut kit.  Some of your T-tracks will be re-usable but it may be best to buy new ones.</li>
+
+            <br>
+            <li>An overhead drive is designed like the original Holtzapffel approach (giving it a little bit of a legacy look).  You can the picture of it on the right.</li>
+
+            <div style="float: right; width: 200px; margin: 5px 5px 5px 5px; padding: 5px; border: 1px solid black; text-align: center; background-color:white">
+                <a href="Images/MDFREOverhead.png"><img src="Images/MDFREOverhead.png" width="100%" class="Image"></a>
+                <br><b>Overhead Drive</b>
+            </div>
+
+            <br>
+            <li>The complete system can be purchased as a kit for easy assembly.  This system components, all of which can be purchased separately, include:</li>
+                <ul>
+                     <li>Base kit (like Jon Magill used to provide, but with a spindle with a Morse taper),</li>
+                     <li>Pre-cut MDF parts,</li>
+                     <li>Overhead drive,</li>
+                     <li>Cross slide,</li>
+                     <li>Stepper motor controls and spindle drive stepper motor, and</li>
+                     <li>Universal cutting frame.</li>
+                </ul>
+
+            <br>
+            <li>Detailed instruction guides are available for the woodworker who wishes to build their own.</li>
+
+            <br>
+            <li>All documentation is being provided electronically and will be kept up-to-date and available online for free.</li>
+                <ul>
+                     <li>Also, the user manual for the stepper motor controls are on-line.  The manual works like the application does and provides information on the screen which is relevant to the operation being started.</li>
+                     <li>A tablet version of the documentation will also be available for those who don’t have a good Internet connection.</li>
+                     <liWe can provide you copy of the documentation on a microSD card.  You can pop the microSD card into your tablet to read the documents electronically.  (It cannot be done on iPads as they do not have a place to plug in a microSD card.)></li>
+                </ul>
+
+        </ul>
+
+    </td></tr>
+
+<!-- ################################################### -->
+<!-- What Did Not Change -->
+    <tr><td>
+    <p><hr class="style1">
+    <p><font color="DarkBlue" size="5"><b>
+    What Did Not Change with the MDF Rose Engine Lathe 2.0?
+    </b></font>
+
+    <p>The things which did not change with the MDF Rose Engine Lathe 2.0 include:
+        <ul>
+             <li>The overall intent for the machine was maintained.  It should be easy to use and not require a lot of math.</li>
+
+             <p style="margin-left:50px"><I>Make it easy to make art</I>
+
+            <br>
+             <li>The base system is still made from <sup>3</sup>/<sub>4</sub>&quot; MDF.</li>
+
+            <br>
+             <li>The same rosettes are still used.</li>
+
+            <br>
+             <li>The spindle still has a 1&quot; diameter, and the headstock's width is the same.  (If you choose to build the new headstock and base, your existing spindle can be reused.)</li>
+
+            <br>
+             <li>Stepper motors are only used where synchronized movement is needed.  There is no attempt to make this a CNC lathe.</li>
+        </ul>
+    </td></tr>
+    </table>
+     </div>
+
+<!-- ################################################### -->
+<!-- Footer                                                                                             -->
+<!-- ################################################### -->
+    <div class="footer">
+        <hr class="style0">
+        <font size="3">
+        <table width="100%">
+            <col width="67%">
+            <col width="33%">
+
+            <tr valign="top">
+                <td align="left">
+                    Questions or comments?  Contact us at
+                    <br><a href="mailto:ColvinTools@Gmail.com?Subject=General" >ColvinTools@Gmail.com</a>
+                </td>
+                <td align="right">
+                    <a href="../index-Disclaimers.html">Disclaimers</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+</body>
+</html>

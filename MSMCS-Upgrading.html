@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
+
+<!-- ################################################### -->
+<!-- Style Sheet for header image max size                                         -->
+<style>
+    img.Image { max-width: 500px;}
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for Horizontal Rule - Style 0                                       -->
+ <style>
+    hr.style0 {
+        border: 0;
+        height: 1px;
+        background-image: linear-gradient(to right,
+                rgba(184,134,11, 2),
+                rgba(184,134,11, 2),
+                rgba(184,134,11, 2));
+    }
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for Horizontal Rule - Style 1                                       -->
+ <style>
+    hr.style1 {
+        border: 0;
+        height: 3px;
+        background-image: linear-gradient(to right,
+            rgba(0, 0, 0, 0),
+                rgba(184,134,11, 2),
+            rgba(0, 0, 0, 0));
+    }
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for Horizontal Rule - Style 2                                       -->
+ <style>
+    hr.style2 {
+        border: 0;
+        height: 6px;
+        background-image: linear-gradient(to right,
+            rgba(0, 0, 0, 0),
+                rgba(184,134,11, 2),
+            rgba(0, 0, 0, 0));
+    }
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for indented paragraphs                                             -->
+<style>
+    .indented { padding-left: 33pt; padding-right: 33pt; }
+</style>
+
+<!-- ################################################### -->
+<!-- Header                                                                                           -->
+<!-- ################################################### -->
+
+<head bgcolor=#E6E6E6>
+<title>MDF Rose Engine Lathe 2.0</title>
+<link rel="shortcut icon" type="image/ico" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="Images/favicon.png">
+
+<font face="Georgia">
+
+<table width="100%" border=0>
+        <col width="10%">
+        <col width="*">
+        <col width="10%">
+
+    <tr valign="bottom">
+        <td align="left">
+            <a href = "javascript:history.back()"><img src="Images/BackButton.png" width="30px"></a>
+        </td>
+        <td align="center" valign="top">
+            <a href="MSMCS.html"><font color="DarkBlue" size="6"><b>
+                Control System for Multiple Stepper Motors</a>
+                <br>
+                System Upgrade Procedure
+                </font>
+            </b></font>
+        </td>
+        <td align="right">
+            <a href="index.html"><img src="Images/Books.png" width="50px" class="Image"></a>
+        </td>
+    </tr>
+</table>
+</head>
+
+<!-- ################################################### -->
+<!-- Body                                                                                               -->
+<!-- ################################################### -->
+
+<body bgcolor=#E6E6E6 background="Images/DevBackground.png">
+<font face="Georgia">
+
+<table>
+    <tr valign="top">
+        <td>
+            The video to the right which shows these steps may be useful for you, but it is not required to perform the upgrade.  The video was made to assist those who might find it a good learning tool for watching someone else perform the steps.
+            
+            <p><div style="float: left; width: 260px; margin: 5px 5px 5px 5px; padding: 5px; border: 0px solid Darkgray; text-align: left; ">
+            <table border="1" width="100%">
+            	<tr bgcolor="Moccasin">
+            		<td style="padding: 5px;">
+        	    		<b>Prior Version Needed?</b>
+        	    		<br>
+        	    		<a href="MSMCS-Upgrading-Prev.html">Click here</a> to download the files.
+            		</td>
+	            </tr>
+
+<!-- 
+            	<tr bgcolor="#BCF5A9">
+            		<td style="padding: 5px;">
+        	    		<b>Beta Version Desired?</b>
+        	    		<br>
+        	    		<a href="MSMCS-Upgrading-Beta.html">Click here</a> to download the files.
+            		</td>
+	            </tr>
+-->
+            </table>
+            </div>
+
+            <p><br><font color="DarkBlue" size="6"><b><center>
+                Current Version:  V3.0
+            </center></b></font>
+        </td>
+        <td>
+            <iframe width="336" height="189" src="https://www.youtube.com/embed/fy9_zjuLy-s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </td>
+    </tr>
+</table>
+
+<font color="blue"><p style="margin-top: 0;">Instructions are in blue.</font>
+Commentary to help clarify the instructions is in black.
+
+<table width="100%" border=1>
+	<col width="*">
+    <col width="200px">
+    <col width="200px">
+
+<!-- ################################################### -->
+<!-- Step 1 -->
+    <tr valign="bottom" bgcolor=#C2DFFF>
+        <td colspan=999>
+            <font color="DarkBlue" size="5"><b>
+            Step 1 - Get a copy of the Teensy program file
+            </b></font>
+        </td>
+
+    </tr>
+
+    <tr>
+        <td valign="top" rowspan=3>
+            <font color="blue">
+            <p style="margin-top: 0;">Download <b>RE30_t</b>xx<b>.hex</b> to your computer.
+            </font>
+            
+            <p><font color="red"><mark style="background-color:Yellow;">To save the file, click on the file's name on the right side of the screen (e.g., &quot;RE30_t35.hex&quot;).</mark></font>
+        
+            <p style="margin-bottom: 0;">
+            <font color="DarkRed"><u><b>Unsure which Teensy you have?</u></b></font>
+            The Teensy 3.5 is the most common, however if you are unsure of which one you have,
+                <ol style="margin-top: 0; margin-bottom: 0;">
+                    <li>Open the Teensy loader (as noted in step 4b below).</li>
+                    <li>Click on <b>&quot;Help&quot;</b> then turn on <b>Verbose Information</b>.</li>
+                    <li>Press the button (as shown on step 4d below).  The Verbose Information screen will show which Teensy you have.</li>
+                </ol>
+            
+            <p style="margin-bottom: 0;"><font color="DarkRed"><u><b>Best Practice Note</u>:</b></font>
+            It is a best practice to right-click on the link for your appropriate Teensy model, then ensure the file is saved with the file name noted.  For example, if you are trying to download the file for the Teensy 3.5, ensure it gets saved as &quot;RE30_t35.hex&quot;.  This is because some computer systems will add &quot;.txt&quot;.to the end (e.g., making it &quot;RE30_t35.hex.txt&quot;).
+        </td>
+        
+        <td align="center" bgcolor="#d8ecff">
+            &nbsp;
+            <br>
+            <font color="DarkBlue" size="4"><b>
+            Teensy 3.2
+            </b></font>
+            <br>
+            &nbsp;
+        </td>
+
+        <td valign="middle" align="center" valign="top" bgcolor="#d8ecff">
+            <font color="DarkBlue" size="3">
+            <a href="NextionUpgrade/V30/Teensy/3.2/RE30_t32.hex" download>RE30_t32.hex</a>
+            </font>
+        </td>
+    </tr>
+
+    <tr>
+        <td align="center">
+            &nbsp;
+            <br>
+            <font color="DarkBlue" size="4"><b>
+            Teensy 3.5
+            </b></font>
+            <br>
+            &nbsp;
+        </td>
+
+        <td valign="middle" align="center" valign="top">
+            <font color="DarkBlue" size="3">
+            <a href="NextionUpgrade/V30/Teensy/3.5/RE30_t35.hex" download>RE30_t35.hex</a>
+            </font>
+        </td>
+
+    <tr>
+        <td align="center" bgcolor="#d8ecff">
+            &nbsp;
+            <br>
+            <font color="DarkBlue" size="4"><b>
+            Teensy 3.6
+            </b></font>
+            <br>
+            &nbsp;
+        </td>
+
+        <td valign="middle" align="center" valign="top" bgcolor="#d8ecff">
+            <font color="DarkBlue" size="3">
+            <a href="NextionUpgrade/V30/Teensy/3.6/RE30_t36.hex" download>RE30_t36.hex</a>
+            </font>
+        </td>
+        
+    </tr>
+
+<!-- ################################################### -->
+<!-- Step 2 -->
+    <tr valign="bottom" bgcolor=#C2DFFF>
+        <td colspan=999>
+            <font color="DarkBlue" size="5"><b>
+            Step 2 - Get a copy of the Nextion configuration file
+            </b></font>
+        </td>
+    </tr>
+
+    <tr>
+        <td valign="top" rowspan=3>
+            <font color="blue">
+            <p style="margin-top: 0;">Get a copy of the Nextion configuration file.
+            </font>
+        
+            <p style="margin-bottom: 0;"><font color="DarkRed"><u><b>Unsure which Nextion you have?</u></b></font>
+            The 4.3&quot; Enhanced is the most common, however if you try the wrong file it won't load.  The Nextion display will not let you load the wrong one.
+        </td>
+        
+        <td align="center" bgcolor="#d8ecff">
+            <font color="DarkBlue" size="4"><b>
+            4.3&quot; Enhanced
+            </b></font>
+        </td>
+        <td valign="middle" align="center" valign="top" bgcolor="#d8ecff">
+            <font color="DarkBlue" size="3">
+            <a href="NextionUpgrade/V30/Nextion/43e/RE30_43e.tft" download>RE30_43e.tft</a>
+            </font>
+        </td>
+    </tr>
+
+    <tr>
+        <td align="center">
+            <font color="DarkBlue" size="4"><b>
+            5.0&quot; Intelligent
+            </b></font>
+        </td>
+        <td valign="middle" align="center" valign="top">
+            <font color="DarkBlue" size="3">
+            <a href="NextionUpgrade/V30/Nextion/50i/RE30_5i.tft" download>RE30_5i.tft</a>
+            </font>
+        </td>
+    </tr>
+
+    <tr>
+        <td align="center" bgcolor="#d8ecff">
+            <font color="DarkBlue" size="4"><b>
+            7.0&quot; Intelligent
+            </b></font>
+        </td>
+        <td valign="middle" align="center" valign="top" bgcolor="#d8ecff">
+            <font color="DarkBlue" size="3">
+            <a href="NextionUpgrade/V30/Nextion/70i/RE30_7i.tft" download>RE30_7i.tft</a>
+            </font>
+        </td>
+    </tr>
+
+<!-- ################################################### -->
+<!-- Step 3 -->
+    <tr>
+        <td valign="top" bgcolor=#C2DFFF colspan=999>
+            <font color="DarkBlue" size="5"><b>
+            Step 3 - Get a copy of the RE30.ini settings file
+            </b></font>
+        </td>
+    </tr>
+
+    <tr>
+        <td valign="top">
+            <font color="blue">
+            Download <b>RE30.ini</b>, and put it in the root of a microSD card.
+            </font>
+            This can be the same microSD card as in step #2.
+            
+            <a href="MSMCSv3/MSMCS-iniFile.html">Details about the RE30.ini</a> are available by clicking the web link at the start of this sentence.
+
+            <p style="margin-bottom: 0;"><font color="DarkRed"><u><b>Best Practice Note</u>:</b></font>
+            It is a best practice to right-click on the link for the ini file, then ensure the file is saved with the file name noted (&quot;RE30.ini&quot;).  This is because some computer systems will simply display the contents if you clik on the link. 
+        </td>
+
+        <td align="center" valign="middle" colspan=999>
+            <font color="DarkBlue" size="3"><b>
+            <p style="margin-bottom: 0; margin-top: 0;">
+            <a href="NextionUpgrade/V30/Teensy/RE30.ini" download>RE30.ini</a>
+            </b></font>
+        </td>
+    </tr>
+
+<!-- ################################################### -->
+<!-- Step 4 -->
+    <tr bgcolor=#C2DFFF>
+        <td valign="top" colspan=999>
+            <font color="DarkBlue" size="5"><b>
+            Step 4 - Upgrade the Teensy
+            </b></font>
+        </td>
+    </tr>
+
+    <tr>
+        <td valign="top" colspan=999>
+            <p><div style="float: right; width: 350px; margin: 5px 5px 5px 5px; padding: 5px; border: 1px solid DarkGray; text-align: center; background-color:White">
+                <a href="NextionUpgrade/Teensy35-1.jpg" target="_new"><img src="NextionUpgrade/Teensy35-1.jpg" width="100%" /></a>
+            </div>
+
+            <p><font color="DarkBlue" size="4"><b>
+            <mark style="background-color:#C2DFFF;">
+            &nbsp;
+            Step 4a
+            &nbsp;
+            </mark>
+            </b></font>
+            &nbsp;
+            
+            <font color="blue">
+            Connect the computer to the Teensy.
+            </font>
+                <ul>
+                    <li>The cable end connected to the Teensy uses a MicroUSB connector.</li>
+                    <li>The Teensy's jack is noted in the picture to the right.</li>
+                    <li>There is no need to remove the Teensy from the PCB to perform this step.</li>
+                </ul>
+
+            <p><div style="float: left; width: calc(100% - 500px); margin: 5px 5px 5px 5px; padding: 5px; border: 1px solid DarkGray; text-align: left; background-color:#d4efdf" >
+                <b>Be sure you have a good MicroUSB cable.</b>  Some are only used for charging a device (and they are usually longer).  These will often not work.
+            </div>                
+        </td>
+    </tr>
+
+    <tr>
+        <td valign="top" colspan=999>
+
+            <p><div style="float: right; width: 400px; margin: 5px 5px 5px 5px; padding: 5px; border: 0px solid DarkGray; text-align: center;">
+                <table>
+                    <tr valign="bottom">
+                        <td align="center" width="50%">
+                            <img src="Images/Teensy2.png" width="100%" />
+                        </td>
+                        <td>
+                            &nbsp;
+                        </td>
+                        <td align="center" width="50%">
+                            <img src="Images/Teensy1.png" width="100%"/>
+                        </td>
+                    </tr>
+                    <tr valign="top">
+                        <td align="center" width="50%">
+                            <p style="margin-top: 0; margin-bottom: 0;">Teensy Loader on macOS
+                        </td>
+                        <td>
+                            &nbsp;
+                        </td>
+                        <td align="center" width="50%">
+                            <p style="margin-top: 0; margin-bottom: 0;">Teensy Loader on Linux and Windows
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+
+            <p><font color="DarkBlue" size="4"><b>
+            <mark style="background-color:#C2DFFF;">
+            &nbsp;
+            Step 4b
+            &nbsp;
+            </mark>
+            </b></font>
+            &nbsp;
+            
+            <font color="blue">
+            On the Computer, start the <b>Teensy Loader</b>.
+            </font>
+
+            <p>If you do not have the <b>Teensy Loader</b> installed on your computer, you can get it from <a href="https://www.pjrc.com/teensy/loader.html" target="_new">https://www.pjrc.com/teensy/loader.html</a>.
+        </td>
+    </tr>
+
+    <tr>
+        <td valign="top" colspan=999>
+            <p><div style="float: right; width: 200px; margin: 5px 5px 5px 5px; padding: 5px; border: 0px solid DarkGray; text-align: center;">
+                <img src="Images/Teensy2.png" width="100%" />
+            </div>
+
+            <p><font color="DarkBlue" size="4"><b>
+            <mark style="background-color:#C2DFFF;">
+            &nbsp;
+            Step 4c
+            &nbsp;
+            </mark>
+            </b></font>
+            &nbsp;
+            
+            <font color="blue">
+            Be sure the system shows that the Teensy is connected.
+            </font>
+            
+            <p>This is evident when
+                <ul>
+                    <li>the Auto button is illuminated green, and</li>
+                    <li>the picture of the Teensy is no longer grayed out.</li>
+                </ul>
+                
+            <p>As noted in step 4a above, if your USB cable is bad, the Teensy will not connect.
+
+            <p>The default CPU selected will not handle the whole RE30_t</b>xx<b>.hex file, so if you try to open it, you will get the message on the bottom of the screen (where this picture shows &quot;No file specified&quot;):
+            
+            <p><center><b>RE30_t</b>xx<b>.hex (too large!)</b></center>
+            
+            <br>&nbsp;
+        </td>
+    </tr>
+
+    <tr>
+        <td valign="top" colspan=999>
+            <p><div style="float: right; width: 350px; margin: 5px 5px 5px 5px; padding: 5px; border: 1px solid DarkGray; text-align: center; background-color:White">
+               <img src="NextionUpgrade/Teensy35-2.jpeg" width="100%" />
+            </div>
+
+            <p><font color="DarkBlue" size="4"><b>
+            <mark style="background-color:#C2DFFF;">
+            &nbsp;
+            Step 4d
+            &nbsp;
+            </mark>
+            </b></font>
+            &nbsp;
+            
+            <font color="blue">
+            Press the button on the Teensy to get the Teensy loader to recognize which CPU you are using.
+            </font>
+        </td>
+    </tr>
+
+    <tr>
+        <td valign="top" colspan=999>
+            <p><div style="float: right; width: 200px; margin: 5px 5px 5px 5px; padding: 5px; border: 1px solid DarkGray; text-align: center;">
+               <img src="Images/Teensy2a.png" width="100%" />
+            </div>
+
+            <p><font color="DarkBlue" size="4"><b>
+            <mark style="background-color:#C2DFFF;">
+            &nbsp;
+            Step 4e
+            &nbsp;
+            </mark>
+            </b></font>
+            &nbsp;
+            
+            Back on the Computer, using the file button <b>Teensy Loader</b> (circled in red in the picture to the right), 
+            <font color="blue">
+            open <b>RE30_t</b>xx<b>.hex</b>. 
+            </font>
+
+            <p>Once this is loaded, the bottom message will change to reflect the file size. 
+        </td>
+    </tr>
+
+    <tr>
+        <td valign="top" colspan=999>
+            <p><div style="float: right; width: 200px; margin: 5px 5px 5px 5px; padding: 5px; border: 1px solid DarkGray; text-align: center;">
+               <img src="Images/Teensy2b.png" width="100%" />
+            </div>
+
+            <p><font color="DarkBlue" size="4"><b>
+            <mark style="background-color:#C2DFFF;">
+            &nbsp;
+            Step 4f
+            &nbsp;
+            </mark>
+            </b></font>
+            &nbsp;
+            
+            <font color="blue">
+            Select the download button (circled in red in the picture to the right) on the Teensy loader program to load the program file onto the Teensy.
+            </font>
+        </td>
+    </tr>
+
+    <tr>
+        <td valign="top" colspan=999>
+            <p><div style="float: right; width: 200px; margin: 5px 5px 5px 5px; padding: 5px; border: 1px solid DarkGray; text-align: center;">
+               <img src="Images/Teensy2c.png" width="100%" />
+            </div>
+
+            <p><font color="DarkBlue" size="4"><b>
+            <mark style="background-color:#C2DFFF;">
+            &nbsp;
+            Step 4g
+            &nbsp;
+            </mark>
+            </b></font>
+            &nbsp;
+            
+            <font color="blue">
+            Select the reboot button (circled in red in the picture to the right) on the Teensy loader program to restart the Teensy.
+            
+            <p>Verify that it was successfully rebooted.  
+            </font>
+            If not, repeat the steps above (and if that does not work, your Teensy may be damaged and needing to be replaced).
+
+            <font color="blue">
+            <p>Disconnect the computer from the Teensy.
+            </font>
+        </td>
+    </tr>
+
+<!-- ################################################### -->
+<!-- Step 5 -->
+    <tr bgcolor=#C2DFFF>
+        <td valign="top" colspan=999>
+            <font color="DarkBlue" size="5"><b>
+            Step 5 - Upgrade the Nextion
+            </b></font>
+        </td>
+    </tr>
+
+    <tr>
+        <td valign="top" colspan=999>
+
+            <p><div style="float: right; width: 350px; margin: 5px 5px 5px 5px; padding: 5px; border: 1px solid DarkGray; text-align: center; background-color:White">
+                <a href="NextionUpgrade/Nextion.png" target="_new"><img src="NextionUpgrade/Nextion.png" width="100%" /></a>
+            </div>
+
+            <font color="blue">
+            <p>Secure the microSD card which has the Nextion configuration file (from step 2).  Put this microSD card into the Nextion's microSD card slot. 
+
+            <p>Reboot the controls system again.
+            </font>
+
+            <p>If this works as expected, the Nextion display will read (upside down, by the way) 
+
+             <font face="arial"><b>
+             <center>
+             Check Data . . . 100%
+             <br><br>
+             Updated Successed!
+             </center>
+             </b></font>
+
+            <p>(guess that is a bad translation from Chinese).
+
+            <p>After that message appears, 
+            <font color="blue">
+            remove the microSD card from the Nextion, and reboot the controls system again.
+            </font>
+        </td>
+    </tr>
+
+<!-- ################################################### -->
+<!-- Step 6 -->
+    <tr bgcolor=#C2DFFF>
+        <td valign="top" colspan=999>
+            <font color="DarkBlue" size="5"><b>
+            Step 6 - Load the .ini file
+            </b></font>
+        </td>
+    </tr>
+
+    <tr>
+        <td valign="top" colspan=999>
+            <p><div style="float: right; width: 350px; margin: 5px 5px 5px 5px; padding: 5px; border: 1px solid DarkGray; text-align: center; background-color:White">
+                <a href="NextionUpgrade/Teensy35-3.jpg" target="_new"><img src="NextionUpgrade/Teensy35-3.jpg" width="100%" /></a>
+            </div>
+
+            <p><font color="DarkBlue" size="4"><b>
+            <mark style="background-color:#C2DFFF;">
+            &nbsp;
+            Step 6a
+            &nbsp;
+            </mark>
+            </b></font>
+            &nbsp;
+            
+            <font color="blue">
+            Secure the microSD card which has the RE30.ini settings file (from step 3). Put this microSD card into the Teensy's microSD card slot.</font>.
+            
+            <p style="margin-bottom: 0;"><font color="DarkRed"><u><b>Using a Teensy 3.2?</u></b></font>. If you are using a Teensy 3.2, the microSD card will have to be into a microSD card adapter.
+            </font>
+        </td>
+    </tr>
+
+    <tr>
+        <td valign="top" colspan=999>
+            <p><div style="float: right; width: 350px; margin: 5px 5px 5px 5px; padding: 5px; border: 0px solid DarkGray; text-align: center; ">
+                <a href="MSMCSv3/Images/Screens/Pref_LoadIni.jpg" target="_new"><img src="MSMCSv3/Images/Screens/Pref_LoadIni.jpg" width="100%" /></a>
+            </div>
+
+            <font color="DarkBlue" size="4"><b>
+            <mark style="background-color:#C2DFFF;">
+            &nbsp;
+            Step 6b
+            &nbsp;
+            </mark>
+            </b></font>
+            &nbsp;
+            
+            <font color="blue">
+            Start the system and click the <b>Load ini</b> button.
+            </font>
+
+            <p><b>Note:</b> Starting with version 24, there are text fields shown at the bottom of the screen (in the center).  These are just to show that the command is working. These boxes only appear when Load Ini has been touched.
+            
+            <font color="blue">
+            <p style="margin-bottom: 0;">Watch the Key field to ensure each of the following are loaded:
+            </font>
+            
+            <table>
+                <tr>
+                    <td width="150px">
+                        <ol start="1">
+                            <li>Preferences</li>
+                            <li>Limits</li>
+                            <li>Returns</li>
+                            <li>Main</li>
+                            <li>Multi</li>
+                        </ol>
+                    </td>
+                    <td width="150px">
+                        <ol start="6">
+                            <li>Index</li>
+                            <li>Move</li>
+                            <li>Shared</li>
+                            <li>Sync</li>
+                        </ol>
+                    </td>
+                    <td width="150px">
+                        <ol start="10">
+                            <li>Recip</li>
+                            <li>GreekKey</li>
+                            <li>Program</li>
+                            <li>Rose</li>
+                        </ol>
+                    </td>
+                </tr>
+            </table>
+
+            <div style="float: right; width: 450px; margin: 5px 5px 5px 5px; padding: 5px; border: 0px solid Darkgray; text-align: left;">
+                <table border="1" bgcolor="#F5A9BC" width="100%">
+            	    <tr>
+    	            	<td style="padding: 5px;">
+            	            <b>First time loading the INI file?</b>
+                
+            				<p>The values of the INI file must be loaded for each section to enable the screens to work in the program.  If the values are not set for a specific section, you will see it in the config settings screens as they will be blank.
+            				
+            				<p style="margin-bottom: 0;">A common problem is not having the key field update-to-date in the INI file.  For example, 
+            				    <ul>
+            				        <li><b>[Ind]</b> was updated to be <b>[Index]</b>.</li>
+                                    <li><b>[Ind]</b> has been deprecated and the values in that section will not load in the current version.</li>
+            				    </ul>
+
+                            <p style="margin-bottom: 0;"><a href="MSMCSv3/MSMCS-iniFile.html">Details about the RE30.ini</a> are available by clicking the web link at the start of this sentence.  This page also documents those items which have been deprecated.
+            			</td>
+		            </tr>
+	            </table>
+            </div>
+            
+            <p style="margin-top: 0;">If data for one of the keys did not load, check the contents of the RE30.ini file you are using against the latest RE30.ini.  The field values are periodically changed, and if they are wrong, the values won't load for that section.
+            
+            <a href="MSMCSv3/MSMCS-iniFile.html">Details about the RE30.ini</a> are available by clicking the web link at the start of this sentence.
+                            
+            <p>Once the INI file load has completed, a message will appear saying 
+
+             <font face="arial" size="5" color="blue"><b>
+             <center>
+             Done - Restart may be needed.
+             </center>
+             </b></font>
+
+            <font color="blue">
+            <p>Restart the system one last time.
+            </font>
+
+        </td>
+    </tr>
+
+<!-- ################################################### -->
+<!-- Step 7 -->
+    <tr bgcolor=#C2DFFF>
+        <td valign="top" colspan=999>
+            <font color="DarkBlue" size="5"><b>
+            Step 7 - Verify the Settings
+            </b></font>
+        </td>
+    </tr>
+
+    <tr>
+        <td valign="top" colspan=999>
+
+            <p><div style="float: right; width: 400px; margin: 5px 5px 5px 5px; padding: 5px; border: 0px solid Darkgray; text-align: left; ">
+            <table border="1" bgcolor="#d4efdf" width="100%">
+            	<tr>
+            		<td style="padding: 5px;">
+        	    		<b>Verification Checklist</b>
+        	    		<br>
+        	    		After installing a new system or making a substantial upgrade to an existing system, consider using this <a href="Documents/MDF RE 2.0 - Checklist, Control System for Multiple Stepper Motors.pdf">checklist</a> to verify everything works as is should.
+            		</td>
+	            </tr>
+            </table>
+            </div>
+
+
+            <p>It is a good practice to verify all of the settings once you've completed the steps.
+
+                <ol> 
+                    <li>Touch the Config button on each page and verify the Teensy column is populated with the same numbers as the Nextion column.  Repeat for each axis on each page.</li>
+                    
+                    <br>
+                    <li>Next verify the Preferences are correct for the Spindle, Axes, Limits, and Returns.</li>
+                    
+                    <br>
+                    <li>Select the Main page, then the '...' (Preferences) page.  
+                    <br>Select the More page. 
+                    <br>Touch EEPROM.  
+                    
+                    <p>Repeat for each page and axis on the page.  This will show all of the settings for the selected page.</li>
+                </ol>
+            
+            <p>If some settings are not loaded, that screen will not run or at least will not run properly.  Check your 4Axes.INI file against the latest one.  As noted in step 6b above, some key field designators have changed in later versions.
+        </td>
+    </tr>
+</table>
+
+<!-- ################################################### -->
+<!-- Footer                                                                                             -->
+<!-- ################################################### -->
+<hr class="style0">
+<font size="3">
+<table width="100%">
+    <col width="67%">
+    <col width="33%">
+
+    <tr valign="top">
+        <td align="left">
+            Questions or comments?  Contact us at
+            <br><a href="mailto:ColvinTools@Gmail.com?Subject=General" target="_new">ColvinTools@Gmail.com</a>
+        </td>
+        <td align="right">
+            <a href="../index-Disclaimers.html">Disclaimers</a>
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>

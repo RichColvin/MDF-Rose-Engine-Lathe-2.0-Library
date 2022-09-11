@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
+
+<!-- ################################################### -->
+<!-- Style Sheet for MathJax                                                                 -->
+<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+
+<!-- ################################################### -->
+<!-- Style Sheet for Horizontal Rule - Style 0                                       -->
+ <style>
+    hr.style0 {
+        border: 0;
+        height: 1px;
+        background-image: linear-gradient(to right,
+                rgba(184,134,11, 2),
+                rgba(184,134,11, 2),
+                rgba(184,134,11, 2));
+    }
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for Horizontal Rule - Style 1                                       -->
+ <style>
+    hr.style1 {
+        border: 0;
+        height: 3px;
+        background-image: linear-gradient(to right,
+            rgba(0, 0, 0, 0),
+                rgba(184,134,11, 2),
+            rgba(0, 0, 0, 0));
+    }
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for Horizontal Rule - Style 2                                       -->
+ <style>
+    hr.style2 {
+        border: 0;
+        height: 6px;
+        background-image: linear-gradient(to right,
+            rgba(0, 0, 0, 0),
+                rgba(184,134,11, 2),
+            rgba(0, 0, 0, 0));
+    }
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for indented paragraphs                                             -->
+<style>
+    .indented { padding-left: 33pt; padding-right: 33pt; }
+</style>
+
+<!-- ################################################### -->
+<!-- <body background="Images/Background.png"> -->
+	<font face="Georgia">
+
+<!-- ################################################### -->
+<!-- Style Sheet for header image max size                                         -->
+<!-- ################################################### -->
+<style>
+    img.Image { max-width: 500px;}
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for split screen                                                            -->
+<!-- ################################################### -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+    body {
+        font-family: Georgia;
+    }
+
+.split1 {
+  height: calc(260px);
+  min-width: 450px;
+  max-width: 450px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.split2 {
+  height: calc(100% - 130px);
+  width: calc(100% - 490px);
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.split3 {
+  height: calc(100% - 400px);
+  min-width: 450px;
+  max-width: 450px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 280px;
+}
+
+.left {
+  left: 0;
+  background-color: #111;
+}
+
+.right {
+  right: 0;
+  background-color: blue;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.centered img {
+  width: 150px;
+  border-radius: 50%;
+}
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for footer                                                                     -->
+<!-- ################################################### -->
+<style>
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: #E6E6E6;
+   text-align: center;
+}
+</style>
+
+<!-- ################################################### -->
+<!-- Header                                                                                           -->
+<!-- ################################################### -->
+
+<head bgcolor=#E6E6E6>
+    <title>MDF Rose Engine Lathe 2.0</title>
+    <link rel="shortcut icon" type="image/ico" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="Images/favicon.png">
+
+<font face="Georgia">
+
+<table width="100%" border=0>
+        <col width="10%">
+        <col width="*">
+        <col width="10%">
+
+    <tr valign="bottom">
+        <td align="left">
+            <a href = "javascript:history.back()"><img src="Images/BackButton.png" width="30px"></a>
+        </td>
+        <td align="center" valign="top">
+            <a href="MSMCS.html"><font color="DarkBlue" size="6"><b>
+                Control System for Multiple Stepper Motors</a>
+            </b></font>
+        </td>
+        <td align="right">
+            <a href="index.html"><img src="Images/Books.png" width="50px" class="Image"></a>
+        </td>
+    </tr>
+</table>
+
+</head>
+
+<!-- ################################################### -->
+<!-- Body - Right Side of the Screen                                                     -->
+<!-- ################################################### -->
+
+<body bgcolor=#E6E6E6 background="Images/DevBackground.png">
+
+    <div style="margin: 60px 5px 5px 5px; padding: 5px; border: 0px solid black; text-align: left;  background-color:#E6E6E6; background-image: url(Images/DevBackground.png);" class="split1 right" >
+    
+                <img src="Images/Nextion-Config-BAxis.jpg" width="100%" class="Image" alt="HTML Map" border="0" usemap="#html">
+                <map name = "html">
+                     <area shape = "rect" coords = "3,3,76,35" href = "MSMCS-Config-Spindle.html" target = "_self" />
+                     <area shape = "rect" coords = "3,40,76,72" href = "MSMCS-Config-ZAxis.html" target = "_self" />
+                     <area shape = "rect" coords = "3,77,76,109" href = "MSMCS-Config-XAxis.html" target = "_self" />
+                     <area shape = "rect" coords = "3,113,76,146" href = "MSMCS-Config-BAxis.html" target = "_self" />
+                     <area shape = "rect" coords = "3,150,76,183" href = "MSMCS-Config-Limits.html" target = "_self" />
+                     <area shape = "rect" coords = "3,186,76,220" href = "MSMCS-Config-Returns.html" target = "_self" />
+                     <area shape = "rect" coords = "3,222,76,257" href = "MSMCS-Config-More.html" target = "_self" />
+                     
+                     <area shape = "rect" coords = "374,3,446,33" href = "javascript:history.back()" target = "_self" />
+                </map>
+    </div>
+    
+    <div style="margin: 330px 5px 5px 5px; padding: 5px; border: 1px solid black; text-align: left;  background-color:#E6E6E6; background-image: url(Images/DevBackground.png);" class="split3 right" >
+
+        <table>
+                    <tr valign="Top">
+                        <td>
+                            <img src="Images/ButtonSettings-Back.png" width="75px">
+                        </td>
+                        <td>
+                            Used to return to the prior screen.
+                        </td>
+                    </tr>
+                    <tr><td colspan=999><hr></td></tr>
+                    <tr valign="Top">
+                        <td>
+                            <img src="Images/ButtonSettings-Refresh.png" width="75px">
+                        </td>
+                        <td>
+                            Used to refresh the values shown in the gray boxes.
+                        </td>
+                    </tr>
+                </table>
+    </div>
+
+<!-- ################################################### -->
+<!-- Body - Left Side of the Screen                                                       -->
+<!-- ################################################### -->
+
+    <div style="float: left; margin: 60px 5px 5px 5px; padding: 5px; border: 0px solid black; text-align: left;  background-color:#E6E6E6; background-image: url(Images/DevBackground.png);" class="split2 left" >
+        <table align="Center" border="0">
+            <tr height="35px">
+                <td align="Center" bgcolor="#3980C0" width="300px">
+                    <font color="White" size="4"><b>Preferences Screen</b></font>
+                </td>
+            </tr>
+        </table>
+
+        <p><div style="float: right; width: 200px; margin: 5px 5px 5px 5px; padding: 5px; border: 1px solid black; text-align: left; background-color:#3980C0">
+            <font color="White" size="2">Touch the buttons on the screen image to the right to see the details for the that screen.</font>
+        </div>
+
+        <b>Purpose:</b>  The factors on these screens control how speeds and distances are determined.
+            <ul>
+                <li>The values shown in a <span style="background-color: #FFEE9C">&nbsp;tan box&nbsp;</span> show values on the Nextion.  Touching one of the text boxes allows you to edit that value using the <a href="MSMCS-NumberPad.html">Number Pad</a> screen.</li>
+                <br>
+                <li>The values shown in a <span style="background-color: LightGray">&nbsp;gray box&nbsp;</span>  show the ones stored on the Teensy controller.  These are read only and should match the settings on the Nextion.</li>
+            </ul>
+
+        <hr class="style1">
+        
+        <p>Based on which screen is used to drive the <b>B Axis</b> movement these settings may or may not matter.
+            
+        <table border="1" width="100%">
+        <thead>
+            <tr bgcolor="#3980C0" valign="bottom">
+                <th width="50px" align="center">
+                    <font face="Georgia" color="White"><b>
+                    Screen
+                    </b></font>
+                </th>
+                <th width="*" align="center">
+                    <font face="Georgia" color="White"><b>
+                    Comments
+                    </b></font>
+                </th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr valign="top">
+                <td align="center" valign="middle">
+                    <a href="MSMCS-Main.html">Main</a>
+                    <br>
+                    <a href="MSMCS-Multi.html">Multi</a>
+                </td>
+                <td align="left">
+                    The speed setting (the right slider) on the respective screen is used to set the rate of motion.  There are no limits to the range of motion; however <a href="MSMCS-Config-Limits.html">limit switches</a> may be used on these two screens.
+                </td>
+            </tr>
+
+            <tr valign="top">
+                <td align="center" valign="middle">
+                    <a href="MSMCS-Grk.html">Grk</a>
+                    <br>
+                    <a href="MSMCS-Mov.html">Mov</a>
+                    <br>
+                    <a href="MSMCS-Rec.html">Rec</a> 
+                    <br>
+                    <a href="MSMCS-Sync.html">Sync</a>
+                </td>
+                <td align="left">
+                    Each these screens has fields to set 
+                        <ul>
+                            <li>the radius the distance from the center of rotation to the cutter. and</li>
+                            <li>the distance for the movement around the B axis (the length of the arc).</li>
+                        </ul>
+                            
+                    The fields and settings below are used to calculate how long to run the stepper motor to achieve the desired rotation.
+                </td>
+            </tr>
+
+            <tr valign="top">
+                <td align="center">
+                    <a href="MSMCS-Geo.html">Geo</a>
+                    <br>
+                    <a href="MSMCS-Ind.html">Ind</a>
+                </td>
+                <td align="left">
+                    <font face="Georgia" color="DarkGray">
+                    N/A:  B-Axis movement is not possible on these screens.
+                    </font>
+                </td>
+            </tr>
+        </table>
+
+        <table width="100%">
+            <tr valign="top">
+                <td colspan=999>
+                    <br>
+                    <br>
+                </td>
+            </tr>
+
+            <table width="100%">
+                <col width="110px">
+                <col width="*">
+
+                <tr valign="top">
+                    <td>
+                        <span style="background-color: #FFEE9C"><b>
+                       &nbsp;Microsteps&nbsp;
+                        </b></span>
+                    </td>
+                    <td>
+                        This must use valid values for the stepper driver, and is usually 1, 2, 4, 16, 32, 64, or 128.  These settings must match the switch settings on the stepper motor driver (<i>when using the StepperOnline DM542T</i>) or jumper settings on the PCB (<i>when using the Pololu DRV8825</i>).
+
+                        <br><br><b>32</b> is the designed value for the MDF Rose Engine Lathe 2.0 (as outlined in <a href = "Documents/MDF RE 2.0 - Instructions, Stepper Controls.pdf" target = "_self">Instructions for Building the Stepper Controls</a>).
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan=999>
+                       &nbsp;
+                    </td>
+                </tr>
+
+                <tr valign="top">
+                    <td>
+                        <span style="background-color: #FFEE9C"><b>
+                       &nbsp;Steps/360&nbsp;
+                        </b></span>
+                    </td>
+                    <td>
+                        This must use valid values for the stepper motor.  The typical step angle is 1.8&deg;, so this would be
+
+\[
+\frac{360 &deg;}{1.8 &deg;} = 200
+\]
+
+                        <b>200</b> is the designed value for the MDF Rose Engine Lathe 2.0 (as outlined in <a href = "Documents/MDF RE 2.0 - Instructions, Stepper Controls.pdf" target = "_self">Instructions for Building the Stepper Controls</a>).
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan=999>
+                       &nbsp;
+                    </td>
+                </tr>
+
+                <tr valign="top">
+                    <td>
+                        <b>
+                        Polarity
+                        </b>
+                    </td>
+                    <td>
+                        The <b>Polarity</b> High and Low radio buttons for both Spindle and Z Axis are set as:
+                        <br><br>
+
+                        <table>
+                            <tr valign="top">
+                                <td>
+                                    <b>High</b>
+                                </td>
+                                <td width="25px">
+                                    <img src="Images/CircleUnChecked.png" width="20px" height="20px">
+                                </td>
+                                <td>
+                                    High setting is for use for some external stepper drivers
+                                    <br><br>
+                                </td>
+                            </tr>
+                            <tr valign="top">
+                                <td>
+                                    <b>Low</b>
+                                </td>
+                                <td width="25px">
+                                    <img src="Images/CircleChecked.png" width="20px" height="20px">
+                                </td>
+                                <td>
+                                    Low is the default, which is the correct setting when using the StepperOnline DM542T or the Pololu DRV8825 Stepper Drivers.
+                                    <br><br>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+
+<!-- 
+            <div style="float: right; width: 200px; 5px 5px 5px 5px; padding: 5px; border: 1px solid black; text-align: center;  background-color:#E6E6E6; background-image: url(Images/DevBackground.png);">
+                <img  src="https://upload.wikimedia.org/wikipedia/commons/4/4c/CNAM-IMG_0602.jpg" width="100%">
+                <br>
+                <b>Worm Drive</b>
+            </div>
+   -->
+
+        <hr class="style1">
+   
+        <table>
+            <tr valign="top">
+                <td width="25px">
+                    <img src="Images/CircleChecked.png" width="20px" height="20px">
+                </td>
+                <td width="75px">
+                    <b>Radial</b>
+                </td>
+                <td>
+                    Used when the rotation is achieved using a <a href="https://en.wikipedia.org/wiki/Worm_drive">worm drive</a>.
+                </td>
+            </tr>
+
+            <tr valign="top">
+                <td colspan=999>
+                    <br>
+                </td>
+            </tr>
+
+            <tr valign="top">
+                <td colspan=2>
+                    <span style="background-color: #FFEE9C"><b>
+                   &nbsp;Gear Ratio&nbsp;
+                    </b></span>
+                </td>
+                <td>
+                    This is the gear ratio between the drive gear and the driven gear.  In this case, 150 roations of the drive gear (<i>AKA, the worm screw</i>) is required to achieve 1 rotation of the driven gear (<i>AKA, the worm wheel</i>).
+
+                    <p>When configured as a radial axis for a spherical device it uses a calculated distance along the circumference based on the radius length between the spherical device pivot point and the cutter. The B Radius text box will appear on a page when the B axis is active and the B axis is set to Radial.
+                        
+                    <br><br><b>150</b> is the default value.
+                </td>
+            </tr>
+
+            <tr valign="top">
+                <td colspan=999>
+                    <hr class="style1">
+                </td>
+            </tr>
+
+            <tr valign="top">
+                <td width="25px">
+                    <img src="Images/CircleUnChecked.png" width="20px" height="20px">
+                </td>
+                <td>
+                    <b>Linear</b>
+                </td>
+                <td>
+                    Used when the rotation is achieved using a threaded rod (<i>AKA, a leadscrew</i>) pulling against a fixed point (i.e., a nut) which is levered away from the axis of rotation.
+                </td>
+            </tr>
+
+            <tr valign="top">
+                <td colspan=999>
+                    <br>
+                </td>
+            </tr>
+
+            <tr valign="top">
+                <td width="125px" colspan=2>
+                    <span style="background-color: #FFEE9C"><b>
+                   &nbsp;Distance / 360&nbsp;
+                    </b></span>
+                </td>
+                <td>
+                    <div style="float: right; width: 150px; 5px 5px 5px 5px; padding: 5px; border: 1px solid black; text-align: center;  background-color:#E6E6E6; background-image: url(Images/DevBackground.png);">
+                        <img  src="Images/BAxis-ThreadedRod-Pos1.png" width="100%">
+                        <br>
+                        <b>Faster Movement</b>
+                        <br>
+                        <img  src="Images/BAxis-ThreadedRod-Pos2.png" width="100%">
+                        <br>
+                        <b>Slower Movement</b>
+                    </div>
+                        
+                    This is the distance the fixed point (i.e., a nut) moves with each rotation of the threaded rod.  
+                        
+                    <p>Note:  when using linear movement, the rate of rotation varies as the fixed point moves (as outlined in the pictures to the right).  
+
+                    <p><b>0.1</b> is the default value.
+                </td>
+            </tr>
+
+            <tr valign="top">
+                <td colspan=999>
+                    <br>
+                </td>
+            </tr>
+
+            <tr valign="top">
+                <td colspan=2>
+                    <b>
+                    Leadscrew
+                    </b>
+                </td>
+                <td>
+                    Used to identify how the direction selection on the respective screen rotates the leadscrew to achieve the desired movement.  If it moves "backward" from what you think it should be, set it to be the opposite handedness.
+                </td>
+            </tr>
+
+            <tr valign="top">
+                <td colspan=2>
+                </td>
+                <td>
+                    <table>
+                        <tr valign="top">
+                            <td>
+                                <b>Left Hand</b>
+                            </td>
+                            <td width="25px">
+                                <img src="Images/CircleChecked.png" width="20px" height="20px">
+                            </td>
+                            <td>
+                                Used when the threads are left handed.
+                                <br><br>
+                            </td>
+                        </tr>
+                        
+                        <tr valign="top">
+                            <td width="90px">
+                                <b>Right Hand</b>
+                            </td>
+                            <td width="25px">
+                                <img src="Images/CircleUnChecked.png" width="20px" height="20px">
+                            </td>
+                            <td>
+                                Used when the threads are right handed.
+                            </td>
+                        </tr>
+                    </table>
+                    </td>
+                </tr>
+            </table>
+
+<!-- ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★  -->
+<!-- Starred Point -->
+
+        <table width="100%" border=0>
+            <tr valign="top">
+                <td width="25px">&nbsp;</td>
+
+                <td width="*">
+                    <div style="float: left; width: 30px; margin: 5px 5px 5px 5px; padding: 5px; border: 0px solid DarkGray; text-align: center;">
+                        <font color="red" size=6><b>&starf;</b></font>
+                    </div>
+                    
+                    <p><font color="Red" >
+                    Strongly recommend you take care when changing these.
+                    </font>
+                </td>
+
+                <td width="25px">&nbsp;</td>
+            </tr>
+        </table>
+
+        </td></tr>
+    </table>
+</div>
+
+<!-- ################################################### -->
+<!-- Footer                                                                                             -->
+<!-- ################################################### -->
+<div class="footer">
+    <hr class="style0">
+    <font size="3">
+    <table width="100%">
+        <col width="75%">
+        <col width="25%">
+
+        <tr valign="top">
+            <td align="left">
+                Questions or comments?  Contact us at
+                <br><a href="mailto:ColvinTools@Gmail.com?Subject=General" >ColvinTools@Gmail.com</a>
+            </td>
+            <td align="right">
+                <a href="../index-Disclaimers.html">Disclaimers</a>
+            </td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

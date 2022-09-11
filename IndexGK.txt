@@ -1,0 +1,18 @@
+; Nextion settings:
+; Segment Length: Any size.  Usually just far enough to clear workpiece during move.
+; Patterns Per 360: This controls how far the spindle will rotate.  Think of it like Index divisions.
+; Count: Number of individual patterns to do. 
+; S1 says there is only one radial pattern in the file.
+S1
+; A1 says there is only one axial pattern in file
+A1
+; Start pattern with the cutter plunged to working depth.
+; Move out
+O1
+; Move down 1 segment (Rotate spindle counterclockwise).
+D1
+; Move in to working depth.
+I1
+; End pattern
+E
+

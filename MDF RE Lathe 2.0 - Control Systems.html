@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
+
+<!-- ################################################### -->
+<!-- Style Sheet for header image max size                                         -->
+<style>
+    img.Image { max-width: 500px;}
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for Horizontal Rule - Style 0                                       -->
+ <style>
+    hr.style0 {
+        border: 0;
+        height: 1px;
+        background-image: linear-gradient(to right,
+                rgba(184,134,11, 2),
+                rgba(184,134,11, 2),
+                rgba(184,134,11, 2));
+    }
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for Horizontal Rule - Style 1                                       -->
+ <style>
+    hr.style1 {
+        border: 0;
+        height: 3px;
+        background-image: linear-gradient(to right,
+            rgba(0, 0, 0, 0),
+                rgba(184,134,11, 2),
+            rgba(0, 0, 0, 0));
+    }
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for Horizontal Rule - Style 2                                       -->
+ <style>
+    hr.style2 {
+        border: 0;
+        height: 6px;
+        background-image: linear-gradient(to right,
+            rgba(0, 0, 0, 0),
+                rgba(184,134,11, 2),
+            rgba(0, 0, 0, 0));
+    }
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for indented paragraphs                                             -->
+<style>
+    .indented { padding-left: 33pt; padding-right: 33pt; }
+</style>
+
+<!-- ################################################### -->
+<!-- Header                                                                                           -->
+<!-- ################################################### -->
+
+<head bgcolor=#E6E6E6>
+<title>MDF Rose Engine Lathe 2.0</title>
+<link rel="shortcut icon" type="image/ico" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="Images/favicon.png">
+
+<font face="Georgia">
+
+<table width="100%" border=0>
+        <col width="10%">
+        <col width="*">
+        <col width="10%">
+
+    <tr valign="bottom">
+        <td align="left">
+            <a href = "javascript:history.back()"><img src="Images/BackButton.png" width="30px"></a>
+        </td>
+        <td align="center" valign="top">
+            <font color="DarkBlue" size="6"><b>
+            Control Systems for MDF Rose Engine Lathes
+            <br>
+            &nbsp;
+            </font>
+            </b></font>
+        </td>
+        <td align="right">
+            <a href="index.html"><img src="Images/Books.png" width="50px" class="Image"></a>
+        </td>
+    </tr>
+</table>
+</head>
+
+<!-- ################################################### -->
+<!-- Body                                                                                               -->
+<!-- ################################################### -->
+
+<body bgcolor=#E6E6E6 background="Images/DevBackground.png">
+<font face="Georgia">
+
+<table border=1 width="100%">
+    <col width="*">
+	<col width="100px">
+	<col width="100px">
+	<col width="100px">
+
+<!-- ################################################### -->
+<!-- Heading -->
+    <tr bgcolor="moccasin">
+        <td valign="bottom" rowspan=2>
+            <font color="DarkBlue" size="5"><b>
+            Activity
+            </b></font>
+        </td>
+
+        <td align="center" valign="bottom" rowspan=2>
+            <font color="DarkBlue" size="5"><b>
+            Pololu Tic
+            </b></font>
+        </td>
+
+        <td align="center" valign="bottom" colspan=2>
+            <font color="DarkBlue" size="5"><b>
+            Teensy Version
+            </b></font>
+        </td>
+    </tr>
+
+    <tr bgcolor="moccasin">
+        <td align="center" valign="bottom">
+            <font color="DarkBlue" size="4"><b>
+            26
+            </b></font>
+        </td>
+
+        <td align="center" valign="bottom">
+            <font color="DarkBlue" size="4"><b>
+            3.0
+            </b></font>
+        </td>
+    </tr>
+
+<!-- ################################################### -->
+<!-- Stepper Motor Drive -->
+    <tr bgcolor="white">
+        <td align="left" valign="top">
+            <b>Stepper Motor Drive for Spindle</b>
+        </td>
+
+        <td align="center" valign="top">    <!-- Pololu Tic -->
+            &#9733;             <!-- Star -->
+        </td>
+
+        <td align="center" valign="top">    <!-- Teensy 26 -->
+            &#9733;             <!-- Star -->
+        </td>
+
+        <td align="center" valign="top">    <!-- Teensy 3.0 -->
+            &#9733;             <!-- Star -->
+        </td>
+    </tr>
+
+    <tr bgcolor="lightgray">
+        <td align="left" valign="top">
+            <b>Secondary Stepper Motor Drive for Rosette(s)</b> 
+            <i>rosette is rotated independently from the spindle; 
+            used for  
+
+            <ul style="margin-top: 0; margin-bottom: 0;">
+            	<li>non-standard phasing such as when using a crossing wheel,</li>
+            	<li>rosette lobe multiplication, or</li>
+            	<li>spiraling a rosette's pattern along an axis</li>
+            </ul>
+             
+            </i>
+        </td>
+
+        <td align="center" valign="top">    <!-- Pololu Tic -->
+        </td>
+
+        <td align="center" valign="top">    <!-- Teensy 26 -->
+        </td>
+
+        <td align="center" valign="top">    <!-- Teensy 3.0 -->
+            &#9733;             <!-- Star -->
+        </td>
+    </tr>
+
+<!-- ################################################### -->
+<!-- Indexing -->
+    <tr bgcolor="white">
+        <td align="left" valign="top" colspan=999>
+            <b>Indexing</b>
+        </td>
+    </tr>
+
+    <tr bgcolor="white">
+        <td align="left" valign="top">
+            <ul style="margin-top: 0; margin-bottom: 0;">
+            	<li>Spindle</li>
+            </ul>
+        </td>
+
+        <td align="center" valign="top">    <!-- Pololu Tic -->
+        </td>
+
+        <td align="center" valign="top">    <!-- Teensy 26 -->
+            &#9733;             <!-- Star -->
+        </td>
+
+        <td align="center" valign="top">    <!-- Teensy 3.0 -->
+            &#9733;             <!-- Star -->
+        </td>
+    </tr>
+
+    <tr bgcolor="white">
+        <td align="left" valign="top">
+            <ul style="margin-top: 0; margin-bottom: 0;">
+            	<li>Secondary Axis <i>(e.g., for a <a href="https://www.otbok.info/OT%20-%20LnT-Term-Chuck-Dome.html" target="_new">Dome Chuck</a> or a <a href="https://www.otbok.info/OT%20-%20LnT-Term-Chuck-Straightline.html" target="_new">Straightline Chuck</a>)</i></li>
+            </ul>
+        </td>
+
+        <td align="center" valign="top">    <!-- Pololu Tic -->
+        </td>
+
+        <td align="center" valign="top">    <!-- Teensy 26 -->
+        </td>
+
+        <td align="center" valign="top">    <!-- Teensy 3.0 -->
+            &#9733;             <!-- Star -->
+        </td>
+    </tr>
+
+<!-- ################################################### -->
+<!-- Linear Movement -->
+    <tr bgcolor="lightgray">
+        <td align="left" valign="top" colspan=999>
+            <b>Linear Movement</b> <i>(e.g., Z or X axis, such as when using a <a href="https://www.otbok.info/OT%20-%20LnT-Term-CurvilinearApparatus.html" target="_new">Curvilinear Slide</a>; or Y axis, such as when using a <a href="https://www.otbok.info/OT%20-%20LnT-Term-Chuck-Straightline.html" target="_new">Straightline Chuck</a>)</i>
+        </td>
+    </tr>
+
+    <tr bgcolor="lightgray">
+        <td align="left" valign="top">
+            <ul style="margin-top: 0; margin-bottom: 0;">
+            	<li>Single Axis</li>
+            </ul>
+        </td>
+
+        <td align="center" valign="top">    <!-- Pololu Tic -->
+        </td>
+
+        <td align="center" valign="top">    <!-- Teensy 26 -->
+            &#9733;             <!-- Star -->
+        </td>
+
+        <td align="center" valign="top">    <!-- Teensy 3.0 -->
+            &#9733;             <!-- Star -->
+        </td>
+    </tr>
+
+    <tr bgcolor="lightgray">
+        <td align="left" valign="top">
+            <ul style="margin-top: 0; margin-bottom: 0;">
+            	<li>Multiple Axes</li>
+            </ul>
+        </td>
+
+        <td align="center" valign="top">    <!-- Pololu Tic -->
+        </td>
+
+        <td align="center" valign="top">    <!-- Teensy 26 -->
+        </td>
+
+        <td align="center" valign="top">    <!-- Teensy 3.0 -->
+            &#9733;             <!-- Star -->
+        </td>
+    </tr>
+
+<!-- ################################################### -->
+<!-- Rotary Movement -->
+    <tr bgcolor="white">
+        <td align="left" valign="top" colspan=999>
+            <b>Rotary Movement</b> <i>(e.g., B axis, such as when using a <a href="https://www.otbok.info/OT%20-%20LnT-Term-SphericalSlide.html" target="_new">Spherical Slide</a>)</i>
+        </td>
+    </tr>
+
+    <tr bgcolor="white">
+        <td align="left" valign="top">
+            <ul style="margin-top: 0; margin-bottom: 0;">
+            	<li>Single Axis</li>
+            </ul>
+        </td>
+
+        <td align="center" valign="top">    <!-- Pololu Tic -->
+        </td>
+
+        <td align="center" valign="top">    <!-- Teensy 26 -->
+            &#9733;             <!-- Star -->
+        </td>
+
+        <td align="center" valign="top">    <!-- Teensy 3.0 -->
+            &#9733;             <!-- Star -->
+        </td>
+    </tr>
+
+    <tr bgcolor="white">
+        <td align="left" valign="top">
+            <ul style="margin-top: 0; margin-bottom: 0;">
+            	<li>Multiple Axes</li>
+            </ul>
+        </td>
+
+        <td align="center" valign="top">    <!-- Pololu Tic -->
+        </td>
+
+        <td align="center" valign="top">    <!-- Teensy 26 -->
+        </td>
+
+        <td align="center" valign="top">    <!-- Teensy 3.0 -->
+            &#9733;             <!-- Star -->
+        </td>
+    </tr>
+
+<!-- ################################################### -->
+<!-- Simulation of Mechanical Devices -->
+    <tr bgcolor="lightgray">
+        <td align="left" valign="top" colspan=999>
+            <b>Simulation of Mechanical Devices</b>
+        </td>
+    </tr>
+
+    <tr bgcolor="lightgray">
+        <td align="left" valign="top">
+            <ul style="margin-top: 0; margin-bottom: 0;">
+            	<li><a href="https://en.wikipedia.org/wiki/Meander_(art)" target="_new">Greek Key (Meander)</a></li>
+            </ul>
+        </td>
+
+        <td align="center" valign="top">    <!-- Pololu Tic -->
+        </td>
+
+        <td align="center" valign="top">    <!-- Teensy 26 -->
+            &#9733;             <!-- Star -->
+        </td>
+
+        <td align="center" valign="top">    <!-- Teensy 3.0 -->
+            &#9733;             <!-- Star -->
+        </td>
+    </tr>
+
+    <tr bgcolor="lightgray">
+        <td align="left" valign="top">
+            <ul style="margin-top: 0; margin-bottom: 0;">
+            	<li>Reciprocation</li>
+            </ul>
+        </td>
+
+        <td align="center" valign="top">    <!-- Pololu Tic -->
+        </td>
+
+        <td align="center" valign="top">    <!-- Teensy 26 -->
+            &#9733;             <!-- Star -->
+        </td>
+
+        <td align="center" valign="top">    <!-- Teensy 3.0 -->
+            &#9733;             <!-- Star -->
+        </td>
+    </tr>
+
+    <tr bgcolor="lightgray">
+        <td align="left" valign="top">
+            <ul style="margin-top: 0; margin-bottom: 0;">
+            	<li>Rose or single stage geometric chuck patterns </li>
+            </ul>
+        </td>
+
+        <td align="center" valign="top">    <!-- Pololu Tic -->
+        </td>
+
+        <td align="center" valign="top">    <!-- Teensy 26 -->
+            &#9733;             <!-- Star -->
+        </td>
+
+        <td align="center" valign="top">    <!-- Teensy 3.0 -->
+            &#9733;             <!-- Star -->
+        </td>
+    </tr>
+
+<!-- ################################################### -->
+<!-- Synchronized Movement -->
+    <tr bgcolor="white">
+        <td align="left" valign="top" colspan=999>
+            <b>Synchronized Movement</b>
+        </td>
+    </tr>
+
+    <tr bgcolor="white">
+        <td align="left" valign="top">
+            <ul style="margin-top: 0; margin-bottom: 0;">
+            	<li>Spindle + 1 axis</li>
+            </ul>
+        </td>
+
+        <td align="center" valign="top">    <!-- Pololu Tic -->
+        </td>
+
+        <td align="center" valign="top">    <!-- Teensy 26 -->
+            &#9733;             <!-- Star -->
+        </td>
+
+        <td align="center" valign="top">    <!-- Teensy 3.0 -->
+            &#9733;             <!-- Star -->
+        </td>
+    </tr>
+
+    <tr bgcolor="white">
+        <td align="left" valign="top">
+            <ul style="margin-top: 0; margin-bottom: 0;">
+            	<li>Multiple Axes <i>(including Spindle)</i></li>
+            </ul>
+        </td>
+
+        <td align="center" valign="top">    <!-- Pololu Tic -->
+        </td>
+
+        <td align="center" valign="top">    <!-- Teensy 26 -->
+        </td>
+
+        <td align="center" valign="top">    <!-- Teensy 3.0 -->
+            &#9733;             <!-- Star -->
+        </td>
+    </tr>
+
+</table>
+
+<!-- ################################################### -->
+<!-- Footer                                                                                             -->
+<!-- ################################################### -->
+<hr class="style0">
+<font size="3">
+<table width="100%">
+    <col width="67%">
+    <col width="33%">
+
+    <tr valign="top">
+        <td align="left">
+            Questions or comments?  Contact us at
+            <br><a href="mailto:ColvinTools@Gmail.com?Subject=General" target="_new">ColvinTools@Gmail.com</a>
+        </td>
+        <td align="right">
+            <a href="../index-Disclaimers.html">Disclaimers</a>
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>
