@@ -192,6 +192,7 @@
             <area shape = "rect" coords = "376,038,450,070" href = "MSMCS-Config-Limits.html" />
             <area shape = "rect" coords = "376,074,450,106" href = "MSMCS-Config-Returns.html" />
             <area shape = "rect" coords = "376,112,450,143" href = "MSMCS-Config-More.html" />                     
+            <area shape = "rect" coords = "376,217,450,252" href = "MSMCS-Config-More-LoadIni.html" />                     
 
             <area shape = "rect" coords = "375,001,446,033" href = "javascript:history.back()" />
         </map>
@@ -201,8 +202,14 @@
 
         <table>
             <tr valign="Top">
-                <td>
-                    <img src="Images/ButtonSettings-Back.png" width="75px">
+                <td width="50px">
+                    <table width="100%" border="0">
+                        <tr height="30px">
+                            <td align="Center" bgcolor="#55B5E5">
+                                <font color="Black" size="3" face="Arial"><b>Back</b></font>
+                            </td>
+                        </tr>
+                    </table>
                 </td>
                 <td>
                     Used to return to the prior screen.
@@ -210,6 +217,7 @@
             </tr>
         </table>
 
+<!-- Refresh Button ...
         <hr>
         <table width="100%">
             <tr valign="Top">
@@ -221,6 +229,34 @@
                 </td>
             </tr>
         </table>
+  -->
+
+        <hr>
+
+        <table width="100%">
+            <tr valign="Top">
+                <td width="50px">
+                    <table width="100%" border="0">
+                        <tr height="30px">
+                            <td align="Center" bgcolor="#55B5E5">
+                                <font color="Black" size="3" face="Arial"><b>B&amp;E</b></font>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                <td>
+                    This button will show the BE icon in the other page toolbars. Clicking on the icon will toggle visibility of the icon on and off.
+
+                    <p>Currently under development. 
+                     Only the Begin and End text boxes are active.  They show the distance or degrees an axis or the spindle has moved from the start of the last operation on another screen.  This can be used to verify the specified movement matches the actual movement.
+                </td>
+            </tr>
+        </table>
+
+        <center>
+            <img src="Images/Screens/B&E.jpg" width="450px">
+        </center>
+
     </div>
 
 <!-- ################################################### -->
@@ -249,6 +285,8 @@
         <hr class="style1">
 
         <p><b>Cutter Motor Pin</b> This is the pin number used for cutting the power on the overhead drive when the limit of travel has been reached.  This function is still in development.
+        
+        <p>More informataion about this is at <a href="MSMCS-Config-More-Auxillary-Pin.html">Auxiliary Pin Function</a>. 
             
         <hr class="style1">
 
@@ -261,32 +299,6 @@
                 <br>
                 <li>If you are using the <a href="https://www.pololu.com/product/2133" target="_new">DRV8825 stepper motor drivers</a>, it can be set either way.</li>
             </ul>
-
-        <hr class="style2">
-
-        <table width="100%">
-            <tr valign="Top">
-                <td>
-                    <table align="Center" border="0">
-                        <tr height="30px">
-                            <td align="Center" bgcolor="#55B5E5" width="225px">
-                                <font color="Black" size="3" face="Arial"><b>B&E</b></font>
-                            </td>
-                        </tr>
-                    </table>
-                </td>
-                <td>
-                    This button will show the BE icon in the other page toolbars. Clicking on the icon will toggle visibility of the icon on and off.
-
-                    <p>Currently under development. 
-                     Only the Begin and End text boxes are active.  They show the distance or degrees an axis or the spindle has moved from the start of the last operation on another screen.  This can be used to verify the specified movement matches the actual movement.
-                </td>
-            </tr>
-        </table>
-
-        <center>
-            <img src="Images/BE.jpg" width="450px">
-        </center>
 
         <hr class="style2">
 

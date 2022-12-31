@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
+
+<!-- ################################################### -->
+<!-- Style Sheet for header image max size                                         -->
+<style>
+    img.Image { max-width: 300px;}
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for Horizontal Rule - Style 1                                       -->
+ <style>
+    hr.style1 {
+        border: 0;
+        height: 3px;
+        background-image: linear-gradient(to right,
+            rgba(0, 0, 0, 0),
+                rgba(184,134,11, 2),
+            rgba(0, 0, 0, 0));
+    }
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for Horizontal Rule - Style 2                                       -->
+ <style>
+    hr.style2 {
+        border: 0;
+        height: 6px;
+        background-image: linear-gradient(to right,
+            rgba(0, 0, 0, 0),
+                rgba(184,134,11, 2),
+            rgba(0, 0, 0, 0));
+    }
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for indented paragraphs                                             -->
+<style>
+    .indented { padding-left: 33pt; padding-right: 33pt; }
+</style>
+
+<!-- ################################################### -->
+<!-- Header                                                                                           -->
+<!-- ################################################### -->
+
+<head bgcolor=#E6E6E6>
+    <title>MDF Rose Engine Lathe 2.0</title>
+    <link rel="shortcut icon" type="image/ico" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="Images/favicon.png">
+
+    <font face="Georgia">
+
+    <table width="100%">
+        <col width="10%">
+        <col width="*">
+        <col width="10%">
+
+        <tr valign="bottom">
+            <td align="left">
+                <a href = "javascript:history.back()"><img src="Images/BackButton.png" width="30px"></a>
+            </td>
+            <td align="center">
+                <a href="index.html"><img src="Images/CTLogo.png" width="100%" class="Image"></a>
+            </td>
+            <td align="right">
+                <a href="http://mdfre2.ColvinTools.com" ><IMG SRC="Images/Books.png" width="50px"></a>
+                <br>
+                <font size="2">
+                <a href="http://mdfre2.ColvinTools.com" >Library</a>
+                </font>
+            </td>
+        </tr>
+    </table>
+    
+    <hr>
+</head>
+
+<!-- ################################################### -->
+<!-- Body                                                                                               -->
+<!-- ################################################### -->
+<body bgcolor=#E6E6E6 background="Images/DevBackground.png">
+<font face="Georgia">
+
+<b><font color="darkblue" size="6">Auxiliary Pin Function</font></b>
+
+<table width="100%">
+<tr><td>
+
+<p><div style="float: left; width: 125px; margin: 5px 5px 5px 5px; padding: 5px; border: 1px solid Darkgray; text-align: center;  ">
+    <a href="Images/AuxPinSignalLight.png" target="_new"><img src="Images/AuxPinSignalLight.png" width="90%" /></a>
+    
+    <p style="margin-bottom: 0;"><b>Signal Light</b>
+</div>
+
+<p>When using certain functions (such as Sync and MultiSync), the final pass can take quite a long time -- many hours is not uncommon.  This function was requested so that a signal light can indicate when the activity is still underway.
+
+<p>The idea was to have a light (such as the one to the left) lit when activity is underway, and not lit when the activity has stopped.  This allows the operator to walk away from the machine when using these long-running operations, and monitor the activity periodically by glancing over to the machine to identify if the activity has stopped.
+
+<hr class="style1">
+<b><font color="darkblue" size="5">How It Works</font></b>
+
+<p><div style="float: right; width: 275px; margin: 5px 5px 5px 5px; padding: 5px; border: 0px solid Darkgray; text-align: left;  ">
+    <a href="Images/AuxPinFunction.png" target="_new"><img src="Images/AuxPinFunction.png" width="90%" style="padding: 5px; border: 1px solid Darkgray; " /></a>
+    
+    <b>Activity Pin Timing</b>
+
+    <p style="margin-bottom: 0;">
+    <table border="1" bgcolor="Moccasin" width="100%" align="left">
+	    <tr>
+		    <td style="padding: 5px;">
+			    <b>Activity Completion</b>
+						
+    	            <ol style="margin-bottom: 0;">
+                        <div style="float: right; width: 35px; margin: 5px 5px 5px 5px; padding: 5px; border: 0px solid Darkgray; text-align: center;  ">
+                            <img src="Images/Buttons/ButtonEStop-Stop.jpg" width="100%" />
+                        </div>
+	                    <li>When the user stops the activity using the stop button.</li>
+    	                <li>When the activity is completed on a function designed to run for a certain distance (e.g., Sync) or rotation (e.g., Index).</li>
+	                </ol>
+		    </td>
+    	</tr>
+    </table>
+</div>
+
+<p>The activity diagram on the right shows the timings.  
+
+<p>When an activity is initiated on the Nextion touch screen (the top line), the Teensy will take the output for the selected pin from 3.3 VDC to 0 VDC (the second line).
+
+<p>When that activity is completed, the Teensy will take the output for the selected pin from 0 VDC back up to 3.3 VDC.
+
+<p>When that activity is completed (e.g., when using Sync or MultiSync) or stopped by the user, the Teensy will take the output for the selected pin from 0 VDC back up to 3.3 VDC.
+
+<p>This output is then used to switch a relay.
+
+<p><b><font color="darkblue" size="4">Identifying the Pin Used</font></b>
+
+<p>Using the Config More panel, a pin is identified for this use (which matches the one wired for this use).
+    <ul>
+        <li>This must be a pin between 10 and 39.</li>
+            <ul>
+                <li>Anything above 39 disables this function.</li>
+            </ul>
+        
+        <br>
+        <li>This cannot be the same pin # used for the limit pins.</li>
+        
+        <br>
+        <li>This cannot be the same pin # used for the Stop pin.</li>
+    </ul>
+
+
+</td></tr>
+<tr><td>
+<hr class="style1">
+<b><font color="darkblue" size="5">Wiring The Components</font></b>
+
+<p><div style="float: right; width: 600px; margin: 5px 5px 5px 5px; padding: 5px; border: 1px solid Darkgray; text-align: center;  ">
+    <a href="Images/AuxPinRelay.png" target="_new"><img src="Images/AuxPinRelay.png" width="90%" /></a>
+</div>
+
+<p>The switching side of the relay (left side in the picture to the right) needs to be connected to the printed circuit board.
+
+    <ul>
+        <li><b>VCC</b> is connected to any place on the PCB which supplies 3.3 VDC.  Do not connect it to the 5 VDC point as that will overload the relay module.</li>
+        
+        <br>
+        <li><b>IN</b> is connected to the pin number on the PCB which corresponds to the one identified in the setup (Config More).</li>
+        
+        <br>
+        <li><b>GND</b> is connected to any place on the PCB which is the common GND.</li>
+    </ul>
+
+<p>The switched side of the relay (right side in the picture to the right) needs to be connected to the power supply for the signal lamp.
+
+    <ul>
+        <li><b>NC</b> (normally closed) is connected to the load supply for the signal lamp.</li>
+        
+        <br>
+        <li><b>COM</b> is connected to the load from the power supply.
+        
+        <p>This can be switched (as shown) to turn this function off if it is not needed.  The addition of the switch helps the usefulness of this as it is easy to enable or disable without having to go back into the configuration settings.  This also makes it so you don't have to remember which pin number was used fo the function.</li>
+        
+        <li><b>NO</b> (normally open) is not used.</li>
+        
+        <br>
+        <li>As shown, Neutral and GND are connected from the power supply to the signal lamp.</li>
+    </ul>
+
+</td></tr>
+<tr><td>
+<hr class="style1">
+<b><font color="darkblue" size="5">Parts</font></b>
+    <ul>
+        <li>The relay is a single channel relay which uses 3.3 VC for the switching, and switches 110V / 220V AC.  The one I purchased has an optical isolation circuit.  It was also purchased from Amazon.
+        
+        <p>Do not remove the two jumpers from the board.</li>
+        
+        <li>The activity light is an LED Signal Tower light powered by 110V / 220V AC.  It was purchased from Amazon.</li>
+
+    </ul>
+</td></tr>
+</table>
+
+<!-- ################################################### -->
+<!-- Footer                                                                                             -->
+<!-- ################################################### -->
+<hr>
+<font size="3">
+<table width="100%">
+    <col width="33%">
+    <col width="34%">
+    <col width="33%">
+
+    <tr valign="top">
+        <td align="left">
+            <a href="index-About.html">About us</a>
+        </td>
+        <td align="center">
+            Questions or comments?  Contact us at
+            <br><a href="mailto:ColvinTools@Gmail.com?Subject=General" >ColvinTools@Gmail.com</a>
+        </td>
+        <td align="right">
+            <a href="index-Disclaimers.html">Disclaimers</a>
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>
