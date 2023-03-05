@@ -104,67 +104,76 @@
 	    	var x = document.getElementById("frm1");
 
 		// ###################################################
-		// Get the Z Axis Target
-		//
-			fZ = Number(x.elements[0].value);
-			
-		// ###################################################
-		// Get the spindle stepover per revolution 
-		//
-			fStepover = Number(x.elements[1].value);
-
-		// ###################################################
-		// Get the amount of revolution of the rosette's pattern across the Z distance
-		//
-			fRosetteRev = Number(x.elements[2].value);
-
-		// ###################################################
-		// Get the final average diameter
-		//
-			fRootDia = Number(x.elements[3].value);
-
-		// ###################################################
 		// Get the rosette's actual number of lobes
 		//
-			iLobesActual = Number(x.elements[4].value);
+			iLobesActual = Number(x.elements[0].value);
 
 		// ###################################################
 		// Get the number of rosette lobes desired
 		//
-			iLobesDesired = Number(x.elements[5].value);
+			iLobesDesired = Number(x.elements[1].value);
+
+		// ###################################################
+		// Get the Z Axis Target
+		//
+			fZ = Number(x.elements[2].value);
+			
+		// ###################################################
+		// Get the spindle step-over per revolution 
+		//
+			fStepover = Number(x.elements[3].value);
+
+		// ###################################################
+		// Get the amount of revolution of the rosette's pattern across the Z distance
+		//
+			fRosetteRev = Number(x.elements[4].value);
+
+		// ###################################################
+		// Get the final average diameter
+		//
+			fRootDia = Number(x.elements[5].value);
+
+		// ###################################################
+		// Get the helix direction
+		//
+
+	       var bDirection = "Right";
+
+            const buttons = document.querySelectorAll("input[type='radio']");
+            if (buttons[0].checked) {
+                bDirection = "Right";
+        	} else {
+                bDirection = "Left";
+        	};
 
 		// ###################################################
 		// Calculate the Values
 		//
 
-		    var LobeMultiplier = iLobesDesired / iLobesActual;
+		    var fLobeMult = iLobesDesired / iLobesActual;
 
 		    var fZImp = fZ;
-    		document.getElementById("ZImpTgt1").innerHTML = fZImp.toFixed(1);
-    		document.getElementById("ZImpTgt2").innerHTML = fZImp.toFixed(1);
-    		document.getElementById("ZImpTgt3").innerHTML = fZImp.toFixed(1);
-    		document.getElementById("ZImpTgt4").innerHTML = fZImp.toFixed(1);
 
 		    var fRootDiaImp = fRootDia;
 
-		    var fSpTgtL = 360 * fZ / fStepover;
-    		document.getElementById("SpTgtL1").innerHTML = parseFloat(fSpTgtL.toFixed(0)).toLocaleString();
-    		document.getElementById("SpTgtL2").innerHTML = parseFloat(fSpTgtL.toFixed(0)).toLocaleString();
-    		document.getElementById("SpTgtR1").innerHTML = parseFloat(fSpTgtL.toFixed(0)).toLocaleString();
-    		document.getElementById("SpTgtR2").innerHTML = parseFloat(fSpTgtL.toFixed(0)).toLocaleString();
-
-		    var fM3TgtL = (fSpTgtL * LobeMultiplier) - fRosetteRev;
-    		document.getElementById("M3TgtL1").innerHTML = parseFloat(fM3TgtL.toFixed(0)).toLocaleString();
-    		document.getElementById("M3TgtL2").innerHTML = parseFloat(fM3TgtL.toFixed(0)).toLocaleString();
-
-		    var fM3TgtR = (fSpTgtL * LobeMultiplier) + fRosetteRev;
-    		document.getElementById("M3TgtR1").innerHTML =  parseFloat(fM3TgtR.toFixed(0)).toLocaleString();
-    		document.getElementById("M3TgtR2").innerHTML =  parseFloat(fM3TgtR.toFixed(0)).toLocaleString();
+		    var fSpTgt = 360 * fZ / fStepover;
+		    var fM3TgtL = (fSpTgt * fLobeMult) - fRosetteRev;
+		    var fM3TgtR = (fSpTgt * fLobeMult) + fRosetteRev;
 
             var fOpp = fRootDiaImp * Math.PI * (fRosetteRev / 360);
             var fAdj = fZ;
             var fUCFRotL = Math.atan(fOpp / fAdj) * 180 / Math.PI;
-    		document.getElementById("UCFRotL1").innerHTML = fUCFRotL.toFixed(1);
+
+    		document.getElementById("ZImpTgt").innerHTML = fZImp.toFixed(1);
+
+			if (bDirection == "Right") {
+        		document.getElementById("M3Tgt").innerHTML = parseFloat(fM3TgtR.toFixed(0)).toLocaleString();
+        	} else {
+        		document.getElementById("M3Tgt").innerHTML = parseFloat(fM3TgtL.toFixed(0)).toLocaleString();
+        	};
+
+    		document.getElementById("SpTgt").innerHTML = parseFloat(fSpTgt.toFixed(0)).toLocaleString();
+
     		document.getElementById("UCFRotR1").innerHTML = fUCFRotL.toFixed(1);
 		}
 	</script>
@@ -194,6 +203,52 @@
     </tr>
     <tr>
         <td>
+        <p><font size=5 color="darkgreen"><b>Rosette Multiplication</b></font>
+
+		<table border="1" width="100%">
+			<col width="200px">
+        	<col width="100px">
+        	<col width="*">
+
+			<tr bgcolor="White">
+				<td style="padding: 5px; ">
+				    Actual Rosette Lobes
+				</td>
+ 				<td align="Right" style="padding: 5px; ">
+ 					<input 
+	 						type="number"
+ 							style="font-size:14px; text-align: right; width: 55px; background-color:#FFEE9C" 
+ 							name="RosetteLobesActual" 
+							step='1' 
+							placeholder='0'
+ 							value=8
+						/>
+ 				</td>
+				<td style="padding: 5px; ">
+					Number of lobes on the rosette
+				</td>
+			</tr>
+
+			<tr bgcolor="White">
+				<td style="padding: 5px; ">
+				    Desired Rosette Lobes
+				</td>
+ 				<td align="Right" style="padding: 5px; ">
+ 					<input 
+	 						type="number"
+ 							style="font-size:14px; text-align: right; width: 55px; background-color:#FFEE9C" 
+ 							name="RosetteLobesDesired" 
+							step='1' 
+							placeholder='8' 
+ 							value=8
+						/>
+				</td>
+				<td style="padding: 5px; ">
+				    <p style="margin-top: 0; margin-bottom: 0;">Lobes desired
+	            </td>
+			</tr>
+		</table>
+
         <p><font size=5 color="darkgreen"><b>Rosette Phasing</b></font>
 
 		<table border="1" width="100%">
@@ -247,7 +302,7 @@
 
 			<tr bgcolor="White">
 				<td style="padding: 5px; ">
-					Rosette Revolution
+					Rosette Pattern Rotation
 				</td>
  				<td align="Right" style="padding: 5px; ">
  					<input 
@@ -284,53 +339,37 @@
 					Diameter of the object at the middle of the cutting.  This is used to calculate the rotation of the UCF.  If using this on a curvilinear slide, it is the average diameter of the piece.
 				</td>
 			</tr>
-		</table>
-
-        <p><font size=5 color="darkgreen"><b>Rosette Multiplication</b></font>
-
-		<table border="1" width="100%">
-			<col width="200px">
-        	<col width="100px">
-        	<col width="*">
 
 			<tr bgcolor="White">
 				<td style="padding: 5px; ">
-				    Actual Rosette Lobes
+					Rosette Pattern's Direction of Rotation
 				</td>
- 				<td align="Right" style="padding: 5px; ">
+ 				<td align="Left" style="padding: 5px; ">
  					<input 
-	 						type="number"
- 							style="font-size:14px; text-align: right; width: 55px; background-color:#FFEE9C" 
- 							name="RosetteLobesActual" 
-							step='1' 
-							placeholder='0'
- 							value=8
+	 						type="radio"
+ 							id="HelixRight"
+ 							name="HelixDir" 
+ 							value="HelixRight"
+ 							checked
 						/>
- 				</td>
-				<td style="padding: 5px; ">
-					Number of lobes on the rosette
-				</td>
-			</tr>
-
-			<tr bgcolor="White">
-				<td style="padding: 5px; ">
-				    Desired Rosette Lobes
-				</td>
- 				<td align="Right" style="padding: 5px; ">
+					<label for="HelixRight">Right</label>
+					
+					<br>
  					<input 
-	 						type="number"
- 							style="font-size:14px; text-align: right; width: 55px; background-color:#FFEE9C" 
- 							name="RosetteLobesDesired" 
-							step='1' 
-							placeholder='8' 
- 							value=8
+	 						type="radio"
+ 							id="HelixLeft" 
+ 							name="HelixDir"
+ 							value="HelixLeft"
 						/>
+					<label for="HelixLeft">Left</label>
+					
 				</td>
 				<td style="padding: 5px; ">
-				    <p style="margin-top: 0; margin-bottom: 0;">Lobes desired
-	            </td>
+				    This is the direction of the rotation of the rosette's pattern around the spindle axis.  A right (handed) helix is like a standard screw.
+				</td>
 			</tr>
 		</table>
+
 	    </td>
     </tr>
 </table>
@@ -342,705 +381,192 @@
         <td align="center">
             <font size=5 color="white"><b>Data Used on MultiSync Page</b></font>
         </td>
+        <td align="center">
+            <font size=5 color="white"><b>UCF Rotation</b></font>
+        </td>
     </tr>
+    
     <tr>
-        <td>
 
 <!-- ################################################### -->
-<!-- Right Helix -->
-        <p><font size=5 color="darkblue"><b>Right Helix</b></font>
+<!-- Data Used on MultiSync Page -->
+        <td width="50%">
+    		<table border="1" width="100%">
+            	<col width="100px">
+                <col width="50px">
+        	    <col width="50px">
+                <col width="*">
+        	    <col width="75px">
+        	    <col width="50px">
 
-		<table border="1" width="100%">
-            <tr bgcolor="darkblue">
-                <td align="center">
-                    <font size=3 color="white"><b>Cutting Away From Headstock</b></font>
-                </td>
-                <td align="center">
-                    <font size=3 color="white"><b>Cutting Towards Headstock</b></font>
-                </td>
-            </tr>
+			    <tr bgcolor="White">
+            	    <td align="center" style="padding: 5px; ">
+			        	<b>Run Single</b>
+            		</td>
+			        <td align="center" style="padding: 5px; ">
+   			 		    <b>&#10003;</b>
+            		</td>
+			        <td align="center" style="padding: 5px; ">
+					    <b>Dir</b>
+            		</td>
+			        <td align="center" style="padding: 5px; ">
+					    <b>Target</b>
+            		</td>
+			        <td align="center" style="padding: 5px; ">
+					    <b>Max Speed</b>
+            		</td>
+				    <td align="center" style="padding: 5px; ">
+            		    <b>%</b>
+			        </td>
+            	</tr>
 
-            <tr>
-                <td align="center" width="50%">
-<!-- ################################################### -->
-<!-- Right Helix 1 -->
-            		<table border="0" width="100%">
-            			<col width="100px">
-        	            <col width="50px">
-        	            <col width="50px">
-                    	<col width="*">
-        	            <col width="75px">
-        	            <col width="50px">
+	            <tr bgcolor="White">
+            	    <td bgcolor=LightGray align="center" style="padding: 5px; ">
+			            <b>Z</b>
+            		</td>
+     			    <td align="center" style="padding: 5px; ">
+             		   <font size=5>&#9635;</font>
+			        </td>
+                    <td align="center" valign="middle" bgcolor=#a3d6b3>
+                        <img src="Images/Buttons/GreenOut.jpg" width="40px">
+                    </td>
+ 			        <td align="center" bgcolor="Moccasin" style="padding: 5px; ">
+                        <font face="Arial" size="3px">
+                        <p id="ZImpTgt" style="margin: 0px; padding: 0px;"></p>
+   			 		    </font>
+            		</td>
+			        <td align="right" style="padding: 5px; ">
+				        5000
+            		</td>
+			        <td align="right" style="padding: 5px; ">
+            		    100
+			        </td>
+            	</tr>
 
-			            <tr bgcolor="White">
-            				<td align="center" style="padding: 5px; ">
-			            		<b>Run Single</b>
-            				</td>
-			            	<td align="center" style="padding: 5px; ">
-   			 		            <b>&#10003;</b>
-            				</td>
-			            	<td align="center" style="padding: 5px; ">
-					            <b>Dir</b>
-            				</td>
-			            	<td align="center" style="padding: 5px; ">
-					            <b>Target</b>
-            				</td>
-			            	<td align="center" style="padding: 5px; ">
-					            <b>Max Speed</b>
-            				</td>
-				            <td align="center" style="padding: 5px; ">
-            					<b>%</b>
-			            	</td>
-            			</tr>
+		        <tr bgcolor="White">
+        			<td bgcolor=LightGray align="center" style="padding: 5px; ">
+			            <b>X</b>
+                    </td>
+                    <td align="center" style="padding: 5px; ">
+         		       <font size=5>&#9634;</font>
+        			</td>
+     			    <td align="center" style="padding: 5px; ">
+            		    &nbsp;
+		            </td>
+     			    <td align="center" style="padding: 5px; ">
+            	        &nbsp;
+            		</td>
+     			    <td align="center" style="padding: 5px; ">
+        			    &nbsp;
+            		</td>
+     			    <td align="center" style="padding: 5px; ">
+            		    &nbsp;
+    				</td>
+	            </tr>
 
-			            <tr bgcolor="White">
-            				<td bgcolor=LightGray align="center" style="padding: 5px; ">
-			            		<b>Z</b>
-            				</td>
-     			           	<td align="center" style="padding: 5px; ">
-             				   <font size=5>&#9635;</font>
-			            	</td>
-                            <td align="center" valign="middle" bgcolor=#a3d6b3>
-                                <img src="Images/Buttons/GreenOut.jpg" width="40px">
-                            </td>
- 			               	<td align="center" bgcolor="Moccasin" style="padding: 5px; ">
-                                <font face="Arial" size="3px">
-                                <p id="ZImpTgt1" style="margin: 0px; padding: 0px;"></p>
-   			 		            </font>
-            				</td>
-			            	<td align="right" style="padding: 5px; ">
-				                5000
-            				</td>
-			            	<td align="right" style="padding: 5px; ">
-            				    100
-			            	</td>
-            			</tr>
+        		<tr bgcolor="White">
+			        <td bgcolor=LightGray align="center" style="padding: 5px; ">
+            			<b>M3</b>
+    				</td>
+     			    <td align="center" style="padding: 5px; ">
+             		   <font size=5>&#9635;</font>
+		            </td>
+                    <td align="center" valign="middle" bgcolor=#a3d6b3>
+                        <img src="Images/Buttons/GreenCW.jpg" width="40px">
+                    </td>
+ 	               	<td align="center" bgcolor="Moccasin" style="padding: 5px; ">
+                        <font face="Arial" size="3px">
+   			       		<p id="M3Tgt" style="margin: 0px; padding: 0px;"></p>
+   			 		    </font>
+            		</td>
+			        <td align="right" style="padding: 5px; ">
+		                15000
+            		</td>
+	                <td align="right" style="padding: 5px; ">
+            		    100
+	            	</td>
+	            </tr>
 
-			            <tr bgcolor="White">
-            				<td bgcolor=LightGray align="center" style="padding: 5px; ">
-					            <b>X</b>
-            				</td>
-            				<td align="center" style="padding: 5px; ">
-         				       <font size=5>&#9634;</font>
-            				</td>
-            				<td align="center" style="padding: 5px; ">
-            				    &nbsp;
-				            </td>
-            				<td style="padding: 5px; ">
-            				    &nbsp;
-            				</td>
-            				<td style="padding: 5px; ">
-            				    &nbsp;
-            				</td>
-            				<td style="padding: 5px; ">
-            				    &nbsp;
-            				</td>
-			            </tr>
+	            <tr bgcolor="White">
+            		<td bgcolor=LightGray align="center" style="padding: 5px; ">
+				        <b>M4</b>
+            		</td>
+            		<td align="center" style="padding: 5px; ">
+         			   <font size=5>&#9634;</font>
+            		</td>
+            		<td align="center" style="padding: 5px; ">
+            		    &nbsp;
+				    </td>
+            		<td style="padding: 5px; ">
+            		    &nbsp;
+            		</td>
+            		<td style="padding: 5px; ">
+            		    &nbsp;
+            		</td>
+            		<td style="padding: 5px; ">
+            		    &nbsp;
+            		</td>
+	            </tr>
 
-            			<tr bgcolor="White">
-			            	<td bgcolor=LightGray align="center" style="padding: 5px; ">
-            					<b>M3</b>
-            				</td>
-     			           	<td align="center" style="padding: 5px; ">
-             				   <font size=5>&#9635;</font>
-			            	</td>
-                            <td align="center" valign="middle" bgcolor=#a3d6b3>
-                                <img src="Images/Buttons/GreenCW.jpg" width="40px">
-                            </td>
- 			               	<td align="center" bgcolor="Moccasin" style="padding: 5px; ">
-                                <font face="Arial" size="3px">
-   			              		<p id="M3TgtL1" style="margin: 0px; padding: 0px;"></p>
-   			 		            </font>
-            				</td>
-			            	<td align="right" style="padding: 5px; ">
-				                15000
-            				</td>
-			            	<td align="right" style="padding: 5px; ">
-            				    100
-			            	</td>
-			            </tr>
-
-			            <tr bgcolor="White">
-            				<td bgcolor=LightGray align="center" style="padding: 5px; ">
-					            <b>M4</b>
-            				</td>
-            				<td align="center" style="padding: 5px; ">
-         				       <font size=5>&#9634;</font>
-            				</td>
-            				<td align="center" style="padding: 5px; ">
-            				    &nbsp;
-				            </td>
-            				<td style="padding: 5px; ">
-            				    &nbsp;
-            				</td>
-            				<td style="padding: 5px; ">
-            				    &nbsp;
-            				</td>
-            				<td style="padding: 5px; ">
-            				    &nbsp;
-            				</td>
-			            </tr>
-
-            			<tr bgcolor="White">
-			            	<td bgcolor=LightGray align="center" style="padding: 5px; ">
-            					<b>Spindle</b>
-            				</td>
-     			           	<td align="center" style="padding: 5px; ">
-             				   <font size=5>&#9635;</font>
-			            	</td>
-                            <td align="center" valign="middle" bgcolor=#a3d6b3>
-                                <img src="Images/Buttons/GreenCW.jpg" width="40px">
-                            </td>
- 			               	<td align="center" bgcolor="Moccasin" style="padding: 5px; ">
-                                <font face="Arial" size="3px">
-   			              		<p id="SpTgtL1" style="margin: 0px; padding: 0px;"></p>
-   			 		            </font>
-            				</td>
-			            	<td align="right" style="padding: 5px; ">
-				                &nbsp;
-            				</td>
-			            	<td align="right" style="padding: 5px; ">
-				                &nbsp;
-			            	</td>
-			            </tr>
-                    </table>
-				</td>
-
-<!-- ################################################### -->
-<!-- Right Helix 2 -->
-                <td align="center" width="50%">
-            		<table border="0" width="100%">
-            			<col width="100px">
-        	            <col width="50px">
-        	            <col width="50px">
-                    	<col width="*">
-        	            <col width="75px">
-        	            <col width="50px">
-
-			            <tr bgcolor="White">
-            				<td align="center" style="padding: 5px; ">
-			            		<b>Run Single</b>
-            				</td>
-			            	<td align="center" style="padding: 5px; ">
-   			 		            <b>&#10003;</b>
-            				</td>
-			            	<td align="center" style="padding: 5px; ">
-					            <b>Dir</b>
-            				</td>
-			            	<td align="center" style="padding: 5px; ">
-					            <b>Target</b>
-            				</td>
-			            	<td align="center" style="padding: 5px; ">
-					            <b>Max Speed</b>
-            				</td>
-				            <td align="center" style="padding: 5px; ">
-            					<b>%</b>
-			            	</td>
-            			</tr>
-
-			            <tr bgcolor="White">
-            				<td bgcolor=LightGray align="center" style="padding: 5px; ">
-			            		<b>Z</b>
-            				</td>
-     			           	<td align="center" style="padding: 5px; ">
-             				   <font size=5>&#9635;</font>
-			            	</td>
-                            <td align="center" valign="middle" bgcolor=#ffb3b6>
-                                <img src="Images/Buttons/PinkIn.jpg" width="40px">
-                            </td>
- 			               	<td align="center" bgcolor="Moccasin" style="padding: 5px; ">
-                                <font face="Arial" size="3px">
-                                <p id="ZImpTgt2" style="margin: 0px; padding: 0px;"></p>
-   			 		            </font>
-            				</td>
-			            	<td align="right" style="padding: 5px; ">
-				                5000
-            				</td>
-			            	<td align="right" style="padding: 5px; ">
-            				    100
-			            	</td>
-            			</tr>
-
-			            <tr bgcolor="White">
-            				<td bgcolor=LightGray align="center" style="padding: 5px; ">
-					            <b>X</b>
-            				</td>
-            				<td align="center" style="padding: 5px; ">
-         				       <font size=5>&#9634;</font>
-            				</td>
-            				<td align="center" style="padding: 5px; ">
-            				    &nbsp;
-				            </td>
-            				<td style="padding: 5px; ">
-            				    &nbsp;
-            				</td>
-            				<td style="padding: 5px; ">
-            				    &nbsp;
-            				</td>
-            				<td style="padding: 5px; ">
-            				    &nbsp;
-            				</td>
-			            </tr>
-
-            			<tr bgcolor="White">
-			            	<td bgcolor=LightGray align="center" style="padding: 5px; ">
-            					<b>M3</b>
-            				</td>
-     			           	<td align="center" style="padding: 5px; ">
-             				   <font size=5>&#9635;</font>
-			            	</td>
-                            <td align="center" valign="middle" bgcolor=#ffb3b6>
-                                <img src="Images/Buttons/PinkCCW.jpg" width="40px">
-                            </td>
- 			               	<td align="center" bgcolor="Moccasin" style="padding: 5px; ">
-                                <font face="Arial" size="3px">
-   			              		<p id="M3TgtL2" style="margin: 0px; padding: 0px;"></p>
-   			 		            </font>
-            				</td>
-			            	<td align="right" style="padding: 5px; ">
-				                15000
-            				</td>
-			            	<td align="right" style="padding: 5px; ">
-            				    100
-			            	</td>
-			            </tr>
-
-			            <tr bgcolor="White">
-            				<td bgcolor=LightGray align="center" style="padding: 5px; ">
-					            <b>M4</b>
-            				</td>
-            				<td align="center" style="padding: 5px; ">
-         				       <font size=5>&#9634;</font>
-            				</td>
-            				<td align="center" style="padding: 5px; ">
-            				    &nbsp;
-				            </td>
-            				<td style="padding: 5px; ">
-            				    &nbsp;
-            				</td>
-            				<td style="padding: 5px; ">
-            				    &nbsp;
-            				</td>
-            				<td style="padding: 5px; ">
-            				    &nbsp;
-            				</td>
-			            </tr>
-
-            			<tr bgcolor="White">
-			            	<td bgcolor=LightGray align="center" style="padding: 5px; ">
-            					<b>Spindle</b>
-            				</td>
-     			           	<td align="center" style="padding: 5px; ">
-             				   <font size=5>&#9635;</font>
-			            	</td>
-                            <td align="center" valign="middle" bgcolor=#ffb3b6>
-                                <img src="Images/Buttons/PinkCCW.jpg" width="40px">
-                            </td>
- 			               	<td align="center" bgcolor="Moccasin" style="padding: 5px; ">
-                                <font face="Arial" size="3px">
-   			              		<p id="SpTgtL2" style="margin: 0px; padding: 0px;"></p>
-   			 		            </font>
-            				</td>
-			            	<td align="right" style="padding: 5px; ">
-				                &nbsp;
-            				</td>
-			            	<td align="right" style="padding: 5px; ">
-				                &nbsp;
-			            	</td>
-			            </tr>
-                    </table>
-				</td>
-			</tr>
-        </table>		
-
+            	<tr bgcolor="White">
+			        <td bgcolor=LightGray align="center" style="padding: 5px; ">
+            		    <b>Spindle</b>
+            		</td>
+     			    <td align="center" style="padding: 5px; ">
+             		   <font size=5>&#9635;</font>
+			        </td>
+                    <td align="center" valign="middle" bgcolor=#a3d6b3>
+                        <img src="Images/Buttons/GreenCW.jpg" width="40px">
+                    </td>
+ 			        <td align="center" bgcolor="Moccasin" style="padding: 5px; ">
+                        <font face="Arial" size="3px">
+   			            <p id="SpTgt" style="margin: 0px; padding: 0px;"></p>
+   			 		    </font>
+            		</td>
+			        <td align="right" style="padding: 5px; ">
+				        &nbsp;
+            		</td>
+			        <td align="right" style="padding: 5px; ">
+				        &nbsp;
+			        </td>
+	            </tr>
+            </table>
+		</td>
 
 <!-- ################################################### -->
 <!-- UCF Rotation -->
-		<p>
-		<table border=1 align="center" width="400px">
-            <col width="*">
-            <col width="5px">
-            <col width="250px">
-            <col width="50px">
-
-			<tr>
-				<td align="center" colspan=999 style="padding: 5px; ">
-                    <font size=4><b>UCF Rotation</b></font>					
-				</td>
-			</tr>
-			
-			<tr>
- 				<td align="Center" bgcolor="Moccasin" style="padding: 5px; ">
-                    <font face="Arial" size="3px">
-   			 		<p id="UCFRotR1" style="margin: 0px; padding: 0px;"></p>
-   			 		</font>
-				</td>
- 				<td align="Left" style="padding: 5px; ">
- 				   &deg;
-				</td>
- 				<td align="Left" style="padding: 5px; ">
-                    Direction of rotation, as seen from the operator's side.
-				</td>
- 				<td align="Left" style="padding: 5px; ">
-                    <img src="Images/Buttons/EmptyCW.png" width="40px">
-				</td>
-			</tr>
-		</table>
-	    </td>
+        <td width="50%">
+    		<table border=1 align="center" >
+    			<tr>
+ 	   			    <td align="Center" bgcolor="Moccasin" width="100px" style="padding: 5px; ">
+                        <font face="Arial" size="3px">
+   			 		    <p id="UCFRotR1" style="margin: 0px; padding: 0px;"></p>
+   			 		    </font>
+    				</td>
+ 	       			<td align="Left" width="5px" style="padding: 5px; ">
+ 			       	   &deg;
+				    </td>
+<!-- 
+ 				   <td align="Left" width="250px" style="padding: 5px; ">
+                        Direction of rotation, as seen from the operator's side.
+	    			</td>
+ 		   	    	<td align="Left" width="50px" style="padding: 5px; ">
+                        <img src="Images/Buttons/EmptyCW.png" width="40px">
+    				</td>
+ -->
+ 	    		</tr>
+		    </table>
+		</td>
     </tr>
-    <tr bgcolor="#f0e6ff">
-        <td>
-<!-- ################################################### -->
-<!-- Left Helix -->
-        <p><font size=5 color="#3d0099"><b>Left Helix</b></font>
+</table>		
+</form>
 
-		<table border="1" width="100%">
-            <tr bgcolor="#3d0099">
-                <td align="center">
-                    <font size=3 color="white"><b>Cutting Away From Headstock</b></font>
-                </td>
-                <td align="center">
-                    <font size=3 color="white"><b>Cutting Towards Headstock</b></font>
-                </td>
-            </tr>
-
-            <tr>
-                <td align="center" width="50%">
-<!-- ################################################### -->
-<!-- Left Helix 1 -->
-            		<table border="0" width="100%">
-            			<col width="100px">
-        	            <col width="50px">
-        	            <col width="50px">
-                    	<col width="*">
-        	            <col width="75px">
-        	            <col width="50px">
-
-			            <tr bgcolor="White">
-            				<td align="center" style="padding: 5px; ">
-			            		<b>Run Single</b>
-            				</td>
-			            	<td align="center" style="padding: 5px; ">
-   			 		            <b>&#10003;</b>
-            				</td>
-			            	<td align="center" style="padding: 5px; ">
-					            <b>Dir</b>
-            				</td>
-			            	<td align="center" style="padding: 5px; ">
-					            <b>Target</b>
-            				</td>
-			            	<td align="center" style="padding: 5px; ">
-					            <b>Max Speed</b>
-            				</td>
-				            <td align="center" style="padding: 5px; ">
-            					<b>%</b>
-			            	</td>
-            			</tr>
-
-			            <tr bgcolor="White">
-            				<td bgcolor=LightGray align="center" style="padding: 5px; ">
-			            		<b>Z</b>
-            				</td>
-     			           	<td align="center" style="padding: 5px; ">
-             				   <font size=5>&#9635;</font>
-			            	</td>
-                            <td align="center" valign="middle" bgcolor=#a3d6b3>
-                                <img src="Images/Buttons/GreenOut.jpg" width="40px">
-                            </td>
- 			               	<td align="center" bgcolor="Moccasin" style="padding: 5px; ">
-                                <font face="Arial" size="3px">
-                                <p id="ZImpTgt3" style="margin: 0px; padding: 0px;"></p>
-   			 		            </font>
-            				</td>
-			            	<td align="right" style="padding: 5px; ">
-				                5000
-            				</td>
-			            	<td align="right" style="padding: 5px; ">
-            				    100
-			            	</td>
-            			</tr>
-
-			            <tr bgcolor="White">
-            				<td bgcolor=LightGray align="center" style="padding: 5px; ">
-					            <b>X</b>
-            				</td>
-            				<td align="center" style="padding: 5px; ">
-         				       <font size=5>&#9634;</font>
-            				</td>
-            				<td align="center" style="padding: 5px; ">
-            				    &nbsp;
-				            </td>
-            				<td style="padding: 5px; ">
-            				    &nbsp;
-            				</td>
-            				<td style="padding: 5px; ">
-            				    &nbsp;
-            				</td>
-            				<td style="padding: 5px; ">
-            				    &nbsp;
-            				</td>
-			            </tr>
-
-            			<tr bgcolor="White">
-			            	<td bgcolor=LightGray align="center" style="padding: 5px; ">
-            					<b>M3</b>
-            				</td>
-     			           	<td align="center" style="padding: 5px; ">
-             				   <font size=5>&#9635;</font>
-			            	</td>
-                            <td align="center" valign="middle" bgcolor=#ffb3b6>
-                                <img src="Images/Buttons/PinkCCW.jpg" width="40px">
-                            </td>
- 			               	<td align="center" bgcolor="Moccasin" style="padding: 5px; ">
-                                <font face="Arial" size="3px">
-   			              		<p id="M3TgtR1" style="margin: 0px; padding: 0px;"></p>
-   			 		            </font>
-            				</td>
-			            	<td align="right" style="padding: 5px; ">
-				                15000
-            				</td>
-			            	<td align="right" style="padding: 5px; ">
-            				    100
-			            	</td>
-			            </tr>
-
-			            <tr bgcolor="White">
-            				<td bgcolor=LightGray align="center" style="padding: 5px; ">
-					            <b>M4</b>
-            				</td>
-            				<td align="center" style="padding: 5px; ">
-         				       <font size=5>&#9634;</font>
-            				</td>
-            				<td align="center" style="padding: 5px; ">
-            				    &nbsp;
-				            </td>
-            				<td style="padding: 5px; ">
-            				    &nbsp;
-            				</td>
-            				<td style="padding: 5px; ">
-            				    &nbsp;
-            				</td>
-            				<td style="padding: 5px; ">
-            				    &nbsp;
-            				</td>
-			            </tr>
-
-            			<tr bgcolor="White">
-			            	<td bgcolor=LightGray align="center" style="padding: 5px; ">
-            					<b>Spindle</b>
-            				</td>
-     			           	<td align="center" style="padding: 5px; ">
-             				   <font size=5>&#9635;</font>
-			            	</td>
-                            <td align="center" valign="middle" bgcolor=#ffb3b6>
-                                <img src="Images/Buttons/PinkCCW.jpg" width="40px">
-                            </td>
- 			               	<td align="center" bgcolor="Moccasin" style="padding: 5px; ">
-                                <font face="Arial" size="3px">
-   			              		<p id="SpTgtR1" style="margin: 0px; padding: 0px;"></p>
-   			 		            </font>
-            				</td>
-			            	<td align="right" style="padding: 5px; ">
-				                &nbsp;
-            				</td>
-			            	<td align="right" style="padding: 5px; ">
-				                &nbsp;
-			            	</td>
-			            </tr>
-                    </table>
-				</td>
-
-<!-- ################################################### -->
-<!-- Left Helix 2 -->
-                <td align="center" width="50%">
-            		<table border="0" width="100%">
-            			<col width="100px">
-        	            <col width="50px">
-        	            <col width="50px">
-                    	<col width="*">
-        	            <col width="75px">
-        	            <col width="50px">
-
-			            <tr bgcolor="White">
-            				<td align="center" style="padding: 5px; ">
-			            		<b>Run Single</b>
-            				</td>
-			            	<td align="center" style="padding: 5px; ">
-   			 		            <b>&#10003;</b>
-            				</td>
-			            	<td align="center" style="padding: 5px; ">
-					            <b>Dir</b>
-            				</td>
-			            	<td align="center" style="padding: 5px; ">
-					            <b>Target</b>
-            				</td>
-			            	<td align="center" style="padding: 5px; ">
-					            <b>Max Speed</b>
-            				</td>
-				            <td align="center" style="padding: 5px; ">
-            					<b>%</b>
-			            	</td>
-            			</tr>
-
-			            <tr bgcolor="White">
-            				<td bgcolor=LightGray align="center" style="padding: 5px; ">
-			            		<b>Z</b>
-            				</td>
-     			           	<td align="center" style="padding: 5px; ">
-             				   <font size=5>&#9635;</font>
-			            	</td>
-                            <td align="center" valign="middle" bgcolor=#ffb3b6>
-                                <img src="Images/Buttons/PinkIn.jpg" width="40px">
-                            </td>
- 			               	<td align="center" bgcolor="Moccasin" style="padding: 5px; ">
-                                <font face="Arial" size="3px">
-                                <p id="ZImpTgt4" style="margin: 0px; padding: 0px;"></p>
-   			 		            </font>
-            				</td>
-			            	<td align="right" style="padding: 5px; ">
-				                5000
-            				</td>
-			            	<td align="right" style="padding: 5px; ">
-            				    100
-			            	</td>
-            			</tr>
-
-			            <tr bgcolor="White">
-            				<td bgcolor=LightGray align="center" style="padding: 5px; ">
-					            <b>X</b>
-            				</td>
-            				<td align="center" style="padding: 5px; ">
-         				       <font size=5>&#9634;</font>
-            				</td>
-            				<td align="center" style="padding: 5px; ">
-            				    &nbsp;
-				            </td>
-            				<td style="padding: 5px; ">
-            				    &nbsp;
-            				</td>
-            				<td style="padding: 5px; ">
-            				    &nbsp;
-            				</td>
-            				<td style="padding: 5px; ">
-            				    &nbsp;
-            				</td>
-			            </tr>
-
-            			<tr bgcolor="White">
-			            	<td bgcolor=LightGray align="center" style="padding: 5px; ">
-            					<b>M3</b>
-            				</td>
-     			           	<td align="center" style="padding: 5px; ">
-             				   <font size=5>&#9635;</font>
-			            	</td>
-                            <td align="center" valign="middle" bgcolor=#a3d6b3>
-                                <img src="Images/Buttons/GreenCW.jpg" width="40px">
-                            </td>
- 			               	<td align="center" bgcolor="Moccasin" style="padding: 5px; ">
-                                <font face="Arial" size="3px">
-   			              		<p id="M3TgtR2" style="margin: 0px; padding: 0px;"></p>
-   			 		            </font>
-            				</td>
-			            	<td align="right" style="padding: 5px; ">
-				                15000
-            				</td>
-			            	<td align="right" style="padding: 5px; ">
-            				    100
-			            	</td>
-			            </tr>
-
-			            <tr bgcolor="White">
-            				<td bgcolor=LightGray align="center" style="padding: 5px; ">
-					            <b>M4</b>
-            				</td>
-            				<td align="center" style="padding: 5px; ">
-         				       <font size=5>&#9634;</font>
-            				</td>
-            				<td align="center" style="padding: 5px; ">
-            				    &nbsp;
-				            </td>
-            				<td style="padding: 5px; ">
-            				    &nbsp;
-            				</td>
-            				<td style="padding: 5px; ">
-            				    &nbsp;
-            				</td>
-            				<td style="padding: 5px; ">
-            				    &nbsp;
-            				</td>
-			            </tr>
-
-            			<tr bgcolor="White">
-			            	<td bgcolor=LightGray align="center" style="padding: 5px; ">
-            					<b>Spindle</b>
-            				</td>
-     			           	<td align="center" style="padding: 5px; ">
-             				   <font size=5>&#9635;</font>
-			            	</td>
-                            <td align="center" valign="middle" bgcolor=#a3d6b3>
-                                <img src="Images/Buttons/GreenCW.jpg" width="40px">
-                            </td>
- 			               	<td align="center" bgcolor="Moccasin" style="padding: 5px; ">
-                                <font face="Arial" size="3px">
-   			              		<p id="SpTgtR2" style="margin: 0px; padding: 0px;"></p>
-   			 		            </font>
-            				</td>
-			            	<td align="right" style="padding: 5px; ">
-				                &nbsp;
-            				</td>
-			            	<td align="right" style="padding: 5px; ">
-				                &nbsp;
-			            	</td>
-			            </tr>
-                    </table>
-				</td>
-			</tr>
-		</table>
-
-<!-- ################################################### -->
-<!-- UCF Rotation -->
-		<p>
-		<table border=1 align="center" width="400px">
-            <col width="*">
-            <col width="5px">
-            <col width="250px">
-            <col width="50px">
-
-			<tr>
-				<td align="center" colspan=999 style="padding: 5px; ">
-                    <font size=4><b>UCF Rotation</b></font>					
-				</td>
-			</tr>
-			
-			<tr>
- 				<td align="Center" bgcolor="Moccasin" style="padding: 5px; ">
-                    <font face="Arial" size="3px">
-   			 		<p id="UCFRotL1" style="margin: 0px; padding: 0px;"></p>
-   			 		</font>
-				</td>
- 				<td align="Left" style="padding: 5px; ">
- 				   &deg;
-				</td>
- 				<td align="Left" style="padding: 5px; ">
-                    Direction of rotation, as seen from the operator's side.
-				</td>
- 				<td align="Left" style="padding: 5px; ">
-                    <img src="Images/Buttons/EmptyCCW.png" width="40px">
-				</td>
-			</tr>
-		</table>
-	    </td>
-    </tr>
-</table>
-
-	</form>
-
-    <p>
-	<center>
-	    <button autofocus type="button" onclick="calcValues()" style="font-size:20px; background-color: #0404B4; color: white;">
-		Calculate MultiSync Values
-	    </button>
-	</center>
+<p>
+<center>
+    <button autofocus type="button" onclick="calcValues()" style="font-size:20px; background-color: #0404B4; color: white;">
+	Calculate MultiSync Values
+    </button>
+</center>
 
 <!-- ################################################### -->
 <!-- Usage Notes -->
@@ -1048,6 +574,9 @@
 <h3><font color="DarkBlue">Usage Notes</font></h3>
 
     <ol>
+        <li>The system will run at the slowest selected speed.  Therefore, these settings are at the max for Z and M3, allowing the speed settings for the Spindle to control all 3.</li>
+        
+        <br>
         <li>Ensure the Spindle and M3 axes are rotating the same direction</li>
         
             <table>
@@ -1204,17 +733,17 @@
 
 \begin{align*}
 \tag{1}
-Lobe \, Multiplier &=  \left(\frac {Lobes \, Desired} {Lobes \, on \, Rosette} \right) \\
+Lobe \, Multiplier &=  \frac {Lobes \, Desired} {Lobes \, on \, Rosette} \\
 
 \tag{2}
 Spindle \, Target\unicode{xB0} &=  \left(\frac {Z \, Axis \, Target} {Z \, Axis \, Stepover \, per \, Revolution} \right) \cdot 360\unicode{xB0} \\
 
 \tag{3}
-M3 \, Target  \, Left \unicode{xB0} &=  \left(Spindle \, Target\unicode{xB0} \cdot Lobe \, Multiplier\right) - Rosette \, Revolution\unicode{xB0} \\
+M3 \, Target \unicode{xB0} &=  \left(Spindle \, Target\unicode{xB0} \cdot Lobe \, Multiplier\right) + Rosette \, Pattern \, Rotation\unicode{xB0} \\
 
-\tag{4}
-M3 \, Target  \, Right \unicode{xB0} &=  \left(Spindle \, Target\unicode{xB0} \cdot Lobe \, Multiplier\right)  + Rosette \, Revolution\unicode{xB0} 
 \end{align*}
+
+<p>Note, when making a left helix, the Rosette Pattern Rotation will be a negative number.
 
 <!-- ################################################### -->
 <!-- Equations -->
@@ -1235,13 +764,13 @@ M3 \, Target  \, Right \unicode{xB0} &=  \left(Spindle \, Target\unicode{xB0} \c
 <h4><font color="DarkBlue">Opposite Side of the Triangle</font></h4>
 
 <p>The cylinder's circumference at the Final Average Diameter is &pi; times that.
-A rosette's revolution, specified in degrees (&deg;), would of course be that portion of the cylinder's circumference.  Thus, the <b>Rosette Revolution</b> distance is calculated as a fraction of the cylinder circumference.
+A rosette's revolution, specified in degrees (&deg;), would of course be that portion of the cylinder's circumference.  Thus, the <b>Rosette Pattern Rotation</b> distance is calculated as a fraction of the cylinder circumference.
 
 \begin{align*}
 \tag{4}
 Cylinder \, circumference  &= \pi \cdot Final \, Average \,  Diameter \\
 \tag{5}
-Rosette \, Revolution \, Distance &= Cylinder \, circumference \cdot \left(\frac {Rosette \, Revolution\unicode{xB0}} {360\unicode{xB0}} \right)
+Rosette \, Pattern \, Revolution \, Distance &= Cylinder \, circumference \cdot \left(\frac {Rosette \, Pattern \, Revolution\unicode{xB0}} {360\unicode{xB0}} \right)
 \end{align*}
 
 <h4><font color="DarkBlue">Adjacent Side of the Triangle</font></h4>
