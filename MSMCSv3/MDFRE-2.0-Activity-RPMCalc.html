@@ -82,10 +82,11 @@
                 Control System for Multiple Stepper Motors
             </a></b></font>
 
-            <p style="margin-bottom: 0;"><font color="DarkBlue" size="6"><b>
-                Dynamic Phasing on the
-                <br>Rosette Phaser / Multiplier
-            </b></font>
+            <p style="margin-bottom: 0;"><font color="DarkBlue" size="6">
+                <b>Dynamic Rosette Phasing &amp; Lobe Multiplication</b>
+                <br>using the
+                <br><b>Rosette Phaser / Multiplier</b>
+            </font>
         </td>
         <td align="right">
             <a href="index.html"><img src="Images/Books.png" width="50px" class="Image"></a>
@@ -97,89 +98,153 @@
 
 <!-- ################################################### -->
 <!-- Get the values needed -->
-    <script>
-	    function calcValues()    {
+<script>
+    function calcValues()    {
 
-			var fmmInch = 0.0393701;
-	    	var x = document.getElementById("frm1");
+	var fmmInch = 0.0393701;
+	var x = document.getElementById("frm1");
 
-		// ###################################################
-		// Get the rosette's actual number of lobes
-		//
-			iLobesActual = Number(x.elements[0].value);
+// ###################################################
+// Get the rosette's actual number of lobes
+//
+	iLobesActual = Number(x.elements[0].value);
 
-		// ###################################################
-		// Get the number of rosette lobes desired
-		//
-			iLobesDesired = Number(x.elements[1].value);
+// ###################################################
+// Get the number of rosette lobes desired
+//
+	iLobesDesired = Number(x.elements[1].value);
 
-		// ###################################################
-		// Get the Z Axis Target
-		//
-			fZ = Number(x.elements[2].value);
+// ###################################################
+// Get the Z Axis Target
+//
+	fZ = Number(x.elements[2].value);
 			
-		// ###################################################
-		// Get the spindle step-over per revolution 
-		//
-			fStepover = Number(x.elements[3].value);
+// ###################################################
+// Get the spindle step-over per revolution 
+//
+	fStepover = Number(x.elements[3].value);
 
-		// ###################################################
-		// Get the amount of revolution of the rosette's pattern across the Z distance
-		//
-			fRosetteRev = Number(x.elements[4].value);
+// ###################################################
+// Get the amount of revolution of the rosette's pattern across the Z distance
+//
+	fRosetteRev = Number(x.elements[4].value);
 
-		// ###################################################
-		// Get the final average diameter
-		//
-			fRootDia = Number(x.elements[5].value);
+// ###################################################
+// Get the final average diameter
+//
+	fRootDia = Number(x.elements[5].value);
 
-		// ###################################################
-		// Get the helix direction
-		//
+// ###################################################
+// Get the helix direction
+//
 
-	       var bDirection = "Right";
+    var bPatternDir = "Right";
 
-            const buttons = document.querySelectorAll("input[type='radio']");
-            if (buttons[0].checked) {
-                bDirection = "Right";
-        	} else {
-                bDirection = "Left";
-        	};
+    const buttons = document.querySelectorAll("input[type='radio']");
+    if (buttons[0].checked) {
+        bPatternDir = "Right";
+	} else {
+        bPatternDir = "Left";
+	};
 
-		// ###################################################
-		// Calculate the Values
-		//
+// ###################################################
+// Get the Z axis direction
+//
 
-		    var fLobeMult = iLobesDesired / iLobesActual;
+    var bZDir = "Right";
 
-		    var fZImp = fZ;
+    if (buttons[2].checked) {
+        bZDir = "Away";
+	} else {
+        bZDir = "Towards";
+	};
 
-		    var fRootDiaImp = fRootDia;
+// ###################################################
+// Calculate the Values
+//
 
-		    var fSpTgt = 360 * fZ / fStepover;
-		    var fM3TgtL = (fSpTgt * fLobeMult) - fRosetteRev;
-		    var fM3TgtR = (fSpTgt * fLobeMult) + fRosetteRev;
 
-            var fOpp = fRootDiaImp * Math.PI * (fRosetteRev / 360);
-            var fAdj = fZ;
-            var fUCFRotL = Math.atan(fOpp / fAdj) * 180 / Math.PI;
+    const PinkCCW = "Images/Buttons/PinkCCW.jpg";
+    const PinkIn = "Images/Buttons/PinkIn.jpg";
 
-    		document.getElementById("ZImpTgt").innerHTML = fZImp.toFixed(1);
+    const GreenCW = "Images/Buttons/GreenCW.jpg";
+    const GreenOut = "Images/Buttons/GreenOut.jpg";
+    
+    const UCFCW = "Images/Buttons/EmptyCW.png";
+    const UCFCCW = "Images/Buttons/EmptyCCW.png";
+    
+    var fLobeMult = iLobesDesired / iLobesActual;
 
-			if (bDirection == "Right") {
-        		document.getElementById("M3Tgt").innerHTML = parseFloat(fM3TgtR.toFixed(0)).toLocaleString();
-        	} else {
-        		document.getElementById("M3Tgt").innerHTML = parseFloat(fM3TgtL.toFixed(0)).toLocaleString();
-        	};
+	var fZImp = fZ;
 
-    		document.getElementById("SpTgt").innerHTML = parseFloat(fSpTgt.toFixed(0)).toLocaleString();
+	var fRootDiaImp = fRootDia;
 
-    		document.getElementById("UCFRotR1").innerHTML = fUCFRotL.toFixed(1);
-		}
-	</script>
+	var fSpTgt = 360 * fZ / fStepover;
+	var fM3TgtL = (fSpTgt + fRosetteRev)* fLobeMult;
+	var fM3TgtR = (fSpTgt - fRosetteRev)* fLobeMult;
+//	This seems to be the correct formulae, but testing has shown it to be incorrect.
+//	var fM3TgtL = (fSpTgt * fLobeMult) + fRosetteRev;
+//	var fM3TgtR = (fSpTgt * fLobeMult) - fRosetteRev;
+
+    var fOpp = fRootDiaImp * Math.PI * (fRosetteRev / 360);
+    var fAdj = fZ;
+    var fUCFRotL = Math.atan(fOpp / fAdj) * 180 / Math.PI;
+
+    document.getElementById("ZImpTgt").innerHTML = fZImp.toFixed(1);
+
+	if (bPatternDir == "Right") {
+        document.getElementById("M3Tgt").innerHTML = parseFloat(fM3TgtR.toFixed(0)).toLocaleString();
+        document.getElementById("UCFDirText").innerHTML = "Clockwise";
+    } else {
+        document.getElementById("M3Tgt").innerHTML = parseFloat(fM3TgtL.toFixed(0)).toLocaleString();
+        document.getElementById("UCFDirText").innerHTML = "Counter Clockwise";
+    };
+
+	if (bPatternDir=="Right" && bZDir == "Away") {
+        var image = document.getElementById("ZDir");
+        image.src = GreenOut;
+        image = document.getElementById("M3Dir");
+        image.src = GreenCW;
+        image = document.getElementById("SpDir");
+        image.src = GreenCW;
+        image = document.getElementById("UCFDir");
+        image.src = UCFCW;
+	} else if (bPatternDir=="Left" && bZDir == "Away") {
+        var image = document.getElementById("ZDir");
+        image.src = GreenOut;
+        image = document.getElementById("M3Dir");
+        image.src = GreenCW;
+        image = document.getElementById("SpDir");
+        image.src = GreenCW;
+        image = document.getElementById("UCFDir");
+        image.src = UCFCCW;
+	} else if (bPatternDir=="Left" && bZDir == "Towards") {
+        var image = document.getElementById("ZDir");
+        image.src = PinkIn;
+        image = document.getElementById("M3Dir");
+        image.src = PinkCCW;
+        image = document.getElementById("SpDir");
+        image.src = PinkCCW;
+        image = document.getElementById("UCFDir");
+        image.src = UCFCCW;
+    } else {
+        var image = document.getElementById("ZDir");
+        image.src = PinkIn;
+        image = document.getElementById("M3Dir");
+        image.src = PinkCCW;
+        image = document.getElementById("SpDir");
+        image.src = PinkCCW;
+        image = document.getElementById("UCFDir");
+        image.src = UCFCW;
+    };
+
+    document.getElementById("SpTgt").innerHTML = parseFloat(fSpTgt.toFixed(0)).toLocaleString();
+
+    document.getElementById("UCFRotR1").innerHTML = fUCFRotL.toFixed(1);
+    }
+</script>
 
 </head>
-
 
 <!-- ################################################### -->
 <!-- Body                                                                                               -->
@@ -189,7 +254,7 @@
 
 <font face="Georgia">
 
-<p>Calculations needed for <b>dynamic phasing</b> when using the <a href="https://otbok.info/OT%20-%20LnT-Term-RosettePhaserMultiplier.html" >Rosette Phaser / Multiplier</a> are based on the data in the table below.  Input fields on this screen are <span style="background-color: #FFEE9C"><b>&nbsp;colored yellow&nbsp;</b></span>. 
+<p>Calculations needed for <b>dynamic phasing</b> when using the <a href="https://ornamentalturners.com/wiki/index.php?n=Main.RosettePhaserMultiplier" >Rosette Phaser / Multiplier</a> are based on the data in the table below.  Input fields on this screen are <span style="background-color: #FFEE9C"><b>&nbsp;colored yellow&nbsp;</b></span>. 
 
 <p>Once you have entered your desired values, scroll down and click the button below, <span style="background-color:#0404B4"><font color="white">&nbsp;Calculate MultiSync Values&nbsp;</font></span>
 
@@ -207,14 +272,14 @@
 
 		<table border="1" width="100%">
 			<col width="200px">
-        	<col width="100px">
+        	<col width="200px">
         	<col width="*">
 
 			<tr bgcolor="White">
 				<td style="padding: 5px; ">
 				    Actual Rosette Lobes
 				</td>
- 				<td align="Right" style="padding: 5px; ">
+ 				<td align="Left" style="padding: 5px; ">
  					<input 
 	 						type="number"
  							style="font-size:14px; text-align: right; width: 55px; background-color:#FFEE9C" 
@@ -233,7 +298,7 @@
 				<td style="padding: 5px; ">
 				    Desired Rosette Lobes
 				</td>
- 				<td align="Right" style="padding: 5px; ">
+ 				<td align="Left" style="padding: 5px; ">
  					<input 
 	 						type="number"
  							style="font-size:14px; text-align: right; width: 55px; background-color:#FFEE9C" 
@@ -253,14 +318,14 @@
 
 		<table border="1" width="100%">
 			<col width="200px">
-        	<col width="100px">
+        	<col width="200px">
         	<col width="*">
 
 			<tr bgcolor="White">
 				<td style="padding: 5px; ">
 				    Z Axis Target
 				</td>
- 				<td align="Right" style="padding: 5px; ">
+ 				<td align="Left" style="padding: 5px; ">
  					<input 
 	 						type="number"
  							style="font-size:14px; text-align: right; width: 55px; background-color:#FFEE9C" 
@@ -280,7 +345,7 @@
 				<td style="padding: 5px; ">
 					Z Axis Stepover per Revolution
 				</td>
- 				<td align="Right" style="padding: 5px; ">
+ 				<td align="Left" style="padding: 5px; ">
  					<input 
 	 						type="number"
  							style="font-size:14px; text-align: right; width: 55px; background-color:#FFEE9C" 
@@ -304,7 +369,7 @@
 				<td style="padding: 5px; ">
 					Rosette Pattern Rotation
 				</td>
- 				<td align="Right" style="padding: 5px; ">
+ 				<td align="Left" style="padding: 5px; ">
  					<input 
 	 						type="number"
  							style="font-size:14px; text-align: right; width: 55px; background-color:#FFEE9C" 
@@ -324,7 +389,7 @@
 				<td style="padding: 5px; ">
 					Final Average Diameter
 				</td style="padding: 5px; ">
- 				<td align="Right">
+ 				<td align="Left">
  					<input 
 	 						type="number"
  							style="font-size:14px; text-align: right; width: 55px; background-color:#FFEE9C" 
@@ -368,6 +433,35 @@
 				    This is the direction of the rotation of the rosette's pattern around the spindle axis.  A right (handed) helix is like a standard screw.
 				</td>
 			</tr>
+
+			<tr bgcolor="White">
+				<td style="padding: 5px; ">
+					Z Axis Direction
+				</td>
+ 				<td align="Left" style="padding: 5px; ">
+ 					<input 
+	 						type="radio"
+ 							id="ZRight"
+ 							name="ZDir" 
+ 							value="ZRight"
+ 							checked
+						/>
+					<label for="ZRight">Away from Headstock</label>
+					
+					<br>
+ 					<input 
+	 						type="radio"
+ 							id="ZLeft" 
+ 							name="ZDir"
+ 							value="ZLeft"
+						/>
+					<label for="ZLeft">Towards Headstock</label>
+					
+				</td>
+				<td style="padding: 5px; ">
+				    This is the direction of movement along the Z axis.
+				</td>
+			</tr>
 		</table>
 
 	    </td>
@@ -377,9 +471,9 @@
 &nbsp;
 		
 <table width="100%" border="1" bgcolor="#e6ecff">
-    <tr bgcolor="black">
+    <tr bgcolor="darkblue">
         <td align="center">
-            <font size=5 color="white"><b>Data Used on MultiSync Page</b></font>
+            <font size=5 color="white"><b>MultiSync Page Data</b></font>
         </td>
         <td align="center">
             <font size=5 color="white"><b>UCF Rotation</b></font>
@@ -420,15 +514,15 @@
 			        </td>
             	</tr>
 
-	            <tr bgcolor="White">
+	            <tr bgcolor="White" style="padding: 0px; ">
             	    <td bgcolor=LightGray align="center" style="padding: 5px; ">
 			            <b>Z</b>
             		</td>
      			    <td align="center" style="padding: 5px; ">
              		   <font size=5>&#9635;</font>
 			        </td>
-                    <td align="center" valign="middle" bgcolor=#a3d6b3>
-                        <img src="Images/Buttons/GreenOut.jpg" width="40px">
+                    <td align="center" valign="middle"  style="line-height:0;" style="padding: 0px; ">
+                        <img src="" id="ZDir" width="50px" height="50px" />
                     </td>
  			        <td align="center" bgcolor="Moccasin" style="padding: 5px; ">
                         <font face="Arial" size="3px">
@@ -471,8 +565,8 @@
      			    <td align="center" style="padding: 5px; ">
              		   <font size=5>&#9635;</font>
 		            </td>
-                    <td align="center" valign="middle" bgcolor=#a3d6b3>
-                        <img src="Images/Buttons/GreenCW.jpg" width="40px">
+                    <td align="center" valign="middle"  style="line-height:0;" style="padding: 0px; ">
+                        <img src="" id="M3Dir" width="50px" height="50px" />
                     </td>
  	               	<td align="center" bgcolor="Moccasin" style="padding: 5px; ">
                         <font face="Arial" size="3px">
@@ -515,8 +609,8 @@
      			    <td align="center" style="padding: 5px; ">
              		   <font size=5>&#9635;</font>
 			        </td>
-                    <td align="center" valign="middle" bgcolor=#a3d6b3>
-                        <img src="Images/Buttons/GreenCW.jpg" width="40px">
+                    <td align="center" valign="middle"  style="line-height:0;" style="padding: 0px; ">
+                        <img src="" id="SpDir" width="50px" height="50px" />
                     </td>
  			        <td align="center" bgcolor="Moccasin" style="padding: 5px; ">
                         <font face="Arial" size="3px">
@@ -546,16 +640,24 @@
  	       			<td align="Left" width="5px" style="padding: 5px; ">
  			       	   &deg;
 				    </td>
-<!-- 
- 				   <td align="Left" width="250px" style="padding: 5px; ">
-                        Direction of rotation, as seen from the operator's side.
-	    			</td>
- 		   	    	<td align="Left" width="50px" style="padding: 5px; ">
-                        <img src="Images/Buttons/EmptyCW.png" width="40px">
-    				</td>
- -->
  	    		</tr>
 		    </table>
+
+            &nbsp;
+            
+            <p><table border=0 align="center">
+                <tr valign="top">
+                    <td align="center" valign="middle"  style="line-height:0;" style="padding: 0px; ">
+                        <img src="" id="UCFDir" width="50px" height="50px" />
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td align="center" valign="middle"  style="line-height:0;" style="padding: 0px; ">
+   			 		    <p id="UCFDirText" style="margin: 0px; padding: 0px;"></p>
+   			 		    <p>As seen from the operator side
+                    </td>
+                </tr>
+            </table>
 		</td>
     </tr>
 </table>		
@@ -723,6 +825,9 @@
         
         <br>
         <li>Ensure the UCF is rotated the correct direction for the direction of the rosette's pattern rotation.  When done so, there is a smooth line for the root of the helix.  A light cut on the first pass can help assure this.</li>
+        
+        <br>
+        <li>There are other means for achieving such rotation; however this is presented as one for helping you achieve your goals.  As you grow your skills, you will find other approaches may be better.</li>
     </ol>
 
 <!-- ################################################### -->
@@ -739,7 +844,7 @@ Lobe \, Multiplier &=  \frac {Lobes \, Desired} {Lobes \, on \, Rosette} \\
 Spindle \, Target\unicode{xB0} &=  \left(\frac {Z \, Axis \, Target} {Z \, Axis \, Stepover \, per \, Revolution} \right) \cdot 360\unicode{xB0} \\
 
 \tag{3}
-M3 \, Target \unicode{xB0} &=  \left(Spindle \, Target\unicode{xB0} \cdot Lobe \, Multiplier\right) + Rosette \, Pattern \, Rotation\unicode{xB0} \\
+M3 \, Target \unicode{xB0} &=  \left(Spindle \, Target\unicode{xB0} + Rosette \, Pattern \, Rotation\unicode{xB0}\right)  \cdot Lobe \, Multiplier \\
 
 \end{align*}
 
