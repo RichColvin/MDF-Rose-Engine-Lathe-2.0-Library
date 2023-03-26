@@ -679,155 +679,174 @@
         <li>The system will run at the slowest selected speed.  Therefore, these settings are at the max for Z and M3, allowing the speed settings for the Spindle to control all 3.</li>
         
         <br>
-        <li>Ensure the Spindle and M3 axes are rotating the same direction</li>
-        
-            <table>
-                <tr>
-                    <td colspan=3>
-                        <table border=1 width="100%">
-                			<tr bgcolor="Moccasin">
- 	       	            	    <td align="Center" colspan=2>
-   			      		           <font color="DarkBlue"><b>Correct</b></font>
-            				    </td>
-            	            </tr>
-                        </table>
-                    </td>
+        <li>There are other means for achieving such rotation; however this is presented as one for helping you achieve your goals.  As you grow your skills, you will find other approaches may be better.  The overarching ideas with this approach are:</li>
 
-                    <td width="50px">
-                        &nbsp;
-                    </td>
-
-                    <td colspan=3>
-                        <table border=1 width="100%">
-                			<tr bgcolor="DarkRed">
- 	       	            	    <td align="Center" colspan=2>
-   			      		           <font color="Moccasin"><b>Incorrect</b></font>
-            				    </td>
-            	            </tr>
-                        </table>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>
-                        <table border=1>
-    		            	<col width="75px">
-    			            <col width="75px">
-
-    		            	<tr bgcolor="Moccasin">
- 	       		            	<td align="Center">
-   			      		           <font color="DarkBlue"><b>Spindle</b></font>
-            				    </td>
- 	       	            		<td align="Center">
-   			      		           <font color="DarkBlue"><b>M3</b></font>
-            				    </td>
-    		            	</tr>
-
-                            <tr>
-                                <td align="center" bgcolor=#FFB3B6>
-                                    <img src="Images/Buttons/PinkCCW.jpg" width="40px">
-                                </td>
-                                <td align="center" bgcolor=#FFB3B6>
-                                    <img src="Images/Buttons/PinkCCW.jpg" width="40px">
-                                </td>
-                            </tr>
-                        </table>
-                    </td>
-
-                    <td>
-                        <b><i>or</i></b>
-                    </td>
-
-                    <td>
-                        <table border=1>
-    		            	<col width="75px">
-    			            <col width="75px">
-
-    		            	<tr bgcolor="Moccasin">
- 	       		            	<td align="Center">
-   			      		           <font color="DarkBlue"><b>Spindle</b></font>
-            				    </td>
- 	       	            		<td align="Center">
-   			      		           <font color="DarkBlue"><b>M3</b></font>
-            				    </td>
-    		            	</tr>
-
-                            <tr>
-                                <td align="center" bgcolor=#a3d6b3>
-                                    <img src="Images/Buttons/GreenCW.jpg" width="40px">
-                                </td>
-                                <td align="center" bgcolor=#a3d6b3>
-                                    <img src="Images/Buttons/GreenCW.jpg" width="40px">
-                                </td>
-                            </tr>
-                        </table>
-                    </td>
-
-                    <td width="50px">
-                        &nbsp;
-                    </td>
-
-                    <td>
-                        <table border=1>
-    		            	<col width="75px">
-    			            <col width="75px">
-
-    		            	<tr bgcolor="DarkRed">
- 	       			            <td align="Center">
-               			      		<font color="Moccasin"><b>Spindle</b></font>
-			            	    </td>
- 	       			            <td align="Center">
-               			      		<font color="Moccasin"><b>M3</b></font>
-			            	    </td>
-                			</tr>
-
-                            <tr>
-                                <td align="center" bgcolor=#a3d6b3>
-                                    <img src="Images/Buttons/GreenCW.jpg" width="40px">
-                                </td>
-                                <td align="center" bgcolor=#FFB3B6>
-                                    <img src="Images/Buttons/PinkCCW.jpg" width="40px">
-                                </td>
-                            </tr>
-                        </table>
-                    </td>
-
-                    <td>
-                        <b><i>or</i></b>
-                    </td>
-
-                    <td>
-                        <table border=1>
-    		            	<col width="75px">
-    			            <col width="75px">
-
-    		            	<tr bgcolor="DarkRed">
- 	       			            <td align="Center">
-               			      		<font color="Moccasin"><b>Spindle</b></font>
-			            	    </td>
- 	       			            <td align="Center">
-               			      		<font color="Moccasin"><b>M3</b></font>
-			            	    </td>
-                			</tr>
-
-                            <tr>
-                                <td align="center" bgcolor=#FFB3B6>
-                                    <img src="Images/Buttons/PinkCCW.jpg" width="40px">
-                                </td>
-                                <td align="center" bgcolor=#a3d6b3>
-                                    <img src="Images/Buttons/GreenCW.jpg" width="40px">
-                                </td>
-                            </tr>
-                        </table>
-                    </td>
-                </tr>
-            </table>
-        
         <br>
-        <li>Ensure the UCF is rotated the correct direction for the direction of the rosette's pattern rotation.  When done so, there is a smooth line for the root of the helix.  A light cut on the first pass can help assure this.</li>
+            <ol type="a">
+                <li>The Z axis direction sets the direction of cut.</li>
+                    
+                <br>
+                <li>There is a relationship between the M3&deg; and the Spindle&deg;:</li>
+                    <ol type="i">
+                        <li>M3&deg; < Spindle&deg; = pattern rotates in a right helix</li>
+                        <li>M3&deg; > Spindle&deg; = pattern rotates in a left helix</li>
+                    </ol>
+                    
+                <br>
+                <li>The direction of pattern rotation sets the direction of UCF rotation.  This does not change based on the direction of movement on the Z axis.</li>
+                    <ol type="i">
+                        <li>A right helical pattern rotation requires the UCF to be rotated clockwise (when observed from the operator side).</li>
+                        <li>A left helical pattern rotation requires the UCF to be rotated counter clockwise (when observed from the operator side).</li>
+                    </ol>
+
+                    <p>You should ensure the UCF is rotated the correct direction for the direction of the rosette's pattern rotation.  When rotated correctly, there is a smooth line for the root of the helix.  A light cut on the first pass can help assure proper direction of rotation.</li>
+                    
+                <br>
+                <li>You must ensure the Spindle and M3 axes are rotating the same direction</li>
         
-        <br>
-        <li>There are other means for achieving such rotation; however this is presented as one for helping you achieve your goals.  As you grow your skills, you will find other approaches may be better.</li>
+                    <table>
+                        <tr>
+                            <td colspan=3>
+                                <table border=1 width="100%">
+                        			<tr bgcolor="Moccasin">
+ 	       	                    	    <td align="Center" colspan=2>
+   			      		                  <font color="DarkBlue"><b>Correct</b></font>
+                    				    </td>
+                    	            </tr>
+                                </table>
+                            </td>
+
+                            <td width="50px">
+                                &nbsp;
+                            </td>
+
+                            <td colspan=3>
+                                <table border=1 width="100%">
+                        			<tr bgcolor="DarkRed">
+ 	       	                    	    <td align="Center" colspan=2>
+   			      		                  <font color="Moccasin"><b>Incorrect</b></font>
+            				            </td>
+                    	            </tr>
+                                </table>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <table border=1>
+    		            	        <col width="75px">
+            			            <col width="75px">
+
+            		            	<tr bgcolor="Moccasin">
+ 	              		            	<td align="Center">
+   			            		           <font color="DarkBlue"><b>Spindle</b></font>
+            		        		    </td>
+ 	       	            	        	<td align="Center">
+   			      		                   <font color="DarkBlue"><b>M3</b></font>
+                    				    </td>
+    	        	            	</tr>
+
+                                    <tr>
+                                        <td align="center" bgcolor=#FFB3B6>
+                                            <img src="Images/Buttons/PinkCCW.jpg" width="40px">
+                                        </td>
+                                        <td align="center" bgcolor=#FFB3B6>
+                                            <img src="Images/Buttons/PinkCCW.jpg" width="40px">
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+
+                            <td>
+                                <b><i>or</i></b>
+                            </td>
+
+                            <td>
+                                <table border=1>
+    		                    	<col width="75px">
+    			                    <col width="75px">
+
+            		            	<tr bgcolor="Moccasin">
+ 	              		            	<td align="Center">
+   			            		           <font color="DarkBlue"><b>Spindle</b></font>
+            		        		    </td>
+ 	       	            	        	<td align="Center">
+   			      		                   <font color="DarkBlue"><b>M3</b></font>
+                    				    </td>
+    	        	            	</tr>
+
+                                    <tr>
+                                        <td align="center" bgcolor=#a3d6b3>
+                                            <img src="Images/Buttons/GreenCW.jpg" width="40px">
+                                        </td>
+                                        <td align="center" bgcolor=#a3d6b3>
+                                            <img src="Images/Buttons/GreenCW.jpg" width="40px">
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+
+                            <td width="50px">
+                                &nbsp;
+                            </td>
+
+                            <td>
+                                <table border=1>
+    		                    	<col width="75px">
+    			                    <col width="75px">
+
+            		            	<tr bgcolor="DarkRed">
+ 	              			            <td align="Center">
+                    			      		<font color="Moccasin"><b>Spindle</b></font>
+			                    	    </td>
+ 	       			                    <td align="Center">
+               			      		       <font color="Moccasin"><b>M3</b></font>
+        			            	    </td>
+                        			</tr>
+
+                                    <tr>
+                                        <td align="center" bgcolor=#a3d6b3>
+                                            <img src="Images/Buttons/GreenCW.jpg" width="40px">
+                                        </td>
+                                        <td align="center" bgcolor=#FFB3B6>
+                                            <img src="Images/Buttons/PinkCCW.jpg" width="40px">
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+
+                            <td>
+                                <b><i>or</i></b>
+                            </td>
+
+                            <td>
+                                <table border=1>
+    		                    	<col width="75px">
+    			                    <col width="75px">
+
+            		            	<tr bgcolor="DarkRed">
+ 	              			            <td align="Center">
+                    			      		<font color="Moccasin"><b>Spindle</b></font>
+			                    	    </td>
+ 	       			                    <td align="Center">
+               			      		       <font color="Moccasin"><b>M3</b></font>
+        			            	    </td>
+                        			</tr>
+
+                                    <tr>
+                                        <td align="center" bgcolor=#FFB3B6>
+                                            <img src="Images/Buttons/PinkCCW.jpg" width="40px">
+                                        </td>
+                                        <td align="center" bgcolor=#a3d6b3>
+                                            <img src="Images/Buttons/GreenCW.jpg" width="40px">
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+            </ol>
+        
     </ol>
 
 <!-- ################################################### -->
