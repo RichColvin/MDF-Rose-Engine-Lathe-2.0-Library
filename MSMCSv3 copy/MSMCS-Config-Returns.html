@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
+
+<!-- ################################################### -->
+<!-- Style Sheet for MathJax                                                                 -->
+<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+
+<!-- ################################################### -->
+<!-- Style Sheet for Horizontal Rule - Style 0                                       -->
+ <style>
+    hr.style0 {
+        border: 0;
+        height: 1px;
+        background-image: linear-gradient(to right,
+                rgba(184,134,11, 2),
+                rgba(184,134,11, 2),
+                rgba(184,134,11, 2));
+    }
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for Horizontal Rule - Style 1                                       -->
+ <style>
+    hr.style1 {
+        border: 0;
+        height: 3px;
+        background-image: linear-gradient(to right,
+            rgba(0, 0, 0, 0),
+                rgba(184,134,11, 2),
+            rgba(0, 0, 0, 0));
+    }
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for Horizontal Rule - Style 2                                       -->
+ <style>
+    hr.style2 {
+        border: 0;
+        height: 6px;
+        background-image: linear-gradient(to right,
+            rgba(0, 0, 0, 0),
+                rgba(184,134,11, 2),
+            rgba(0, 0, 0, 0));
+    }
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for indented paragraphs                                             -->
+<style>
+    .indented { padding-left: 33pt; padding-right: 33pt; }
+</style>
+
+<!-- ################################################### -->
+<!-- <body background="Images/Background.png"> -->
+	<font face="Georgia">
+
+<!-- ################################################### -->
+<!-- Style Sheet for header image max size                                         -->
+<!-- ################################################### -->
+<style>
+    img.Image { max-width: 500px;}
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for split screen                                                            -->
+<!-- ################################################### -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+    body {
+        font-family: Georgia;
+    }
+
+.split1 {
+  height: calc(260px);
+  min-width: 450px;
+  max-width: 450px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.split2 {
+  height: calc(100% - 130px);
+  width: calc(100% - 490px);
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.split3 {
+  height: calc(100% - 400px);
+  min-width: 450px;
+  max-width: 450px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 280px;
+}
+
+.left {
+  left: 0;
+  background-color: #111;
+}
+
+.right {
+  right: 0;
+  background-color: blue;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.centered img {
+  width: 150px;
+  border-radius: 50%;
+}
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for footer                                                                     -->
+<!-- ################################################### -->
+<style>
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: #E6E6E6;
+   text-align: center;
+}
+</style>
+
+<!-- ################################################### -->
+<!-- Header                                                                                           -->
+<!-- ################################################### -->
+
+<head bgcolor=#E6E6E6>
+    <title>MDF Rose Engine Lathe 2.0</title>
+    <link rel="shortcut icon" type="image/ico" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="Images/favicon.png">
+
+<font face="Georgia">
+
+<table width="100%" border=0>
+        <col width="10%">
+        <col width="*">
+        <col width="10%">
+
+    <tr valign="bottom">
+        <td align="left">
+            <a href = "javascript:history.back()"><img src="Images/BackButton.png" width="30px"></a>
+        </td>
+        <td align="center" valign="top">
+            <a href="MSMCS.html"><font color="DarkBlue" size="6"><b>
+                Control System for Multiple Stepper Motors</a>
+            </b></font>
+        </td>
+        <td align="right">
+            <a href="index.html"><img src="Images/Books.png" width="50px" class="Image"></a>
+        </td>
+    </tr>
+</table>
+
+</head>
+
+<!-- ################################################### -->
+<!-- Body - Right Side of the Screen                                                     -->
+<!-- ################################################### -->
+
+<body bgcolor=#E6E6E6 background="Images/DevBackground.png">
+
+<div style="margin: 60px 5px 5px 5px; padding: 5px; border: 0px solid black; text-align: left;  background-color:#E6E6E6; background-image: url(Images/DevBackground.png);" class="split1 right" >
+    <img src="Images/Screens/Pref_Returns.jpg" width="100%" class="Image" alt="HTML Map" border="0" usemap="#html">
+        <map name = "html">
+            <area shape = "rect" coords = "002,002,075,033" href = "MSMCS-Config-Spindle.html" />
+            <area shape = "rect" coords = "002,038,075,069" href = "MSMCS-Config-ZAxis.html" />
+            <area shape = "rect" coords = "002,075,075,107" href = "MSMCS-Config-XAxis.html" />
+            <area shape = "rect" coords = "002,111,075,143" href = "MSMCS-Config-M3.html" />
+            <area shape = "rect" coords = "002,147,075,180" href = "MSMCS-Config-M4.html" />
+            
+            <area shape = "rect" coords = "376,038,450,070" href = "MSMCS-Config-Limits.html" />
+            <area shape = "rect" coords = "376,074,450,106" href = "MSMCS-Config-Returns.html" />
+            <area shape = "rect" coords = "376,112,450,143" href = "MSMCS-Config-More.html" />                     
+            <area shape = "rect" coords = "376,217,450,252" href = "MSMCS-Config-More-LoadIni.html" />                     
+
+            <area shape = "rect" coords = "375,001,446,033" href = "javascript:history.back()" />
+        </map>
+</div>
+    
+<div style="margin: 330px 5px 5px 5px; padding: 5px; border: 1px solid black; text-align: left;  background-color:#E6E6E6; background-image: url(Images/DevBackground.png);" class="split3 right" >
+
+        <table>
+            <tr valign="Top">
+                <td>
+                    <img src="Images/ButtonSettings-Back.png" width="75px">
+                </td>
+                <td>
+                    Used to return to the prior screen.
+                </td>
+            </tr>
+            <tr><td colspan=999><hr></td></tr>
+            <tr valign="Top">
+                <td>
+                    <img src="Images/ButtonSettings-Refresh.png" width="75px">
+                </td>
+                <td>
+                    Used to refresh the values shown in the gray boxes.
+                </td>
+            </tr>
+        </table>
+    </div>
+
+<!-- ################################################### -->
+<!-- Body - Left Side of the Screen                                                       -->
+<!-- ################################################### -->
+
+<div style="float: left; margin: 60px 5px 5px 5px; padding: 5px; border: 0px solid black; text-align: left;  background-color:#E6E6E6; background-image: url(Images/DevBackground.png);" class="split2 left" >
+    <table align="Center" border="0">
+        <tr height="35px">
+            <td align="Center" bgcolor="#3980C0" width="300px">
+                <font color="White" size="4"><b>Preferences Screen</b></font>
+            </td>
+        </tr>
+    </table>
+
+    <p>
+    <div style="float: right; width: 200px; margin: 5px 5px 5px 5px; padding: 5px; border: 1px solid black; text-align: left; background-color:#3980C0">
+        <font color="White" size="2">Touch the buttons on the screen image to the right to see the details for the that screen.</font>
+    </div>
+
+    <p><b>Purpose:</b>  Set speed and acceleration for return actions.  
+        
+    <div style="float: left; width: 50px; margin: 5px 5px 5px 5px; padding: 5px; border: 0px solid Darkgray;  text-align: center; ">
+        <img src="Images/Buttons/ButtonDarkBlue-Return.png" width="100%" />
+    </div>
+    
+    <p>Return actions are initiated when a button like the one to the left is pressed.
+    
+    <p>&nbsp;
+        <ul>
+            <li>The values shown in a <span style="background-color: #FFEE9C">&nbsp;tan box&nbsp;</span> show values on the Nextion.  Touching one of the text boxes allows you to edit that value using the <a href="MSMCS-NumberPad.html">Number Pad</a> screen.</li>
+            
+            <br>
+            <li>The values shown in a <span style="background-color: LightGray">&nbsp;gray box&nbsp;</span>  show the ones stored on the Teensy controller.  These are read only and should match the settings on the Nextion.</li>
+        </ul>
+
+        </td></tr>
+    </table>
+</div>
+
+<!-- ################################################### -->
+<!-- Footer                                                                                             -->
+<!-- ################################################### -->
+<div class="footer">
+    <hr class="style0">
+    <font size="3">
+    <table width="100%">
+        <col width="75%">
+        <col width="25%">
+
+        <tr valign="top">
+            <td align="left">
+                Questions or comments?  Contact us at
+                <br><a href="mailto:ColvinTools@Gmail.com?Subject=General" >ColvinTools@Gmail.com</a>
+            </td>
+            <td align="right">
+                <a href="../index-Disclaimers.html">Disclaimers</a>
+            </td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

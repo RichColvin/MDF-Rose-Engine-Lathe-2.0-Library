@@ -189,7 +189,7 @@
 <!-- ################################################### -->
 
 <head bgcolor=#E6E6E6>
-    <title>MDF Rose Engine Lathe 2.0</title>
+    <title>ELFOS</title>
     <link rel="shortcut icon" type="image/ico" href="favicon.ico">
     <link rel="icon" type="image/png" sizes="16x16" href="Images/favicon.png">
 
@@ -205,12 +205,10 @@
             <a href = "javascript:history.back()"><img src="Images/BackButton.png" width="30px"></a>
         </td>
         <td align="center" valign="top">
-            <a href="MSMCS.html"><font color="DarkBlue" size="6"><b>
-                Control System for Multiple Stepper Motors</a>
-            </b></font>
+            <font color="DarkBlue" size="6"><a href="MSMCS.html" style="text-decoration: none; color: DarkBlue; "><b>ELFOS</b></a></font>
         </td>
         <td align="right">
-            <a href="index.html"><img src="Images/Books.png" width="50px" class="Image"></a>
+            <img src="Images/ELFOS-Logo.png" width="65px" class="Image">
         </td>
     </tr>
 </table>
@@ -410,7 +408,7 @@
     </div>
 
 <!-- ################################################### -->
-<!-- Body - Left Side of the Screen                                                       -->
+<!-- Body - Left Side of the Screen                      -->
 <!-- ################################################### -->
 
     <div style="float: left; margin: 60px 5px 5px 5px; padding: 5px; border: 0px solid black; text-align: left;  background-color:#E6E6E6; background-image: url(Images/DevBackground.png);" class="split2 left" >
@@ -423,13 +421,15 @@
             </tr>
         </table>
 
-        <p><div style="float: left; width: 100px; margin: 5px 5px 5px 5px; padding: 5px; border: 0px solid DarkGray; text-align: center;">
+        <p><div style="float: right; width: 100px; margin: 5px 5px 5px 5px; padding: 5px; border: 0px solid DarkGray; text-align: center;">
             <a href="Images/Nextion-Rose.png" target="_new" /><img src="Images/Nextion-Rose.png" width="100%" border=0></a>
         </div>
 
         <p><b>Purpose:</b>  This screen allows for the creation of a rose or single stage geometric chuck patterns (see also, <a href="https://en.wikipedia.org/wiki/Rose_(mathematics)" >Wikipedia Rose (mathematics)</a> -- the math explaining how the variables work is explained there).
 
         <p>The <b>M3</b> and <b>M4</b> axes are only available when either is set to <b>Linear</b>.
+        
+        <p><b><I>Starting with version 3.0.8</I></b>, there is a progress bar displayed just above the bottom row of buttons.
         
         <hr class="style1">
         
@@ -480,11 +480,22 @@
                             the numerator
                         </td>
                         <td align="center" valign="middle" rowspan="5" width="250px">
-                            <div style="float: right; width: 150px; margin: 5px 5px 5px 5px; padding: 5px; border: 1px solid DarkGray; text-align: center; bgcolor: White">
-                                <a href="Images/RoseCurves.png" target="_self" /><img src="Images/RoseCurves.png" width="100%" bgcolor="white" border=0></a>
-                            </div>
+                            <div style="float: right; width: 400px; margin: 5px 5px 5px 5px; padding: 5px; border: 1px solid DarkGray; text-align: center; bgcolor: White">
+                                <table>
+                                    <tr>
+                                        <td align="left" valign="top">
+                                            <p style="margin-top: 0;"><b><b>Rose curves for various values of n & d</b></b>
+                                            
+                                            <br><I><font size=2>Click on the picture to see a larger version.</font></I>
 
-                            <p><a href = "Images/RoseCurves.png" target = "_self" /><b>Rose curves for various values of n & d</b></a>
+                                            <p style="margin-bottom: 0;">You can also use the <a href="https://www.desmos.com/calculator/7tn7taznez" target="new" />Desmos Web Site</a> for visualizing the expected curve.
+                                        </td>
+                                        <td width="150px">
+                                            <a href="Images/RoseCurves.png" target="_self" /><img src="Images/RoseCurves.png" width="100%" bgcolor="white" border=0></a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
                         </td>
                     </tr>
 

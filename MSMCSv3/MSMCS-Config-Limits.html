@@ -146,7 +146,7 @@
 <!-- ################################################### -->
 
 <head bgcolor=#E6E6E6>
-    <title>MDF Rose Engine Lathe 2.0</title>
+    <title>ELFOS</title>
     <link rel="shortcut icon" type="image/ico" href="favicon.ico">
     <link rel="icon" type="image/png" sizes="16x16" href="Images/favicon.png">
 
@@ -162,12 +162,10 @@
             <a href = "javascript:history.back()"><img src="Images/BackButton.png" width="30px"></a>
         </td>
         <td align="center" valign="top">
-            <a href="MSMCS.html"><font color="DarkBlue" size="6"><b>
-                Control System for Multiple Stepper Motors</a>
-            </b></font>
+            <font color="DarkBlue" size="6"><a href="MSMCS.html" style="text-decoration: none; color: DarkBlue; "><b>ELFOS</b></a></font>
         </td>
         <td align="right">
-            <a href="index.html"><img src="Images/Books.png" width="50px" class="Image"></a>
+            <img src="Images/ELFOS-Logo.png" width="65px" class="Image">
         </td>
     </tr>
 </table>
@@ -203,7 +201,7 @@
     <table>
         <tr valign="Top">
             <td>
-                <img src="Images/ButtonSettings-Back.png" width="75px">
+                <img src="Images/Buttons/ButtonSettings-Back.png" width="75px">
             </td>
             <td>
                 Used to return to the prior screen.
@@ -214,7 +212,7 @@
         
         <tr valign="Top">
             <td>
-                <img src="Images/ButtonSettings-Refresh.png" width="75px">
+                <img src="Images/Buttons/ButtonSettings-Refresh.png" width="75px">
             </td>
             <td>
                 Used to refresh the values shown in the gray boxes.
@@ -247,7 +245,7 @@
 <!-- Purpose  -->
                 <b>Purpose:</b> Set (Teensy) pin numbers to be used for limit switches.
             
-                <p>The use of a specific pin for Min or Max for any given axis is not critical.  However, using the same pin # for Min and Max is not recommended.  The reason is that, if the limit is tripped for one direction, movement in that direction is halted.  However, movement in the other direction is not.  Note though that tripping the EStop limit will halt movement in all directions.
+                <p>The use of a specific pin for Min or Max for any given axis is not critical.  However, using the same pin # for Min and Max is not recommended.  The reason is that, if the limit is tripped for one direction, movement in that direction is halted.  However, movement in the other direction is not.  Note though that tripping the Stop limit will halt movement in all directions.
             
                 <p>The Teensy microcontroller allows for pins 18, 19, and 25 - 39 to be used.  These need to match the ones wired to your board.
                 
@@ -265,7 +263,7 @@
                         </tr>
                         <tr>
                             <td align="center">18 or 19</td>
-                            <td>EStop</td>
+                            <td>Stop</td>
                         </tr>
                         <tr>
                             <td align="center">25 - 39</td>
@@ -290,7 +288,6 @@
                 	<col width="70px">
                 	<col width="70px">
                 	<col width="*">
-                    <col width="50px">
                     
                     <tr valign="top">
                         <td rowspan=4>
@@ -308,10 +305,11 @@
                         </td>
                         
                         <td>
+                              <div style="float: right; margin: 0px 0px 0px 0px; border: 0px solid Darkgray; text-align: left; ">
+                                    <img src="Images/Buttons/ButtonMain-In.png" width="45px">
+                              </div>
+
                             The <b>Min</b> pin on this axis is used when moving in the direction towards the headstock
-                        </td>
-                        <td>
-                            <img src="Images/ButtonMain-In.png" width="45px">
                         </td>
                     </tr>
 
@@ -321,10 +319,11 @@
                         </td>
                         
                         <td>
+                              <div style="float: right; margin: 0px 0px 0px 0px; border: 0px solid Darkgray; text-align: left; ">
+                                    <img src="Images/Buttons/ButtonMain-In.png" width="45px">
+                              </div>
+
                             The <b>Min</b> pin on this axis is used when moving in the direction towards the spindle's axis
-                        </td>
-                        <td>
-                            <img src="Images/ButtonMain-In.png" width="45px">
                         </td>
                     </tr>
                     
@@ -334,10 +333,18 @@
                         </td>
                         
                         <td>
-                            The <b>Min</b> pin on this axis is used when moving in the direction towards the spindle's axis
+                              <div style="float: right; margin: 0px 0px 0px 5px; border: 0px solid Darkgray; text-align: left; ">
+                                    <img src="Images/Buttons/ButtonMain-In.png" width="45px">
+                              </div>
+
+                            <p style="margin-top: 0;">The <b>Min</b> pin on this axis is used when moving in the direction towards the spindle's axis
+                            
+                              <div style="float: right; margin: 0px 0px 0px 5px; border: 0px solid Darkgray; text-align: left; ">
+                                    <img src="Images/Buttons/ButtonMain-CW.png" width="45px">
+                              </div>
+                            <p style="margin-bottom: 0;">In theory, it can also be used when M3 is configured for radial usage, but that seems difficult to grasp.
                         </td>
                         <td>
-                            <img src="Images/ButtonMain-CW.png" width="45px">
                         </td>
                     </tr>
                     
@@ -347,10 +354,17 @@
                         </td>
                         
                         <td>
-                            The <b>Min</b> pin on this axis is used when moving in the direction towards the spindle's axis
-                        </td>
-                        <td>
-                            <img src="Images/ButtonMain-CW.png" width="45px">
+                              <div style="float: right; margin: 0px 0px 0px 5px; border: 0px solid Darkgray; text-align: left; ">
+                                    <img src="Images/Buttons/ButtonMain-In.png" width="45px">
+                              </div>
+
+                            <p style="margin-top: 0;">The <b>Min</b> pin on this axis is used when moving in the direction towards the spindle's axis
+                            
+                              <div style="float: right; margin: 0px 0px 0px 5px; border: 0px solid Darkgray; text-align: left; ">
+                                    <img src="Images/Buttons/ButtonMain-CW.png" width="45px">
+                              </div>
+
+                            <p style="margin-bottom: 0;">In theory, it can also be used when M4 is configured for radial usage, but that seems difficult to grasp.
                         </td>
                     </tr>
 
@@ -377,10 +391,11 @@
                         </td>
                         
                         <td>
+                              <div style="float: right; margin: 0px 0px 0px 5px; border: 0px solid Darkgray; text-align: left; ">
+                                    <img src="Images/Buttons/ButtonMain-Out.png" width="45px">
+                              </div>
+
                             The <b>Max</b> pin on this axis is used when moving in the direction away from the headstock
-                        </td>
-                        <td>
-                            <img src="Images/ButtonMain-Out.png" width="45px">
                         </td>
                     </tr>
 
@@ -390,10 +405,11 @@
                         </td>
                         
                         <td>
+                              <div style="float: right; margin: 0px 0px 0px 5px; border: 0px solid Darkgray; text-align: left; ">
+                                    <img src="Images/Buttons/ButtonMain-Out.png" width="45px">
+                              </div>
+
                             The <b>Max</b> pin on this axis is used when moving in the direction away from the spindle's axis
-                        </td>
-                        <td>
-                            <img src="Images/ButtonMain-Out.png" width="45px">
                         </td>
                     </tr>
 
@@ -403,10 +419,17 @@
                         </td>
                         
                         <td>
-                            The <b>Max</b> pin on this axis is used when moving in the direction away from the spindle's axis
-                        </td>
-                        <td>
-                            <img src="Images/ButtonMain-CCW.png" width="45px">
+                              <div style="float: right; margin: 0px 0px 0px 5px; border: 0px solid Darkgray; text-align: left; ">
+                                    <img src="Images/Buttons/ButtonMain-Out.png" width="45px">
+                              </div>
+
+                            <p style="margin-top: 0;">The <b>Max</b> pin on this axis is used when moving in the direction away from the spindle's axis
+                            
+                              <div style="float: right; margin: 0px 0px 0px 5px; border: 0px solid Darkgray; text-align: left; ">
+                                    <img src="Images/Buttons/ButtonMain-CCW.png" width="45px">
+                              </div>
+
+                            <p style="margin-bottom: 0;">In theory, it can also be used when M3 is configured for radial usage, but that seems difficult to grasp.
                         </td>
                     </tr>
 
@@ -416,10 +439,17 @@
                         </td>
                         
                         <td>
-                            The <b>Max</b> pin on this axis is used when moving in the direction away from the spindle's axis
-                        </td>
-                        <td>
-                            <img src="Images/ButtonMain-CCW.png" width="45px">
+                              <div style="float: right; margin: 0px 0px 0px 5px; border: 0px solid Darkgray; text-align: left; ">
+                                    <img src="Images/Buttons/ButtonMain-Out.png" width="45px">
+                              </div>
+
+                            <p style="margin-top: 0;">The <b>Max</b> pin on this axis is used when moving in the direction away from the spindle's axis
+                            
+                              <div style="float: right; margin: 0px 0px 0px 5px; border: 0px solid Darkgray; text-align: left; ">
+                                    <img src="Images/Buttons/ButtonMain-CW.png" width="45px">
+                              </div>
+
+                            <p style="margin-bottom: 0;">In theory, it can also be used when M4 is configured for radial usage, but that seems difficult to grasp.
                         </td>
                     </tr>
                 </table>
@@ -441,7 +471,7 @@
                 </center>
 
                 <p><div style="float: right; width: 40px; 1px 1px 1px 1px; padding: 1px; border: 0px solid black; text-align: center; background-color:#White">
-                    <img  src="Images/ButtonEStop-Stop.jpg" width="100%">
+                    <img  src="Images/Buttons/ButtonEStop-Stop.jpg" width="100%">
                 </div>
 
                 <p>To reset, touch the stop button.  Once that is done, the opposite direction action button can be touched even though the limit switch may still be triggered.
@@ -456,7 +486,7 @@
                     <table bgcolor="#F6DA17" align="left">
                         <tr>
                             <td>
-                                &nbsp; <b>EStop</b> &nbsp;
+                                &nbsp; <b>Stop</b> &nbsp;
                             </td>
                         </tr>
                     </table>
@@ -464,13 +494,13 @@
 
         designates the pin number used to immediately stop all movement on the stepper motors.  
         
-        <p>This is different from the limit function which performs a slow, controlled stop.  The EStop is typically implemented as a big red switch like to the right.
+        <p>This is different from the limit function which performs a slow, controlled stop.  The Stop is typically implemented as a big red switch like to the right.
 
          <div style="float: right; width: 300px; margin: 5px 5px 5px 5px; border: 0px solid Darkgray; text-align: left; ">
             <table border="1" bgcolor="moccasin" width="100%">
     	        <tr>
             		<td style="padding: 5px;">
-                        <p style="margin-top: 0; margin-bottom: 0;"><b>Wiring multiple EStop switches?</b>
+                        <p style="margin-top: 0; margin-top: 0;"><b>Wiring multiple Stop switches?</b>
                         <p style="margin-top: 0; margin-bottom: 0;"><a href="MSMCS-Config-LimitSwitches.html">These are the directions for wiring them</a>.
 		        	</td>
         		</tr>
@@ -486,20 +516,20 @@
             </ol>
         </font>
         
-    <p>If the EStop is engaged when using any function, all the movement buttons will turn red.
+    <p>If the Stop is engaged when using any function, all the movement buttons will turn red.
     
     <p style="margin-bottom: 0;">
     <center>
         <img  src="Images/Screens/Main5.png" width = "50%">
         <br>
-        <b>EStop on Main Screen</b>
+        <b>Stop on Main Screen</b>
     </center>
 
     <p>
     <center>
         <img  src="Images/Screens/Sync6.png" width = "50%">
         <br>
-        <b>EStop on Sync Screen</b>
+        <b>Stop on Sync Screen</b>
     </center>
 
     <p>To reset:
@@ -508,12 +538,12 @@
         </div>
                 
         <ol>
-            <li>Ensure the EStop switch is not closed, and</li>
+            <li>Ensure the Stop switch is not closed, and</li>
             <li>Touch one of the stop buttons.</li>
         </ol>
 
 
-        <p>The EStop function was implemented with version 26.
+        <p>The Stop function was implemented with version 26.
             
 <!-- ################################################### -->
 <!-- Controls   -->
@@ -586,57 +616,18 @@
         <tr valign="top"><td>
 <!-- ################################################### -->
 <!-- Release Notes  -->
-            <table width="100%" border=1>
-                <col width="75px">
-                <col width="*">
+            <b>How It Works</b>
 
-	        	<thead>
-	    	        <tr  bgcolor="3980C0" valign="bottom">
-    	        	    <th align="center">
-                            <font face="Georgia" color="White"><b>
-                            Version
-                            </b></font>
-                        </th>
-                        <th align="center">
-                            <font face="Georgia" color="White"><b>
-                            How It Works
-                            </b></font>
-                        </th>
-                    </tr>
-	        	</thead>
 
-                <tr valign="top">
-                    <td align="center">
-                        <b>17+</b>
-                    </td>
-                    <td align="left">
-                        When the limit is triggered, the system stops.  
+                        <p style="margin-top: 0;">When the limit is triggered, the system stops.  
                         
-                        <br><br>
                         <div style="float: right; width: 50px; 5px 5px 5px 5px; padding: 5px; border: 0px solid black; text-align: center;  background-color:#E6E6E6; background-image: url(Images/DevBackground.png);">
-                            <img  src="Images/ButtonMain-Stop.png" width="100%">
+                            <img  src="Images/Buttons/ButtonMain-Stop.png" width="100%">
                         </div>
-                        To reset after a stop, touch the stop button (shown to the right).  You will have to do this for both the spindle and the axis in use.
                         
-                        <br><br>
-                        The system is setup this way to prevent damage to the machinery if it left unattended for a while, but also to allow the artist to get to the next operation quicker.
-                    </td>
-                </tr>
-
-                <tr valign="top">
-                    <td align="center">
-                        <b>Prior to 17</b>
-                    </td>
-                    <td align="left">
-                        When the limit is triggered, the system stops.
+                        <p>To reset after a stop, touch the stop button (shown to the right).  You will have to do this for both the spindle and the axis in use.
                         
-                        <br><br>
-                        To restart after a stop, power down the system, and then power it back up.
-                        
-                        <br><br>
-                        The system is setup this way to prevent damage to the machinery if it left unattended for a while.
-                </tr>
-            </table>
+                        <p style="margin-bottom: 0;">The system is setup this way to prevent damage to the machinery if it left unattended for a while, but also to allow the artist to get to the next operation quicker.
 
 <!-- ################################################### -->
 <!-- Physical Stuff  -->

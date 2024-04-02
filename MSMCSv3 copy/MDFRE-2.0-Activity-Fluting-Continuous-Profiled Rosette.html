@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
+
+<!-- ################################################### -->
+<!-- Style Sheet for MathJax                                                                 -->
+<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+
+<!-- ################################################### -->
+<!-- Style Sheet for header image max size                                         -->
+<style>
+    img.Image { max-width: 500px;}
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for Horizontal Rule - Style 0                                       -->
+ <style>
+    hr.style0 {
+        border: 0;
+        height: 1px;
+        background-image: linear-gradient(to right,
+                rgba(184,134,11, 2),
+                rgba(184,134,11, 2),
+                rgba(184,134,11, 2));
+    }
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for Horizontal Rule - Style 1                                       -->
+ <style>
+    hr.style1 {
+        border: 0;
+        height: 3px;
+        background-image: linear-gradient(to right,
+            rgba(0, 0, 0, 0),
+                rgba(184,134,11, 2),
+            rgba(0, 0, 0, 0));
+    }
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for Horizontal Rule - Style 2                                       -->
+ <style>
+    hr.style2 {
+        border: 0;
+        height: 6px;
+        background-image: linear-gradient(to right,
+            rgba(0, 0, 0, 0),
+                rgba(184,134,11, 2),
+            rgba(0, 0, 0, 0));
+    }
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for indented paragraphs                                             -->
+<style>
+    .indented { padding-left: 33pt; padding-right: 33pt; }
+</style>
+
+<!-- ################################################### -->
+<!-- Header                                                                                           -->
+<!-- ################################################### -->
+
+<head bgcolor=#E6E6E6>
+    <title>MDF Rose Engine Lathe 2.0</title>
+    <link rel="shortcut icon" type="image/ico" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="Images/favicon.png">
+
+<font face="Georgia">
+
+<table width="100%" border=0>
+        <col width="10%">
+        <col width="*">
+        <col width="10%">
+
+    <tr valign="bottom">
+        <td align="left">
+            <a href = "javascript:history.back()"><img src="Images/BackButton.png" width="30px"></a>
+        </td>
+        <td align="center" valign="top">
+            <a href="MSMCS.html"><font color="DarkBlue" size="6"><b>
+                Control System for Multiple Stepper Motors
+            </a></b></font>
+
+            <p style="margin-bottom: 0;"><font color="DarkBlue" size="6"><b>
+                Continuous Flutes using a Rosette
+            </b></font>
+        </td>
+        <td align="right">
+            <a href="index.html"><img src="Images/Books.png" width="50px" class="Image"></a>
+        </td>
+    </tr>
+</table>
+</head>
+
+<!-- ################################################### -->
+<!-- Body                                                                                               -->
+<!-- ################################################### -->
+<body bgcolor=#E6E6E6 background="Images/DevBackground.png">
+	<font face="Georgia">
+
+    <p style="margin-top: 0;">The idea behind this approach is you are cutting the rosette's design around the object, whilst also moving very slowly along the Z axis. A standard cutter is typically used to to cut the rosette's profile.
+	
+	<table border=1 width="100%">
+	    <tr valign="top">
+	        <td width="100px">
+                <b><font color="darkblue" size=4>
+                Rosette
+                </b></font>
+            </td>
+            <td>
+                Use a rosette with the desired shape (e.g., a Holtzapffel D-12 rosette, used from the far side).  Another rosette which yields a nice effect is the PF-9.
+            </td>
+            
+            <td rowspan=999 width="75px">
+                <a href="Images/Column - Fluted.png" ><img src="Images/Column - Fluted.png" width="100%" /></a>
+            </td>
+        </tr>
+
+	    <tr valign="top">
+	        <td>
+                <b><font color="darkblue" size=4>
+                Spindle
+                </b></font>
+            </td>
+            <td>
+                <p style="margin-top: 0; margin-bottom: 0;">The spindle is rotated slowly whilst the cutter is moved in the Z direction.
+            </td>
+        </tr>
+
+	    <tr valign="top">
+	        <td>
+                <b><font color="darkblue" size=4>
+                Cutting Frame
+                </b></font>
+            </td>
+            <td>
+                The cutting frame selected and the angle of cutting can have great effects on the results achieved.  Typically, a horizontal cutting frame is used.
+                
+                <p>The cutting frame is moved slowly down the Z axis. Movement of the cutter along the Z axis can be achieved at least two ways.
+                    <ul  style="margin-bottom: 0;">
+                        <li>The most efficient way is to use a slide rest which has automated movement using a lead screw (e.g., a curvilinear slide).  This also has the most likelihood of achieving a smooth, even finish.</li>
+                        
+                        <br>
+                        <li>If you don't have a slide rest which can automate the movement using a lead screw, then you will have to move it manually a small increment after each revolution.  Something like 0.005&quot; at a time is not uncommon.</li>
+                    </ul>
+                    
+                    <p style="margin-bottom: 0;"><b><u>Note</u>:</b> a Drill Spindle could be used with this, but the cuts would probably not be as nicely made.
+            </td>
+        </tr>
+
+	    <tr valign="top">
+	        <td>
+                <b><font color="darkblue" size=4>
+                Cutter
+                </b></font>
+            </td>
+            <td>
+                Use a cutter with a standard shape (e.g., 60&deg;). Hold it in a cutting frame, and move it down the whole length.
+            </td>
+        </tr>
+
+	    <tr valign="top">
+	        <td>
+                <b><font color="darkblue" size=4>
+                Rubber
+                </b></font>
+            </td>
+            <td>
+                The shape of the rubber can have a great effect on the shape.
+            </td>
+        </tr>
+    </table>
+	
+<!-- ################################################### -->
+<!-- Instructions                                                                                     -->
+    <p>&nbsp;
+    <table border="1" width="100%" bgcolor="White">
+        <col width="75px">
+        <col width="*">
+
+        <thead>
+            <tr bgcolor="Moccasin" valign="bottom">
+                <th>
+                    <font face="Georgia" color="darkblue">Screen</font>
+                </th>
+                <th>
+                    <font face="Georgia" color="darkblue">Actions</font>
+                </th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+<!-- ################################################### -->
+<!-- Main                                                                                                -->
+<!-- 
+            <tr valign="top" bgcolor=#F7F2E0>
+  -->
+            <tr valign="top" bgcolor="white">
+                <td align="center" valign="top">
+                    <div style="float: center; width: 55px; margin: 0px 0px 0px 0px; padding: 0px; border: 0px solid black; text-align: left;">
+                        <table align="Center" border="0" width="100%">
+                            <tr height="35px">
+                                <td align="Center" bgcolor="#3980C0" width="50px">
+                                    <a href="NextionUserGuide-Main.html" style="color: White"><b>Main</b></a>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+
+                <td align="left" valign="top">
+                    <p>On the <b><a href="NextionUserGuide-Main.html">Main</a></b> page, 
+
+                    <ol type="1" start="1">
+                        <li>Set the max speed for the spindle to 5,000.</li>
+                        
+                        <br>
+                        <li>Set the max speed for the Z axis to 100.</li>
+                        
+                        <br>
+                        <li>The radio button selections are set as:</li>
+                        
+                            <p><table>
+                                <tr valign="middle">
+                                    <td>
+                                        <b>Z</b>
+                                    </td>
+                                    <td>
+                                         <img src="Images/CircleChecked.png" width="20px" height="20px">                         
+                                    </td>
+
+                                    <td  width="5px">
+                                         &nbsp;                         
+                                    </td>
+
+                                    <td>
+                                        <b>X</b>
+                                    </td>
+                                    <td>
+                                         <img src="Images/CircleUnChecked.png" width="20px" height="20px">                         
+                                    </td>
+
+                                    <td  width="5px">
+                                         &nbsp;                         
+                                    </td>
+
+                                    <td>
+                                        <b>B</b>
+                                    </td>
+                                    <td>
+                                         <img src="Images/CircleUnChecked.png" width="20px" height="20px">                         
+                                    </td>
+                                </tr>
+                            </table>
+
+                        <br>
+                        <li>Consider using a <a href="NextionUserGuide-Config-Limits.html">limit switch</a> to stop movement when the desired distance has been reached on the Z axis.  If using one, ensure the limit switch is plugged into the configured pin for <b>Max</b>.</li>
+                        
+                        <br>
+                        <li>Start the spindle rotation.  Touch either
+                            <table>
+                                <tr valign="middle">
+                                    <td width="15px" rowspan=999>
+                                        &nbsp;
+                                    </td>
+
+                                    <td width="35px">
+                                        <img src="Images/ButtonMain-CCW.png" width="30px">
+                                    </td>
+                                    <td>
+                                         to rotate the spindle counter-clockwise (recommended) or                         
+                                    </td>
+                                </tr>
+                                <tr valign="middle">
+                                    <td>
+                                        <img src="Images/ButtonMain-CW.png" width="30px">
+                                    </td>
+                                    <td>
+                                         to rotate the spindle clockwise                         
+                                    </td>
+                                </tr>
+                            </table>
+                        </li>
+                        
+                        <br>
+                        <li>Engage the cutter to the desired depth.</li>
+                        
+                        <br>
+                        <li>Start the movement of the cutter along the Z axis.  Touch either
+                            <table>
+                                <tr valign="middle">
+                                    <td width="15px" rowspan=999>
+                                        &nbsp;
+                                    </td>
+
+                                    <td width="35px">
+                                        <img src="Images/ButtonMain-In.png" width="30px">
+                                    </td>
+                                    <td>
+                                         to cut towards the headstock                         
+                                    </td>
+                                </tr>
+                                <tr valign="middle">
+                                    <td>
+                                        <img src="Images/ButtonMain-Out.png" width="30px">
+                                    </td>
+                                    <td>
+                                         to cut away from the headstock                         
+                                    </td>
+                                </tr>
+                            </table>
+                        </li>
+                        
+                        <br>
+                        <li>Disengage the cutter.</li>
+                        
+                        <br>
+                        <li>Stop the movement of the cutter along the Z axis.
+                            <table>
+                                <tr valign="middle">
+                                    <td width="15px" rowspan=999>
+                                        &nbsp;
+                                    </td>
+
+                                    <td width="35px">
+                                        <img src="Images/ButtonMain-Stop.png" width="30px">
+                                    </td>
+                                </tr>
+                            </table>
+                        </li>
+                        
+                        <br>
+                        <li>Stop the rotation of the spindle.
+                            <table>
+                                <tr valign="middle">
+                                    <td width="15px" rowspan=999>
+                                        &nbsp;
+                                    </td>
+
+                                    <td width="35px">
+                                        <img src="Images/ButtonMain-Stop.png" width="30px">
+                                    </td>
+                                </tr>
+                            </table>
+                        </li>
+
+                        <br>
+                        <li>If additional depth is needed for the flutes, repeat steps 5 thru 10.</li>
+                    </ol>
+                </td>
+            </tr>
+
+    </table>
+
+<!-- ################################################### -->
+<!-- Cutting Downhill                                                                             -->
+    </td></tr>
+    <tr><td>
+    <p><hr class="style1">
+
+    <div style="float: right; width: 300px; margin: 5px 5px 5px 5px; padding: 5px; border: 1px solid black; text-align: left; background-color:White">
+        <table>
+            <tr>
+                <td align="center" colspan=999>
+                    <b>Cutting Downhill</b>
+                </td>
+            </tr>
+            <tr>
+                <td align="center">
+                    <br><a href="Images/CuttingDownhill.png" ><img src="Images/CuttingDownhill.png" width="100%"></a>
+                    <br>Cutting to the Left
+                </td>
+                <td align="center">
+                    <br><a href="Images/CuttingDownhill2.png" ><img src="Images/CuttingDownhill2.png" width="100%"></a>
+                    <br>Cutting to the Right
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <p>When cutting with a spinning cutter, just as on a router, it is a good practice to always cut downhill.  This is not always possible, but it typically leaves the smoothest surface.
+
+    <p>The choices for the direction to move the cutter (the <font color="red">red arrow</font>) and the cutter's rotation (<font color="blue">blue arrow</font>) should be made to ensure downhill cutting happens.
+
+    <p>This is an advantage for using a fly cutter over a carbide bit.  With a fly cutter, the direction of the cut can be reversed.  (For more information about fly cutters vs. carbide bits, see also <a href="https://www.otbok.info/OT%20-%20LnT-Term-CuttingFrame.html#Cutters" > Cutters</a> on the Cutting Frames page at the <a href="https://www.otbok.info/" >Ornamental Turning Book of Knowledge</a>.)
+
+    <br>
+    <br>
+    <p><i><font size="2">Click on any of the pictures on this page to see bigger images.</font></i>
+
+    </td></tr>
+</table>
+
+<!-- ################################################### -->
+<!-- Footer                                                                                             -->
+<!-- ################################################### -->
+    <div class="footer">
+        <hr class="style0">
+        <font size="3">
+        <table width="100%">
+            <col width="67%">
+            <col width="33%">
+
+            <tr valign="top">
+                <td align="left">
+                    Questions or comments?  Contact us at
+                    <br><a href="mailto:ColvinTools@Gmail.com?Subject=General" >ColvinTools@Gmail.com</a>
+                </td>
+                <td align="right">
+                    <a href="../index-Disclaimers.html">Disclaimers</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+</body>
+</html>
