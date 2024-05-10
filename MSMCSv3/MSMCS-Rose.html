@@ -72,7 +72,7 @@
     }
 
 .split1 {
-  height: calc(260px);
+  height: 400px;
   min-width: 450px;
   max-width: 450px;
   position: fixed;
@@ -100,7 +100,7 @@
   z-index: 1;
   top: 0;
   overflow-x: hidden;
-  padding-top: 280px;
+  padding-top: 400px;
 }
 
 .left {
@@ -128,7 +128,7 @@
 </style>
 
 <!-- ################################################### -->
-<!-- Style Sheet for footer                                                                     -->
+<!-- Style Sheet for footer                              -->
 <!-- ################################################### -->
 <style>
 .footer {
@@ -142,7 +142,7 @@
 </style>
 
 <!-- ################################################### -->
-<!-- Style Sheet for collapsible section                                                 -->
+<!-- Style Sheet for collapsible section                 -->
 <!-- ################################################### -->
 <style>
 .collapsible {
@@ -185,7 +185,7 @@
 </style>
 
 <!-- ################################################### -->
-<!-- Header                                                                                           -->
+<!-- Header                                              -->
 <!-- ################################################### -->
 
 <head bgcolor=#E6E6E6>
@@ -216,14 +216,14 @@
 </head>
 
 <!-- ################################################### -->
-<!-- Body - Right Side of the Screen                                                     -->
+<!-- Body - Right Side of the Screen                     -->
 <!-- ################################################### -->
 
 <body bgcolor=#E6E6E6 background="Images/DevBackground.png">
 
-    <div style="margin: 60px 5px 5px 5px; padding: 5px; border: 0px solid black; text-align: left;  background-color:#E6E6E6; background-image: url(Images/DevBackground.png);" class="split1 right" >
+    <div style="margin: 59px 15px 0px 0px; padding: 0px; border: 0px solid black; text-align: left;  background-color:#E6E6E6; background-image: url(Images/DevBackground.png);" class="split1 right" >
     
-        <img src = "Images/Screens/Rose1.jpg" width = "450px" class = "Image" usemap="#html1">
+        <img src = "Images/Screens/Rose.jpg" width = "450px" class = "Image" usemap="#html1">
 
 <!-- area map based on an image size of 450px wide -->
         <map name = "html1">
@@ -431,6 +431,10 @@
         
         <p><b><I>Starting with version 3.0.8</I></b>, there is a progress bar displayed just above the bottom row of buttons.
         
+        <p><b><I>Starting with version 3.1</I></b>, the indexing buttons (CCW, CW, Left, and Right) were added to this screen, making the artist's job easier as they don't have to jump to the Index page for performing those operations between cuts.
+        
+        <p>Also with version 3.1, the values for <b>n</b> &amp; <b>d</b> may be an integer or real number. 
+        
         <hr class="style1">
         
         <p style="margin-bottom: 0;"><font color="red"><u>Key Note</u>:</font> There is some pretty heavy duty math going on here, and some of the combinations of <b>n</b> and <b>d</b> get into calculations which can take the Teensy some time.  The result is that it can not be run as fast on the Z axis as with other operations.  
@@ -571,6 +575,142 @@
                 Sets <b>height</b> (distance along Z or X Axes) of each lobe and is dependent upon value entered in <a href="MSMCS-Config-ZAxis.html">Configuration Screen</a> for <b>Distance/360</b> for the axis you are using. If using the M3 or M4 axis with radial movement, the gear ratio sets this value.
             </td>
         </tr>
+
+        <tr valign="top">
+            <td colspan=999>
+            <hr class="style2">
+
+            <p><b>Usage Notes:</b> It is important to develop a rhythm of steps which are constantly followed.  Skipping one of the steps will cause unwanted cuts to be added to your piece.
+            
+            <p>Be sure to setup for the first series of cuts to allow the backlash to be absorbed before beginning the cuts.  This is the location where the cutter will return to after each series, so giving a little space is recommended.
+
+            <p>After setting up for the first series of cuts,
+            
+                <ol>
+                    <li>Start the cutter (e.g., the overhead drive)</li>
+                    
+                    <li>Engage the cutter to the desired depth.  Record the setting for this so it can be repeated.</li>
+                    
+                    <li>Start the first series, using either the <img src="Images/Buttons/ButtonDarkBlue-CCW.png" width="35px" /> or <img src="Images/Buttons/ButtonDarkBlue-CW.png" width="35px" /> button.</li>
+                    
+                    <li>Retract the cutter from the piece.</li>
+                    
+                    <li>Return the cutter to the start position using the <img src="Images/Buttons/ButtonDarkBlue-Return.png" width="35px" /> button.</li>
+                    
+                    <li>Index the cut using one of the 4 indexing buttons.    The one used is not relevant; however it is best to stay with the same one for each set of indexes.</li>
+                    
+                    <table>
+                        <tr height="30px">
+                            <td>
+                                <img src="Images/Buttons/ButtonDarkBlue-In.png" height="30px" />
+                            </td>
+                            <td>
+                                &nbsp;
+                            </td>
+                            <td>
+                                <img src="Images/Buttons/ButtonDarkBlue-Out.png" height="30px" />
+                            </td>
+                            <td>
+                                &nbsp;
+                            </td>
+                            <td align="Center" bgcolor="#2A4F98" width="50px">
+                                <font color="White" size="3" face="Arial"><b>CCW</b></font>
+                            </td>
+                            <td>
+                                &nbsp;
+                            </td>
+                            <td align="Center" bgcolor="#2A4F98" width="50px">
+                                <font color="White" size="3" face="Arial"><b>CW</b></font>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <li>Continue on to the next cut by returning to step 1.</li>
+                </ol>
+            </td>
+        </tr>
+
+    <table width="100%">
+        <col width="125px">
+        <col width="*">
+
+<!-- ################################################### -->
+<!-- Controls   -->
+
+        <tr>
+            <td colspan=999>
+                <hr class="style1">
+            </td>
+        </tr>
+
+        <tr valign="top">
+            <td>
+                <img src="Images/Buttons/ButtonDarkBlue-In.png" width="50px">
+                <p><img src="Images/Buttons/ButtonDarkBlue-Out.png" width="50px">
+
+                <p><span style="background-color: LightGray"><b>&nbsp;Indexes&nbsp;</b></span>
+            </td>
+
+            <td>
+                <p style="margin-top: 0;">These buttons are used to move the cutter along the Z or X axis to the next pattern starting position.  The amount of movement is set on the <a href="MSMCS-Mov.html">Move Screen</a>.
+                
+                <p>After one indexing is executed, that direction's button will be &quot;lit&quot; (the arrow will change to red).  This makes it easier to index again in the same direction.
+                
+                <p>The value shown in gray indicates the number of times the axis has been indexed. It is decremented each time the stepper motor is moved counter clockwise, and incremented when moved clockwise.
+                                
+                <p style="margin-bottom: 0;"><b>Note:</b>  the speed for the indexing movement is set on the Move Screen.
+
+            </td>
+        </tr>
+
+        <tr valign="top">
+            <td colspan=999>
+                <hr class="style1">
+            </td>
+        </tr>
+
+        <tr valign="top">
+            <td>
+                <table border="0">
+                    <tr height="30px">
+                        <td align="Center" bgcolor="#2A4F98" width="50px">
+                            <font color="White" size="3" face="Arial"><b>CCW</b></font>
+                        </td>
+                    </tr>
+                </table>
+
+                <table border="0">
+                    <tr height="30px">
+                        <td align="Center" bgcolor="#2A4F98" width="50px">
+                            <font color="White" size="3" face="Arial"><b>CW</b></font>
+                        </td>
+                    </tr>
+                </table>
+                
+                <p><span style="background-color: LightGray"><b>&nbsp;Indexes&nbsp;</b></span>
+            </td>
+
+            <td>
+                <p style="margin-top: 0;">These buttons are used to index to the next pattern starting position.  The indexing is for the:
+                    <ul>
+                        <li>Spindle,</li>
+                        <li>M3,</li>
+                        <li>M4, or</li>
+                        <li>Spindle &amp; M3 (in Synchro mode)</li>
+                    </ul>
+                
+                <p>The amount of movement is set on the <a href="MSMCS-Ind.html">Index Screen</a>.
+                
+                <p>After one indexing is executed, that direction's button will be &quot;lit&quot; (the letters will change to red).  This makes it easier to index again in the same direction.
+                
+                <p>The value shown in gray indicates the number of times the axis has been indexed. It is decremented each time the stepper motor is moved counter clockwise, and incremented when moved clockwise.
+                                
+                <p style="margin-bottom: 0;"><b>Note:</b>  the speed for the indexing movement is set on the Index Screen.
+            </td>
+        </tr>
+
+
+
 
         <tr>
             <td colspan=999>
