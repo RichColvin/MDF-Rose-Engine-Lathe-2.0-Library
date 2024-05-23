@@ -189,7 +189,7 @@
 <!-- ################################################### -->
 
 <head bgcolor=#E6E6E6>
-    <title>MDF Rose Engine Lathe 2.0</title>
+    <title>ELFOS</title>
     <link rel="shortcut icon" type="image/ico" href="favicon.ico">
     <link rel="icon" type="image/png" sizes="16x16" href="Images/favicon.png">
 
@@ -205,12 +205,10 @@
             <a href = "javascript:history.back()"><img src="Images/BackButton.png" width="30px"></a>
         </td>
         <td align="center" valign="top">
-            <a href="MSMCS.html"><font color="DarkBlue" size="6"><b>
-                Control System for Multiple Stepper Motors</a>
-            </b></font>
+            <font color="DarkBlue" size="6"><a href="MSMCS.html" style="text-decoration: none; color: DarkBlue; "><b>ELFOS</b></a></font>
         </td>
         <td align="right">
-            <a href="index.html"><img src="Images/Books.png" width="50px" class="Image"></a>
+            <img src="Images/ELFOS-Logo.png" width="65px" class="Image">
         </td>
     </tr>
 </table>
@@ -225,7 +223,7 @@
 
     <div style="margin: 60px 5px 5px 5px; padding: 5px; border: 0px solid black; text-align: left;  background-color:#E6E6E6; background-image: url(Images/DevBackground.png);" class="split1 right" >
         
-        <img src = "Images/Screens/Sync1.jpg" width = "450px" class = "Image" usemap="#html1">
+        <img src = "Images/Screens/Sync_Revolutions.jpg" width = "450px" class = "Image" usemap="#html1">
 
 <!-- area map based on an image size of 450px wide -->
         <map name = "html1">
@@ -424,7 +422,7 @@
     </div>
 
 <!-- ################################################### -->
-<!-- Body - Left Side of the Screen                                                       -->
+<!-- Body - Left Side of the Screen                      -->
 <!-- ################################################### -->
 
     <div style="float: left; margin: 60px 5px 5px 5px; padding: 5px; border: 0px solid black; text-align: left;  background-color:#E6E6E6; background-image: url(Images/DevBackground.png);" class="split2 left" >
@@ -444,6 +442,8 @@
     
     <p>There is value in reading thru the <a href="MDFRE-2.0-Activity-Threading.html">threading</a> activity document for understanding how to add helixes to an object.
 
+    <p><b><I>Starting with version 3.0.8</I></b>, there is a progress bar displayed just above the bottom row of buttons.
+        
     <table width="100%">
         <col width="125px">
         <col width="*">
@@ -511,13 +511,13 @@
                             Left
                         </td>
                         <td>
-                            <img src="Images/CircleChecked.png" width="20px" height="20px">
+                            <img src="Images/CircleUnChecked.png" width="20px" height="20px">
                         </td>
                         <td>
                             Right
                         </td>
                         <td>
-                            <img src="Images/CircleUnChecked.png" width="20px" height="20px">
+                            <img src="Images/CircleChecked.png" width="20px" height="20px">
                         </td>
                     </tr>
                 </table>
@@ -537,28 +537,50 @@
 
         <tr valign="top">
             <td>
-                <span style="background-color: #FFEE9C"><b>
-                &nbsp; Revolutions &nbsp;
-                </b></span>
+                <table border="0">
+                    <tr>
+                        <td align="Left">
+                            <span style="background-color: #FFEE9C"><b>
+                            &nbsp; Revolutions &nbsp;
+                            </b></span>
+                        </td>
+                    </tr>
+                </table>
+                <table border="0">
+                    <tr>
+                        <td align="Left">
+                            <span style="background-color: #FFEE9C"><b>
+                            &nbsp; Degrees &nbsp;
+                            </b></span>
+                        </td>
+                    </tr>
+                </table>
+
             </td>
             <td>
-                The value of the <b>Revolutions</b> determines how far around the piece the helix will travel based on the spindle rotating.  The value of 0.3 illustrated will rotate the spindle
+                <p style="margin-top: 0;">The selection of <b>Revolutions</b> or <b>Degrees</b> is used to determine if the sync distance is measured in number of spindle revolutions, or degrees of rotation.  Whichever approach is selected turns <span style="background-color: #1bf910">&nbsp; green &nbsp;</span>.
+                
+                <p><i>NOTE:  The option to select degrees was introduced in version 3.0.8.</I>
+                
+                <p>The value of the <b>Revolutions</b> / <b>Degrees</b> numeric field determines how far around the piece the helix will travel based on the spindles rotation.  
+                
+                <p>If the selection is <b>Revolutions</b>, then the value of 4 illustrated will rotate the spindle
 
 \[
 \begin{align}
 SpindleRotation & = 360 &deg; \times \, Revolutions \\
- & = 360 &deg; \times \, 0.3 \\
- & = 108 &deg;
+ & = 360 &deg; \times \, 4 \\
+ & = 1,440 &deg;
 \end{align}
 \]
 
                 whilst moving the cutter the distance specified (in this case, 2.6).
                 
-                <p>The value of the <b>Revolutions</b> also determines the evenness of the surface when making a flute.  Increasing the number of revolutions for a given distance will reduce the size of the ridges.
+                <p>The value used also determines the evenness of the surface when making a flute.  Increasing the number of revolutions for a given distance will reduce the size of the ridges.
                 
                 <center><a href="Images/Fluting-Ridges.png" ><img src="Images/Fluting-Ridges.png" width="75%" /></a></center>
                 
-                <p>Ridges are desirable when making threads, but for a smooth surface they may not be.  With a high enough value for the <b>Revolutions</b>, these ridges will become imperceptable. More details about that are available at <a href="MSMCS-Sync-Rev.html">this web page</a>.
+                <p>Ridges are desirable when making threads, but for a smooth surface they may not be.  With a high enough value in this field, these ridges will become imperceptable. More details about that are available at <a href="MSMCS-Sync-Rev.html">this web page</a>.
 
                 <p style="margin-bottom: 0;">To change this value, touch the number, and you will be presented with the <a href="MSMCS-NumberPad.html">Number Pad Screen</a>.
             </td>

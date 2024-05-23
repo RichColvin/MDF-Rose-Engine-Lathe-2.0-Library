@@ -189,7 +189,7 @@
 <!-- ################################################### -->
 
 <head bgcolor=#E6E6E6>
-    <title>MDF Rose Engine Lathe 2.0</title>
+    <title>ELFOS</title>
     <link rel="shortcut icon" type="image/ico" href="favicon.ico">
     <link rel="icon" type="image/png" sizes="16x16" href="Images/favicon.png">
 
@@ -205,12 +205,10 @@
             <a href = "javascript:history.back()"><img src="Images/BackButton.png" width="30px"></a>
         </td>
         <td align="center" valign="top">
-            <a href="MSMCS.html"><font color="DarkBlue" size="6"><b>
-                Control System for Multiple Stepper Motors</a>
-            </b></font>
+            <font color="DarkBlue" size="6"><a href="MSMCS.html" style="text-decoration: none; color: DarkBlue; "><b>ELFOS</b></a></font>
         </td>
         <td align="right">
-            <a href="index.html"><img src="Images/Books.png" width="50px" class="Image"></a>
+            <img src="Images/ELFOS-Logo.png" width="65px" class="Image">
         </td>
     </tr>
 </table>
@@ -223,9 +221,9 @@
 
 <body bgcolor=#E6E6E6 background="Images/DevBackground.png">
 
-    <div style="margin: 60px 5px 5px 5px; padding: 5px; border: 0px solid black; text-align: left;  background-color:#E6E6E6; background-image: url(Images/DevBackground.png);" class="split1 right" >
+    <div style="margin: 59px 15px 0px 0px; padding: 0px; border: 0px solid black; text-align: left;  background-color:#E6E6E6; background-image: url(Images/DevBackground.png);" class="split1 right" >
     
-        <img src = "Images/Screens/Recip_Axial1.jpg" width = "450px" class = "Image" usemap="#html1">
+        <img src = "Images/Screens/RecipPlus.jpg" width = "450px" class = "Image" usemap="#html1">
 
 <!-- area map based on an image size of 450px wide -->
         <map name = "html1">
@@ -370,7 +368,7 @@
                     <img src="Images/Buttons/ButtonDarkBlue-In.png" width="50px">
                 </td>
                 <td>
-                    Used to determine the direction of cut around the spindle.  The pattern will run the pre-determined <b>Axial Distance</b> then stop and wait for return direction instruction.  User chooses whether to cut in both directions (either on the same cut path or on subsequent path) or retract cutter and return to the origin point without cutting.
+                    Used to determine the direction of cut along the X or Z axis, depending on which is selected.  The pattern will run the pre-determined <b>Axial Distance</b> then stop and wait for return direction instruction.  User chooses whether to cut in both directions (either on the same cut path or on subsequent path) or retract cutter and return to the origin point without cutting.
                 </td>
             </tr>
         </table>
@@ -410,7 +408,7 @@
                     <img src="Images/Buttons/ButtonDarkBlue-Out.png" width="50px">
                 </td>
                 <td>
-                    Used to determine the direction of cut around the spindle.  The pattern will run the pre-determined <b>Axial Distance</b> then stop and wait for return direction instruction.  User chooses whether to cut in both directions (either on the same cut path or on subsequent path) or retract cutter and return to the origin point without cutting.
+                    Used to determine the direction of cut along the X or Z axis, depending on which is selected.  The pattern will run the pre-determined <b>Axial Distance</b> then stop and wait for return direction instruction.  User chooses whether to cut in both directions (either on the same cut path or on subsequent path) or retract cutter and return to the origin point without cutting.
                 </td>
             </tr>
         </table>
@@ -420,7 +418,7 @@
     </div>
 
 <!-- ################################################### -->
-<!-- Body - Left Side of the Screen                                                       -->
+<!-- Body - Left Side of the Screen                      -->
 <!-- ################################################### -->
 
     <div style="float: left; margin: 60px 5px 5px 5px; padding: 5px; border: 0px solid black; text-align: left;  background-color:#E6E6E6; background-image: url(Images/DevBackground.png);" class="split2 left" >
@@ -449,6 +447,9 @@
             </table>
 
             <p>It works by alternately reversing the Z, X, M3, or M4 axis direction whilst the spindle continues rotating in the same direction.    The result would be a pattern "wrapped around the object" as it rotated.
+            
+            <p><b><I>Starting with version 3.0.8</I></b>, there is a progress bar displayed just above the bottom row of buttons.
+        
             <hr class="style1">
 
             <p><b>Usage Notes:</b> It is important to develop a rhythm of steps which are constantly followed.  Skipping one of the steps will cause unwanted cuts to be added to your piece.
@@ -459,11 +460,43 @@
             
                 <ol>
                     <li>Start the cutter (e.g., the overhead drive)</li>
+                    
                     <li>Engage the cutter to the desired depth.  Record the setting for this so it can be repeated.</li>
+                    
                     <li>Start the first series, using either the <img src="Images/Buttons/ButtonDarkBlue-In.png" width="35px" /> or <img src="Images/Buttons/ButtonDarkBlue-Out.png" width="35px" /> button.</li>
+                    
                     <li>Retract the cutter from the piece.</li>
+                    
                     <li>Return the cutter to the start position using the <img src="Images/Buttons/ButtonDarkBlue-Return.png" width="35px" /> button.</li>
-                    <li>Index the cut using either the <img src="Images/Buttons/ButtonDarkBlue-CCW.png" width="35px" /> or <img src="Images/Buttons/ButtonDarkBlue-CW.png" width="35px" /> button.  The one used is not relevant; however it is best to stay with the same one for each set of indexes.</li>
+                    
+                    <li>Index the cut using one of the 4 indexing buttons.    The one used is not relevant; however it is best to stay with the same one for each set of indexes.</li>
+                    
+                    <table>
+                        <tr height="30px">
+                            <td>
+                                <img src="Images/Buttons/ButtonDarkBlue-In.png" height="30px" />
+                            </td>
+                            <td>
+                                &nbsp;
+                            </td>
+                            <td>
+                                <img src="Images/Buttons/ButtonDarkBlue-Out.png" height="30px" />
+                            </td>
+                            <td>
+                                &nbsp;
+                            </td>
+                            <td align="Center" bgcolor="#2A4F98" width="50px">
+                                <font color="White" size="3" face="Arial"><b>CCW</b></font>
+                            </td>
+                            <td>
+                                &nbsp;
+                            </td>
+                            <td align="Center" bgcolor="#2A4F98" width="50px">
+                                <font color="White" size="3" face="Arial"><b>CW</b></font>
+                            </td>
+                        </tr>
+                    </table>
+
                     <li>Continue on to the next cut by returning to step 1.</li>
                 </ol>
 
@@ -480,6 +513,32 @@
             </td>
         </tr>
 
+
+        <tr valign="top">
+            <td>
+                <img src="Images/Buttons/ButtonDarkBlue-In.png" width="50px">
+                <p><img src="Images/Buttons/ButtonDarkBlue-Out.png" width="50px">
+
+                <p><span style="background-color: LightGray"><b>&nbsp;Indexes&nbsp;</b></span>
+            </td>
+
+            <td>
+                <p style="margin-top: 0;">These buttons are used to move the cutter along the Z or X axis to the next pattern starting position.  The amount of movement is set on the <a href="MSMCS-Mov.html">Move Screen</a>.
+                
+                <p>After one indexing is executed, that direction's button will be &quot;lit&quot; (the arrow will change to red).  This makes it easier to index again in the same direction.
+                
+                <p>The value shown in gray indicates the number of times the axis has been indexed. It is decremented each time the stepper motor is moved counter clockwise, and incremented when moved clockwise.
+                                
+                <p style="margin-bottom: 0;"><b>Note:</b>  the speed for the indexing movement is set on the Move Screen.
+
+            </td>
+        </tr>
+
+        <tr valign="top">
+            <td colspan=999>
+                <hr class="style1">
+            </td>
+        </tr>
 
         <tr valign="top">
             <td>
@@ -503,9 +562,17 @@
             </td>
 
             <td>
-                <p style="margin-top: 0;">These buttons are used to index the spindle s to the next pattern starting position.  The amount of movement is set on the <a href="MSMCS-Ind.html">Index Screen</a>.
+                <p style="margin-top: 0;">These buttons are used to index to the next pattern starting position.  The indexing is for the:
+                    <ul>
+                        <li>Spindle,</li>
+                        <li>M3,</li>
+                        <li>M4, or</li>
+                        <li>Spindle &amp; M3 (in Synchro mode)</li>
+                    </ul>
                 
-                <p>After one indexing is executed, that direction's button will be &quot;lit&quot; (the arrow will change to red).  This makes it easier to index again in the same direction.
+                <p>The amount of movement is set on the <a href="MSMCS-Ind.html">Index Screen</a>.
+                
+                <p>After one indexing is executed, that direction's button will be &quot;lit&quot; (the letters will change to red).  This makes it easier to index again in the same direction.
                 
                 <p>The value shown in gray indicates the number of times the axis has been indexed. It is decremented each time the stepper motor is moved counter clockwise, and incremented when moved clockwise.
                                 
@@ -563,12 +630,6 @@
         </tr>
 
         <tr>
-            <td colspan=999>
-                New in version 19 is the ability to select from some pre-set patterns:
-            </td>
-        </tr>
-
-        <tr>
             <td align="center" colspan=999>
                 <table width="100%">
                     <tr>
@@ -619,8 +680,43 @@
             </td>
         </tr>
 
+        <tr>
+            <td colspan=999>
+                <hr class="style1">
+            </td>
+        </tr>
+
+        <tr valign="top">
+            <td>
+                <b>No Last Leg</b>
+                <img src="Images/SquareChecked.png" width="20px" height="20px">
+            </td>
+            <td>
+                This option can be used by the artist on pattern 2 to have the system not cut the final vertical leg of the pattern.  This only works for pattern 2.
+            </td>
+        </tr>
+
 <!-- ################################################### -->
 <!-- Variables   -->
+
+        <tr>
+            <td colspan=999>
+                <hr class="style1">
+            </td>
+        </tr>
+
+        <tr valign="top">
+            <td>
+                <span style="background-color: #FFEE9C"><b>&nbsp;Grow +/-&nbsp;</b></span>
+            </td>
+            <td>
+                <p style="margin-top: 0;">This can be used to adjust the waves as the cutter progresses down a conical form.  The values can be positive, 0, or negative.
+                
+                <p>Values are added or subtracted from each leg's length after the first wave.
+
+                <p style="margin-bottom: 0;"><i>NOTE:  The option was introduced in version 3.0.8.</I>                
+            </td>
+        </tr>
 
         <tr>
             <td colspan=999>

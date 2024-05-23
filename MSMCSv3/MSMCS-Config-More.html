@@ -146,7 +146,7 @@
 <!-- ################################################### -->
 
 <head bgcolor=#E6E6E6>
-    <title>MDF Rose Engine Lathe 2.0</title>
+    <title>ELFOS</title>
     <link rel="shortcut icon" type="image/ico" href="favicon.ico">
     <link rel="icon" type="image/png" sizes="16x16" href="Images/favicon.png">
 
@@ -162,12 +162,10 @@
             <a href = "javascript:history.back()"><img src="Images/BackButton.png" width="30px"></a>
         </td>
         <td align="center" valign="top">
-            <a href="MSMCS.html"><font color="DarkBlue" size="6"><b>
-                Control System for Multiple Stepper Motors</a>
-            </b></font>
+            <font color="DarkBlue" size="6"><a href="MSMCS.html" style="text-decoration: none; color: DarkBlue; "><b>ELFOS</b></a></font>
         </td>
         <td align="right">
-            <a href="index.html"><img src="Images/Books.png" width="50px" class="Image"></a>
+            <img src="Images/ELFOS-Logo.png" width="65px" class="Image">
         </td>
     </tr>
 </table>
@@ -284,9 +282,20 @@
             
         <hr class="style1">
 
-        <p><b>Cutter Motor Pin</b> This is the pin number used for cutting the power on the overhead drive when the limit of travel has been reached.  This function is still in development.
+        <div style="float: right; width: 65px; margin: 5px 5px 5px 5px; padding: 5px; border: 1px solid Darkgray; text-align: center;  ">
+            <a href="Images/AuxPinSignalLight.png" target="_new"><img src="Images/AuxPinSignalLight.png" width="90%" /></a>
+            <p style="margin-bottom: 0;"><font size=2><b>Signal Light</b></font>
+        </div>
+
+        <p><b>Auxiliary Pin</b> This is the pin number used for identifying when an operation is running.
         
-        <p>More informataion about this is at <a href="MSMCS-Config-More-Auxillary-Pin.html">Auxiliary Pin Function</a>. 
+        <p>When using certain functions (such as Sync and MultiSync), the final pass can take quite a long time -- many hours is not uncommon.  This function was requested so that a signal light can indicate when the activity is still underway.
+
+        <p>The idea was to have a light (such as the one to the right) lit when activity is underway, and not lit when the activity has stopped.  This allows the operator to walk away from the machine when using these long-running operations, and monitor the activity periodically by glancing over to the machine to identify if the activity has stopped.
+        
+        <p>More informataion about this is at <a href="MSMCS-Config-More-Auxillary-Pin.html">Auxiliary Pin Function</a>.
+        
+        <p><I>Prior to version 3.0.8, this was called the <b>Cutter Motor Pin</b>.</I>
             
         <hr class="style1">
 

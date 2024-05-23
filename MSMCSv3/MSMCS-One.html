@@ -189,7 +189,7 @@
 <!-- ################################################### -->
 
 <head bgcolor=#E6E6E6>
-    <title>MDF Rose Engine Lathe 2.0</title>
+    <title>ELFOS</title>
     <link rel="shortcut icon" type="image/ico" href="favicon.ico">
     <link rel="icon" type="image/png" sizes="16x16" href="Images/favicon.png">
 
@@ -205,12 +205,10 @@
             <a href = "javascript:history.back()"><img src="Images/BackButton.png" width="30px"></a>
         </td>
         <td align="center" valign="top">
-            <a href="MSMCS.html"><font color="DarkBlue" size="6"><b>
-                Control System for Multiple Stepper Motors</a>
-            </b></font>
+            <font color="DarkBlue" size="6"><a href="MSMCS.html" style="text-decoration: none; color: DarkBlue; "><b>ELFOS</b></a></font>
         </td>
         <td align="right">
-            <a href="index.html"><img src="Images/Books.png" width="50px" class="Image"></a>
+            <img src="Images/ELFOS-Logo.png" width="65px" class="Image">
         </td>
     </tr>
 </table>
@@ -323,9 +321,12 @@
             <tr valign="Top">
                 <td>
                     <img src="Images/Buttons/ButtonGreen2-CCW.jpg" width="50px">
+                    <img src="Images/Buttons/ButtonGreen2-In.jpg" width="50px">
                 </td>
                 <td>
-                    Used to turn the spindle counter-clockwise.  On a traditional lathe, this is considered forward.
+                    <p style="margin-top: 0;">Used to turn the spindle counter-clockwise.  On a traditional lathe, this is considered forward.
+                    
+                    <p style="margin-bottom: 0;"><b><u>Note</u>:</b>  if the axis for movement X, Z, M3 (<I>when configured as linear</I>), or M4 (<I>when configured as linear</I>), then this button will be a left arrow.
                 </td>
             </tr>
         </table>
@@ -377,7 +378,7 @@
                     <img src="Images/Buttons/ButtonGreen2-Return.jpg" width="50px">
                 </td>
                 <td>
-                    Used to return the spindle or the selected axis to the start point of the previous operation.
+                    <p style="margin-top: 0;">Used to return the spindle or the selected axis to the start point of the previous operation.
                     
                     <p>When using this function, Be sure to stop and retract the cutter from the cut first.  The return path does not always follow the same path as the initial cut.  (Backlash and other factors come into play here.)
                     
@@ -391,9 +392,12 @@
             <tr valign="Top">
                 <td>
                     <img src="Images/Buttons/ButtonGreen2-CW.jpg" width="50px">
+                    <img src="Images/Buttons/ButtonGreen2-Out.jpg" width="50px">
                 </td>
                 <td>
-                    Used to turn the spindle clockwise.  On a traditional lathe, this is considered reverse.  To change the direction of the spindle, you must stop it first.  You cannot directly swap between clockwise and counter-clockwise.
+                    <p style="margin-top: 0;">Used to turn the spindle clockwise.  On a traditional lathe, this is considered reverse.  To change the direction of the spindle, you must stop it first.  You cannot directly swap between clockwise and counter-clockwise.
+                    
+                    <p style="margin-bottom: 0;"><b><u>Note</u>:</b>   if the axis for movement X, Z, M3 (<I>when configured as linear</I>), or M4 (<I>when configured as linear</I>), then this button will be a right arrow.
                 </td>
             </tr>
         </table>

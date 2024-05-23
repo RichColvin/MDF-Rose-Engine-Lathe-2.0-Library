@@ -58,7 +58,7 @@
 <!-- ################################################### -->
 
 <head bgcolor=#E6E6E6>
-<title>MDF Rose Engine Lathe 2.0</title>
+<title>ELFOS</title>
 <link rel="shortcut icon" type="image/ico" href="favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="Images/favicon.png">
 
@@ -74,15 +74,15 @@
             <a href = "javascript:history.back()"><img src="Images/BackButton.png" width="30px"></a>
         </td>
         <td align="center" valign="top">
-            <a href="MSMCS.html"><font color="DarkBlue" size="6"><b>
-                Control System for Multiple Stepper Motors</a>
+            <font color="DarkBlue" size="6">
+                <a href="MSMCS.html" style="text-decoration: none; color: DarkBlue; "><b>ELFOS</b></a>
                 <br>
                 About the <b>RE30.ini</b> File
                 </font>
             </b></font>
         </td>
         <td align="right">
-            <a href="index.html"><img src="Images/Books.png" width="50px" class="Image"></a>
+            <img src="Images/ELFOS-Logo.png" width="65px" class="Image">
         </td>
     </tr>
 </table>
@@ -240,6 +240,7 @@ Settings typically used on the MDF Rose Engine Lathe 2.0 are highlighted in <spa
                             Ed French's rose engine lathe, as modeled in Fusion 360
                         </td>
                     </tr>
+<!--  
                     <tr>
                         <td align="center" valign="top">
                             5
@@ -248,6 +249,7 @@ Settings typically used on the MDF Rose Engine Lathe 2.0 are highlighted in <spa
                             Armbruster Mark II
                         </td>
                     </tr>
+-->
                 </table>
             </div>
             
@@ -357,9 +359,30 @@ Settings typically used on the MDF Rose Engine Lathe 2.0 are highlighted in <spa
 
             <p style="margin-top: 0;">This identifies if the M3 and/or M4 axes are available.  The value is typically 4, but may be 5 if the v3.0 printed circuit board (PCB) is being used.
 
+            <p><font color="red"><b><u>ELFOS 3.0.8</u>:</b></font> Beginning with 3.0.8, this setting has no effect on the operation of the system.  Even if you are using a 4-axis PCB, the options for M4 will be shown.
+
             <p><font color="red"><b><u>Note regarding the Teensy 3.2</u>:</b></font> If the Teensy 3.2 is being used as the controller, this needs be 4 (regardless of the PCB being used).
 
             <p style="margin-bottom: 0;"><font color="red"><b><u>Note</u>:</b></font> This value cannot be set via the menus; the ini file is the only option for setting it.
+        </td>
+    </tr>
+
+    <tr bgcolor="white">
+        <td valign="top">
+        </td>
+        <td valign="top">
+            AuxiliaryPin
+        </td>
+        <td valign="top">
+            <div style="float: right; width: 200px; margin: 0px 0px 0px 0px; padding: 5px; border: 1px solid Darkgray; text-align: left; background-color: LightGray; ">
+                More information about the <a href="MSMCS-Config-More-Auxillary-Pin.html">Auxiliary Pin Function</a></a>
+            </div>        
+        
+            <p style="margin-top: 0;">This is the pin number used for identifying when an operation is running.
+        
+            <p>When using certain functions (such as Sync and MultiSync), the final pass can take quite a long time -- many hours is not uncommon.  This function was requested so that a signal light can indicate when the activity is still underway.
+
+            <p style="margin-bottom: 0;">The idea was to have a light lit when activity is underway, and not lit when the activity has stopped.  This allows the operator to walk away from the machine when using these long-running operations, and monitor the activity periodically by glancing over to the machine to identify if the activity has stopped.
         </td>
     </tr>
 
