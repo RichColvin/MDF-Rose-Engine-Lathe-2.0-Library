@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
+
+<!-- ################################################### -->
+<!-- Style Sheet for MathJax                             -->
+<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+
+<!-- ################################################### -->
+<!-- Style Sheet for Horizontal Rule - Style 0                                       -->
+ <style>
+    hr.style0 {
+        border: 0;
+        height: 1px;
+        background-image: linear-gradient(to right,
+                rgba(184,134,11, 2),
+                rgba(184,134,11, 2),
+                rgba(184,134,11, 2));
+    }
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for Horizontal Rule - Style 1                                       -->
+ <style>
+    hr.style1 {
+        border: 0;
+        height: 3px;
+        background-image: linear-gradient(to right,
+            rgba(0, 0, 0, 0),
+                rgba(184,134,11, 2),
+            rgba(0, 0, 0, 0));
+    }
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for Horizontal Rule - Style 2                                       -->
+ <style>
+    hr.style2 {
+        border: 0;
+        height: 6px;
+        background-image: linear-gradient(to right,
+            rgba(0, 0, 0, 0),
+                rgba(184,134,11, 2),
+            rgba(0, 0, 0, 0));
+    }
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for indented paragraphs                                             -->
+<style>
+    .indented { padding-left: 33pt; padding-right: 33pt; }
+</style>
+
+<!-- ################################################### -->
+<!-- <body background="Images/Background.png"> -->
+	<font face="Georgia">
+
+<!-- ################################################### -->
+<!-- Style Sheet for header image max size                                         -->
+<!-- ################################################### -->
+<style>
+    img.Image { max-width: 500px;}
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for split screen                                                            -->
+<!-- ################################################### -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+    body {
+        font-family: Georgia;
+    }
+
+.split1 {
+  height: calc(260px);
+  min-width: 450px;
+  max-width: 450px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.split2 {
+  height: calc(100% - 130px);
+  width: calc(100% - 490px);
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.split3 {
+  height: calc(100% - 400px);
+  min-width: 450px;
+  max-width: 450px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 280px;
+}
+
+.left {
+  left: 0;
+  background-color: #111;
+}
+
+.right {
+  right: 0;
+  background-color: blue;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.centered img {
+  width: 150px;
+  border-radius: 50%;
+}
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for footer                                                                     -->
+<!-- ################################################### -->
+<style>
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: #E6E6E6;
+   text-align: center;
+}
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for collapsible section                                                 -->
+<!-- ################################################### -->
+<style>
+.collapsible {
+  background-color: #E6E6E6;
+  color: DarkBlue;
+  cursor: pointer;
+  padding: 3px;
+  width: calc(100%-450px);
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.active, .collapsible:hover {
+  background-color:#4C877A;
+  color: white;
+}
+
+.collapsible:after {
+  content: '\002B';
+  color: black;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2212";
+  color: black;
+}
+
+.content {
+  padding: 0 3px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #f1f1f1;
+}
+</style>
+
+<!-- ################################################### -->
+<!-- Header                                                                                           -->
+<!-- ################################################### -->
+
+<head bgcolor=#E6E6E6>
+    <title>ELFOS</title>
+    <link rel="shortcut icon" type="image/ico" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="Images/favicon.png">
+
+<font face="Georgia">
+
+<table width="100%" border=0>
+        <col width="10%">
+        <col width="*">
+        <col width="10%">
+
+    <tr valign="bottom">
+        <td align="left">
+            <a href = "javascript:history.back()"><img src="Images/BackButton.png" width="30px"></a>
+        </td>
+        <td align="center" valign="top">
+            <font color="DarkBlue" size="6"><a href="MSMCS.html"><b>ELFOS</b></a></font>
+        </td>
+        <td align="right">
+            <img src="Images/ELFOS-Logo.png" width="65px" class="Image">
+        </td>
+    </tr>
+</table>
+
+</head>
+
+<!-- ################################################### -->
+<!-- Body                                                                                                -->
+<!-- ################################################### -->
+
+<body bgcolor=#E6E6E6 background="Images/DevBackground.png">
+    <table align="Center" border="0">
+        <tr height="35px">
+            <td align="Center" bgcolor="#c9931d" width="300px">
+                <font color="Black" size="4"><b>Synchronization Screen</b></font>
+            </td>
+        </tr>
+    </table>
+    
+<h2><font color="DarkBlue">Revolutions &amp; Fluting</font></h2>
+
+<p>The setting for <b>Revolutions</b> has an affect on the evenness of the surface, but it is also affected by the diameter of cutter's rotation.  The helical ridges shown on the left below are prominent, and even more so when the cutter's diameter is smaller, as shown on the right.
+
+<table width="100%">
+    <tr>
+        <td width="50%" align="center" valign="bottom">
+            <a href="Images/Fluting-Rough-1in.png" ><img src="Images/Fluting-Rough-1in.png" width="100%" /></a>
+        </td>
+        <td width="50%" align="center" valign="bottom">
+            <a href="Images/Fluting-Rough-0.75in.png" ><img src="Images/Fluting-Rough-0.75in.png" width="100%" /></a>
+        </td>
+    </tr>
+    <tr>
+        <td width="50%" align="center" valign="bottom">
+            <b>2&quot; Cutter Diameter</b>
+            <br>
+            <b>Rough Cutting Passes</b>
+        </td>
+        <td width="50%" align="center" valign="bottom">
+            <b>1 <sup>1</sup>/<sub>2</sub>&quot; Cutter Diameter</b>
+            <br>
+            <b>Rough Cutting Passes</b>
+        </td>
+    </tr>
+</table>
+
+<p>As the number of revolutions is increased, the size of the helical ridges continues to decrease.
+
+<table width="100%">
+    <tr>
+        <td width="50%" align="center" valign="bottom">
+            <a href="Images/Fluting-Smooth-1in.png" ><img src="Images/Fluting-Smooth-1in.png" width="100%" /></a>
+        </td>
+        <td width="50%" align="center" valign="bottom">
+        </td>
+    </tr>
+    <tr>
+        <td width="50%" align="center" valign="bottom">
+            <b>2&quot; Cutter Diameter</b>
+            <br>
+            <b>Smooth Cutting Passes</b>
+        </td>
+        <td width="50%" align="center" valign="bottom">
+        </td>
+    </tr>
+</table>        
+
+<h2><font color="DarkBlue">Recommendation</font></h2>
+
+<p>With a 2&quot; diameter cutter, I have found a good value for <b>Revolutions</b> is a factor of the <b>Distance</b>:
+
+<table align="center" border=1>
+    <col width="200px">
+    <col width="200px">
+
+    <tr bgcolor="moccasin">
+        <th align="center">
+            <font color="DarkBlue">
+            Purpose
+            </font>
+        </th>
+        <th align="center">
+            <font color="DarkBlue">
+            <sup>Revolutions</sup>/<sub>Inch</sub>
+            </font>
+        </th>
+    </tr>
+    
+    <tr>
+        <td align="left">
+            Roughing Cuts
+        </td>
+        <td align="center">
+            10
+        </td>
+    </tr>
+    
+    <tr>
+        <td align="left">
+            Final pass
+        </td>
+        <td align="center">
+            25 to 30
+        </td>
+    </tr>
+</table>
+
+<p>For example, if the <b>Distance</b> is for the cutter's movement is 2.5&quot;, then the roughting cuts would use a setting for <b>Revolutions</b> 25.  And on the final pass, the  setting for <b>Revolutions</b> would be 65 to 75.  This takes quite a while to make the cut, but the surface is quite smooth!
+
+<!-- ################################################### -->
+<!-- Footer                                                                                             -->
+<!-- ################################################### -->
+    <hr class="style0">
+    <font size="3">
+    <table width="100%">
+        <col width="75%">
+        <col width="25%">
+
+        <tr valign="top">
+            <td align="left">
+                Questions or comments?  Contact us at
+                <br><a href="mailto:ColvinTools@Gmail.com?Subject=General" >ColvinTools@Gmail.com</a>
+            </td>
+            <td align="right">
+                <a href="../index-Disclaimers.html">Disclaimers</a>
+            </td>
+        </tr>
+    </table>
+</div>
+
+</body>
+</html>

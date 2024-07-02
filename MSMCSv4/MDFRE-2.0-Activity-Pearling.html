@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
+
+<!-- ################################################### -->
+<!-- Style Sheet for header image max size                                         -->
+<style>
+    img.Image { max-width: 500px;}
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for Horizontal Rule - Style 0                                       -->
+ <style>
+    hr.style0 {
+        border: 0;
+        height: 1px;
+        background-image: linear-gradient(to right,
+                rgba(184,134,11, 2),
+                rgba(184,134,11, 2),
+                rgba(184,134,11, 2));
+    }
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for Horizontal Rule - Style 1                                       -->
+ <style>
+    hr.style1 {
+        border: 0;
+        height: 3px;
+        background-image: linear-gradient(to right,
+            rgba(0, 0, 0, 0),
+                rgba(184,134,11, 2),
+            rgba(0, 0, 0, 0));
+    }
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for Horizontal Rule - Style 2                                       -->
+ <style>
+    hr.style2 {
+        border: 0;
+        height: 6px;
+        background-image: linear-gradient(to right,
+            rgba(0, 0, 0, 0),
+                rgba(184,134,11, 2),
+            rgba(0, 0, 0, 0));
+    }
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for indented paragraphs                                             -->
+<style>
+    .indented { padding-left: 33pt; padding-right: 33pt; }
+</style>
+
+<!-- ################################################### -->
+<!-- Header                                                                                           -->
+<!-- ################################################### -->
+
+<head bgcolor=#E6E6E6>
+<title>ELFOS</title>
+<link rel="shortcut icon" type="image/ico" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="Images/favicon.png">
+
+<font face="Georgia">
+
+<table width="100%" border=0>
+        <col width="10%">
+        <col width="*">
+        <col width="10%">
+
+    <tr valign="bottom">
+        <td align="left">
+            <a href = "javascript:history.back()"><img src="Images/BackButton.png" width="30px"></a>
+        </td>
+        <td align="center" valign="top">
+            <font color="DarkBlue" size="6"><a href="MSMCS.html" style="text-decoration: none; color: DarkBlue; "><b>ELFOS</b></a></font>
+            <br>
+            <p style="margin-bottom: 0;"><font color="DarkBlue" size="6"><b>
+                Pearling
+            </b></font>
+        </td>
+        <td align="right">
+            <img src="Images/ELFOS-Logo.png" width="65px" class="Image">
+        </td>
+    </tr>
+</table>
+
+<hr class="style0">
+
+<!-- ################################################### -->
+<!-- Get the values needed -->
+    <script>
+	    function calcValues()    {
+
+			var fmmInch = 0.0393701;
+
+			var fDia = 0;
+			var fDOC = 0;
+			var iPearls = 0;
+
+			var fHexRoughDia = 0;
+			var fHexDOCDia = 0;
+			var fHexZMove = 0;
+			var iHexSpIdx = 0;
+
+			var fSqRoughDia = 0;
+			var fSqDOCDia = 0;
+			var fSqZMove = 0;
+			var iSqSpIdx = 0;
+
+	    	var x = document.getElementById("frm1");
+
+		// ###################################################
+		// Get the Cutter Diameter
+		//
+			fDia = Number(x.elements[0].value);
+			
+		// ###################################################
+		// Get the Cutter Depth of Cut
+		//
+			fDOC = Number(x.elements[1].value);
+
+		// ###################################################
+		// Get the # of Pearls
+		//
+			iPearls = Number(x.elements[2].value);
+
+		// ###################################################
+		// Calculate the Values
+		//
+		    var fRadius = 0;
+		    
+		    fRadius = fDia / 2;
+
+		// Rough Diameter - Hex
+
+			var fHexChordDistanceToCenter = 0;
+		    fHexChordDistanceToCenter = Math.sqrt(Math.pow(fRadius, 2) - (Math.pow((fRadius / 2), 2)));
+
+            fHexRoughDia =   2 * fDOC + 2 * fHexChordDistanceToCenter / (Math.sin((Math.PI/180) * (360 / iPearls) / 2));
+    		document.getElementById("HexRoughDia").innerHTML = fHexRoughDia.toFixed(1);
+
+
+		// Rough Diameter - Sq
+
+            fCentralAngleInRadians = Math.PI / 2;            
+            fChordSq = fRadius * (Math.sin(fCentralAngleInRadians / 2))*2;
+		    fSqChordDistanceToCenter = Math.sqrt(Math.pow(fRadius, 2) - (Math.pow((fChordSq / 2), 2)));
+
+            fDocRad = fSqChordDistanceToCenter / (Math.sin((360 / iPearls * (Math.PI / 180)) / 2));
+
+            fSqRoughDia =   (2 * fDOC) + (2 * fDocRad);
+    		document.getElementById("SqRoughDia").innerHTML = fSqRoughDia.toFixed(1);
+
+		//
+		// Depth of Cut Diameter 
+
+            fHexDOCDia =  2 * fHexChordDistanceToCenter / (Math.sin((Math.PI/180) * (360 / iPearls) / 2));
+    		document.getElementById("HexDOCDia").innerHTML = fHexDOCDia.toFixed(1);
+
+            fSqDOCDia =   fDocRad * 2;
+    		document.getElementById("SqDOCDia").innerHTML = fSqDOCDia.toFixed(1);
+
+		//
+		// Z Axis Move 
+
+            fHexZMove = fRadius * 1.5;
+    		document.getElementById("HexZMove").innerHTML = fHexZMove.toFixed(1);                                  
+    		document.getElementById("SqZMove").innerHTML = fSqZMove.toFixed(1);                                  
+
+		//
+		// Z Axis Move 
+
+            iHexSpIdx = (360 / iPearls) / 2;
+    		document.getElementById("HexSpIdx").innerHTML = iHexSpIdx.toFixed(1);
+    		document.getElementById("SqSpIdx").innerHTML = 0;
+
+		// ###################################################
+		// Write the imperial Values
+		//
+ 		//	var fmmInch = 0.0393701;
+
+    		document.getElementById("DiaImp").innerHTML = (fDia * fmmInch).toFixed(1);
+    		document.getElementById("DOCImp").innerHTML = (fDOC * fmmInch).toFixed(1);
+    		document.getElementById("HexRoughDiaImp").innerHTML = (fHexRoughDia * fmmInch).toFixed(1);
+    		document.getElementById("SqRoughDiaImp").innerHTML = (fSqRoughDia * fmmInch).toFixed(1);
+    		document.getElementById("HexDOCDiaImp").innerHTML = (fHexDOCDia * fmmInch).toFixed(1);
+    		document.getElementById("SqDOCDiaImp").innerHTML = (fSqDOCDia * fmmInch).toFixed(1);
+    		document.getElementById("HexZMoveImp").innerHTML = (fHexZMove * fmmInch).toFixed(1);
+    		document.getElementById("SqZMoveImp").innerHTML = (fSqZMove * fmmInch).toFixed(1);
+		}
+	</script>
+
+</head>
+
+
+<!-- ################################################### -->
+<!-- Body                                                                                               -->
+<!-- ################################################### -->
+
+<body bgcolor=#E6E6E6  background="Images/DevBackground.png" class="" id="" onload='hideTotal()'>
+
+<font face="Georgia">
+<table width="100%">
+<tr><td>
+
+<!-- 
+<div style="float: right; width: 55px; margin: 0px 0px 0px 0px; padding: 5px; border: 1px solid black; text-align: left; background-color: #F5ECCE;">
+    blah blah
+</div>
+-->
+
+Calculations needed for this are based on the data in the table below.  Click on any of the pictures to see larger images and diagrams.
+
+</td></tr>
+<tr><td>
+
+<p>Input fields are <span style="background-color: #FFEE9C"><b>&nbsp;colored&nbsp;</b></span>.
+
+	<form id="frm1">
+		<table border="1" width="100%">
+			<col width="200px">
+
+        	<col width="60px">
+        	<col width="35px">
+
+        	<col width="60px">
+        	<col width="35px">
+
+        	<col width="60px">
+        	<col width="35px">
+
+        	<col width="60px">
+        	<col width="35px">
+
+        	<col width="*">
+
+			<tr bgcolor="Moccasin">
+				<td colspan="999">
+				    <font color="blue" size="4"≈><b>
+				        Cutter
+				    </b></font>
+				</td>
+ 			</tr>
+
+			<tr bgcolor="White">
+				<td>
+				    Diameter
+				</td>
+ 				<td align="Right">
+   			 		<p id="DiaImp" style="margin: 0px; padding: 0px;"></p>
+ 				</td>
+				<td>
+					&quot;
+				</td>
+ 				<td align="Right">
+ 					<input 
+	 						type="number"
+ 							style="font-size:14px; text-align: right; width: 55px; background-color:#FFEE9C" 
+ 							name="Dia" 
+							step='0.1' 
+							placeholder='0.0' 
+ 							value=10.0
+						/>
+ 				</td>
+				<td>
+					mm
+				</td>
+				<td colspan="999">
+					Diameter of the cutter
+				</td>
+			</tr>
+
+			<tr bgcolor="White">
+				<td>
+					Depth of Cut
+				</td>
+ 				<td align="Right">
+   			 		<p id="DOCImp" style="margin: 0px; padding: 0px;"></p>
+				</td>
+				<td>
+					&quot;
+				</td>
+ 				<td align="Right">
+ 					<input 
+	 						type="number"
+ 							style="font-size:14px; text-align: right; width: 55px; background-color:#FFEE9C" 
+ 							name="DOC" 
+							step='0.1' 
+							placeholder='0.0' 
+ 							value=0.5
+						/>
+				</td>
+				<td>
+					mm
+				</td>
+				<td colspan="999">
+					 This is the depth to cut for the hexagon or square, not the full depth of cut to create the full dome on the pearl.
+				</td>
+			</tr>
+
+			<tr bgcolor="Moccasin">
+				<td colspan="999">
+				    <font color="blue" size="4"><b>
+				    Pattern
+				    </b></font>
+				</td>
+ 			</tr>
+
+			<tr bgcolor="White">
+				<td>
+					Number of Pearls
+				</td>
+ 				<td align="Right">
+ 					<input 
+	 						type="number"
+ 							style="font-size:14px; text-align: right; width: 55px; background-color:#FFEE9C" 
+ 							name="Pearls" 
+							step='1' 
+							placeholder='0' 
+ 							value=30
+						/>
+				</td>
+				<td colspan="999">
+					This is the number of pearls that would be cut in a complete circuit around the object.  This number is used to calculate the Rough Diameter of the workpiece as well as the move and index settings for the next row.
+					
+					<p style="margin-bottom: 0;">Based on the pearling cutter's diameter, this is adjusted to achieve the rough diameter of the piece desired.
+				</td>
+			</tr>
+
+			<tr bgcolor="DarkBlue">
+				<td colspan="999">
+				    <font color=#FFEE9C size="4"><b>
+				    Pearling Values
+				    </b></font>
+				</td>
+ 			</tr>
+
+			<tr bgcolor=#E0E6F8>
+				<td rowspan=2>
+				</td>
+   			 	<td align="Center" colspan=8>
+   			 	    <font color="blue"><b>
+                    Pearl Alignment
+   			 		</b></font>
+   			 	</td>
+				<td rowspan=2 valign="bottom">
+				</td>
+			</tr>
+
+			<tr bgcolor=#E0E6F8>
+   			 	<td align="Center" colspan=4>
+   			 	    <font color="blue"><b>
+   			 		Hexagonal
+   			 		</b></font>
+   			 		<br>
+   			 		<a href="NextionUserGuide-Pearling-Images.html" ><img src="Images/PearlHex.png" width="150px"></a>
+   			 	</td>
+   			 	<td align="Center" colspan=4>
+   			 	    <font color="blue"><b>
+   			 		Square
+   			 		</b></font>
+   			 		<br>
+   			 		<a href="NextionUserGuide-Pearling-Images.html" ><img src="Images/PearlSq.png" width="150px"></a>
+   			 	</td>
+			</tr>
+
+			<tr bgcolor=#E0E6F8>
+				<td>
+					Rough Diameter
+				</td>
+   			 	<td align="right">
+   			 		<p id="HexRoughDiaImp" style="margin: 0px; padding: 0px;"></p>
+   			 	</td>
+				<td>
+					&quot;
+				</td>
+   			 	<td align="right">
+   			 		<p id="HexRoughDia" style="margin: 0px; padding: 0px;"></p>
+   			 	</td>
+				<td>
+					mm
+				</td>
+   			 	<td align="right">
+   			 		<p id="SqRoughDiaImp" style="margin: 0px; padding: 0px;"></p>
+   			 	</td>
+				<td>
+					&quot;
+				</td>
+   			 	<td align="right">
+   			 		<p id="SqRoughDia" style="margin: 0px; padding: 0px;"></p>
+   			 	</td>
+				<td>
+					mm
+				</td>
+				<td>
+				</td>
+			</tr>
+
+			<tr bgcolor=#E0E6F8>
+				<td>
+					Depth of Cut Diameter
+				</td>
+   			 	<td align="right">
+   			 		<p id="HexDOCDiaImp" style="margin: 0px; padding: 0px;"></p>
+   			 	</td>
+				<td>
+					&quot;
+				</td>
+   			 	<td align="right">
+   			 		<p id="HexDOCDia" style="margin: 0px; padding: 0px;"></p>
+   			 	</td>
+				<td>
+					mm
+				</td>
+   			 	<td align="right">
+   			 		<p id="SqDOCDiaImp" style="margin: 0px; padding: 0px;"></p>
+   			 	</td>
+				<td>
+					&quot;
+				</td>
+   			 	<td align="right">
+   			 		<p id="SqDOCDia" style="margin: 0px; padding: 0px;"></p>
+   			 	</td>
+				<td>
+					mm
+				</td>
+				<td>
+				</td>
+			</tr>
+
+			<tr bgcolor=#E0E6F8>
+				<td>
+					Z Axis Move
+				</td>
+   			 	<td align="right">
+   			 		<p id="HexZMoveImp" style="margin: 0px; padding: 0px;"></p>
+   			 	</td>
+				<td>
+					&quot;
+				</td>
+   			 	<td align="right">
+   			 		<p id="HexZMove" style="margin: 0px; padding: 0px;"></p></b>
+   			 	</td>
+				<td>
+					mm
+				</td>
+   			 	<td align="right">
+   			 		<p id="SqZMoveImp" style="margin: 0px; padding: 0px;"></p>
+   			 	</td>
+				<td>
+					&quot;
+				</td>
+   			 	<td align="right">
+   			 		<p id="SqZMove" style="margin: 0px; padding: 0px;"></p>
+   			 	</td>
+				<td>
+					mm
+				</td>
+				<td>
+				    Distance to the next row
+				</td>
+			</tr>
+
+			<tr bgcolor=#E0E6F8>
+				<td>
+					Spindle Index Degrees
+				</td>
+   			 	<td align="right">
+   			 		<p id="HexSpIdx" style="margin: 0px; padding: 0px;"></p></b>
+   			 	</td>
+				<td>
+					&deg;
+				</td>
+				<td colspan=2>
+				</td>
+   			 	<td align="right">
+   			 		<p id="SqSpIdx" style="margin: 0px; padding: 0px;"></p>
+   			 	</td>
+				<td>
+					&deg;
+				</td>
+				<td colspan=2>
+				</td>
+				<td>
+				</td>
+			</tr>
+
+		</table>
+	</form>
+
+    <p>
+	<center>
+	    <button autofocus type="button" onclick="calcValues()" style="font-size:20px; background-color: #0404B4; color: white;">
+		Calculate Pearling Values
+	    </button>
+	</center>
+
+    
+    <p>
+    <table border="1" width="100%" bgcolor="White">
+        <col width="75px">
+        <col width="*">
+
+        <thead>
+            <tr bgcolor="Moccasin" valign="bottom">
+                <th>
+                    <font face="Georgia" color="Blue">Screen</font>
+                </th>
+                <th>
+                    <font face="Georgia" color="Blue">Actions</font>
+                </th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr valign="top" bgcolor="White">
+                <td align="center" valign="top">
+                    <div style="float: center; width: 55px; margin: 0px 0px 0px 0px; padding: 0px; border: 0px solid black; text-align: left;">
+                        <table align="Center" border="0" width="100%">
+                            <tr height="35px">
+                                <td align="Center" bgcolor="#4C877A" width="50px">
+                                    <a href="NextionUserGuide-Grk2.html" style="color: White"><b>Grk</b></a>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+
+                <td align="left" valign="top">
+ 
+                    <div style="float: right; width: 200px; margin: 5px 5px 5px 5px; padding: 0px; border: 1px solid black; text-align: center; background-color:White">
+		                <a href="Images/TeensyOnPCB.png" ><img src="Images/TeensyOnPCBsm.png" style="padding: 5px 5px; float: right;" width="190px" /></a>
+		                <br>
+		                <b>Teensy's Spot for 
+		                <br>microSD Card</b>
+	                </div>
+
+                    <p>On the <b><a href="NextionUserGuide-Grk2.html">Greek Key File</a></b> page,
+                        
+                        <ol type="1" start="1">
+                        <li>Put the file, <b><a href="NextionUserGuide-Pearling-IndexGT-txt.html" >IndexGK.txt</a></b>, on a <a href="https://en.wikipedia.org/wiki/SD_card#Micro" >microSD card</a> and put the microSD card in the <a href="Images/TeensyOnPCB.png" >Teensy</a>.</li>
+                        
+                        <br>
+                        <li>Open the <b>IndexGK.txt</b> file.</li>
+                        
+                        <br>
+                        <li>Set the variables on the screen as:</li>
+                        
+                            <br>
+                            <ol type="i">
+                                <li><span style="background-color: #FFEE9C"><b> &nbsp;Count&nbsp; </b></span> &nbsp; = If pearls are desired around 360&deg;, then enter the <b>Number of Pearls</b> (as entered above); otherwise enter the number of pearls desired.
+                                
+                                <li><span style="background-color: #FFEE9C"><b> &nbsp;Patterns/360&nbsp; </b></span> &nbsp; = <b>Number of Pearls</b> (as entered above)
+                                
+                                <li><span style="background-color: #FFEE9C"><b> &nbsp;Length&nbsp; </b></span> &nbsp; = a distance which will allow the cutter to clear the workpiece while moving between cuts.
+                            </ol>
+                        
+                        <br>
+                        <li>The radio button selections are set as:</li>
+                        
+                            <br>
+                            <ol type="i">
+                                <li><b>Z</b> <img src="Images/CircleChecked.png" width="20px" height="20px"> &nbsp; &nbsp; <b>X</b> <img src="Images/CircleUnChecked.png" width="20px" height="20px">  &nbsp; &nbsp; <b>B</b> <img src="Images/CircleUnChecked.png" width="20px" height="20px"></Ii>
+                                
+                                <li><b>Radial</b> <img src="Images/CircleChecked.png" width="20px" height="20px"> &nbsp; &nbsp;  <b>Axial</b> <img src="Images/CircleUnChecked.png" width="20px" height="20px"></Ii>
+
+                                <li><b>Segments</b> <img src="Images/CircleChecked.png" width="20px" height="20px"> &nbsp; &nbsp;  <b>Actual</b> <img src="Images/CircleUnChecked.png" width="20px" height="20px"></Ii>
+                            </ol>
+                        
+                        <br>
+                        <li>Turn the cutter on.</li>
+                        <li>Plunge to cutting depth.  It is a best practice to only cut 0.020" to 0.030" on each pass.</li>
+
+                        <br>
+                        <li>Touch either <img src="Images/ButtonGreekKey-In.png" width="30px"> or <img src="Images/ButtonGreekKey-Out.png" width="30px"> to create the desired number of pearls in this row.</li>
+
+                        <br>
+                        <li>You should plan to make multiple passes in order to cut to the full depth.  A typical pearling bit would have something on the order of 0.080" depth of cut.</li>
+
+                        <br>
+                        <li>To move to the next row, first, <font color="red">retract the cutter</font>.</li>
+                    </ol>
+                </td>
+            </tr>
+
+
+            <tr valign="top" bgcolor=#F7F2E0>
+                <td align="center" valign="top">
+                    <div style="float: center; width: 55px; margin: 0px 0px 0px 0px; padding: 0px; border: 0px solid black; text-align: left;">
+                        <table align="Center" border="0" width="100%">
+                            <tr height="35px">
+                                <td align="Center" bgcolor="#5718B7" width="50px">
+                                    <a href="NextionUserGuide-Mov.html" style="color: White"><b>Mov</b></a>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+
+                <td align="left" valign="top">
+                    <p>On the <b><a href="NextionUserGuide-Mov.html"><b>Move</b></a></b> page,
+                    
+                    <ol type="1" start="10">                    
+                        <li>Set the variables on the screen as:</li>
+                        
+                            <br>
+                            <ol type="i">
+                                <li><span style="background-color: #FFEE9C"><b> &nbsp;Distance&nbsp; </b></span> &nbsp; = <b>Z Axis Move</b> (as calculated above)
+                            </ol>
+                        
+                        <br>
+                        <li>The radio button selections are set as one of the two below:</li>
+                        
+                            <br>
+                            <ol type="i">                        
+                                <li><sup><b>Z</b></sup><sub>1</sub><img src="Images/CircleChecked.png" width="20px" height="20px">   <sub>2</sub><img src="Images/CircleUnChecked.png" width="20px" height="20px"> &nbsp; &nbsp;  <sup><b>X</b></sup><sub>1</sub><img src="Images/CircleUnChecked.png" width="20px" height="20px">   <sub>2</sub><img src="Images/CircleUnChecked.png" width="20px" height="20px"> &nbsp; &nbsp;  <sup><b>B</b></sup><sub>1</sub><img src="Images/CircleUnChecked.png" width="20px" height="20px">   <sub>2</sub><img src="Images/CircleUnChecked.png" width="20px" height="20px"></Ii>
+
+                                <br>
+                                <li><sup><b>Z</b></sup><sub>1</sub><img src="Images/CircleUnChecked.png" width="20px" height="20px">   <sub>2</sub><img src="Images/CircleChecked.png" width="20px" height="20px"> &nbsp; &nbsp;  <sup><b>X</b></sup><sub>1</sub><img src="Images/CircleUnChecked.png" width="20px" height="20px">   <sub>2</sub><img src="Images/CircleUnChecked.png" width="20px" height="20px"> &nbsp; &nbsp;  <sup><b>B</b></sup><sub>1</sub><img src="Images/CircleUnChecked.png" width="20px" height="20px">   <sub>2</sub><img src="Images/CircleUnChecked.png" width="20px" height="20px"></Ii>
+                            </ol>
+
+                        <br>
+                        <li>Touch either <img src="Images/ButtonMove-In.png" width="30px"> or <img src="Images/ButtonMove-Out.png" width="30px"> to advance to the next row.</li>
+                    </ol>
+                </td>
+            </tr>
+
+            <tr valign="top" bgcolor="White">
+                <td align="center" valign="top">
+                    <div style="float: center; width: 55px; margin: 0px 0px 0px 0px; padding: 0px; border: 0px solid black; text-align: left;">
+                        <table align="Center" border="0" width="100%">
+                            <tr height="35px">
+                                <td align="Center" bgcolor="#3980C0" width="50px">
+                                    <a href="NextionUserGuide-Ind2.html" style="color: White"><b>Ind</b></a>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+
+                <td align="left" valign="top">
+                    <p>On the <b><a href="NextionUserGuide-Ind2.html"><b>Indexing</b></a></b> page,
+                    
+                    <ol type="1" start="13">
+                        <li>Set the radio button selections as:</li>
+                        
+                            <br>
+                            <ol type="i">
+                                <li><b>Div</b> <img src="Images/CircleUnChecked.png" width="20px" height="20px"> &nbsp; &nbsp; <b>Deg</b> <img src="Images/CircleChecked.png" width="20px" height="20px"></Ii>
+                                
+                                <li><b>Fixed</b> <img src="Images/CircleChecked.png" width="20px" height="20px"> &nbsp; &nbsp;  <b>File</b> <img src="Images/CircleUnChecked.png" width="20px" height="20px"></Ii>
+
+                            </ol>
+
+                        <br>
+                        <li>Set the variables on the screen as:</li>
+                        
+                            <br>
+                            <ol type="i">
+                                <li><span style="background-color: #FFEE9C"><b> &nbsp;Degrees&nbsp; </b></span> &nbsp; = <b>Spindle Index Degrees</b> (as calculated above)
+                            </ol>
+
+                        <br>
+                        <li>Touch either <img src="Images/ButtonIndex-CCW.png" width="30px"> or <img src="Images/ButtonIndex-CW.png" width="30px"> to index.</li>
+                    </ol>
+                </td>
+            </tr>
+
+    </table>
+
+<p><center><b>Repeat the steps above for the desired number of rows.</b></center>
+
+<p><hr class="style1">
+
+</td></tr>
+</table>
+
+<!-- ################################################### -->
+<!-- Footer                                                                                             -->
+<!-- ################################################### -->
+<hr class="style0">
+<font size="3">
+<table width="100%">
+    <col width="67%">
+    <col width="33%">
+
+    <tr valign="top">
+        <td align="left">
+            Questions or comments?  Contact us at
+            <br><a href="mailto:ColvinTools@Gmail.com?Subject=General" >ColvinTools@Gmail.com</a>
+        </td>
+        <td align="right">
+            <a href="../index-Disclaimers.html">Disclaimers</a>
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>
