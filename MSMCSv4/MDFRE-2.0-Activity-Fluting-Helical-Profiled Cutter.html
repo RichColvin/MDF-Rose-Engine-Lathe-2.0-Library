@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
+
+<!-- ################################################### -->
+<!-- Style Sheet for MathJax                                                                 -->
+<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+
+<!-- ################################################### -->
+<!-- Style Sheet for header image max size                                         -->
+<style>
+    img.Image { max-width: 500px;}
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for Horizontal Rule - Style 0                                       -->
+ <style>
+    hr.style0 {
+        border: 0;
+        height: 1px;
+        background-image: linear-gradient(to right,
+                rgba(184,134,11, 2),
+                rgba(184,134,11, 2),
+                rgba(184,134,11, 2));
+    }
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for Horizontal Rule - Style 1                                       -->
+ <style>
+    hr.style1 {
+        border: 0;
+        height: 3px;
+        background-image: linear-gradient(to right,
+            rgba(0, 0, 0, 0),
+                rgba(184,134,11, 2),
+            rgba(0, 0, 0, 0));
+    }
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for Horizontal Rule - Style 2                                       -->
+ <style>
+    hr.style2 {
+        border: 0;
+        height: 6px;
+        background-image: linear-gradient(to right,
+            rgba(0, 0, 0, 0),
+                rgba(184,134,11, 2),
+            rgba(0, 0, 0, 0));
+    }
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for indented paragraphs                                             -->
+<style>
+    .indented { padding-left: 33pt; padding-right: 33pt; }
+</style>
+
+<!-- ################################################### -->
+<!-- Header                                                                                           -->
+<!-- ################################################### -->
+
+<head bgcolor=#E6E6E6>
+    <title>ELFOS</title>
+    <link rel="shortcut icon" type="image/ico" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="Images/favicon.png">
+
+<font face="Georgia">
+
+<table width="100%" border=0>
+        <col width="10%">
+        <col width="*">
+        <col width="10%">
+
+    <tr valign="bottom">
+        <td align="left">
+            <a href = "javascript:history.back()"><img src="Images/BackButton.png" width="30px"></a>
+        </td>
+        <td align="center" valign="top">
+            <font color="DarkBlue" size="6"><a href="MSMCS.html" style="text-decoration: none; color: DarkBlue; "><b>ELFOS</b></a></font>
+            <br>
+            <p style="margin-bottom: 0;"><font color="DarkBlue" size="6"><b>
+                Helical Flutes using a Profiled Cutter
+            </b></font>
+        </td>
+        <td align="right">
+            <img src="Images/ELFOS-Logo.png" width="65px" class="Image">
+        </td>
+    </tr>
+</table>
+</head>
+
+<!-- ################################################### -->
+<!-- Body                                                                                               -->
+<!-- ################################################### -->
+<body bgcolor=#E6E6E6 background="Images/DevBackground.png">
+	<font face="Georgia">
+
+    <p style="margin-top: 0;">The idea behind this approach is you are cutting one flute helically down the entire length of the Z axis.  A shaped cutter which is moved along the Z axis to cut one flute, the spindle is indexed, and the whole process is repeated until all the flutes are cut.
+	
+	<p>Basically, it is the same as multi-start threading.
+	
+	<table border=1 width="100%">
+	    <tr valign="top">
+	        <td width="100px">
+                <b><font color="darkblue" size=4>
+                Rosette
+                </b></font>
+            </td>
+            <td>
+                No rosette is used for this approach.  The shape comes from the cutter's profile.
+                
+                <p style="margin-bottom: 0;">The headstock is held fixed (the centering block is inserted in the back, and the fading wedge dropped down).
+            </td>
+            
+            <td rowspan=999 width="75px">
+                <a href="Images/Column - Fluted.png" ><img src="Images/Column - Helical.png" width="100%" /></a>
+            </td>
+        </tr>
+
+	    <tr valign="top">
+	        <td>
+                <b><font color="darkblue" size=4>
+                Spindle
+                </b></font>
+            </td>
+            <td>
+                <p style="margin-top: 0;">The spindle is rotated slowly whilst the cutter is moved in the Z direction.
+                
+                <p style="margin-bottom: 0;">The spindle is indexed after each flute has been cut to the desired depth.  (This may be multiple passes.)
+            </td>
+        </tr>
+
+	    <tr valign="top">
+	        <td>
+                <b><font color="darkblue" size=4>
+                Cutting Frame
+                </b></font>
+            </td>
+            <td>
+                The cutting frame selected and the angle of cutting can have great effects on the results achieved.  Typically, a horizontal cutting frame is used.
+                
+                <p>The cutting frame is moved slowly down the Z axis. Movement of the cutter along the Z axis must be synchronized with the spindle, so it really needs automated movement using a lead screw (e.g., a curvilinear slide).</li>
+                    
+                <p style="margin-bottom: 0;"><b><u>Note</u>:</b> a Drill Spindle could be used with this, especially when using specialty cutters.
+            </td>
+        </tr>
+
+	    <tr valign="top">
+	        <td>
+                <b><font color="darkblue" size=4>
+                Cutter
+                </b></font>
+            </td>
+            <td>
+                Use a cutter with a profiled shape which will yield the desired cut. Hold it in a cutting frame, and move it down the whole length.
+            </td>
+        </tr>
+
+	    <tr valign="top">
+	        <td>
+                <b><font color="darkblue" size=4>
+                Rubber
+                </b></font>
+            </td>
+            <td>
+                The shape of the rubber has no effect as no rosette is used for this.
+            </td>
+        </tr>
+    </table>
+	
+<!-- ################################################### -->
+<!-- Instructions                                                                                     -->
+    <p>&nbsp;
+    <table border="1" width="100%" bgcolor="White">
+        <col width="75px">
+        <col width="*">
+
+        <thead>
+            <tr bgcolor="Moccasin" valign="bottom">
+                <th>
+                    <font face="Georgia" color="Blue">Screen</font>
+                </th>
+                <th>
+                    <font face="Georgia" color="Blue">Actions</font>
+                </th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr valign="top" bgcolor="White">
+                <td align="center" valign="top">
+                    <div style="float: center; width: 55px; margin: 0px 0px 0px 0px; padding: 0px; border: 0px solid black; text-align: left;">
+                        <table align="Center" border="0" width="100%">
+                            <tr height="35px">
+                                <td align="Center" bgcolor="#3980C0" width="50px">
+                                    <a href="NextionUserGuide-Ind.html" style="color: White"><b>Ind</b></a>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+
+                <td align="left" valign="top">
+                    <p>On the <b><a href="NextionUserGuide-Ind.html"><b>Indexing</b></a></b> page,
+                     <ol type="1" start="1">
+                    
+                        <li>Set the variables on the screen as:</li>
+                        
+                            <br>
+                            <ol type="i">
+                                <li><span style="background-color: #FFEE9C"><b>&nbsp;Divisions&nbsp;</b></span> = number of desired flutes around the piece.
+                            </ol>
+                        
+                        <br>
+                        <li>The radio button selections are set as:</li>
+                        
+                            <br>
+                            <ol type="i">
+                                <li><b>Div</b> <img src="Images/CircleChecked.png" width="20px" height="20px"> &nbsp; &nbsp; <b>Deg</b> <img src="Images/CircleUnChecked.png" width="20px" height="20px"></Ii>
+                                
+                                <li><b>Fixed</b> <img src="Images/CircleChecked.png" width="20px" height="20px"> &nbsp; &nbsp;  <b>File</b> <img src="Images/CircleUnChecked.png" width="20px" height="20px"></Ii>
+                            </ol>
+                        </ol>
+                    
+                    <p><b><u>Note</u>:</b>  Indexing is not done using this screen; rather the <img src="Images/ButtonSync-CCW.png" width="60px"> and the <img src="Images/ButtonSync-CW.png" width="60px"> buttons on the <b><a href="NextionUserGuide-Sync.html">Synchronization</b></a> screen use these settings.</li>
+
+                </td>
+            </tr>
+
+            <tr valign="top" bgcolor=#F7F2E0>
+                <td align="center" valign="top">
+                    <div style="float: center; width: 65px; margin: 0px 0px 0px 0px; padding: 0px; border: 0px solid black; text-align: left;">
+                        <table align="Center" border="0" width="100%">
+                            <tr height="35px">
+                                <td align="Center" bgcolor="#3980C0" width="50px">
+                                    <a href="NextionUserGuide-Config-ZAxis.html" style="color: White"><b>Z Axis</b></a>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+
+                <td align="left" valign="top">
+                    <p>On the <b><a href="NextionUserGuide-Config-ZAxis.html"><b>Z Axis Preferences</b></a></b> page,
+                     <ol type="1" start="3">                    
+                        <li>Ensure the <b>Leadscrew</b> is set for your cross slide's motion.</li>
+                    </ol>
+                        
+                    <table>
+                        <col width="50px">
+                        <col width="90px">
+                        <col width="50px">
+                        <col width="*">
+                        
+                        <tr valign="top">
+                            <td>
+                            </td>
+                            <td>
+                                <b>Left Hand</b>
+                            </td>
+                            <td>
+                                <img src="Images/CircleUnChecked.png" width="20px" height="20px">
+                            </td>
+                            <td>
+                                Use when using an apparatus with a left-handed threaded rod.  A Hardinge compound slide-rest has a left-hand thread.
+                                <br><br>
+                            </td>
+                        </tr>
+                        <tr valign="top">
+                            <td>
+                            </td>
+                            <td>
+                                <b>Right Hand</b>
+                            </td>
+                            <td>
+                                <img src="Images/CircleChecked.png" width="20px" height="20px">
+                            </td>
+                            <td>
+                                Use when using an apparatus with a right-handed threaded rod
+                                <br><br>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+
+            <tr valign="top" bgcolor=White>
+                <td align="center" valign="top">
+                    <div style="float: center; width: 55px; margin: 0px 0px 0px 0px; padding: 0px; border: 0px solid black; text-align: left;">
+                        <table align="Center" border="0" width="100%">
+                            <tr height="35px">
+                                <td align="Center" bgcolor="#B18904" width="50px">
+                                    <a href="NextionUserGuide-Sync.html" style="color: Black"><b>Sync</b></a>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+
+                <td align="left" valign="top">
+                    <p>On the <b><a href="NextionUserGuide-Sync.html">Synchronization</a></b> page, 
+
+                    <ol type="1" start="4">
+                        <li>The radio button selections are set as:</li>
+                        
+                            <br>
+                            <ol type="i">
+                                <li><b>Z</b><img src="Images/CircleChecked.png" width="20px" height="20px"> &nbsp; &nbsp;  <b>X</b><img src="Images/CircleUnChecked.png" width="20px" height="20px"> &nbsp; &nbsp;  <b>B</b><img src="Images/CircleUnChecked.png" width="20px" height="20px"></Ii>
+
+                                <br>
+                                <br>
+                                <li><b>Helix Type:</b> either of these is OK, depending on what is desired.
+                                
+                                <p>If cross hatching is desired, then a set of flutes will be cut with <b>Left</b><img src="Images/CircleChecked.png" width="20px" height="20px"> and another with <b>Right</b><img src="Images/CircleChecked.png" width="20px" height="20px">.  Also, consider using a Drill Spindle for cross hatching.</li>
+                            </ol>
+
+                        <li>Set the variables on the screen as:</li>
+                        
+                            <br>
+                            <ol type="i">
+                                <li><span style="background-color: #FFEE9C"><b> &nbsp;Revolutions&nbsp;</b></span>
+                                
+                                    <br>
+                                    <br>
+                                    <ul>
+                                        <li><b>Straight flutes</b> - set to 0</li>
+                                        
+                                        <br>
+                                        <li><b>Helical flutes</b> - Typically, this is set to 60&deg; or 90&deg;, though different values can also yield nice effects.</li>
+                                
+                                <p>The formula for this is:</li>
+                                    
+\[
+\begin{align}
+Revolutions & = \frac{SpindleRotation}{360 &deg;}
+\end{align}
+\]
+                                    </ul>
+                                    
+                                <br>
+                                <li><span style="background-color: #FFEE9C"><b>&nbsp;Distance&nbsp;</b></span> = distance to be traversed</li>
+                            </ol>
+                        
+                        <br>
+                        <li>The <b>Max Spindle Speed</b> is recommended to be no higher than <b>5000</b>, and the <b>Max Z Axis Speed</b> is recommended to be no higher than <b>2500</b>.
+                        
+                        <p>This screen will limit the overall speed of the spindle and the Z axis to whichever is lower.  This is based on the settings in the Preferences pages for the <a href="NextionUserGuide-Config-Spindle.html" >Spindle</a> and the <a href="NextionUserGuide-Config-ZAxis.html" >Z Axis</a></li>
+                        
+                        <p><hr class="style1">
+
+                        <li>Turn the cutter on, and plunge to an initial cutting depth.
+
+                        <p>It is a best practice to cut the first two flutes shallower, then recut until the desired distance between the flutes is reached.  You can have the peaks meet, or have a small flat between them.</li>
+
+                        <li>Touch either 
+                        <br>&nbsp; &nbsp; <img src="Images/ButtonSync-Left.png" width="30px"> to cut towards the headstock or 
+                        <br>&nbsp; &nbsp; <img src="Images/ButtonSync-Right.png" width="30px"> to cut away from the headstock.</li>
+
+                        <br>
+                        <li>If additional depth is needed for the flute, use the opposite movement as in previous step.</li>
+
+                        <br>
+                        <li>At this point, you can:</li>
+                            <ul>
+                                <li>recut the same flute in the opposite direction,</li>
+
+                                <br>
+                                <li>cut the next flute in the opposite direction, or</li>
+                                <li>retract the cutter and return to the starting point of this flute (using <img src="Images/ButtonSync-Return.png" width="30px">) before indexing to the next flute.</li>
+                            </ul>
+
+                        <br>
+                        <li>To index to the next flute, use the <img src="Images/ButtonSync-CCW.png" width="60px"> or the <img src="Images/ButtonSync-CW.png" width="60px"> button.</li>
+
+                        <br>
+                        <li>Repeat steps 7 thru 11 for each flute.</li>
+
+                    </ol>
+                </td>
+            </tr>
+
+    </table>
+
+<!-- ################################################### -->
+<!-- Cutting Downhill                                                                             -->
+    </td></tr>
+    <tr><td>
+    <p><hr class="style1">
+
+    <div style="float: right; width: 300px; margin: 5px 5px 5px 5px; padding: 5px; border: 1px solid black; text-align: left; background-color:White">
+        <table>
+            <tr>
+                <td align="center" colspan=999>
+                    <b>Cutting Downhill</b>
+                </td>
+            </tr>
+            <tr>
+                <td align="center">
+                    <br><a href="Images/CuttingDownhill.png" ><img src="Images/CuttingDownhill.png" width="100%"></a>
+                    <br>Cutting to the Left
+                </td>
+                <td align="center">
+                    <br><a href="Images/CuttingDownhill2.png" ><img src="Images/CuttingDownhill2.png" width="100%"></a>
+                    <br>Cutting to the Right
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <p>When cutting with a spinning cutter, just as on a router, it is a good practice to always cut downhill.  This is not always possible, but it typically leaves the smoothest surface.
+
+    <p>The choices for the direction to move the cutter (the <font color="red">red arrow</font>) and the cutter's rotation (<font color="blue">blue arrow</font>) should be made to ensure downhill cutting happens.
+
+    <p>This is an advantage for using a fly cutter over a carbide bit.  With a fly cutter, the direction of the cut can be reversed.  (For more information about fly cutters vs. carbide bits, see also <a href="https://www.otbok.info/OT%20-%20LnT-Term-CuttingFrame.html#Cutters" > Cutters</a> on the Cutting Frames page at the <a href="https://www.otbok.info/" >Ornamental Turning Book of Knowledge</a>.)
+
+    <br>
+    <br>
+    <p><i><font size="2">Click on any of the pictures on this page to see bigger images.</font></i>
+
+    </td></tr>
+</table>
+
+<!-- ################################################### -->
+<!-- Footer                                                                                             -->
+<!-- ################################################### -->
+    <div class="footer">
+        <hr class="style0">
+        <font size="3">
+        <table width="100%">
+            <col width="67%">
+            <col width="33%">
+
+            <tr valign="top">
+                <td align="left">
+                    Questions or comments?  Contact us at
+                    <br><a href="mailto:ColvinTools@Gmail.com?Subject=General" >ColvinTools@Gmail.com</a>
+                </td>
+                <td align="right">
+                    <a href="../index-Disclaimers.html">Disclaimers</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+</body>
+</html>

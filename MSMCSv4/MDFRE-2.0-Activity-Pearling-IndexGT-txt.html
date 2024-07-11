@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
+
+<!-- ################################################### -->
+<!-- Style Sheet for header image max size                                         -->
+<style>
+    img.Image { max-width: 500px;}
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for Horizontal Rule - Style 0                                       -->
+ <style>
+    hr.style0 {
+        border: 0;
+        height: 1px;
+        background-image: linear-gradient(to right,
+                rgba(184,134,11, 2),
+                rgba(184,134,11, 2),
+                rgba(184,134,11, 2));
+    }
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for Horizontal Rule - Style 1                                       -->
+ <style>
+    hr.style1 {
+        border: 0;
+        height: 3px;
+        background-image: linear-gradient(to right,
+            rgba(0, 0, 0, 0),
+                rgba(184,134,11, 2),
+            rgba(0, 0, 0, 0));
+    }
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for Horizontal Rule - Style 2                                       -->
+ <style>
+    hr.style2 {
+        border: 0;
+        height: 6px;
+        background-image: linear-gradient(to right,
+            rgba(0, 0, 0, 0),
+                rgba(184,134,11, 2),
+            rgba(0, 0, 0, 0));
+    }
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for indented paragraphs                                             -->
+<style>
+    .indented { padding-left: 33pt; padding-right: 33pt; }
+</style>
+
+<!-- ################################################### -->
+<!-- Header                                                                                           -->
+<!-- ################################################### -->
+
+<head bgcolor=#E6E6E6>
+<title>ELFOS</title>
+<link rel="shortcut icon" type="image/ico" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="Images/favicon.png">
+
+<font face="Georgia">
+
+<table width="100%" border=0>
+        <col width="10%">
+        <col width="*">
+        <col width="10%">
+
+    <tr valign="bottom">
+        <td align="left">
+            <a href = "javascript:history.back()"><img src="Images/BackButton.png" width="30px"></a>
+        </td>
+        <td align="center" valign="top">
+            <font color="DarkBlue" size="6"><a href="MSMCS.html" style="text-decoration: none; color: DarkBlue; "><b>ELFOS</b></a></font>
+            <br>
+            <p style="margin-bottom: 0;"><font color="DarkBlue" size="6"><b>
+                Pearling
+            </b></font>
+        </td>
+        <td align="right">
+            <img src="Images/ELFOS-Logo.png" width="65px" class="Image">
+        </td>
+    </tr>
+</table>
+
+<hr class="style0">
+
+</head>
+
+
+<!-- ################################################### -->
+<!-- Body                                                                                               -->
+<!-- ################################################### -->
+
+<body bgcolor=#E6E6E6 background="Images/DevBackground.png" class="" id="" onload='hideTotal()'>
+
+<font face="Georgia">
+<table width="100%">
+<tr><td>
+
+<font color="DarkBlue" size="5"><b>
+Pearling File - IndexGK.txt
+</b></font>
+
+<p><table border="0" width="100%">
+    <col width="50%">
+    <col width="50%">
+
+    <tr>
+	    <td align="Center" valign="top">
+	        <b>Link to file</b>
+	        
+	        <p><a href="IndexGK.txt" ><img src="Images/TxtFileIcon.png" width="100px"></a>
+	        
+	        <p>Right click on the picture, and select save file.
+   		</td>
+   		
+	    <td align="left" valign="top">
+	        <center><b>File Contents</b></center>
+	        
+	        <table width="100%" border="1">
+	            <tr><td style="padding: 15px;">
+	                ; Nextion settings:
+	                <br>
+                    ; Segment Length: Any size.  Usually just far enough to clear workpiece during move.
+	                <br>
+                    ; Patterns Per 360: This controls how far the spindle will rotate.  Think of it like Index divisions.
+	                <br>
+                    ; Count: Number of individual patterns to do. 
+	                <br>
+                    ; S1 says there is only one radial pattern in the file.
+	                <br>
+                    S1
+	                <br>
+                    ; A1 says there is only one axial pattern in file
+	                <br>
+                    A1
+	                <br>
+                    ; Start pattern with the cutter plunged to working depth.
+	                <br>
+                    ; Move out
+	                <br>
+                    O1
+	                <br>
+                    ; Move down 1 segment (Rotate spindle counterclockwise).
+	                <br>
+                    D1
+	                <br>
+                    ; Move in to working depth.
+	                <br>
+                    I1
+	                <br>
+                    ; End pattern
+	                <br>
+                    E
+	            </td></tr>
+	        </table>
+	        
+	        <p><b>Note:</b>  If you want to start with the cutter out of the work, swap the O1 and I1 lines in IndexGK.txt.
+   		</td>
+	</tr>
+
+</table>
+
+
+<!-- ################################################### -->
+<!-- Footer                                                                                             -->
+<!-- ################################################### -->
+<hr class="style0">
+<font size="3">
+<table width="100%">
+    <col width="67%">
+    <col width="33%">
+
+    <tr valign="top">
+        <td align="left">
+            Questions or comments?  Contact us at
+            <br><a href="mailto:ColvinTools@Gmail.com?Subject=General" >ColvinTools@Gmail.com</a>
+        </td>
+        <td align="right">
+            <a href="../index-Disclaimers.html">Disclaimers</a>
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>

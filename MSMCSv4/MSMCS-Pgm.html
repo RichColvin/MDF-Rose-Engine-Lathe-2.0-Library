@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
+
+<!-- ################################################### -->
+<!-- Style Sheet for MathJax                                                                 -->
+<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+
+<!-- ################################################### -->
+<!-- Style Sheet for Horizontal Rule - Style 0                                       -->
+ <style>
+    hr.style0 {
+        border: 0;
+        height: 1px;
+        background-image: linear-gradient(to right,
+                rgba(184,134,11, 2),
+                rgba(184,134,11, 2),
+                rgba(184,134,11, 2));
+    }
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for Horizontal Rule - Style 1                                       -->
+ <style>
+    hr.style1 {
+        border: 0;
+        height: 3px;
+        background-image: linear-gradient(to right,
+            rgba(0, 0, 0, 0),
+                rgba(184,134,11, 2),
+            rgba(0, 0, 0, 0));
+    }
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for Horizontal Rule - Style 2                                       -->
+ <style>
+    hr.style2 {
+        border: 0;
+        height: 6px;
+        background-image: linear-gradient(to right,
+            rgba(0, 0, 0, 0),
+                rgba(184,134,11, 2),
+            rgba(0, 0, 0, 0));
+    }
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for indented paragraphs                                             -->
+<style>
+    .indented { padding-left: 33pt; padding-right: 33pt; }
+</style>
+
+<!-- ################################################### -->
+<!-- <body background="Images/Background.png"> -->
+	<font face="Georgia">
+
+<!-- ################################################### -->
+<!-- Style Sheet for header image max size                                         -->
+<!-- ################################################### -->
+<style>
+    img.Image { max-width: 500px;}
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for split screen                                                            -->
+<!-- ################################################### -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+    body {
+        font-family: Georgia;
+    }
+
+.split1 {
+  height: calc(260px);
+  min-width: 450px;
+  max-width: 450px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.split2 {
+  height: calc(100% - 130px);
+  width: calc(100% - 490px);
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.split3 {
+  height: calc(100% - 400px);
+  min-width: 450px;
+  max-width: 450px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 280px;
+}
+
+.left {
+  left: 0;
+  background-color: #111;
+}
+
+.right {
+  right: 0;
+  background-color: blue;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.centered img {
+  width: 150px;
+  border-radius: 50%;
+}
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for footer                                                                     -->
+<!-- ################################################### -->
+<style>
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: #E6E6E6;
+   text-align: center;
+}
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for collapsible section                                                 -->
+<!-- ################################################### -->
+<style>
+.collapsible {
+  background-color: #E6E6E6;
+  color: DarkBlue;
+  cursor: pointer;
+  padding: 3px;
+  width: calc(100%-450px);
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.active, .collapsible:hover {
+  background-color:#4C877A;
+  color: white;
+}
+
+.collapsible:after {
+  content: '\002B';
+  color: black;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2212";
+  color: black;
+}
+
+.content {
+  padding: 0 3px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #f1f1f1;
+}
+</style>
+
+<!-- ################################################### -->
+<!-- Header                                                                                           -->
+<!-- ################################################### -->
+
+<head bgcolor=#E6E6E6>
+    <title>ELFOS</title>
+    <link rel="shortcut icon" type="image/ico" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="Images/favicon.png">
+
+<font face="Georgia">
+
+<table width="100%" border=0>
+        <col width="10%">
+        <col width="*">
+        <col width="10%">
+
+    <tr valign="bottom">
+        <td align="left">
+            <a href = "javascript:history.back()"><img src="Images/BackButton.png" width="30px"></a>
+        </td>
+        <td align="center" valign="top">
+            <font color="DarkBlue" size="6"><a href="MSMCS.html" style="text-decoration: none; color: DarkBlue; "><b>ELFOS</b></a></font>
+        </td>
+        <td align="right">
+            <img src="Images/ELFOS-Logo.png" width="65px" class="Image">
+        </td>
+    </tr>
+</table>
+
+</head>
+
+<!-- ################################################### -->
+<!-- Body - Right Side of the Screen                                                     -->
+<!-- ################################################### -->
+
+<body bgcolor=#E6E6E6 background="Images/DevBackground.png">
+
+    <div style="margin: 60px 5px 5px 5px; padding: 5px; border: 0px solid black; text-align: left;  background-color:#E6E6E6; background-image: url(Images/DevBackground.png);" class="split1 right" >
+    
+        <img src = "Images/Screens/Program2.jpg" width = "450px" class = "Image" usemap="#html1">
+
+<!-- area map based on an image size of 450px wide -->
+        <map name = "html1">
+
+<!-- Rose (Mathematics) -->
+            <area shape = "rect" coords = "1,1,51,37" 
+                href = "MSMCS-Rose.html"
+                target = "_self" 
+                />
+
+<!-- Greek Key -->
+            <area shape = "rect" coords = "54,1,138,37" 
+                href = "MSMCS-Grk.html"
+                target = "_self" 
+                />
+
+<!-- Program -->
+            <area shape = "rect" coords = "139,1,212,37" 
+                href = "MSMCS-Pgm.html"
+                target = "_self" 
+                />
+
+<!-- MultiSync -->
+            <area shape = "rect" coords = "214,1,301,37" 
+                href = "MSMCS-Multi.html"
+                target = "_self" 
+                />
+
+<!-- Home Screen -->
+            <area shape = "rect" coords = "354,1,406,37" 
+                href = "MSMCS-Home.html"
+                target = "_self" 
+                />
+
+<!-- Preferences Screen -->
+            <area shape = "rect" coords = "408,1,449,37" 
+                href = "MSMCS-Config-More.html"
+                target = "_self" 
+                />
+
+
+<!-- Speed Settings - Left -->
+            <area shape = "rect" coords = "2,78,54,101" 
+                href = "MSMCS-NumberPad.html"
+                target = "_self" 
+                title="Number Pad"
+                />
+            <area shape = "rect" coords = "2,234,54,253" 
+                href = "MSMCS-NumberPad.html"
+                target = "_self" 
+                title="Number Pad"
+                />
+
+<!-- Speed Settings - Right -->
+            <area shape = "rect" coords = "399,78,450,101" 
+                href = "MSMCS-NumberPad.html"
+                target = "_self" 
+                title="Number Pad"
+                />
+            <area shape = "rect" coords = "399,234,450,253" 
+                href = "MSMCS-NumberPad.html"
+                target = "_self" 
+                title="Number Pad"
+                />
+
+        </map>
+    </div>
+    
+    <div style="margin: 330px 5px 5px 5px; padding: 5px; border: 1px solid black; text-align: left;  background-color:#E6E6E6; background-image: url(Images/DevBackground.png);" class="split3 right" >
+
+
+        <table width="100%">
+            <tr valign="Top">
+                <td valign="top">
+                    <table align="Center" border="0">
+                        <tr height="30px">
+                            <td align="Center" bgcolor="#02cddc" width="85px">
+                                <font color="Black" size="2" face="Arial"><b>Enabled</b></font>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                <td valign="top" width="45%">
+                    Indicates that the selected stepper motor is enabled even when not in use.  Touch this to change it to <b>Disabled</b>.
+                </td>
+                <td valign="top" rowspan=3>
+                    The <a href="MSMCS-Config-More.html" target="_self">More</a> screen can be used to set this to be continuously Disabled or Enabled.  These buttons temporarily override that configuration setting.
+
+                    <p style="margin-bottom: 0;"><b><u>Key Note</u>:</b>When using <a href="https://www.omc-stepperonline.com/digital-stepper-driver-10-42a-20-50vdc-for-nema-17-23-24-stepper-motor-dm542t.html" target="_new">DM542T stepper motor drivers</a>, this needs to be <b>Enabled</b> (especially for work using indexing), otherwise the position will be lost and the movement will not be predictable.
+                </td>
+            </tr>
+
+            <tr><td colspan=2><hr></td></tr>
+
+            <tr valign="Top">
+                <td valign="top">
+                    <table align="Center" border="0">
+                        <tr height="30px">
+                            <td align="Center" bgcolor="#CD3C21" width="85px">
+                                <font color="Black" size="2" face="Arial"><b>Disabled</b></font>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                <td valign="top">
+                    Indicates that the selected stepper motor is only enabled when in use, and then disabled.  Touch this to change it to <b>Enabled</b>.
+                </td>
+            </tr>
+        </table>
+
+        <hr>
+        <table width="100%">
+            <tr valign="Top">
+                <td>
+                    <img src="Images/Buttons/ButtonTeal-In.jpg" width="50px">
+                </td>
+                <td>
+                    Used to initiate movement in the indicated direction on the identified axis.  Movement continues until <b>Stop</b> is pushed.
+                </td>
+            </tr>
+        </table>
+
+        <hr>
+        <table width="100%">
+            <tr valign="Top">
+                <td>
+                    <img src="Images/Buttons/ButtonTeal-Stop.jpg" width="50px">
+                </td>
+                <td>
+                    Used to stop the motion of the stepper motor.
+                </td>
+            </tr>
+        </table>
+
+        <hr>
+        <table width="100%">
+            <tr valign="Top">
+                <td>
+                    <img src="Images/Buttons/ButtonTeal-Return.jpg" width="50px">
+                </td>
+                <td>
+                    Used to return the spindle or the selected axis to the start point of the previous operation.
+                    
+                    <p>When using this function, Be sure to stop and retract the cutter from the cut first.  The return path does not always follow the same path as the initial cut.  (Backlash and other factors come into play here.)
+                    
+                    <p style="margin-bottom: 0;">The speed of the return action is set in the <a href="MSMCS-Config-Returns.html">Preferences | Returns</a> screen.
+                </td>
+            </tr>
+        </table>
+
+        <hr>
+        <table width="100%">
+            <tr valign="Top">
+                <td>
+                    <img src="Images/Buttons/ButtonTeal-Out.jpg" width="50px">
+                </td>
+                <td>
+                    Used to initiate movement in the indicated direction on the identified axis.  Movement continues until <b>Stop</b> is pushed.
+                </td>
+            </tr>
+        </table>
+
+    </div>
+
+<!-- ################################################### -->
+<!-- Body - Left Side of the Screen                                                       -->
+<!-- ################################################### -->
+
+    <div style="float: left; margin: 60px 5px 5px 5px; padding: 5px; border: 0px solid black; text-align: left;  background-color:#E6E6E6; background-image: url(Images/DevBackground.png);" class="split2 left" >
+    <table align="Center" border="0">
+        <tr height="35px">
+            <td align="Center" bgcolor="#02cddc" width="300px">
+                <font color="Black" size="4"><b>Program Screen</b></font>
+            </td>
+        </tr>
+    </table>
+
+    <p><b>Purpose:</b>  This screen allows the user to perform activities based on the patterns outlined in a file.  This allows for automating process steps to create an object, removing the amount of interaction required to achieve the desired results.
+    
+    <p>Details on the <a href="MSMCS-Pgm-File-Identifiers.html">File Information and File Identifiers</a> helps explain how the file is created to use this function.  Patterns are created by the commands in the file which move the spindle, or one of two axes individually.
+    
+    <p>Examples are on the starting page for this help, under the heading of <a href="MSMCS.html#IndexOfActivities">Index of Activities and Other Key Information</a>.
+
+    <p><b><I>Starting with version 3.0.8</I></b>, there is a progress bar displayed just above the bottom row of buttons.
+        
+    <table width="100%">
+        <col width="125px">
+        <col width="*">
+
+<!-- ################################################### -->
+<!-- Controls   -->
+
+        <tr>
+            <td colspan=999>
+                <hr class="style2">
+            </td>
+        </tr>
+
+        <tr valign="top">
+            <td>
+                <b>Radial</b>
+                <img src="Images/CircleUnChecked.png" width="20px" height="20px">
+            </td>
+            <td>
+                Used to create  a pattern radially (circumferentially)
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan=999>
+                &nbsp;
+            </td>
+        </tr>
+
+        <tr valign="top">
+            <td>
+                <b>Axial</b>
+                <img src="Images/CircleChecked.png" width="20px" height="20px">
+            </td>
+            <td>
+                Used to create a pattern axially
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan=999>
+                <hr class="style1">
+            </td>
+        </tr>
+
+        <tr valign="top">
+            <td>
+                <b>Segments</b>
+                <img src="Images/CircleUnChecked.png" width="20px" height="20px">
+            </td>
+            <td>
+                When selected, values in the file are interpreted as a multiplier of the "Length" for the linear movement axes and as a multiplier of the calculated segment size for the spindle.  Floating point numbers are valid.
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan=999>
+                &nbsp;
+            </td>
+        </tr>
+
+        <tr valign="top">
+            <td>
+                <b>Actual</b>
+                <img src="Images/CircleChecked.png" width="20px" height="20px">
+            </td>
+            <td>
+                When selected, values in the file are used as the length of the move.  Floating point numbers are valid.
+                <br><br>
+            </td>
+        </tr>
+
+<!-- ################################################### -->
+<!-- Variables   -->
+
+        <tr>
+            <td colspan=999>
+                <hr class="style1">
+            </td>
+        </tr>
+
+        <tr valign="top">
+            <td>
+                <span style="background-color: LightGray"><b>
+                &nbsp; Count &nbsp;
+                </b></span>
+                <br>
+                <span style="background-color: #FFEE9C"><b>
+                &nbsp; Count &nbsp;
+                </b></span>
+            </td>
+            <td>
+                This determines the actual number of patterns to create.  Setting it less than the <b>Patterns/360</b> value will leave a space at the end of the pattern.  Setting it larger will recut the same pattern.  This is useful when you want to cut a pattern deeper.
+                
+                <p style="margin-bottom: 0;">The value with a <span style="background-color: LightGray">&nbsp;gray backround&nbsp;</span> shows the current count as the sequence is run.  (<I>This was introduced in version 24.</I>)
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan=999>
+                &nbsp;
+            </td>
+        </tr>
+
+        <tr valign="top">
+            <td>
+                <span style="background-color: #FFEE9C"><b>
+                &nbsp; Patterns per 360 &nbsp;
+                </b></span>
+            </td>
+            <td>
+                This specifies how many individual patterns will fit in 360&deg; rotation of the spindle.  This controls the length of the shortest spindle segment.
+                <br><br>
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan=999>
+                &nbsp;
+            </td>
+        </tr>
+
+        <tr valign="top">
+            <td>
+                <span style="background-color: #FFEE9C"><b>
+                &nbsp; Length &nbsp;
+                </b></span>
+            </td>
+            <td>
+                This specifies the length of the shortest Z or X axis segment. Each pattern will have segments which are a multiple of the shortest segment.  This can be a floating point number.
+                
+                <p style="margin-bottom: 0;">This is a display only field when <b>Actual</b> is selected.  When <b>Segments</b> is selected, it can be set.
+            </td>
+        </tr>
+
+<!-- ################################################### -->
+<!-- Status   -->
+
+        <tr>
+            <td colspan=999>
+                <hr class="style1">
+            </td>
+        </tr>
+
+        <tr valign="top">
+            <td>
+                <span style="background-color: #D6D5DA"><b>
+               &nbsp; Command &nbsp;
+                </b></span>
+            </td>
+            <td>
+                This is the command from the file which is currently executing.  This information, along with the next two items, are very useful when running a new design.  It helps the user to monitor the progress as it happens.  If something does not work as desired, then this shows you where the process is at that time so that it is easer know where to change the file as necessary.
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan=999>
+                &nbsp;
+            </td>
+        </tr>
+
+        <tr valign="top">
+            <td>
+                <span style="background-color: #D6D5DA"><b>
+                &nbsp; Segments &nbsp;
+                </b></span>
+            </td>
+            <td>
+                This is the segment from the file which is currently executing.
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan=999>
+                &nbsp;
+            </td>
+        </tr>
+
+        <tr valign="top">
+            <td>
+                <span style="background-color: #D6D5DA"><b>
+                &nbsp; Line # &nbsp;
+                </b></span>
+            </td>
+            <td>
+                This is the line # from the file which is currently executing.
+            </td>
+        </tr>
+
+        <tr valign="top">
+            <td>
+                <table border="0">
+                    <tr height="30px">
+                        <td align="Center" bgcolor="#02cddc" width="75px">
+                            <font color="Black" size="2" face="Arial"><b>Synchro</b></font>
+                        </td>
+                    </tr>
+                </table>
+                
+                <p style="margin-bottom: 0;"><span style="background-color: #FFEE9C"><b>
+                &nbsp; Sync % &nbsp;
+                </b></span>
+                
+            </td>
+            <td>
+                <p style="margin-top: 0;">This option is used to run the spindle and M3 stepper motors synchronously at the specified percentages. Negative numbers run the spindle and M3 in opposite directions.
+
+                <p>This option only works if the Synchro function button is enabled (not red).
+
+                <p style="margin-bottom: 0;">This function is useful for activities such as having the spindle and the rosette(s) run at different revolutions per minute (i.e., a second stepper motor is driving the rosette's rotation).
+            </td>
+        </tr>
+        
+        <tr>
+            <td colspan=999>
+                <hr class="style1">
+            </td>
+        </tr>
+
+<!-- ################################################### -->
+<!-- Stepper Motor Controls   -->
+
+        <tr>
+            <td colspan=999>
+                <hr class="style1">
+            </td>
+        </tr>
+
+        <tr valign="top">
+            <td>
+                <b>Speed</b>
+            </td>
+            <td>
+                The controls on the left and right side of the screen are for controlling the respective stepper motor's speed and acceleration.
+
+                <p>To change the Max Speed, touch the number, and you will be presented with the <a href="MSMCS-NumberPad.html">Number Pad Screen</a>.</p>
+
+                <p>The slider is a red bar that can be moved up to increase the speed, or down to decrease it.
+
+                <p style="margin-bottom: 0;"><b>Want to understand this better?</b>  More details about the stepper motor speeds are on <a href="MSMCS-Speed.html">this page</a>.
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan=999>
+                &nbsp;
+            </td>
+        </tr>
+
+        <tr valign="top">
+            <td>
+                <b>Acceleration</b>
+            </td>
+            <td>
+                The bottom number (15001 on the left; 4300 on the right) is the acceleration for the stepper motor.
+
+                <p>To change this value, touch the number, and you will be presented with the <a href="MSMCS-NumberPad.html">Number Pad Screen</a>.
+
+            </td>
+        </tr>
+    </table>
+
+    <table width="100%">
+         <tr><td>
+
+<!-- ################################################### -->
+<!-- Limit Switches -->
+
+    <hr class="style2">
+    <p><font color="DarkBlue" size="4"><b><a name="LimitSwitches">Limit Switches</a></font></b>
+    <p>Limit switches can be used with this function.  The pins used for this are configured on the <a href="MSMCS-Config-Limits.html">Limit Switches Configuration Screen</a>.  (More information about the implementation of limit switches is on that page.)
+
+</div>
+
+<!-- ################################################### -->
+<!-- Footer                                                                                             -->
+<!-- ################################################### -->
+<div class="footer">
+    <hr class="style0">
+    <font size="3">
+    <table width="100%">
+        <col width="75%">
+        <col width="25%">
+
+        <tr valign="top">
+            <td align="left">
+                Questions or comments?  Contact us at
+                <br><a href="mailto:ColvinTools@Gmail.com?Subject=General" >ColvinTools@Gmail.com</a>
+            </td>
+            <td align="right">
+                <a href="../index-Disclaimers.html">Disclaimers</a>
+            </td>
+        </tr>
+    </table>
+</div>
+
+</body>
+</html>
