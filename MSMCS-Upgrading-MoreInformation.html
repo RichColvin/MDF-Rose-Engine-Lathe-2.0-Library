@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
+
+<!-- ################################################### -->
+<!-- Style Sheet for header image max size                                         -->
+<style>
+    img.Image { max-width: 500px;}
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for Horizontal Rule - Style 0           -->
+ <style>
+    hr.style0 {
+        border: 0;
+        height: 1px;
+        background-image: linear-gradient(to right,
+                rgba(0,0,256, 2),
+                rgba(0,0,256, 2),
+                rgba(0,0,256, 2),
+    }
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for Horizontal Rule - Style 1           -->
+ <style>
+    hr.style1 {
+        border: 0;
+        height: 3px;
+        background-image: linear-gradient(to right,
+            rgba(0, 0, 0, 0),
+            rgba(0,0,256, 2),
+            rgba(0, 0, 0, 0));
+    }
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for Horizontal Rule - Style 2           -->
+ <style>
+    hr.style2 {
+        border: 0;
+        height: 6px;
+        background-image: linear-gradient(to right,
+            rgba(0, 0, 0, 0),
+            rgba(0,0,256, 2),
+            rgba(0, 0, 0, 0));
+    }
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for indented paragraphs                 -->
+<style>
+    .indented { padding-left: 33pt; padding-right: 33pt; }
+</style>
+
+<!-- ################################################### -->
+<!-- Header                                              -->
+<!-- ################################################### -->
+
+<head bgcolor=#E6E6E6>
+<title>ELFOS</title>
+<link rel="shortcut icon" type="image/ico" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="Images/favicon.png">
+
+<font face="Georgia">
+
+<table width="100%" border=0>
+    <col width="10%">
+    <col width="*">
+    <col width="10%">
+
+    <tr valign="bottom">
+        <td align="left">
+            <a href = "javascript:history.back()"><img src="Images/BackButton.png" width="30px"></a>
+        </td>
+        <td align="center" valign="top">
+            <font color="DarkBlue" size="6"><b>ELFOS</b></font>
+            <br>
+            <font color="DarkBlue" size="5"><b>System Installation &amp; Upgrade Procedure</b></font>
+            <br>
+            <font color="DarkBlue" size="5"><b>More Information</b></font>
+        </td>
+        <td align="right">
+            <img src="Images/ELFOS-Logo.png" width="65px" class="Image">
+        </td>
+    </tr>
+</table>
+</head>
+
+<hr>
+
+<!-- ################################################### -->
+<!-- Body                                                -->
+<!-- ################################################### -->
+
+<body bgcolor=#E6E6E6 background="Images/DevBackground.png">
+<font face="Georgia">
+
+<!-- *************************************************** -->
+<!-- PCB                                                 -->
+<!-- *************************************************** -->
+<h1><font color="darkblue">Printed Circuit Board (PCB)</font></h1>
+<p>The specific printed circuit board (PCB) you are using will matter for these instructions.  The two current boards are shown in the images to the right, though the color of your board might be different.
+
+<table border=1 width=100%>
+    <tr valign="top">
+        <td align="center" valign="middle">
+            <b>4 Axis Board</b>
+        </td>
+        <td>
+            <p style="margin-top: 0;">Text on the board reads 
+
+            <center><b>Rose Engine Controller</b></center>
+            <center><b>Spindle and Three Axes V002c</b></center>
+            
+            <p style="margin-bottom: 0;">There are 4 bi-color circles along one side of the board (shown on the bottom of the picture to the right).
+            </ul>
+        </td>
+        <td align="center" width="200px">
+            <a href="Images/PCB-4-Axis.png"><img src="Images/PCB-4-Axis.png" width="200px" class="Image"></a>
+        </td>
+    </tr>
+    <tr valign="top">
+        <td align="center" valign="middle">
+            <b>5 Axis Board</b>
+        </td>
+        <td>
+            <p style="margin-top: 0;">Text on the board reads 
+
+            <center><b>Rose Engine Controller V003</b></center>
+                
+            <p>There are 5 bi-color circles along one side of the board (shown on the bottom of the picture to the right).
+
+            <p style="margin-bottom: 0;">There is also a version of this board with surface-mounted shifters; that one is typically blue.
+            </ul>
+        </td>
+        <td align="center" valign="top">
+            <a href="Images/PCB-5-Axis.png"><img src="Images/PCB-5-Axis.png" width="200px" class="Image"></a>
+    </tr>
+</table>
+
+<br><i>Click on either picture above to see a larger size</i>
+
+<hr class="style1">
+
+<!-- *************************************************** -->
+<!-- Teensy                                              -->
+<!-- *************************************************** -->
+<h1><font color="darkblue">Teensy Microcontroller</font></h1>
+
+<h3><font color="darkblue">Unsure which Teensy Microcontroller you have?</font></h3>
+
+<p><div style="float: right; width: 350px; margin: 5px 5px 5px 5px; padding: 5px; border: 1px solid DarkGray; text-align: center; background-color:White">
+    <img src="NextionUpgrade/Teensy35-2.jpeg" width="100%" />
+</div>
+
+<p>The Teensy 3.5 is the most common, however if you are unsure of which one you have,
+
+    <ol style="margin-top: 0; margin-bottom: 0;">
+        <li>Open the Teensy loader (shown in the picture to the right).</li>
+        <li>Click on <b>&quot;Help&quot;</b> then turn on <b>Verbose Information</b>.</li>
+        <li>Press the white button.  The Verbose Information screen will show which Teensy you have.</li>
+    </ol>
+            
+<h3><font color="darkblue">What about the Teensy 4.1?</font></h3>
+<p><font color="DarkRed"></font> The code library used for programming this system has not been successfully upgraded for the Teensy 4.1.  Once Ed gets that completed, we will post the upgrade. 
+            
+<h3><font color="darkblue">Best Practice</font></h3>
+<p>It is a best practice to right-click on the link for your appropriate Teensy model, then ensure the file is saved with the file name noted.  For example, if you are trying to download the file for the Teensy 3.5, ensure it gets saved as &quot;5Rose_v305_t35.hex&quot;.  This is because some computer systems will add &quot;.txt&quot;.to the end (e.g., making it &quot;5Rose_v305_t35.hex.txt&quot;).
+
+<hr class="style1">
+
+<!-- *************************************************** -->
+<!-- Nextion                                             -->
+<!-- *************************************************** -->
+<h1><font color="darkblue">Nextion Display</font></h1>
+
+<h3><font color="darkblue">Unsure which Nextion display you have?</font></h3>
+
+<p>The 4.3&quot; Enhanced is the most common, however if you try the wrong file it won't load.  The Nextion display will not let you load the wrong one.
+            
+
+<h3><font color="darkblue">Why do the Nextion 5&rdquo; and 7&rdquo; Intelligent need the 5-axis PCB?</font></h3>
+
+<p>The Nextion Intelligent displays require a higher voltage than the Nextion Enhanced series.  This can be a problem which may cause the Teensy to fail due to over-voltage on the input pins.  This is particularly true for the on the Teensy 3.6, and will be similarly for the Teensy 4.1.  
+            
+<p>The 5-axis PCB was designed with a Pololu 2595 daughter board for handling the voltage differences.
+            
+<p>The 4-axis PCB can theoretically be used if you are using a Teensy 3.2 or 3.5.  But the higher voltages for the Nextion Intelligent display do make this risky.
+            
+<h3><font color="darkblue">Should you upgrade to the 7&rdquo; Nextion Intelligent?</font></h3>
+
+<p>If you have the 4.3&rdquo; Nextion Enhanced display or especialy if you have the 5&rdquo; Nextion Intelligent display, then you should.  
+
+<p></p>Over time, the 5&rdquo; display may be deprecated, and the 7&rdquo; display is nicer.  The case for the 7&rdquo; Nextion Intelligent Display which can be 3D printed is available on <a href="https://github.com/elfren/RoseEngine_SpindleAndAxis" target="_new">Ed's Github Page</a> in the Nextion folder.  Or, you can look in the <a href="https://mdfre2.colvintools.com/" target="_new">MDF Rose Engine 2.0 Library</a> at the book for 3D Printed Parts.
+
+<h3><font color="darkblue">Why is there an option with pre-set VendorId and MotorCount?</font></h3>
+
+<p>For some Teensy 3.2s, we have a problem loading the INI file.  These two settings cannot be changed using the Nextion display, and are set to VendorId=4 and MotorCount=5.
+
+<p>Here is some background information to explain things.  ELFOS consists of two computers which talk to each other via a serial connection (Rx <-> Tx, Tx <-> Rx):
+    <ol>
+        <li>a Teensy microcontroller, and</li>
+        <li>a Nextion display (which has a small CPU built-in).</li>
+    </ol>
+
+<p>When a change is made on the Nextion display, that change gets sent to the Teensy microcontroller.  Then the Nextion display requests the value of the setting on the Teensy microcontroller, and receives a response back with it.
+
+<p>That is why the EEPROM function in ELFOS is needed.  It shows what each setting is on the Nextion display (in the yellow box) vs. on the Teensy microcontroller (in the gray box).  If they don't match, you can change (or simply re-enter) the setting on the Nextion display and then re-check the EEPROM function.  The two should match then.
+
+<p>Sometimes, when a machine is newly built, the setting for the Teensy microcontroller will show "Ovf" when there is a value for that setting on the Nextion display.  You can change the setting in the Nextion display, and that should change the setting in the Teensy microcontroller to match.
+
+<p>As implemented in the code for both the Teensy microcontroller and the Nextion display, there are only two settings which could not be set from the Nextion display:
+    <ul>
+        <li>VendorId</li>
+        <li>MotorCount</li>
+    </ul>
+
+<p><b>VendorId</b> is not critical as that simply sets the splash screen at startup.  Once you go into some function and go back to home, it shows other pictures of stuff someone has made.
+
+<p><b>MotorCount</b> is another issue though.  That is set to either 4 or 5, depending on the number of axes on the PCB.  The one you have supports 5 axes.  If this is set to 4, then no menu settings show up on the Nextion for M4; only Spindle, X, Z, and M3.
+
+<p>What Ed has done is set 
+
+    <ul>
+        <li><b>VendorId</b> to 4 (the CAD drawing of Ed's machine, and the picture we've selected as the logo for ELFOS)</li>
+        <li><b>MotorCount</b> to 5</li>
+    </ul>
+
+<p>These would have otherwise been set by the INI file load, but as that is not working for some, we are locking them down to these values.
+
+
+
+
+
+
+
+<!-- ################################################### -->
+<!-- Footer                                              -->
+<!-- ################################################### -->
+<hr>
+<font size="3">
+<table width="100%">
+    <col width="67%">
+    <col width="33%">
+
+    <tr valign="top">
+        <td align="left">
+            Questions or comments?  Contact us at
+            <br><a href="mailto:ColvinTools@Gmail.com?Subject=General" target="_new">ColvinTools@Gmail.com</a>
+        </td>
+        <td align="right">
+            <a href="../index-Disclaimers.html">Disclaimers</a>
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>
