@@ -153,9 +153,9 @@
 <font face="Georgia">
 
 <table width="100%" border=0>
-        <col width="10%">
-        <col width="*">
-        <col width="10%">
+	<col width="10%">
+    <col width="*">
+    <col width="10%">
 
     <tr valign="bottom">
         <td align="left">
@@ -198,86 +198,65 @@
 </div>
     
 <div style="margin: 330px 5px 5px 5px; padding: 5px; border: 1px solid black; text-align: left;  background-color:#E6E6E6; background-image: url(Images/DevBackground.png);" class="split3 right" >
-
-<!-- 
-        <table>
-            <tr valign="Top">
-                <td>
-                    <img src="Images/ButtonSettings-Back.png" width="75px">
-                </td>
-                <td>
-                    Used to return to the prior screen.
-                </td>
-            </tr>
-        </table>
-
-        <hr>
-        <table width="100%">
-            <tr valign="Top">
-                <td>
-                    <img src="Images/ButtonSettings-Refresh.png" width="75px">
-                </td>
-                <td>
-                    Used to refresh the values shown in the gray boxes.
-                </td>
-            </tr>
-        </table>
- -->
-
     <p><b>Once the load is finished</b>, you will have to restart the system.
-    </div>
-
-<!-- ################################################### -->
-<!-- Body - Left Side of the Screen                                                       -->
-<!-- ################################################### -->
-
-    <div style="float: left; margin: 60px 5px 5px 5px; padding: 5px; border: 0px solid black; text-align: left;  background-color:#E6E6E6; background-image: url(Images/DevBackground.png);" class="split2 left" >
-        <table align="Center" border="0">
-            <tr height="35px">
-                <td align="Center" bgcolor="#3980C0" width="300px">
-                    <font color="White" size="4"><b>Preferences Screen</b></font>
-                </td>
-            </tr>
-        </table>
-
-        <p><div style="float: right; width: 200px; margin: 5px 5px 5px 5px; padding: 5px; border: 1px solid black; text-align: left; background-color:#3980C0">
-            <font color="White" size="2">Touch the buttons on the screen image to the right to see the details for the that screen.</font>
-        </div>
-
-        <b>Purpose:</b>  Used to load the INI file.  The text fields shown are just to show that the command is working.  These boxes only appear when Load Ini has been touched.
-
-        <p><i>The option introduced with version 3.0 is to select the file to load.</i>. This allows for a settings file to be used for a specific device.  For example, the settings for a curvilinear slide could be loaded with no other ones affected.
-
-        <p style="margin-bottom: 0;">Look for these keys to load:
-            <table>
-                <tr valign="top">
-                    <td width="150px">
-                        <ol start="1">
-                            <li>Preferences</li>
-                            <li>Limits</li>
-                            <li>Returns</li>
-                            <li>Main</li>
-                            <li>Multi</li>
-                            <li>Index</li>
-                            <li>Move</li>
-                        </ol>
-                    </td>
-                    <td width="150px">
-                        <ol start="8">
-                            <li>Shared</li>
-                            <li>Sync</li>
-                            <li>Recip</li>
-                            <li>GreekKey</li>
-                            <li>Program</li>
-                            <li>Rose</li>
-                        </ol>
-                    </td>
-                </tr>
-            </table>
 </div>
 
 <!-- ################################################### -->
-<!-- Footer                                                                                             -->
+<!-- Body - Left Side of the Screen   					 -->
+<!-- ################################################### -->
+
+<div style="float: left; margin: 60px 5px 5px 5px; padding: 5px; border: 0px solid black; text-align: left;  background-color:#E6E6E6; background-image: url(Images/DevBackground.png);" class="split2 left" >
+	<table align="Center" border="0">
+    	<tr height="35px">
+        	<td align="Center" bgcolor="#3980C0" width="300px">
+            	<font color="White" size="4"><b>Preferences Screen</b></font>
+            </td>
+        </tr>
+    </table>
+
+	<p style="margin-top: 0; ">&nbsp;
+	
+	<table align="left" border="0">
+        <tr height="50px">
+            <td align="Center" bgcolor="#0FB8ED" width="125px">
+                <font color="black" size="4"><b>Load ini</b></font>
+            </td>
+        </tr>
+    </table>
+
+
+    <b>Purpose:</b>  Used to load settings for the system from a file.  The text fields shown are just to show that the command is working.
+
+	<p style="margin-bottom: 0; "><b><u>Notes</u>:</b></p>
+	
+		<ol style="margin-top: 0; margin-bottom: 0; ">
+			<li>You can load a file which only has partial settings, and not all of them.  This is useful for saving the settings for devices (e.g., a file for the curvilinear slide, and a different file for a spherical slide).</li>
+
+			<li><i>The option introduced with version 3.0 is to select the file to load.</i> This allows for a settings file to be used for a specific device.  For example, the settings for a curvilinear slide could be loaded with no other ones affected.</li>
+		</ol>
+
+    <hr class="style1">
+
+    <table align="left" border="0">
+    	<tr height="50px">
+        	<td align="Center" bgcolor="#0FB8ED" width="125px">
+            	<font color="black" size="4"><b>Save ini</b></font>
+            </td>
+        </tr>
+    </table>
+
+    <b>Purpose:</b>  Used to save the current system settings to a file named Settings.ini.
+
+	<p style="margin-bottom: 0; "><b><u>Notes</u>:</b></p>
+		<ol style="margin-top: 0; margin-bottom: 0; ">
+			<li>When using this action, any file named Settings.ini will first be erased, and then a new one created to save the current system's settings.</li>
+
+		    <li><i>The option was introduced with version 3.12b.</i></li>
+		</ol>
+</div>
+
+<!-- ################################################### -->
+<!-- Footer           					                 -->
 <!-- ################################################### -->
 <div class="footer">
     <hr class="style0">
