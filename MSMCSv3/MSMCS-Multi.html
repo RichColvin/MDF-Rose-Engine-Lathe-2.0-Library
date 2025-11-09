@@ -3,57 +3,57 @@
 <html>
 
 <!-- ################################################### -->
-<!-- Style Sheet for MathJax                                                                 -->
+<!-- Style Sheet for MathJax                             -->
 <script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
 <!-- ################################################### -->
-<!-- Style Sheet for Horizontal Rule - Style 0                                       -->
- <style>
+<!-- Style Sheet for Horizontal Rule - Style 0           -->
+<style>
     hr.style0 {
         border: 0;
         height: 1px;
         background-image: linear-gradient(to right,
-                rgba(184,134,11, 2),
-                rgba(184,134,11, 2),
-                rgba(184,134,11, 2));
+            rgba(184,134,11, 2),
+            rgba(184,134,11, 2),
+            rgba(184,134,11, 2));
     }
 </style>
 
 <!-- ################################################### -->
-<!-- Style Sheet for Horizontal Rule - Style 1                                       -->
- <style>
+<!-- Style Sheet for Horizontal Rule - Style 1           -->
+<style>
     hr.style1 {
         border: 0;
         height: 3px;
         background-image: linear-gradient(to right,
             rgba(0, 0, 0, 0),
-                rgba(184,134,11, 2),
+            rgba(184,134,11, 2),
             rgba(0, 0, 0, 0));
     }
 </style>
 
 <!-- ################################################### -->
-<!-- Style Sheet for Horizontal Rule - Style 2                                       -->
- <style>
+<!-- Style Sheet for Horizontal Rule - Style 2           -->
+<style>
     hr.style2 {
         border: 0;
         height: 6px;
         background-image: linear-gradient(to right,
             rgba(0, 0, 0, 0),
-                rgba(184,134,11, 2),
+            rgba(184,134,11, 2),
             rgba(0, 0, 0, 0));
     }
 </style>
 
 <!-- ################################################### -->
-<!-- Style Sheet for indented paragraphs                                             -->
+<!-- Style Sheet for indented paragraphs                 -->
 <style>
     .indented { padding-left: 33pt; padding-right: 33pt; }
 </style>
 
 <!-- ################################################### -->
 <!-- <body background="Images/Background.png"> -->
-	<font face="Georgia">
+<font face="Georgia">
 
 <!-- ################################################### -->
 <!-- Style Sheet for header image max size                                         -->
@@ -67,131 +67,88 @@
 <!-- ################################################### -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-    body {
-        font-family: Georgia;
+body {
+    font-family: Georgia;
     }
 
 .split1 {
-  height: calc(260px);
-  min-width: 450px;
-  max-width: 450px;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  overflow-x: hidden;
-  padding-top: 20px;
-}
+    height: calc(260px);
+    min-width: 450px;
+    max-width: 450px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+    }
 
 .split2 {
-  height: calc(100% - 130px);
-  width: calc(100% - 490px);
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  overflow-x: hidden;
-  padding-top: 20px;
-}
+    height: calc(100% - 130px);
+    width: calc(100% - 490px);
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+    }
 
 .split3 {
-  height: calc(100% - 400px);
-  min-width: 450px;
-  max-width: 450px;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  overflow-x: hidden;
-  padding-top: 280px;
-}
+    height: calc(100% - 410px);
+    min-width: 450px;
+    max-width: 450px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 280px;
+    }
 
 .left {
-  left: 0;
-  background-color: #111;
-}
+    left: 0;
+    background-color: #111;
+    }
 
 .right {
-  right: 0;
-  background-color: blue;
-}
+    right: 0;
+    background-color: blue;
+    }
 
 .centered {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-}
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    }
 
 .centered img {
-  width: 150px;
-  border-radius: 50%;
-}
+    width: 150px;
+    border-radius: 50%;
+    }
 </style>
 
 <!-- ################################################### -->
-<!-- Style Sheet for footer                                                                     -->
+<!-- Style Sheet for footer                              -->
 <!-- ################################################### -->
 <style>
 .footer {
-   position: fixed;
-   left: 0;
-   bottom: 0;
-   width: 100%;
-   background-color: #E6E6E6;
-   text-align: center;
-}
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #E6E6E6;
+    text-align: center;
+    }
 </style>
 
 <!-- ################################################### -->
-<!-- Style Sheet for collapsible section                                                 -->
-<!-- ################################################### -->
-<style>
-.collapsible {
-  background-color: #E6E6E6;
-  color: DarkBlue;
-  cursor: pointer;
-  padding: 3px;
-  width: calc(100%-450px);
-  border: none;
-  text-align: left;
-  outline: none;
-  font-size: 15px;
-}
-
-.active, .collapsible:hover {
-  background-color:#3980C0;
-  color: white;
-}
-
-.collapsible:after {
-  content: '\002B';
-  color: black;
-  font-weight: bold;
-  float: right;
-  margin-left: 5px;
-}
-
-.active:after {
-  content: "\2212";
-  color: black;
-}
-
-.content {
-  padding: 0 3px;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.2s ease-out;
-  background-color: #f1f1f1;
-}
-</style>
-
-<!-- ################################################### -->
-<!-- Header                                                                                           -->
+<!-- Header                                              -->
 <!-- ################################################### -->
 
 <head bgcolor=#E6E6E6>
-    <title>ELFOS</title>
-    <link rel="shortcut icon" type="image/ico" href="favicon.ico">
-    <link rel="icon" type="image/png" sizes="16x16" href="Images/favicon.png">
+<title>ELFOS</title>
+<link rel="shortcut icon" type="image/ico" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="Images/favicon.png">
 
 <font face="Georgia">
 
@@ -202,7 +159,7 @@
 
     <tr valign="bottom">
         <td align="left">
-            <a href = "javascript:history.back()"><img src="Images/BackButton.png" width="30px"></a>
+            &nbsp;
         </td>
         <td align="center" valign="top">
             <font color="DarkBlue" size="6"><a href="MSMCS.html" style="text-decoration: none; color: DarkBlue; "><b>ELFOS</b></a></font>
@@ -216,7 +173,7 @@
 </head>
 
 <!-- ################################################### -->
-<!-- Body - Right Side of the Screen                                                     -->
+<!-- Body - Right Side of the Screen                     -->
 <!-- ################################################### -->
 
 <body bgcolor=#E6E6E6 background="Images/DevBackground.png">
@@ -228,63 +185,46 @@
 <!-- area map based on an image size of 450px wide -->
     <map name = "html1">
 
-<!-- Rose (Mathematics) -->
-        <area shape = "rect" coords = "1,1,51,37" 
-            href = "MSMCS-Rose.html"
-            target = "_self" 
-            />
+<!-- Home -->
+        <area shape = "rect" coords = "1,1,44,39" 
+            href = "MSMCS-Home.html" target = "self"  />
 
-<!-- Greek Key -->
-        <area shape = "rect" coords = "54,1,138,37" 
-            href = "MSMCS-Grk.html"
-            target = "_self" 
-            />
+<!-- Main Screen -->
+        <area shape = "rect" coords = "79,1,133,39" 
+            href = "MSMCS-Main.html" target = "self"  />
 
-<!-- Program -->
-        <area shape = "rect" coords = "139,1,212,37" 
-            href = "MSMCS-Pgm.html"
-            target = "_self" 
-            />
+<!-- One Screen -->
+        <area shape = "rect" coords = "135,1,189,39" 
+            href = "MSMCS-One.html" target = "self"  />
 
-<!-- MultiSync -->
-        <area shape = "rect" coords = "214,1,301,37" 
-            href = "MSMCS-Multi.html"
-            target = "_self" 
-            />
+<!-- Index Screen -->
+        <area shape = "rect" coords = "191,1,245,39" 
+            href = "MSMCS-Ind.html" target = "self"  />
 
-<!-- Home Screen -->
-        <area shape = "rect" coords = "354,1,406,37" 
-            href = "MSMCS-Home.html"
-            target = "_self" 
-            />
+<!-- Move Screen -->
+        <area shape = "rect" coords = "247,1,301,39" 
+            href = "MSMCS-Mov.html" target = "self"  />
 
-<!-- Preferences Screen -->
-        <area shape = "rect" coords = "408,1,449,37" 
-            href = "MSMCS-Config-More.html"
-            target = "_self" 
-            />
+<!-- Multi-Sync Screen -->
+        <area shape = "rect" coords = "303,1,371,39" 
+            href = "MSMCS-Multi.html" target = "self"  />
 
-
- <!-- Speed Settings - Left -->
-        <area shape = "rect" coords = "5,42,54,60" 
-            href = "MSMCS-NumberPad.html"
-            target = "_self" 
-            title="Config Screen"
-            />
-        <area shape = "rect" coords = "5,234,54,253" 
-            href = "MSMCS-NumberPad.html"
-            target = "_self" 
-            title="Config Screen"
-            />
+<!-- Config Screen -->
+        <area shape = "rect" coords = "403,1,450,39" 
+            href = "MSMCS-Config-More.html" target = "self"  />
 
    </map>
 </div>
     
+<!-- ################################################### -->
+<!-- Body - Bottom Right Side of the Screen              -->
+<!-- ################################################### -->
+
 <div style="margin: 330px 5px 5px 5px; padding: 5px; border: 1px solid black; text-align: left;  background-color:#E6E6E6; background-image: url(Images/DevBackground.png);" class="split3 right" >
     <table width="100%">
         <tr valign="Top">
             <td>
-                <img src="Images/Buttons/ButtonGreen2-Stop.jpg" width="50px">
+                <img src="Images/Buttons/ButtonGreen2-Stop.jpg" width="35px">
             </td>
             <td>
                 Used to stop the motion of the stepper motor.
@@ -315,7 +255,7 @@
     <table width="100%">
         <tr valign="Top">
 	        <td>
-               <img src="Images/Buttons/ButtonGreen2-Return.jpg" width="50px">
+               <img src="Images/Buttons/ButtonGreen2-Return.jpg" width="35px">
             </td>
             <td>
                 Used to return the spindle or the selected axis to the start point of the previous operation.
@@ -329,7 +269,7 @@
 </div>
 
 <!-- ################################################### -->
-<!-- Body - Left Side of the Screen                                                       -->
+<!-- Body - Left Side of the Screen                      -->
 <!-- ################################################### -->
 
 <div style="float: left; margin: 60px 5px 5px 5px; padding: 5px; border: 0px solid black; text-align: left;  background-color:#E6E6E6; background-image: url(Images/DevBackground.png);" class="split2 left" >
@@ -360,10 +300,21 @@
 
         <tr valign="top">
             <td>
-                <b>Run One</b>
+                <b>Run Single</b>
             </td>
             <td>
                 For a given axis, this button can be used to run that single axis (like on the One screen) in continuous mode.  The motor will run until Stop is pressed.
+                
+                <div style="float: right; width: 250px;
+                        margin-left: 0px; margin-right: 5px; 
+                        margin-top: 0px; margin-bottom: 5px; 
+                        padding-left: 5px; padding-right: 5px;
+                        padding-top: 5px; padding-bottom: 0px; 
+                        border: 1px solid Darkgray; text-align: left;
+                        text-align: left;">
+            	    <img src="Images/Screens/MultiSync2.jpg" alt="no image file" style="width: 100%;" />
+            	    <b><i><font size="2">Pop-up window shown when running a single axis</font></i></b>
+                </div>
                 
                 <p>This is basically the opposite of using 
                 
@@ -516,6 +467,21 @@
 
         <tr valign="top">
             <td>
+                <b>Waves</b>
+            </td>
+            <td>
+                (to be completed ...)
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan=999>
+                <hr>
+            </td>
+        </tr>
+
+        <tr valign="top">
+            <td>
                 <table border="0">
                     <tr height="30px">
                         <td align="Center" bgcolor="#28C68B" width="75px">
@@ -601,8 +567,6 @@
                 Percentage of MaxSpeed that this axis will run.
             </td>
         </tr>
-
-
     </table>
 
 <!-- ################################################### -->
@@ -611,11 +575,10 @@
     <hr class="style2">
     <p><font color="DarkBlue" size="4"><b><a name="LimitSwitches">Limit Switches</a></font></b>
     <p>Limit switches can be used with this function.  The pins used for this are configured on the <a href="MSMCS-Config-Limits.html">Limit Switches Configuration Screen</a>.  (More information about the implementation of limit switches is on that page.)
-
 </div>
 
 <!-- ################################################### -->
-<!-- Footer                                                                                             -->
+<!-- Footer                                              -->
 <!-- ################################################### -->
 <div class="footer">
     <hr class="style0">
@@ -634,6 +597,6 @@
             </td>
         </tr>
     </table>
-
+</div>
 </body>
 </html>

@@ -3,57 +3,57 @@
 <html>
 
 <!-- ################################################### -->
-<!-- Style Sheet for MathJax                                                                 -->
+<!-- Style Sheet for MathJax                             -->
 <script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
 <!-- ################################################### -->
-<!-- Style Sheet for Horizontal Rule - Style 0                                       -->
- <style>
+<!-- Style Sheet for Horizontal Rule - Style 0           -->
+<style>
     hr.style0 {
         border: 0;
         height: 1px;
         background-image: linear-gradient(to right,
-                rgba(184,134,11, 2),
-                rgba(184,134,11, 2),
-                rgba(184,134,11, 2));
+            rgba(184,134,11, 2),
+            rgba(184,134,11, 2),
+            rgba(184,134,11, 2));
     }
 </style>
 
 <!-- ################################################### -->
-<!-- Style Sheet for Horizontal Rule - Style 1                                       -->
- <style>
+<!-- Style Sheet for Horizontal Rule - Style 1           -->
+<style>
     hr.style1 {
         border: 0;
         height: 3px;
         background-image: linear-gradient(to right,
             rgba(0, 0, 0, 0),
-                rgba(184,134,11, 2),
+            rgba(184,134,11, 2),
             rgba(0, 0, 0, 0));
     }
 </style>
 
 <!-- ################################################### -->
-<!-- Style Sheet for Horizontal Rule - Style 2                                       -->
- <style>
+<!-- Style Sheet for Horizontal Rule - Style 2           -->
+<style>
     hr.style2 {
         border: 0;
         height: 6px;
         background-image: linear-gradient(to right,
             rgba(0, 0, 0, 0),
-                rgba(184,134,11, 2),
+            rgba(184,134,11, 2),
             rgba(0, 0, 0, 0));
     }
 </style>
 
 <!-- ################################################### -->
-<!-- Style Sheet for indented paragraphs                                             -->
+<!-- Style Sheet for indented paragraphs                 -->
 <style>
     .indented { padding-left: 33pt; padding-right: 33pt; }
 </style>
 
 <!-- ################################################### -->
 <!-- <body background="Images/Background.png"> -->
-	<font face="Georgia">
+<font face="Georgia">
 
 <!-- ################################################### -->
 <!-- Style Sheet for header image max size                                         -->
@@ -67,142 +67,99 @@
 <!-- ################################################### -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-    body {
-        font-family: Georgia;
+body {
+    font-family: Georgia;
     }
 
 .split1 {
-  height: calc(260px);
-  min-width: 450px;
-  max-width: 450px;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  overflow-x: hidden;
-  padding-top: 20px;
-}
+    height: calc(260px);
+    min-width: 450px;
+    max-width: 450px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+    }
 
 .split2 {
-  height: calc(100% - 130px);
-  width: calc(100% - 490px);
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  overflow-x: hidden;
-  padding-top: 20px;
-}
+    height: calc(100% - 130px);
+    width: calc(100% - 490px);
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+    }
 
 .split3 {
-  height: calc(100% - 400px);
-  min-width: 450px;
-  max-width: 450px;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  overflow-x: hidden;
-  padding-top: 280px;
-}
+    height: calc(100% - 410px);
+    min-width: 450px;
+    max-width: 450px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 280px;
+    }
 
 .left {
-  left: 0;
-  background-color: #111;
-}
+    left: 0;
+    background-color: #111;
+    }
 
 .right {
-  right: 0;
-  background-color: blue;
-}
+    right: 0;
+    background-color: blue;
+    }
 
 .centered {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-}
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    }
 
 .centered img {
-  width: 150px;
-  border-radius: 50%;
-}
+    width: 150px;
+    border-radius: 50%;
+    }
 </style>
 
 <!-- ################################################### -->
-<!-- Style Sheet for footer                                                                     -->
+<!-- Style Sheet for footer                              -->
 <!-- ################################################### -->
 <style>
 .footer {
-   position: fixed;
-   left: 0;
-   bottom: 0;
-   width: 100%;
-   background-color: #E6E6E6;
-   text-align: center;
-}
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #E6E6E6;
+    text-align: center;
+    }
 </style>
 
 <!-- ################################################### -->
-<!-- Style Sheet for collapsible section                                                 -->
-<!-- ################################################### -->
-<style>
-.collapsible {
-  background-color: #E6E6E6;
-  color: DarkBlue;
-  cursor: pointer;
-  padding: 3px;
-  width: calc(100%-450px);
-  border: none;
-  text-align: left;
-  outline: none;
-  font-size: 15px;
-}
-
-.active, .collapsible:hover {
-  background-color:#5718B7;
-  color: white;
-}
-
-.collapsible:after {
-  content: '\002B';
-  color: black;
-  font-weight: bold;
-  float: right;
-  margin-left: 5px;
-}
-
-.active:after {
-  content: "\2212";
-  color: black;
-}
-
-.content {
-  padding: 0 3px;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.2s ease-out;
-  background-color: #f1f1f1;
-}
-</style>
-
-<!-- ################################################### -->
-<!-- Header                                                                                           -->
+<!-- Header                                              -->
 <!-- ################################################### -->
 
 <head bgcolor=#E6E6E6>
-    <title>ELFOS</title>
-    <link rel="shortcut icon" type="image/ico" href="favicon.ico">
-    <link rel="icon" type="image/png" sizes="16x16" href="Images/favicon.png">
+<title>ELFOS</title>
+<link rel="shortcut icon" type="image/ico" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="Images/favicon.png">
 
 <font face="Georgia">
 
 <table width="100%" border=0>
-        <col width="10%">
-        <col width="*">
-        <col width="10%">
+    <col width="10%">
+    <col width="*">
+    <col width="10%">
 
     <tr valign="bottom">
         <td align="left">
-            <a href = "javascript:history.back()"><img src="Images/BackButton.png" width="30px"></a>
+            &nbsp;
         </td>
         <td align="center" valign="top">
             <font color="DarkBlue" size="6"><a href="MSMCS.html" style="text-decoration: none; color: DarkBlue; "><b>ELFOS</b></a></font>
@@ -216,90 +173,54 @@
 </head>
 
 <!-- ################################################### -->
-<!-- Body - Right Side of the Screen                                                     -->
+<!-- Body - Right Side of the Screen                     -->
 <!-- ################################################### -->
 
 <body bgcolor=#E6E6E6 background="Images/DevBackground.png">
 
-    <div style="margin: 60px 5px 5px 5px; padding: 5px; border: 0px solid black; text-align: left;  background-color:#E6E6E6; background-image: url(Images/DevBackground.png);" class="split1 right" >
+<div style="margin: 60px 5px 5px 5px; padding: 5px; border: 0px solid black; text-align: left;  background-color:#E6E6E6; background-image: url(Images/DevBackground.png);" class="split1 right" >
     
-        <img src = "Images/Screens/Move1.jpg" width = "450px" class = "Image" usemap="#html1">
+    <img src = "Images/Screens/Move1.jpg" width = "450px" class = "Image" usemap="#html1">
 
 <!-- area map based on an image size of 450px wide -->
-        <map name = "html1">
+    <map name = "html1">
+
+<!-- Home -->
+        <area shape = "rect" coords = "1,1,44,39" 
+            href = "MSMCS-Home.html" target = "self"  />
 
 <!-- Main Screen -->
-        <area shape = "rect" coords = "1,1,50,38" 
-            href = "MSMCS-Main.html"
-            target = "_self" 
-            />
+        <area shape = "rect" coords = "79,1,133,39" 
+            href = "MSMCS-Main.html" target = "self"  />
 
 <!-- One Screen -->
-        <area shape = "rect" coords = "52,1,103,38" 
-            href = "MSMCS-One.html"
-            target = "_self" 
-            />
+        <area shape = "rect" coords = "135,1,189,39" 
+            href = "MSMCS-One.html" target = "self"  />
 
 <!-- Index Screen -->
-        <area shape = "rect" coords = "105,1,155,38" 
-            href = "MSMCS-Ind.html"
-            target = "_self" 
-            />
+        <area shape = "rect" coords = "191,1,245,39" 
+            href = "MSMCS-Ind.html" target = "self"  />
 
 <!-- Move Screen -->
-        <area shape = "rect" coords = "157,1,208,38" 
-            href = "MSMCS-Mov.html"
-            target = "_self" 
-            />
+        <area shape = "rect" coords = "247,1,301,39" 
+            href = "MSMCS-Mov.html" target = "self"  />
 
-<!-- Sync Screen -->
-        <area shape = "rect" coords = "210,1,259,38" 
-            href = "MSMCS-Sync.html"
-            target = "_self" 
-            />
-
-<!-- Reciprocation Screen -->
-        <area shape = "rect" coords = "261,1,314,38" 
-            href = "MSMCS-Rec-Radial.html"
-            target = "_self" 
-            />
-
-<!-- Home Screen -->
-        <area shape = "rect" coords = "356,1,407,38" 
-            href = "MSMCS-Home.html"
-            target = "_self" 
-            />
+<!-- Multi-Sync Screen -->
+        <area shape = "rect" coords = "303,1,371,39" 
+            href = "MSMCS-Multi.html" target = "self"  />
 
 <!-- Config Screen -->
-        <area shape = "rect" coords = "404,1,450,38" 
-            href = "MSMCS-Config-More.html"
-            target = "_self" 
-            />
+        <area shape = "rect" coords = "403,1,450,39" 
+            href = "MSMCS-Config-More.html" target = "self"  />
 
-<!-- Speed Settings - Right -->
-            <area shape = "rect" coords = "399,78,450,101" 
-                href = "MSMCS-NumberPad.html"
-                target = "_self" 
-                title="Number Pad"
-                />
-            <area shape = "rect" coords = "399,234,450,253" 
-                href = "MSMCS-NumberPad.html"
-                target = "_self" 
-                title="Number Pad"
-                />
-
-<!-- Disabled/Enabled Button  -->
-            <area shape = "rect" coords = "385,45,450,253" 
-                href = '#' onClick="switch_image_function()"
-                target = "_self" 
-                title="Enable stepper motor"
-                />
-
-        </map>
-    </div>
+    </map>
+</div>
     
-    <div style="margin: 330px 5px 5px 5px; padding: 5px; border: 1px solid black; text-align: left;  background-color:#E6E6E6; background-image: url(Images/DevBackground.png);" class="split3 right" >
+<!-- ################################################### -->
+<!-- Body - Bottom Right Side of the Screen              -->
+<!-- ################################################### -->
 
+<div style="margin: 330px 5px 5px 5px; padding: 5px; border: 1px solid black; text-align: left;  background-color:#E6E6E6; background-image: url(Images/DevBackground.png);" class="split3 right" >
         <table width="100%">
             <tr valign="Top">
                 <td valign="top">
@@ -343,7 +264,7 @@
         <table width="100%">
             <tr>
                 <td>
-                    <img src="Images/Buttons/ButtonMove-In.png" width="50px">
+                    <img src="Images/Buttons/ButtonMove-In.png" width="35px">
                 </td>
                 <td>
                     Used to indicate the direction for the movement on the axis.  Movement will continue for <b>Distance</b> set and then stop and wait for another move instruction, either repeating move or returning to origin.
@@ -355,7 +276,7 @@
         <table width="100%">
             <tr valign="Top">
                 <td>
-                    <img src="Images/Buttons/ButtonMove-Stop.png" width="50px">
+                    <img src="Images/Buttons/ButtonMove-Stop.png" width="35px">
                 </td>
                 <td>
                     Used to stop the motion of the stepper motor.
@@ -367,7 +288,7 @@
         <table width="100%">
             <tr valign="Top">
                 <td>
-                    <img src="Images/Buttons/ButtonMove-Return.png" width="50px">
+                    <img src="Images/Buttons/ButtonMove-Return.png" width="35px">
                 </td>
                 <td>
                     Used to return the spindle or the selected axis to the start point of the previous operation.
@@ -383,7 +304,7 @@
         <table width="100%">
             <tr valign="Top">
                 <td>
-                    <img src="Images/Buttons/ButtonMove-Out.png" width="50px">
+                    <img src="Images/Buttons/ButtonMove-Out.png" width="35px">
                 </td>
                 <td>
                     Used to indicate the direction for the movement on the axis.  Movement will continue for <b>Distance</b> set and then stop and wait for another move instruction, either repeating move or returning to origin.
@@ -394,7 +315,7 @@
     </div>
 
 <!-- ################################################### -->
-<!-- Body - Left Side of the Screen                                                       -->
+<!-- Body - Left Side of the Screen                      -->
 <!-- ################################################### -->
 
     <div style="float: left; margin: 60px 5px 5px 5px; padding: 5px; border: 0px solid black; text-align: left;  background-color:#E6E6E6; background-image: url(Images/DevBackground.png);" class="split2 left" >
@@ -452,8 +373,6 @@
                 <td width="25px"></td>
                 <td>
                     Rotate a spherical slide (on the M3 axis, when it is set to Linear on the Preferences page).
-                    
-                    <p style="margin-bottom: 0;"><b>Note:</b>  M3 is only shown if it is set to be a linear axis.  If set to spherical, it does not show in the list of options.
                 </td>
                 <td width="80px" align="right">
                     <sup><b>M3</b></sup><sub>1</sub><img src="Images/CircleUnChecked.png" width="20px" height="20px">   <sub>2</sub><img src="Images/CircleUnChecked.png" width="20px" height="20px">
@@ -470,8 +389,6 @@
                 <td width="25px"></td>
                 <td>
                     Rotate a spherical slide (on the M4 axis, when it is set to Linear on the Preferences page).
-                    
-                    <p style="margin-bottom: 0;"><b>Note:</b>  M4 is only shown if it is set to be a linear axis.  If set to spherical, it does not show in the list of options.
                 </td>
                 <td width="80px" align="right">
                     <sup><b>M4</b></sup><sub>1</sub><img src="Images/CircleUnChecked.png" width="20px" height="20px">   <sub>2</sub><img src="Images/CircleUnChecked.png" width="20px" height="20px">
@@ -479,6 +396,20 @@
             </tr>
         </table>
 
+
+    <div style="float: left; width: 250px;
+            margin-left: 0px; margin-right: 5px; 
+            margin-top: 0px; margin-bottom: 5px; 
+            padding-left: 5px; padding-right: 5px;
+            padding-top: 5px; padding-bottom: 0px; 
+            border: 1px solid Darkgray; text-align: left;
+            text-align: left;">
+	    <img src="Images/Screens/Move2.jpg" alt="no image file" style="width: 100%;" />
+	    <b><i><font size="2">Move screen with M3 &amp; M4 not shown</font></i></b>
+    </div>
+    
+    <p style="margin-top: 0;"><b>Note:</b>  M3 &amp; M4 are only shown if that axis is configured to be a linear axis.  If configured to spherical, it does not show in the list of options.  The picture to the left shows how this screen would appear if M3 &amp; M4 are configured as spherical axes.
+    
     <p>Each of the axes can have 2 pre-defined values (aka, pre-sets), allowing the ornamental turner to easily repeat a prior setup.
     
     <p><b><I>Starting with version 3.0.8</I></b>, there is a progress bar displayed just above the bottom row of buttons.
