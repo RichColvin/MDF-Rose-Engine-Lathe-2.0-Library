@@ -1490,7 +1490,7 @@ Page Call:  Index Page
 
 
     <tr valign="top">
-        <td align="center">
+        <td align="center" rowspan=3>
             <font color="Black"><b>
             Sp
             </b></font>
@@ -1545,11 +1545,6 @@ Page Call:  Index Page
 
     <tr valign="top">
         <td align="center">
-            <font color="Black"><b>
-            Sp
-            </b></font>
-        </td>
-        <td align="center">
             <font color="blue"><b>
             NT#
             </b></font>
@@ -1595,11 +1590,6 @@ Page Call:  Index Page
     </tr>
 
     <tr valign="top">
-        <td align="center">
-            <font color="Black"><b>
-            Sp
-            </b></font>
-        </td>
         <td align="center">
             <font color="blue"><b>
             NJ#
@@ -1745,6 +1735,696 @@ Page Call:  Move Page
 </table>
     
 <!-- ################################################### -->
+<!-- Page Calls - MultiSync Page -->
+
+<p><hr class="style1">
+
+<p><font color="DarkBlue" size="3"><b>
+Page Call:  MultiSync Page
+</b>
+
+<br><i>These were introduced in v3.1.3.  If your system is a prior version, they will not work.</i>
+</font>
+
+<table width="100%" border=1>
+    <col width="25px">
+    <col width="85px">
+    <col width="250px">
+    <col width="300px">
+    <col width="*">
+
+    <tr valign="top" bgcolor="Gray" >
+        <td align="center">
+            <font color="White"><b>
+            Axis
+            </b></font>
+        </td>
+        <td align="center">
+            <font color="White"><b>
+            Identifier
+            </b></font>
+        </td>
+        <td align="center">
+            <font color="White"><b>
+            Identifier Usage
+            </b></font>                                
+        </td>
+        <td align="center">
+            <font color="White"><b>
+            Syntax Notes
+            </b></font>                                
+        </td>
+        <td align="center">
+            <font color="White"><b>
+            Comments
+            </b></font>                                
+        </td>
+    </tr>
+
+    <tr valign="top">
+        <td align="center" bgcolor="LightGray">
+            <font color="Gray">
+            n/a
+            </font>
+        </td>
+        <td align="center">
+            <font color="blue"><b>
+            QQ
+            </b></font>
+        </td>
+        <td>
+            Execute the moves specified on the <a href="MSMCS-Multi.html"><b>MultiSync</b></a> page, using settings on that page.
+        </td>
+        <td>
+            &nbsp;
+        </td>
+        <td align="left" rowspan=21>
+            <p style="margin-top: 0; ">Settings on the page are used.
+            
+            <p><font color="darkred">Axes should be set the same on the Program page as they are on the called page.</font>
+            
+            <p style="margin-bottom: 0;"><font color="blue"><b>I</b></font> and <font color="blue"><b>O</b></font> will usually be used in conjunction with the page moves.  They take the axis setting on the Program page and the page moves use the settings on that page.
+            </ol>
+        </td>
+    </tr>
+    
+    <tr valign="top">
+        <td align="center" rowspan=4>
+            X
+        </td>
+        <td align="center">
+            <font color="blue"><b>
+            QA
+            </b></font>
+        </td>
+        <td>
+            X target (floating point)
+        </td>
+        <td>
+            &nbsp;
+        </td>
+    </tr>
+    
+    <tr valign="top">
+        <td align="center">
+            <font color="blue"><b>
+            QB
+            </b></font>
+        </td>
+        <td>
+            X waves (floating point)
+        </td>
+        <td>
+            &nbsp;
+        </td>
+    </tr>
+
+    <tr valign="top">
+        <td align="center">
+            <font color="blue"><b>
+            QC
+            </b></font>
+        </td>
+        <td>
+            X direction
+        </td>
+        <td>
+            <table border=1 align="center">
+            	<col width="50px">
+                <col width="150px">
+
+                <tr bgcolor="#d8ecff">
+                    <td align="center">
+                        <b>
+                        #
+                        </b>
+                    </td>
+                    <td align="center">
+                        <b>
+                        Resulting Action
+                        </b>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center">
+                        2
+                    </td>
+                    <td>
+                        Right arrow
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center">
+                        3
+                    </td>
+                    <td>
+                        Left arrow
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+
+    <tr valign="top">
+        <td align="center">
+            <font color="blue"><b>
+            QD
+            </b></font>
+        </td>
+        <td>
+            X checked
+        </td>
+        <td>
+            <table border=1 align="center">
+            	<col width="50px">
+                <col width="150px">
+
+                <tr bgcolor="#d8ecff">
+                    <td align="center">
+                        <b>
+                        #
+                        </b>
+                    </td>
+                    <td align="center">
+                        <b>
+                        Resulting Action
+                        </b>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center">
+                        1
+                    </td>
+                    <td>
+                        Selected
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center">
+                        0
+                    </td>
+                    <td>
+                        Unselected
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    
+    <tr valign="top">
+        <td align="center" rowspan=4>
+            Z
+        </td>
+        <td align="center">
+            <font color="blue"><b>
+            QE
+            </b></font>
+        </td>
+        <td>
+            Z target (floating point)
+        </td>
+        <td>
+            &nbsp;
+        </td>
+    </tr>
+    
+    <tr valign="top">
+        <td align="center">
+            <font color="blue"><b>
+            QF
+            </b></font>
+        </td>
+        <td>
+            Z waves (floating point)
+        </td>
+        <td>
+            &nbsp;
+        </td>
+    </tr>
+
+    <tr valign="top">
+        <td align="center">
+            <font color="blue"><b>
+            QG
+            </b></font>
+        </td>
+        <td>
+            Z direction
+        </td>
+        <td>
+            <table border=1 align="center">
+            	<col width="50px">
+                <col width="150px">
+
+                <tr bgcolor="#d8ecff">
+                    <td align="center">
+                        <b>
+                        #
+                        </b>
+                    </td>
+                    <td align="center">
+                        <b>
+                        Resulting Action
+                        </b>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center">
+                        2
+                    </td>
+                    <td>
+                        Right arrow
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center">
+                        3
+                    </td>
+                    <td>
+                        Left arrow
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+
+    <tr valign="top">
+        <td align="center">
+            <font color="blue"><b>
+            QH
+            </b></font>
+        </td>
+        <td>
+            Z checked
+        </td>
+        <td>
+            <table border=1 align="center">
+            	<col width="50px">
+                <col width="150px">
+
+                <tr bgcolor="#d8ecff">
+                    <td align="center">
+                        <b>
+                        #
+                        </b>
+                    </td>
+                    <td align="center">
+                        <b>
+                        Resulting Action
+                        </b>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center">
+                        1
+                    </td>
+                    <td>
+                        Selected
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center">
+                        0
+                    </td>
+                    <td>
+                        Unselected
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    
+    <tr valign="top">
+        <td align="center" rowspan=4>
+            M3
+        </td>
+        <td align="center">
+            <font color="blue"><b>
+            QI
+            </b></font>
+        </td>
+        <td>
+            M3 target (floating point)
+        </td>
+        <td>
+            &nbsp;
+        </td>
+    </tr>
+    
+    <tr valign="top">
+        <td align="center">
+            <font color="blue"><b>
+            QJ
+            </b></font>
+        </td>
+        <td>
+            M3 waves (floating point)
+        </td>
+        <td>
+            &nbsp;
+        </td>
+    </tr>
+
+    <tr valign="top">
+        <td align="center">
+            <font color="blue"><b>
+            QK
+            </b></font>
+        </td>
+        <td>
+            M3 direction
+        </td>
+        <td>
+            <table border=1 align="center">
+            	<col width="50px">
+                <col width="150px">
+
+                <tr bgcolor="#d8ecff">
+                    <td align="center">
+                        <b>
+                        #
+                        </b>
+                    </td>
+                    <td align="center">
+                        <b>
+                        Resulting Action
+                        </b>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center">
+                        2
+                    </td>
+                    <td>
+                        Right arrow or CW
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center">
+                        3
+                    </td>
+                    <td>
+                        Left arrow or CCW
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+
+    <tr valign="top">
+        <td align="center">
+            <font color="blue"><b>
+            QL
+            </b></font>
+        </td>
+        <td>
+            M3 checked
+        </td>
+        <td>
+            <table border=1 align="center">
+            	<col width="50px">
+                <col width="150px">
+
+                <tr bgcolor="#d8ecff">
+                    <td align="center">
+                        <b>
+                        #
+                        </b>
+                    </td>
+                    <td align="center">
+                        <b>
+                        Resulting Action
+                        </b>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center">
+                        1
+                    </td>
+                    <td>
+                        Selected
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center">
+                        0
+                    </td>
+                    <td>
+                        Unselected
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    
+    <tr valign="top">
+        <td align="center" rowspan=4>
+            M4
+        </td>
+        <td align="center">
+            <font color="blue"><b>
+            QM
+            </b></font>
+        </td>
+        <td>
+            M4 target (floating point)
+        </td>
+        <td>
+            &nbsp;
+        </td>
+    </tr>
+    
+    <tr valign="top">
+        <td align="center">
+            <font color="blue"><b>
+            QN
+            </b></font>
+        </td>
+        <td>
+            M4 waves (floating point)
+        </td>
+        <td>
+            &nbsp;
+        </td>
+    </tr>
+
+    <tr valign="top">
+        <td align="center">
+            <font color="blue"><b>
+            QO
+            </b></font>
+        </td>
+        <td>
+            M4 direction
+        </td>
+        <td>
+            <table border=1 align="center">
+            	<col width="50px">
+                <col width="150px">
+
+                <tr bgcolor="#d8ecff">
+                    <td align="center">
+                        <b>
+                        #
+                        </b>
+                    </td>
+                    <td align="center">
+                        <b>
+                        Resulting Action
+                        </b>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center">
+                        2
+                    </td>
+                    <td>
+                        Right arrow or CW
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center">
+                        3
+                    </td>
+                    <td>
+                        Left arrow or CCW
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+
+    <tr valign="top">
+        <td align="center">
+            <font color="blue"><b>
+            QP
+            </b></font>
+        </td>
+        <td>
+            M4 checked
+        </td>
+        <td>
+            <table border=1 align="center">
+            	<col width="50px">
+                <col width="150px">
+
+                <tr bgcolor="#d8ecff">
+                    <td align="center">
+                        <b>
+                        #
+                        </b>
+                    </td>
+                    <td align="center">
+                        <b>
+                        Resulting Action
+                        </b>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center">
+                        1
+                    </td>
+                    <td>
+                        Selected
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center">
+                        0
+                    </td>
+                    <td>
+                        Unselected
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    
+    <tr valign="top">
+        <td align="center" rowspan=4>
+            Sp
+        </td>
+        <td align="center">
+            <font color="blue"><b>
+            QS
+            </b></font>
+        </td>
+        <td>
+            Spindle target (floating point)
+        </td>
+        <td>
+            &nbsp;
+        </td>
+    </tr>
+    
+    <tr valign="top">
+        <td align="center">
+            <font color="blue"><b>
+            QT
+            </b></font>
+        </td>
+        <td>
+            Spindle waves (floating point)
+        </td>
+        <td>
+            &nbsp;
+        </td>
+    </tr>
+
+    <tr valign="top">
+        <td align="center">
+            <font color="blue"><b>
+            QU
+            </b></font>
+        </td>
+        <td>
+            Spindle direction
+        </td>
+        <td>
+            <table border=1 align="center">
+            	<col width="50px">
+                <col width="150px">
+
+                <tr bgcolor="#d8ecff">
+                    <td align="center">
+                        <b>
+                        #
+                        </b>
+                    </td>
+                    <td align="center">
+                        <b>
+                        Resulting Action
+                        </b>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center">
+                        2
+                    </td>
+                    <td>
+                        CW
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center">
+                        3
+                    </td>
+                    <td>
+                        CCW
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+
+    <tr valign="top">
+        <td align="center">
+            <font color="blue"><b>
+            QV
+            </b></font>
+        </td>
+        <td>
+            Spindle checked
+        </td>
+        <td>
+            <table border=1 align="center">
+            	<col width="50px">
+                <col width="150px">
+
+                <tr bgcolor="#d8ecff">
+                    <td align="center">
+                        <b>
+                        #
+                        </b>
+                    </td>
+                    <td align="center">
+                        <b>
+                        Resulting Action
+                        </b>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center">
+                        1
+                    </td>
+                    <td>
+                        Selected
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center">
+                        0
+                    </td>
+                    <td>
+                        Unselected
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+    
+<!-- ################################################### -->
 <!-- Page Calls - Recip Page -->
 
 <p><hr class="style1">
@@ -1803,7 +2483,7 @@ Page Call:  Recip Page
             </b></font>
         </td>
         <td>
-            Execute the moves specified on the <a href="MSMCS-Rec.html"><b>Recip</b></a> page, using settings on that page.
+            Execute the moves specified on the <a href="MSMCS-Rec-Radial.html"><b>Recip</b></a> page, using settings on that page.
         </td>
         <td>
             <table border=1 align="center">
@@ -1981,6 +2661,189 @@ Page Call:  Recip Page
             <ul style="margin-top: 0; margin-bottom: 0;">
                 <li><font color="Blue"><b>#</b></font> is a floating point number</li>
             </ul>
+        </td>
+    </tr>
+</table>
+    
+<!-- ################################################### -->
+<!-- Page Calls - Rose Page -->
+
+<p><hr class="style1">
+
+<p><font color="DarkBlue" size="3"><b>
+Page Call:  Rose Page
+</b>
+
+<br><i>These were introduced in v3.1.3.  If your system is a prior version, they will not work.</i>
+</font>
+
+<table width="100%" border=1>
+    <col width="25px">
+    <col width="85px">
+    <col width="250px">
+    <col width="300px">
+    <col width="*">
+
+    <tr valign="top" bgcolor="Gray" >
+        <td align="center">
+            <font color="White"><b>
+            Axis
+            </b></font>
+        </td>
+        <td align="center">
+            <font color="White"><b>
+            Identifier
+            </b></font>
+        </td>
+        <td align="center">
+            <font color="White"><b>
+            Identifier Usage
+            </b></font>                                
+        </td>
+        <td align="center">
+            <font color="White"><b>
+            Syntax Notes
+            </b></font>                                
+        </td>
+        <td align="center">
+            <font color="White"><b>
+            Comments
+            </b></font>                                
+        </td>
+    </tr>
+
+    <tr valign="top">
+        <td align="center" bgcolor="LightGray">
+            <font color="Gray">
+            n/a
+            </font>
+        </td>
+        <td align="center">
+            <font color="blue"><b>
+            RR#
+            </b></font>
+        </td>
+        <td>
+            Execute the moves specified on the <a href="MSMCS-Rose.html"><b>Rose</b></a> page, using settings on that page.
+        </td>
+        <td>
+            <table border=1 align="center">
+            	<col width="50px">
+                <col width="150px">
+
+                <tr bgcolor="#d8ecff">
+                    <td align="center">
+                        <b>
+                        #
+                        </b>
+                    </td>
+                    <td align="center">
+                        <b>
+                        Resulting Action
+                        </b>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center">
+                        1
+                    </td>
+                    <td>
+                        moves away from the headstock
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center">
+                        -1
+                    </td>
+                    <td>
+                         moves towards from the headstock 
+                    </td>
+                </tr>
+            </table>
+        </td>
+        <td align="left" rowspan=7>
+            <p style="margin-top: 0; ">Settings on the page are used.
+            
+            <p><font color="darkred">Axes should be set the same on the Program page as they are on the called page.</font>
+            
+            <p style="margin-bottom: 0;"><font color="blue"><b>I</b></font> and <font color="blue"><b>O</b></font> will usually be used in conjunction with the page moves.  They take the axis setting on the Program page and the page moves use the settings on that page.
+            </ol>
+        </td>
+    </tr>
+    
+    <tr valign="top">
+        <td align="center" bgcolor="LightGray">
+            <font color="Gray">
+            n/a
+            </font>
+        </td>
+        <td align="center">
+            <font color="blue"><b>
+            RN
+            </b></font>
+        </td>
+        <td>
+            Set n (floating point)
+        </td>
+        <td>
+            &nbsp;
+        </td>
+    </tr>
+    
+    <tr valign="top">
+        <td align="center" bgcolor="LightGray">
+            <font color="Gray">
+            n/a
+            </font>
+        </td>
+        <td align="center">
+            <font color="blue"><b>
+            RD
+            </b></font>
+        </td>
+        <td>
+            Set d (floating point)
+        </td>
+        <td>
+            &nbsp;
+        </td>
+    </tr>
+    
+    <tr valign="top">
+        <td align="center" bgcolor="LightGray">
+            <font color="Gray">
+            n/a
+            </font>
+        </td>
+        <td align="center">
+            <font color="blue"><b>
+            RS
+            </b></font>
+        </td>
+        <td>
+            Set spindle revolutions (floating point)
+        </td>
+        <td>
+            &nbsp;
+        </td>
+    </tr>
+    
+    <tr valign="top">
+        <td align="center" bgcolor="LightGray">
+            <font color="Gray">
+            n/a
+            </font>
+        </td>
+        <td align="center">
+            <font color="blue"><b>
+            RA
+            </b></font>
+        </td>
+        <td>
+            Set axis distance (floating point)
+        </td>
+        <td>
+            &nbsp;
         </td>
     </tr>
 </table>
