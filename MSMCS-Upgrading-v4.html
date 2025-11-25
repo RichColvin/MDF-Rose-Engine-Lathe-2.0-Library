@@ -1,0 +1,1561 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
+
+<!-- ################################################### -->
+<!-- Style Sheet for header image max size                                         -->
+<style>
+    img.Image { max-width: 500px;}
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for Horizontal Rule - Style 0           -->
+ <style>
+    hr.style0 {
+        border: 0;
+        height: 1px;
+        background-image: linear-gradient(to right,
+                rgba(0,0,256, 2),
+                rgba(0,0,256, 2),
+                rgba(0,0,256, 2),
+    }
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for Horizontal Rule - Style 1           -->
+ <style>
+    hr.style1 {
+        border: 0;
+        height: 3px;
+        background-image: linear-gradient(to right,
+            rgba(0, 0, 0, 0),
+            rgba(0,0,256, 2),
+            rgba(0, 0, 0, 0));
+    }
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for Horizontal Rule - Style 2           -->
+ <style>
+    hr.style2 {
+        border: 0;
+        height: 6px;
+        background-image: linear-gradient(to right,
+            rgba(0, 0, 0, 0),
+            rgba(0,0,256, 2),
+            rgba(0, 0, 0, 0));
+    }
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for indented paragraphs                 -->
+<style>
+    .indented { padding-left: 33pt; padding-right: 33pt; }
+</style>
+
+<!-- ################################################### -->
+<!-- Header                                              -->
+<!-- ################################################### -->
+
+<head bgcolor=#E6E6E6>
+<title>ELFOS</title>
+<link rel="shortcut icon" type="image/ico" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="Images/favicon.png">
+
+<font face="Georgia">
+
+<table width="100%" border=0>
+    <col width="10%">
+    <col width="*">
+    <col width="10%">
+
+    <tr valign="bottom">
+        <td align="left">
+            <a href = "javascript:history.back()"><img src="Images/BackButton.png" width="30px"></a>
+        </td>
+        <td align="center" valign="top">
+            <font color="DarkBlue" size="6"><b>ELFOS</b></font>
+            <br>
+            <font color="DarkBlue" size="5"><b>System Installation &amp; Upgrade Procedure</b></font>
+        </td>
+        <td align="right">
+            <img src="Images/ELFOS-Logo.png" width="65px" class="Image">
+        </td>
+    </tr>
+</table>
+</head>
+
+<hr>
+
+<!-- ################################################### -->
+<!-- Body                                                -->
+<!-- ################################################### -->
+
+<body bgcolor=#E6E6E6 background="Images/DevBackground.png">
+<font face="Georgia">
+
+<div style="float: right; width: 336px; margin: 0px; padding: 0px; border: 0px solid black; text-align: left;">
+    <iframe width="336" height="189" src="https://www.youtube.com/embed/fy9_zjuLy-s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+<p>The video to the right which shows these steps may be useful for you, but it is not required to perform the upgrade.  The video was made to assist those who might find it a good learning tool for watching someone else perform the steps.
+            
+<p>
+<div style="float: left; width: 260px; margin: 0px; padding: 5px; border: 1px solid black; text-align: left; background-color:Moccasin">
+    <b>Prior Version Needed?</b>
+    <br>
+    <a href="MSMCS-Upgrading-Prev.html">Click here</a> to download the files.
+</div>
+
+
+<p><font color="DarkBlue" size="6"><b><center>Current Versions</center></b></font>
+
+<p><table align="center" style="border-collapse: collapse; ">
+    <tr bgcolor="DarkBlue" valign="bottom">
+        <td width="100px" align="center" style="
+                border-style: solid; 
+                border-color: darkgray; 
+                border-top-width: medium; 
+                border-bottom-width: medium; 
+                border-left-width: medium; 
+                border-right-width: medium; ">
+            <font color="White" size="4"><b>
+            Teensy Model
+            </b></font>
+        </td>
+        <td width="100px" align="center" colspan=3 style="
+                border-style: solid; 
+                border-color: darkgray; 
+                border-top-width: medium; 
+                border-bottom-width: medium; 
+                border-left-width: medium; 
+                border-right-width: medium; ">
+            <font color="White" size="4"><b>
+            ELFOS Version
+            </b></font>
+        </td>
+    </tr>
+    <tr>
+        <td align="center" style="
+                border-style: solid; 
+                border-color: darkgray; 
+                border-top-width: medium; 
+                border-bottom-width: medium; 
+                border-left-width: medium; 
+                border-right-width: medium; ">
+            <font color="DarkBlue" size="4"><b>
+            3.2
+            </b></font>
+        </td>
+        <td align="center" style="
+                border-style: solid; 
+                border-color: darkgray; 
+                border-top-width: medium; 
+                border-bottom-width: medium; 
+                border-left-width: medium; 
+                border-right-width: medium; ">
+            <font color="DarkBlue" size="4"><b>
+            3.0.5
+            </b></font>
+        </td>
+    </tr>
+    <tr>
+        <td align="center" style="
+                border-style: solid; 
+                border-color: darkgray; 
+                border-top-width: medium; 
+                border-bottom-width: medium; 
+                border-left-width: medium; 
+                border-right-width: medium; ">
+            <font color="DarkBlue" size="4"><b>
+            3.5
+            <br>
+            3.6
+            </b></font>
+        </td>
+        <td align="center" style="
+                border-style: solid; 
+                border-color: darkgray; 
+                border-top-width: medium; 
+                border-bottom-width: medium; 
+                border-left-width: medium; 
+                border-right-width: medium; ">
+            <font color="DarkBlue" size="4"><b>
+            3.1.3
+            </b></font>
+        </td>
+    </tr>
+    <tr>
+        <td align="center" style="
+                border-style: solid; 
+                border-color: darkgray; 
+                border-top-width: medium; 
+                border-bottom-width: medium; 
+                border-left-width: medium; 
+                border-right-width: medium; ">
+            <font color="DarkBlue" size="4"><b>
+            4.1
+            </b></font>
+        </td>
+        <td align="center" style="
+                border-style: solid; 
+                border-color: darkgray; 
+                border-top-width: medium; 
+                border-bottom-width: medium; 
+                border-left-width: medium; 
+                border-right-width: medium; ">
+            <font color="DarkBlue" size="4"><b>
+            4.0
+            </b></font>
+        </td>
+    </tr>
+</table>
+
+<font color="blue"><p style="margin-top: 0;">Instructions are in blue.</font>
+Commentary to help clarify the instructions is in black.
+
+<h3><font color="darkblue">More Questions?</font></h3>
+<p>Additional clarifying comments are available at <a href="MSMCS-Upgrading-MoreInformation.html" target="_new">this link</a>.
+
+<!-- ################################################### -->
+<!-- Step 1                                              -->
+<!-- ################################################### -->
+<hr class="style2">
+<h2><font color="DarkBlue">Step 1 - Get a copy of the Teensy program file</h2>
+
+<!-- ################################################### -->
+<!-- 4-Axis PCB                                          -->
+<!-- ################################################### -->
+<table border=1 align="right" style="border-collapse: collapse; ">
+    <col width="75px">
+    <col width="200px">
+    <col width="200px">
+    <col width="200px">
+
+    <tr bgcolor="DarkBlue" valign="bottom">
+        <td align="center" colspan=999 style="
+                border-style: solid; 
+                border-color: darkgray; 
+                border-top-width: medium; 
+                border-bottom-width: medium; 
+                border-left-width: medium; 
+                border-right-width: medium; ">
+            <font color="White" size="5"><b>
+            4-Axis PCB
+            </b></font>
+        </td>
+    </tr>
+
+    <tr bgcolor="DarkBlue" valign="bottom">
+        <td align="center" rowspan=2 style="
+                border-style: solid; 
+                border-color: darkgray; 
+                border-top-width: medium; 
+                border-bottom-width: medium; 
+                border-left-width: medium; 
+                border-right-width: medium; ">
+            <font color="White" size="4"><b>
+            Teensy Model
+            </b></font>
+        </td>
+        <td align="center" colspan=3 style="
+                border-style: solid; 
+                border-color: darkgray; 
+                border-top-width: medium; 
+                border-bottom-width: medium; 
+                border-left-width: medium; 
+                border-right-width: medium; ">
+            <font color="White" size="4"><b>
+            ELFOS Version
+            </b></font>
+        </td>
+    </tr>
+    <tr bgcolor="DarkBlue" valign="bottom">
+        <td align="center" style="
+                border-style: solid; 
+                border-color: darkgray; 
+                border-top-width: medium; 
+                border-bottom-width: medium; 
+                border-left-width: medium; 
+                border-right-width: medium; ">
+            <font color="White" size="4"><b>
+            3.0.5
+            </b></font>
+        </td>
+        <td align="center" style="
+                border-style: solid; 
+                border-color: darkgray; 
+                border-top-width: medium; 
+                border-bottom-width: medium; 
+                border-left-width: medium; 
+                border-right-width: medium; ">
+            <font color="White" size="4"><b>
+            3.1.3
+            </b></font>
+        </td>
+        <td align="center" style="
+                border-style: solid; 
+                border-color: darkgray; 
+                border-top-width: medium; 
+                border-bottom-width: medium; 
+                border-left-width: medium; 
+                border-right-width: medium; ">
+            <font color="White" size="4"><b>
+            4.0
+            </b></font>
+        </td>
+    </tr>
+
+    <!-- ########## -->
+    <!-- Teensy 3.2 -->
+    <!-- ########## -->
+    <tr bgcolor="#d8ecff">
+        <td align="center" style="
+                border-style: solid; 
+                border-color: darkgray;
+                border-top-width: medium; 
+                border-bottom-width: medium; 
+                border-left-width: medium; 
+                border-right-width: medium; ">
+            <font color="DarkBlue" size="4">3.2</font>
+        </td>
+        <td valign="middle" align="center" valign="top" style="
+                border-style: solid; 
+                border-color: darkgray;
+                border-top-width: medium; 
+                border-bottom-width: medium; 
+                border-left-width: medium; 
+                border-right-width: medium; ">
+            <font color="DarkBlue" size="3"><a href="NextionUpgrade/V30/Teensy/3.2/5Rose_v305_t32.hex" download>5Rose_v305_t32.hex</a></font>
+        </td>
+        <td valign="middle" align="center" valign="top" style="
+                border-style: solid; 
+                border-color: darkgray; 
+                border-top-width: medium; 
+                border-bottom-width: medium; 
+                border-left-width: medium; 
+                border-right-width: medium; ">
+            <font color="Gray" size="3"><i>N/A</i></font>
+        </td>
+        <td valign="middle" align="center" valign="top" style="
+                border-style: solid; 
+                border-color: darkgray; 
+                border-top-width: medium; 
+                border-bottom-width: medium; 
+                border-left-width: medium; 
+                border-right-width: medium; ">
+            <font color="Gray" size="3"><i>N/A</i></font>
+        </td>
+    </tr>
+
+    <!-- ########## -->
+    <!-- Teensy 3.5 -->
+    <!-- ########## -->
+    <tr>
+        <td align="center" style="
+                border-style: solid; 
+                border-color: darkgray; 
+                border-top-width: medium; 
+                border-bottom-width: medium; 
+                border-left-width: medium; 
+                border-right-width: medium; ">
+            <font color="DarkBlue" size="4">3.5</font>
+        </td>
+        <td align="center" style="
+                border-style: solid; 
+                border-color: darkgray; 
+                border-top-width: medium; 
+                border-bottom-width: medium; 
+                border-left-width: medium; 
+                border-right-width: medium; ">
+            <font color="DarkBlue" size="3"><a href="NextionUpgrade/V30/Teensy/3.5/5Rose_v305_t35.hex" download>5Rose_v305_t35.hex</a></font>
+        </td>
+        <td align="center" style="
+                border-style: solid; 
+                border-color: darkgray; 
+                border-top-width: medium; 
+                border-bottom-width: medium; 
+                border-left-width: medium; 
+                border-right-width: medium; ">
+            <font color="DarkBlue" size="3"><a href="NextionUpgrade/V31/Teensy/3.5/5Rose_313c_t35.hex" download>5Rose_313c_t35.hex</a></font>
+        </td>
+        <td valign="middle" align="center" valign="top" style="
+                border-style: solid; 
+                border-color: darkgray; 
+                border-top-width: medium; 
+                border-bottom-width: medium; 
+                border-left-width: medium; 
+                border-right-width: medium; ">
+            <font color="Gray" size="3"><i>N/A</i></font>
+        </td>
+    </tr>
+
+    <!-- ########## -->
+    <!-- Teensy 3.6 -->
+    <!-- ########## -->
+   <tr bgcolor="#d8ecff">
+        <td align="center" style="
+                border-style: solid; 
+                border-color: darkgray; 
+                border-top-width: medium; 
+                border-bottom-width: medium; 
+                border-left-width: medium; 
+                border-right-width: medium; ">
+            <font color="DarkBlue" size="4">3.6</font>
+        </td>
+        <td align="center" style="
+                border-style: solid; 
+                border-color: darkgray; 
+                border-top-width: medium; 
+                border-bottom-width: medium; 
+                border-left-width: medium; 
+                border-right-width: medium; ">
+                <font color="DarkBlue" size="3"><a href="NextionUpgrade/V30/Teensy/3.6/5Rose_v305_t36.hex" download>5Rose_v305_t36.hex</a></font>
+        </td>
+        <td align="center" style="
+                border-style: solid; 
+                border-color: darkgray; 
+                border-top-width: medium; 
+                border-bottom-width: medium; 
+                border-left-width: medium; 
+                border-right-width: medium; ">
+                <font color="DarkBlue" size="3"><a href="NextionUpgrade/V31/Teensy/3.6/5Rose_313c_t36.hex" download>5Rose_313c_t36.hex</a></font>
+        </td>
+        <td valign="middle" align="center" valign="top" style="
+                border-style: solid; 
+                border-color: darkgray; 
+                border-top-width: medium; 
+                border-bottom-width: medium; 
+                border-left-width: medium; 
+                border-right-width: medium; ">
+            <font color="Gray" size="3"><i>N/A</i></font>
+        </td>
+    </tr>
+    
+    <!-- ########## -->
+    <!-- Teensy 4.1 -->
+    <!-- ########## -->
+    <tr>
+        <td align="center" style="
+                border-style: solid; 
+                border-color: darkgray; 
+                border-top-width: medium; 
+                border-bottom-width: medium; 
+                border-left-width: medium; 
+                border-right-width: medium; ">
+            <font color="DarkBlue" size="4">4.1</font>
+        </td>
+        <td align="center" style="
+                border-style: solid; 
+                border-color: darkgray; 
+                border-top-width: medium; 
+                border-bottom-width: medium; 
+                border-left-width: medium; 
+                border-right-width: medium; ">
+            <font color="Gray" size="3"><i>N/A</i></font>
+        </td>
+        <td align="center" style="
+                border-style: solid; 
+                border-color: darkgray; 
+                border-top-width: medium; 
+                border-bottom-width: medium; 
+                border-left-width: medium; 
+                border-right-width: medium; ">
+            <font color="Gray" size="3"><i>N/A</i></font>
+        </td>
+        <td valign="middle" align="center" valign="top" rowspan=1 style="
+                border-style: solid; 
+                border-color: darkgray; 
+                border-top-width: medium; 
+                border-bottom-width: medium; 
+                border-left-width: medium; 
+                border-right-width: medium; ">
+                <font color="DarkBlue" size="3"><a href="NextionUpgrade/V40/Teensy/4.1/5Rose_40_t41.hex" download>5Rose_40_t41.hex</a></font>
+        </td>
+    </tr>
+</table>
+
+<!-- ################################################### -->
+<!-- 5-Axis PCB                                          -->
+<!-- ################################################### -->
+<table border=1 align="right" style="border-collapse: collapse; 
+        margin-top: 12px;">
+    <col width="75px">
+    <col width="200px">
+    <col width="200px">
+    <col width="200px">
+
+    <tr bgcolor="DarkBlue" valign="bottom">
+        <td align="center" colspan=999 style="
+                border-style: solid; 
+                border-color: darkgray; 
+                border-top-width: medium; 
+                border-bottom-width: medium; 
+                border-left-width: medium; 
+                border-right-width: medium; ">
+            <font color="White" size="5"><b>
+            5-Axis PCB
+            </b></font>
+        </td>
+    </tr>
+
+    <tr bgcolor="DarkBlue" valign="bottom">
+        <td align="center" rowspan=2 style="
+                border-style: solid; 
+                border-color: darkgray; 
+                border-top-width: medium; 
+                border-bottom-width: medium; 
+                border-left-width: medium; 
+                border-right-width: medium; ">
+            <font color="White" size="4"><b>
+            Teensy Model
+            </b></font>
+        </td>
+        <td align="center" colspan=3 style="
+                border-style: solid; 
+                border-color: darkgray; 
+                border-top-width: medium; 
+                border-bottom-width: medium; 
+                border-left-width: medium; 
+                border-right-width: medium; ">
+            <font color="White" size="4"><b>
+            ELFOS Version
+            </b></font>
+        </td>
+    </tr>
+    <tr bgcolor="DarkBlue" valign="bottom">
+        <td align="center" style="
+                border-style: solid; 
+                border-color: darkgray; 
+                border-top-width: medium; 
+                border-bottom-width: medium; 
+                border-left-width: medium; 
+                border-right-width: medium; ">
+            <font color="White" size="4"><b>
+            3.0.5
+            </b></font>
+        </td>
+        <td align="center" style="
+                border-style: solid; 
+                border-color: darkgray; 
+                border-top-width: medium; 
+                border-bottom-width: medium; 
+                border-left-width: medium; 
+                border-right-color: black; 
+                border-right-width: medium; ">
+            <font color="White" size="4"><b>
+            3.1.3
+            </b></font>
+        </td>
+        <td align="center" style="
+                border-style: solid; 
+                border-color: darkgray; 
+                border-top-width: medium; 
+                border-bottom-width: medium; 
+                border-left-width: medium; 
+                border-right-color: black; 
+                border-right-width: medium; ">
+            <font color="White" size="4"><b>
+            4.0
+            </b></font>
+        </td>
+    </tr>
+
+    <!-- ########## -->
+    <!-- Teensy 3.2 -->
+    <!-- ########## -->
+    <tr bgcolor="#d8ecff">
+        <td align="center" style="
+                border-style: solid; 
+                border-color: darkgray; 
+                border-top-width: medium; 
+                border-bottom-width: medium; 
+                border-left-width: medium; 
+                border-right-width: medium; ">
+            <font color="DarkBlue" size="4">3.2</font>
+        </td>
+        <td valign="middle" align="center" valign="top" style="
+                border-style: solid; 
+                border-color: darkgray; 
+                border-top-width: medium; 
+                border-bottom-width: medium; 
+                border-left-width: medium; 
+                border-right-width: medium; ">
+            <font color="DarkBlue" size="3"><a href="NextionUpgrade/V30/Teensy/3.2/5Rose_v305_t32.hex" download>5Rose_v305_t32.hex</a></font>
+        </td>
+        <td valign="middle" align="center" valign="top" style="
+                border-style: solid; 
+                border-color: darkgray; 
+                border-top-width: medium; 
+                border-bottom-width: medium; 
+                border-left-width: medium; 
+                border-right-width: medium; ">
+            <font color="Gray" size="3"><i>N/A</i></font>
+        </td>
+        <td valign="middle" align="center" valign="top" style="
+                border-style: solid; 
+                border-color: darkgray; 
+                border-top-width: medium; 
+                border-bottom-width: medium; 
+                border-left-width: medium; 
+                border-right-width: medium; ">
+            <font color="Gray" size="3"><i>N/A</i></font>
+        </td>
+    </tr>
+
+    <!-- ########## -->
+    <!-- Teensy 3.5 -->
+    <!-- ########## -->
+    <tr>
+        <td align="center" style="
+                border-style: solid; 
+                border-color: darkgray; 
+                border-top-width: medium; 
+                border-bottom-width: medium; 
+                border-left-width: medium; 
+                border-right-width: medium; ">
+            <font color="DarkBlue" size="4">3.5</font>
+        </td>
+        <td align="center" style="
+                border-style: solid; 
+                border-color: darkgray; 
+                border-top-width: medium; 
+                border-bottom-width: medium; 
+                border-left-width: medium; 
+                border-right-width: medium; ">
+            <font color="DarkBlue" size="3"><a href="NextionUpgrade/V30/Teensy/3.5/5Rose_v305_t35.hex" download>5Rose_v305_t35.hex</a></font>
+        </td>
+        <td align="center" style="
+                border-style: solid; 
+                border-color: darkgray; 
+                border-top-width: medium; 
+                border-bottom-width: medium; 
+                border-left-width: medium; 
+                border-right-width: medium; ">
+            <font color="DarkBlue" size="3"><a href="NextionUpgrade/V31/Teensy/3.5/5Rose_313c_t35.hex" download>5Rose_313c_t35.hex</a></font>
+        </td>
+        <td valign="middle" align="center" valign="top" style="
+                border-style: solid; 
+                border-color: darkgray; 
+                border-top-width: medium; 
+                border-bottom-width: medium; 
+                border-left-width: medium; 
+                border-right-width: medium; ">
+            <font color="Gray" size="3"><i>N/A</i></font>
+        </td>
+    </tr>
+
+    <!-- ########## -->
+    <!-- Teensy 3.6 -->
+    <!-- ########## -->
+   <tr bgcolor="#d8ecff">
+        <td align="center" style="
+                border-style: solid; 
+                border-color: darkgray; 
+                border-top-width: medium; 
+                border-bottom-width: medium; 
+                border-left-width: medium; 
+                border-right-width: medium; ">
+            <font color="DarkBlue" size="4">3.6</font>
+        </td>
+        <td align="center" style="
+                border-style: solid; 
+                border-color: darkgray; 
+                border-top-width: medium; 
+                border-bottom-width: medium; 
+                border-left-width: medium; 
+                border-right-width: medium; ">
+                <font color="DarkBlue" size="3"><a href="NextionUpgrade/V30/Teensy/3.6/5Rose_v305_t36.hex" download>5Rose_v305_t36.hex</a></font>
+        </td>
+        <td align="center" style="
+                border-style: solid; 
+                border-color: darkgray; 
+                border-top-width: medium; 
+                border-bottom-width: medium; 
+                border-left-width: medium; 
+                border-right-width: medium; ">
+                <font color="DarkBlue" size="3"><a href="NextionUpgrade/V31/Teensy/3.6/5Rose_313c_t36.hex" download>5Rose_313c_t36.hex</a></font>
+        </td>
+        <td valign="middle" align="center" valign="top" style="
+                border-style: solid; 
+                border-color: darkgray; 
+                border-top-width: medium; 
+                border-bottom-width: medium; 
+                border-left-width: medium; 
+                border-right-width: medium; ">
+            <font color="Gray" size="3"><i>N/A</i></font>
+        </td>
+    </tr>
+    
+    <!-- ########## -->
+    <!-- Teensy 4.1 -->
+    <!-- ########## -->
+    <tr>
+        <td align="center" style="
+                border-style: solid; 
+                border-color: darkgray; 
+                border-top-width: medium; 
+                border-bottom-width: medium; 
+                border-left-width: medium; 
+                border-right-width: medium; ">
+            <font color="DarkBlue" size="4">4.1</font>
+        </td>
+        <td align="center" style="
+                border-style: solid; 
+                border-color: darkgray; 
+                border-top-width: medium; 
+                border-bottom-width: medium; 
+                border-left-width: medium; 
+                border-right-width: medium; ">
+            <font color="Gray" size="3"><i>N/A</i></font>
+        </td>
+        <td align="center" style="
+                border-style: solid; 
+                border-color: darkgray; 
+                border-top-width: medium; 
+                border-bottom-width: medium; 
+                border-left-width: medium; 
+                border-right-width: medium; ">
+            <font color="Gray" size="3"><i>N/A</i></font>
+        </td>
+        <td valign="middle" align="center" valign="top" rowspan=1 style="
+                border-style: solid; 
+                border-color: darkgray; 
+                border-top-width: medium; 
+                border-bottom-width: medium; 
+                border-left-width: medium; 
+                border-right-width: medium; ">
+                <font color="DarkBlue" size="3"><a href="NextionUpgrade/V40/Teensy/4.1/5Rose_40_t41.hex" download>5Rose_40_t41.hex</a></font>
+        </td>
+    </tr>
+</table>
+
+<p><font color="blue">Download the Teensy program file to your computer.</font>
+
+<p>Be sure to get the correct file for your:
+    <ul>
+        <li>Teensy model, &amp;</li>
+        <li>PCB type (either 4-axis or 5-axis)</li>
+    </ul>
+        
+<p><mark style="background-color:Yellow;">To save the file, click on the file's name on the right side of the screen (e.g., &quot;5Rose_v305_t35.hex&quot;).</mark>
+
+<!-- ################################################### -->
+<!-- Step 2                                              -->
+<!-- ################################################### -->
+<table width="100%"><tr><td>&nbsp;</td></tr></table>
+<hr class="style2">
+<h2><font color="DarkBlue">Step 2 - Get a copy of the Nextion configuration file</h2>
+
+<table border=1 align="right" style="border-collapse: collapse; 
+        margin-top: 12px;">
+    <col width="175px">
+    <col width="200px">
+    <col width="200px">
+    <col width="200px">
+
+    <tr bgcolor="DarkBlue" valign="bottom">
+        <td align="center" rowspan=2 style="
+                border-style: solid; 
+                border-color: darkgray; 
+                border-top-width: medium; 
+                border-bottom-width: medium; 
+                border-left-width: medium; 
+                border-right-width: medium; ">
+            <font color="White" size="4"><b>
+            Nextion Display Model
+            </b></font>
+        </td>
+        <td align="center" colspan=999 style="
+                border-style: solid; 
+                border-color: darkgray; 
+                border-top-width: medium; 
+                border-bottom-width: medium; 
+                border-left-width: medium; 
+                border-right-color: black; 
+                border-right-width: medium; ">
+            <font color="White" size="4"><b>
+            ELFOS Version
+            </b></font>
+        </td>
+    </tr>
+    <tr bgcolor="DarkBlue" valign="bottom">
+        <td align="center" style="
+                border-style: solid; 
+                border-color: darkgray; 
+                border-top-width: medium; 
+                border-bottom-width: medium; 
+                border-left-width: medium; 
+                border-right-width: medium; ">
+            <font color="White" size="4"><b>
+            3.0.5
+            </b></font>
+        </td>
+        <td align="center" style="
+                border-style: solid; 
+                border-color: darkgray; 
+                border-top-width: medium; 
+                border-bottom-width: medium; 
+                border-left-width: medium; 
+                border-right-color: black; 
+                border-right-width: medium; ">
+            <font color="White" size="4"><b>
+            3.1.3
+            </b></font>
+        </td>
+        <td align="center" style="
+                border-style: solid; 
+                border-color: darkgray; 
+                border-top-width: medium; 
+                border-bottom-width: medium; 
+                border-left-width: medium; 
+                border-right-width: medium; ">
+            <font color="White" size="4"><b>
+            4.0
+            </b></font>
+        </td>
+    </tr>
+
+    <!-- ####################### -->
+    <!-- Nextion 4.3" Enhanced   -->
+    <!-- ####################### -->
+    <tr bgcolor="#d8ecff">
+        <td align="center" style="
+                border-style: solid; 
+                border-color: darkgray; 
+                border-top-width: medium; 
+                border-bottom-width: medium; 
+                border-left-width: medium; 
+                border-right-width: medium; ">
+            <font color="DarkBlue" size="4">4.3&quot; Enhanced</font>
+        </td>
+        <td valign="middle" align="center" valign="top" style="
+                border-style: solid; 
+                border-color: darkgray; 
+                border-top-width: medium; 
+                border-bottom-width: medium; 
+                border-left-width: medium; 
+                border-right-width: medium; ">
+            <font color="DarkBlue" size="3"><a href="NextionUpgrade/V30/Nextion/43e/RE305_43e.tft" download>RE305_43e.tft</a></font>
+        </td>
+        <td valign="middle" align="center" valign="top" style="
+                border-style: solid; 
+                border-color: darkgray; 
+                border-top-width: medium; 
+                border-bottom-width: medium; 
+                border-left-width: medium; 
+                border-right-width: medium; ">
+            <font color="Gray" size="3"><i>N/A</i></font>
+        </td>
+        <td valign="middle" align="center" valign="top" style="
+                border-style: solid; 
+                border-color: darkgray; 
+                border-top-width: medium; 
+                border-bottom-width: medium; 
+                border-left-width: medium; 
+                border-right-width: medium; ">
+            <font color="Gray" size="3"><i>N/A</i></font>
+        </td>
+    </tr>
+
+    <!-- ############################# -->
+    <!-- Nextion 4.3" Enhanced         -->
+    <!-- Pre-set VendorId & MotorCount -->
+    <!-- ############################# -->
+    <tr bgcolor="#d8ecff">
+        <td align="center" style="
+                border-style: solid; 
+                border-color: darkgray; 
+                border-top-width: medium; 
+                border-bottom-width: medium; 
+                border-left-width: medium; 
+                border-right-width: medium; ">
+            <font color="DarkBlue" size="4">4.3&quot; Enhanced</font>
+            <br>
+            <font color="Black" size="3"><i>Pre-set VendorId &amp; MotorCount</i></font>
+        </td>
+        <td valign="middle" align="center" valign="top" style="
+                border-style: solid; 
+                border-color: darkgray; 
+                border-top-width: medium; 
+                border-bottom-width: medium; 
+                border-left-width: medium; 
+                border-right-width: medium; ">
+            <font color="DarkBlue" size="3"><a href="NextionUpgrade/V30/Nextion/43e/RE305_43e_32.tft" download>RE305_43e_32.tft</a></font>
+        </td>
+        <td valign="middle" align="center" valign="top" style="
+                border-style: solid; 
+                border-color: darkgray; 
+                border-top-width: medium; 
+                border-bottom-width: medium; 
+                border-left-width: medium; 
+                border-right-width: medium; ">
+            <font color="Gray" size="3"><i>N/A</i></font>
+        </td>
+        <td valign="middle" align="center" valign="top" style="
+                border-style: solid; 
+                border-color: darkgray; 
+                border-top-width: medium; 
+                border-bottom-width: medium; 
+                border-left-width: medium; 
+                border-right-width: medium; ">
+            <font color="Gray" size="3"><i>N/A</i></font>
+        </td>
+    </tr>
+    
+    <!-- ###################### -->
+    <!-- Nextion 5" Intelligent -->
+    <!-- ###################### -->
+    <tr>
+        <td align="center" style="
+                border-style: solid; 
+                border-color: darkgray; 
+                border-top-width: medium; 
+                border-bottom-width: medium; 
+                border-left-width: medium; 
+                border-right-width: medium; ">
+            <font color="DarkBlue" size="4">5&quot; Intelligent</font>
+        </td>
+        <td valign="middle" align="center" valign="top" style="
+                border-style: solid; 
+                border-color: darkgray; 
+                border-top-width: medium; 
+                border-bottom-width: medium; 
+                border-left-width: medium; 
+                border-right-width: medium; ">
+            <font color="DarkBlue" size="3"><a href="NextionUpgrade/V30/Nextion/50i/RE305_5i.tft" download>RE305_5i.tft</a></font>
+        </td>
+        <td valign="middle" align="center" valign="top" style="
+                border-style: solid; 
+                border-color: darkgray; 
+                border-top-width: medium; 
+                border-bottom-width: medium; 
+                border-left-width: medium; 
+                border-right-width: medium; ">
+            <font color="DarkBlue" size="3"><a href="NextionUpgrade/V31/Nextion/50i/RE313b_5i.tft" download>RE313b_5i.tft</a></font>
+        </td>
+        <td valign="middle" align="center" valign="top" style="
+                border-style: solid; 
+                border-color: darkgray; 
+                border-top-width: medium; 
+                border-bottom-width: medium; 
+                border-left-width: medium; 
+                border-right-width: medium; ">
+            <font color="Gray" size="3"><i>N/A</i></font>
+        </td>
+    </tr>
+
+    <!-- ############################# -->
+    <!-- Nextion 7" Intelligent        -->
+    <!-- ############################# -->
+    <tr bgcolor="#d8ecff">
+        <td align="center" style="
+                border-style: solid; 
+                border-color: darkgray; 
+                border-top-width: medium; 
+                border-bottom-width: medium; 
+                border-left-width: medium; 
+                border-right-width: medium; ">
+            <font color="DarkBlue" size="4">7&quot; Intelligent</font>
+        </td>
+        <td valign="middle" align="center" valign="top" style="
+                border-style: solid; 
+                border-color: darkgray; 
+                border-top-width: medium; 
+                border-bottom-width: medium; 
+                border-left-width: medium; 
+                border-right-width: medium; ">
+            <font color="DarkBlue" size="3"><a href="NextionUpgrade/V30/Nextion/70i/RE305_7i.tft" download>RE305_7i.tft</a></font>
+        </td>
+        <td valign="middle" align="center" valign="top" style="
+                border-style: solid; 
+                border-color: darkgray; 
+                border-top-width: medium; 
+                border-bottom-width: medium; 
+                border-left-width: medium; 
+                border-right-width: medium; ">
+            <font color="DarkBlue" size="3"><a href="NextionUpgrade/V31/Nextion/70i/RE313c_7i.tft" download>RE313c_7i.tft</a></font>
+        </td>
+        <td valign="middle" align="center" valign="top" style="
+                border-style: solid; 
+                border-color: darkgray; 
+                border-top-width: medium; 
+                border-bottom-width: medium; 
+                border-left-width: medium; 
+                border-right-width: medium; ">
+            <font color="DarkBlue" size="3"><a href="NextionUpgrade/V40/Nextion/70i/RE40_7i.tft" download>RE40_7i.tft</a></font>
+        </td>
+    </tr>
+                
+    <!-- ############################# -->
+    <!-- Nextion 7" Intelligent        -->
+    <!-- Pre-set VendorId & MotorCount -->
+    <!-- ############################# -->
+    <tr bgcolor="#d8ecff">
+        <td align="center" style="
+                border-style: solid; 
+                border-color: darkgray; 
+                border-top-width: medium; 
+                border-bottom-width: medium; 
+                border-left-width: medium; 
+                border-right-width: medium; ">
+            <font color="DarkBlue" size="4">7&quot; Intelligent</font>
+            <br>
+            <font color="Black" size="3"><i>Pre-set VendorId &amp; MotorCount</i></font>
+        </td>
+        <td valign="middle" align="center" valign="top" style="
+                border-style: solid; 
+                border-color: darkgray; 
+                border-top-width: medium; 
+                border-bottom-width: medium; 
+                border-left-width: medium; 
+                border-right-width: medium; ">
+            <font color="DarkBlue" size="3"><a href="NextionUpgrade/V30/Nextion/70i/RE305_7i_32.tft" download>RE305_7i_32.tft</a></font>
+        </td>
+        <td valign="middle" align="center" valign="top" style="
+                border-style: solid; 
+                border-color: darkgray; 
+                border-top-width: medium; 
+                border-bottom-width: medium; 
+                border-left-width: medium; 
+                border-right-width: medium; ">
+            <font color="Gray" size="3"><i>N/A</i></font>
+        </td>
+        <td valign="middle" align="center" valign="top" style="
+                border-style: solid; 
+                border-color: darkgray; 
+                border-top-width: medium; 
+                border-bottom-width: medium; 
+                border-left-width: medium; 
+                border-right-width: medium; ">
+            <font color="Gray" size="3"><i>N/A</i></font>
+        </td>
+    </tr>
+</table>
+
+<p><font color="blue">Get a copy of the Nextion configuration file.</font>
+
+<p>Be sure to get the correct file for your Nextion model.  
+
+<p>Please note that not all Nextion models will not work with the 4-axis PCB.
+
+<table style="float: left; border-collapse: collapse; ">
+    <tr bgcolor="DarkBlue" valign="bottom">
+        <td align="center" width=150px; rowspan=2 style="
+                border-style: solid; 
+                border-color: darkgray; 
+                border-top-width: medium; 
+                border-bottom-width: medium; 
+                border-left-width: medium; 
+                border-right-width: medium; ">
+            <font color="White" size="4"><b>
+            Nextion Display Model
+            </b></font>
+        </td>
+        <td align="center" colspan=2 style="
+                border-style: solid; 
+                border-color: darkgray; 
+                border-top-width: medium; 
+                border-bottom-width: medium; 
+                border-left-width: medium; 
+                border-right-color: black; 
+                border-right-width: medium; ">
+            <font color="White" size="4"><b>
+            PCB
+            </b></font>
+        </td>
+    </tr>
+    <tr bgcolor="DarkBlue" valign="bottom">
+        <td align="center" width=80px; style="
+                border-style: solid; 
+                border-color: darkgray; 
+                border-top-width: medium; 
+                border-bottom-width: medium; 
+                border-left-width: medium; 
+                border-right-width: medium; ">
+            <font color="White" size="4"><b>
+            4-Axis
+            </b></font>
+        </td>
+        <td align="center" width=80px; style="
+                border-style: solid; 
+                border-color: darkgray; 
+                border-top-width: medium; 
+                border-bottom-width: medium; 
+                border-left-width: medium; 
+                border-right-width: medium; ">
+            <font color="White" size="4"><b>
+            5-Axis
+            </b></font>
+        </td>
+    </tr>
+
+    <tr>
+        <td align="left" style="
+                border-style: solid; 
+                border-color: darkgray; 
+                border-top-width: medium; 
+                border-bottom-width: medium; 
+                border-left-width: medium; 
+                border-right-width: medium; ">
+            4.3&rdquo; Enhanced
+        </td>
+        <td align="center" bgcolor="green" style="
+                border-style: solid; 
+                border-color: darkgray; 
+                border-top-width: medium; 
+                border-bottom-width: medium; 
+                border-left-width: medium; 
+                border-right-width: medium; ">
+            <font color="white">
+                &#10004;
+            </font>
+        </td>
+        <td align="center" bgcolor="green" style="
+                border-style: solid; 
+                border-color: darkgray; 
+                border-top-width: medium; 
+                border-bottom-width: medium; 
+                border-left-width: medium; 
+                border-right-width: medium; ">
+            <font color="white">
+                &#10004;
+            </font>
+        </td>
+    </tr>
+    <tr>
+        <td align="left" style="
+                border-style: solid; 
+                border-color: darkgray; 
+                border-top-width: medium; 
+                border-bottom-width: medium; 
+                border-left-width: medium; 
+                border-right-width: medium; ">
+            5&rdquo; Intelligent
+        </td>
+        <td align="center" bgcolor="red" style="
+                border-style: solid; 
+                border-color: darkgray; 
+                border-top-width: medium; 
+                border-bottom-width: medium; 
+                border-left-width: medium; 
+                border-right-width: medium; ">
+            <font color="white">
+                &#10006;
+            </font>
+        </td>
+        <td align="center" bgcolor="green" style="
+                border-style: solid; 
+                border-color: darkgray; 
+                border-top-width: medium; 
+                border-bottom-width: medium; 
+                border-left-width: medium; 
+                border-right-width: medium; ">
+            <font color="white">
+                &#10004;
+            </font>
+        </td>
+    </tr>
+    <tr>
+        <td align="left" style="
+                border-style: solid; 
+                border-color: darkgray; 
+                border-top-width: medium; 
+                border-bottom-width: medium; 
+                border-left-width: medium; 
+                border-right-width: medium; ">
+            7&rdquo; Intelligent
+        </td>
+        <td align="center" bgcolor="red" style="
+                border-style: solid; 
+                border-color: darkgray; 
+                border-top-width: medium; 
+                border-bottom-width: medium; 
+                border-left-width: medium; 
+                border-right-width: medium; ">
+            <font color="white">
+                &#10006;
+            </font>
+        </td>
+        <td align="center" bgcolor="green" style="
+                border-style: solid; 
+                border-color: darkgray; 
+                border-top-width: medium; 
+                border-bottom-width: medium; 
+                border-left-width: medium; 
+                border-right-width: medium; ">
+            <font color="white">
+                &#10004;
+            </font>
+        </td>
+    </tr>
+</table>
+
+
+<!-- ################################################### -->
+<!-- Step 3                                              -->
+<!-- ################################################### -->
+<table width="100%"><tr><td>&nbsp;</td></tr></table>
+<hr class="style2">
+<h2><font color="DarkBlue">Step 3 - Get a copy of the RE30.ini settings file</h2>
+
+<table border=1 align="right" style="border-collapse: collapse; ">
+    <col width="150px">
+    <col width="150px">
+    <col width="150px">
+
+    <tr bgcolor="DarkBlue" valign="bottom">
+        <td align="center" colspan=999 style="
+                border-style: solid; 
+                border-color: darkgray; 
+                border-top-width: medium; 
+                border-bottom-width: medium; 
+                border-left-width: medium; 
+                border-right-width: medium; ">
+            <font color="White" size="4"><b>
+            ELFOS Version
+            </b></font>
+        </td>
+    </tr>
+    <tr bgcolor="DarkBlue" valign="bottom">
+        <td align="center" style="
+                border-style: solid; 
+                border-color: darkgray; 
+                border-top-width: medium; 
+                border-bottom-width: medium; 
+                border-left-width: medium; 
+                border-right-width: medium; ">
+            <font color="White" size="4"><b>
+            3.0.5
+            </b></font>
+        </td>
+        <td align="center" style="
+                border-style: solid; 
+                border-color: darkgray; 
+                border-top-width: medium; 
+                border-bottom-width: medium; 
+                border-left-width: medium; 
+                border-right-width: medium; ">
+            <font color="White" size="4"><b>
+            3.1.3
+            </b></font>
+        </td>
+        <td align="center" style="
+                border-style: solid; 
+                border-color: darkgray; 
+                border-top-width: medium; 
+                border-bottom-width: medium; 
+                border-left-width: medium; 
+                border-right-width: medium; ">
+            <font color="White" size="4"><b>
+            4.0
+            </b></font>
+        </td>
+    </tr>
+
+    <tr>
+        <td valign="middle" align="center" valign="top" bgcolor="#d8ecff" style="
+                border-style: solid; 
+                border-color: darkgray; 
+                border-top-width: medium; 
+                border-bottom-width: medium; 
+                border-left-width: medium; 
+                border-right-width: medium; ">
+            <font color="DarkBlue" size="3"><a href="NextionUpgrade/V30/Teensy/RE30.ini" download>RE30.ini</a></font>
+        </td>
+        <td valign="middle" align="center" valign="top" bgcolor="#d8ecff" style="
+                border-style: solid; 
+                border-color: darkgray; 
+                border-top-width: medium; 
+                border-bottom-width: medium; 
+                border-left-width: medium; 
+                border-right-width: medium; ">
+            <font color="DarkBlue" size="3"><a href="NextionUpgrade/V31/Teensy/RE313.ini" download>RE313.ini</a></font>
+        </td>
+        <td valign="middle" align="center" valign="top" bgcolor="#d8ecff" style="
+                border-style: solid; 
+                border-color: darkgray; 
+                border-top-width: medium; 
+                border-bottom-width: medium; 
+                border-left-width: medium; 
+                border-right-width: medium; ">
+            <font color="DarkBlue" size="3"><a href="NextionUpgrade/V40/Teensy/RE40.ini" download>RE40.ini</a></font>
+        </td>
+    </tr>
+</table>
+
+<p><font color="blue">Download <b>RE30.ini</b>, and put it in the root of a microSD card.</font>This can be the same microSD card as in step #2.  <a href="MSMCSv3/MSMCS-iniFile.html">Details about the RE30.ini</a> are available by clicking the web link at the start of this sentence.
+
+<p><mark style="background-color:Yellow;">The RE30.ini file is updated with each version.  Get a copy of the new one if upgrading to a new version.</mark>
+        
+<!-- ################################################### -->
+<!-- Step 4                                              -->
+<!-- ################################################### -->
+<table width="100%"><tr><td>&nbsp;</td></tr></table>
+<hr class="style2">
+<h2><font color="DarkBlue">Step 4 - Upgrade the Teensy</h2>
+
+<!-- *************************************************** -->
+<!-- Step 4a                                             -->
+<!-- *************************************************** -->
+<h3><font color="DarkBlue">Step 4a - Connect the computer to the Teensy</h3>
+
+<div style="float: right; width: 350px; margin: 5px 5px 5px 5px; padding: 5px; border: 1px solid DarkGray; text-align: center; background-color:White">
+    <a href="NextionUpgrade/Teensy35-1.jpg" target="_new"><img src="NextionUpgrade/Teensy35-1.jpg" width="100%" /></a>
+</div>
+
+<font color="blue">Connect the computer to the Teensy.</font>
+    <ul>
+        <li>The cable end connected to the Teensy uses a MicroUSB connector.</li>
+        <li>The Teensy's jack is noted in the picture to the right.</li>
+        <li>There is no need to remove the Teensy from the PCB to perform this step.</li>
+    </ul>
+
+<p><mark style="background-color:#d4efdf;"><b>Be sure you have a good MicroUSB cable.</b>  Some are only used for charging a device (and they are usually longer).  These will often not work.</mark>
+
+<!-- *************************************************** -->
+<!-- Step 4b                                             -->
+<!-- *************************************************** -->
+<table width="100%"><tr><td>&nbsp;</td></tr></table>
+<hr class="style1">
+<h3><font color="DarkBlue">Step 4b - Start the Teensy Loader</h3>
+
+<font color="blue">On the Computer, start the <b>Teensy Loader</b>.</font>
+
+<table align="right" width="400px">
+    <tr valign="bottom">
+        <td align="center" width="50%">
+            <img src="Images/Teensy2.png" width="100%" />
+        </td>
+        <td>
+            &nbsp;
+        </td>
+        <td align="center" width="50%">
+            <img src="Images/Teensy1.png" width="100%"/>
+        </td>
+    </tr>
+    <tr valign="top">
+        <td align="center">
+            <p style="margin-top: 0; margin-bottom: 0;">Teensy Loader on macOS
+        </td>
+        <td>
+            &nbsp;
+        </td>
+        <td align="center">
+            <p style="margin-top: 0; margin-bottom: 0;">Teensy Loader on Linux and Windows
+        </td>
+    </tr>
+</table>
+
+<p>&nbsp;
+
+<p>If you do not have the <b>Teensy Loader</b> installed on your computer, you can get it from <a href="https://www.pjrc.com/teensy/loader.html" target="_new">https://www.pjrc.com/teensy/loader.html</a>.
+
+<!-- *************************************************** -->
+<!-- Step 4c                                             -->
+<!-- *************************************************** -->
+<table width="100%"><tr><td>&nbsp;</td></tr></table>
+<hr class="style1">
+<h3><font color="DarkBlue">Step 4c - Be sure the system shows that the Teensy is connected</h3>
+
+<div style="float: right; width: 200px; margin: 5px 5px 5px 5px; padding: 5px; border: 1px solid DarkGray; text-align: center;">
+    <img src="Images/Teensy2.png" width="100%" />
+</div>
+
+<p>This is evident when
+    <ul>
+        <li>the Auto button is illuminated green, and</li>
+        <li>the picture of the Teensy is no longer grayed out.</li>
+    </ul>
+                
+<p>As noted in step 4a above, if your USB cable is bad, the Teensy will not connect.
+
+<p>&nbsp;
+<p>The default CPU selected will not handle the whole 5Rose_x.hex file, so if you try to open it, you will get the message on the bottom of the screen (where this picture shows &quot;No file specified&quot;):
+            
+<p><center><b>5Rose_</b>x<b>.hex (too large!)</b></center>
+            
+<!-- *************************************************** -->
+<!-- Step 4d                                             -->
+<!-- *************************************************** -->
+<table width="100%"><tr><td>&nbsp;</td></tr></table>
+<hr class="style1">
+<h3><font color="DarkBlue">Step 4d - Get the Teensy loader to recognize which Teensy you are using</h3>
+
+<div style="float: right; width: 350px; margin: 5px 5px 5px 5px; padding: 5px; border: 1px solid DarkGray; text-align: center; background-color:White">
+    <img src="NextionUpgrade/Teensy35-2.jpeg" width="100%" />
+</div>
+
+<p><font color="blue">Press the white button on the Teensy to get the Teensy loader to recognize which CPU you are using.
+            
+<!-- *************************************************** -->
+<!-- Step 4e                                             -->
+<!-- *************************************************** -->
+<table width="100%"><tr><td>&nbsp;</td></tr></table>
+<hr class="style1">
+<h3><font color="DarkBlue">Step 4e - Open the 5Rose_x.hex file</h3>
+
+<div style="float: right; width: 200px; margin: 5px 5px 5px 5px; padding: 5px; border: 1px solid DarkGray; text-align: center;">
+    <img src="Images/Teensy2a.png" width="100%" />
+</div>
+
+<p>Back on the Computer, using the file button <b>Teensy Loader</b> (circled in red in the picture to the right), <font color="blue">open 5Rose_x.hex</font>.
+
+<p>Once this is loaded, the bottom message will change to reflect the file size. 
+
+<!-- *************************************************** -->
+<!-- Step 4f                                             -->
+<!-- *************************************************** -->
+<table width="100%"><tr><td>&nbsp;</td></tr></table>
+<hr class="style1">
+<h3><font color="DarkBlue">Step 4f - Download the 5Rose_x.hex file</h3>
+
+<div style="float: right; width: 200px; margin: 5px 5px 5px 5px; padding: 5px; border: 1px solid DarkGray; text-align: center;">
+    <img src="Images/Teensy2b.png" width="100%" />
+</div>
+
+<font color="blue">Select the download button (circled in red in the picture to the right) on the Teensy loader program to load the program file onto the Teensy.</font>
+
+<!-- *************************************************** -->
+<!-- Step 4g                                             -->
+<!-- *************************************************** -->
+<table width="100%"><tr><td>&nbsp;</td></tr></table>
+<hr class="style1">
+<h3><font color="DarkBlue">Step 4g - Reboot the Teensy Microcontroller</h3>
+
+<div style="float: right; width: 200px; margin: 5px 5px 5px 5px; padding: 5px; border: 1px solid DarkGray; text-align: center;">
+    <img src="Images/Teensy2c.png" width="100%" />
+</div>
+
+<font color="blue">Select the reboot button (circled in red in the picture to the right) on the Teensy loader program to restart the Teensy.
+            
+<p>Verify that it was successfully rebooted.</font>
+            
+If not, repeat the steps above (and if that does not work, your Teensy may be damaged and needing to be replaced).
+
+<p><font color="blue">Disconnect the computer from the Teensy.</font>
+
+<!-- ################################################### -->
+<!-- Step 5                                              -->
+<!-- ################################################### -->
+<table width="100%"><tr><td>&nbsp;</td></tr></table>
+<hr class="style2">
+<h2><font color="DarkBlue">Step 5 - Upgrade the Nextion Display</h2>
+Step 4a - Connect the computer to the Teensy
+<div style="float: right; width: 350px; margin: 5px 5px 5px 5px; padding: 5px; border: 1px solid DarkGray; text-align: center; background-color:White">
+    <a href="NextionUpgrade/Nextion.png" target="_new"><img src="NextionUpgrade/Nextion.png" width="100%" /></a>
+</div>
+
+<p><font color="blue">Secure the microSD card which has the Nextion configuration file (from step 2).  Put this microSD card into the Nextion's microSD card slot. 
+
+<p>Reboot the controls system again.</font>
+
+<p>If this works as expected, the Nextion display will read (upside down, by the way) 
+
+<font face="arial"><b><center>
+Check Data . . . 100%
+<br><br>
+Updated Successed!
+</center></b></font>
+
+<p>(guess that is a bad translation from Chinese).
+
+<p>After that message appears, <font color="blue">remove the microSD card from the Nextion, and reboot the controls system again.</font>
+
+<p><font color="DarkRed"><u><b>Error for too many .tft files?</u></b></font>When you delete the old .ini file from many computers, it gets renamed in a way that you can not see it.  For example, on some systems
+
+<p><center><b>RE30.tft</b> &nbsp; becomes &nbsp; <b>~E30.tft</b></center>
+
+<br>It is not actually removed from the microSD card.  The remediation is:
+    <ol>
+        <li>Use a computer which lets you see hidden files, and delete the hidden one, or</li>
+        <li>Re-format the microSD card.  A good solution I use is <a href="https://www.sdcard.org/downloads/formatter/">SD Memory Card Formatter</a> from SD Association.  I will say I've had mixed luck with this approach though.</li>
+    </ol>
+
+<!-- ################################################### -->
+<!-- Step 6                                              -->
+<!-- ################################################### -->
+<table width="100%"><tr><td>&nbsp;</td></tr></table>
+<hr class="style2">
+<h2><font color="DarkBlue">Step 6 - Load the .ini file</h2>
+
+<!-- *************************************************** -->
+<!-- Step 6a                                             -->
+<!-- *************************************************** -->
+<h3><font color="DarkBlue">Step 6a - Put the microSD card into the Teensy Microcontroller</h3>
+
+<div style="float: right; width: 350px; margin: 5px 5px 5px 5px; padding: 5px; border: 1px solid DarkGray; text-align: center; background-color:White">
+    <a href="NextionUpgrade/Teensy35-3.jpg" target="_new"><img src="NextionUpgrade/Teensy35-3.jpg" width="100%" /></a>
+</div>
+
+<p><font color="blue">Secure the microSD card which has the RE30.ini settings file (from step 3). Put this microSD card into the Teensy's microSD card slot.</font>.
+            
+<p><font color="DarkRed"><u><b>Using a Teensy 3.2?</u></b></font>. If you are using a Teensy 3.2, the microSD card will have to be inserted into a microSD card adapter.
+
+<!-- *************************************************** -->
+<!-- Step 6b                                             -->
+<!-- *************************************************** -->
+<table width="100%"><tr><td>&nbsp;</td></tr></table>
+<hr class="style1">
+<h3><font color="DarkBlue">Step 6b - Load the INI file's settings</h3>
+
+<font color="blue">Start the system and click the <b>...</b> button (top right), and then the <b>Load ini</b> button (left).</font>
+
+<p>Starting with version 24, there are text fields shown at the bottom of the screen (in the center).  These are just to show that the command is working. These boxes only appear when Load Ini has been touched.
+            
+<p>Once the INI file load has completed, a message will appear saying 
+
+<font face="arial" size="5" color="blue"><b><center>Done - Restart may be needed.</center></b></font>
+
+<font color="blue"><p>Restart the system one last time.</font>
+
+<p>&nbsp;
+
+<p><a href="MSMCSv3/MSMCS-iniFile.html">Details about the RE30.ini</a> are available by clicking the web link at the start of this sentence.
+
+<!-- ################################################### -->
+<!-- Step 7                                              -->
+<!-- ################################################### -->
+<table width="100%"><tr><td>&nbsp;</td></tr></table>
+<hr class="style2">
+<h2><font color="DarkBlue">Step 7 - Verify the Settings</h2>
+
+<p>It is a good practice to verify all of the settings once you've completed the steps.
+
+    <ol> 
+        <li>Touch the Config button on each page and verify the Teensy column is populated with the same numbers as the Nextion column.  Repeat for each axis on each page.</li>
+                    
+        <br>
+        <li>Next verify the Preferences are correct for the Spindle, Axes, Limits, and Returns.</li>
+                    
+        <br>
+        <li>Select the Main page, then the '...' (Preferences) page.  
+        <br>Select the More page. 
+        <br>Touch EEPROM.  
+                    
+        <p>Repeat for each page and axis on the page.  This will show all of the settings for the selected page.</li>
+    </ol>
+            
+<p>If some settings are not loaded, that screen will not run or at least will not run properly.  Check your 4Axes.INI file against the latest one.  As noted in step 6b above, some key field designators have changed in later versions.
+
+<!-- ################################################### -->
+<!-- Footer                                              -->
+<!-- ################################################### -->
+<hr class="style0">
+<font size="3">
+<table width="100%">
+    <col width="67%">
+    <col width="33%">
+
+    <tr valign="top">
+        <td align="left">
+            Questions or comments?  Contact us at
+            <br><a href="mailto:ColvinTools@Gmail.com?Subject=General" target="_new">ColvinTools@Gmail.com</a>
+        </td>
+        <td align="right">
+            <a href="../index-Disclaimers.html">Disclaimers</a>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

@@ -150,150 +150,363 @@ Calculations needed for using an <a href="https://otbok.info/OT%20-%20LnT-Term-A
 
 <p>Input fields are <span style="background-color: #FFEE9C"><b>&nbsp;colored&nbsp;</b></span>.
 
-	<form id="frm1">
-		<table border="1" width="100%">
-			<col width="200px">
+<form id="frm1">
+    <table style="border-collapse: collapse; width: 100%; ">
+	<col width="200px">
+	<col width="60px">
+       	<col width="35px">
+       	<col width="60px">
+       	<col width="35px">
+       	<col width="*">
 
-        	<col width="60px">
-        	<col width="35px">
+	<tr style="background-color: DarkGray;
+		vertical-align: bottom; 
+		">
+	    <td colspan="5" style="
+		    border-style: solid; 
+		    border-color: black; 
+		    border-top-width: thick; 
+		    border-bottom-width: medium;
+		    border-left-width: thick; 
+		    border-right-width: 0px; 
+		    text-align: left; 
+		    ">
+		<font color="white" size="4"><b>
+		Fixed Values
+		</b></font>
+	    </td>
+	    <td style="
+		    border-style: solid; 
+		    border-color: black; 
+		    border-top-width: thick; 
+		    border-bottom-width: medium;
+		    border-left-width: 0px; 
+		    border-right-width: thick; 
+		    text-align: right; 
+		    ">
+		<font color="white" size="3">
+		These are based on your machine
+		</font>
+	    </td>
+	</tr>
 
-        	<col width="60px">
-        	<col width="35px">
+	<tr style="background-color: LightGray;
+		vertical-align: top; 
+		">
+	    <td style="
+		    border-style: solid; 
+		    border-color: black; 
+		    border-top-width: thin; 
+		    border-bottom-width: thin;
+		    border-left-width: thick; 
+		    border-right-width: 0px; 
+		    text-align: left; 
+		    ">
+		Headstock Lever Arm Length
+	    </td>
+	    <td style="
+		    border-style: solid; 
+		    border-color: black; 
+		    border-top-width: thin; 
+		    border-bottom-width: thin;
+		    border-left-width: 0px; 
+		    border-right-width: 0px; 
+		    text-align: right; 
+		    ">
+		<input 
+		    type="number"
+		    style="font-size:14px; text-align: right; width: 55px; background-color:#FFEE9C" 
+		    name="HSLALImp" 
+		    step='0.1' 
+		    placeholder='0.0' 
+		    value=12.0
+		    />
+	    </td>
+	    <td style="
+		    border-style: solid; 
+		    border-color: black; 
+		    border-top-width: thin; 
+		    border-bottom-width: thin;
+		    border-left-width: 0px; 
+		    border-right-width: 0px; 
+		    text-align: left; 
+		    ">
+		&nbsp;in
+	    </td>
+	    <td style="
+		    border-style: solid; 
+		    border-color: black; 
+		    border-top-width: thin; 
+		    border-bottom-width: thin;
+		    border-left-width: 0px; 
+		    border-right-width: 0px; 
+		    text-align: right; 
+		    ">
+		<p id="HSLALmm" style="margin: 0px; padding: 0px;"></p>
+	    </td>
+	    <td style="
+		    border-style: solid; 
+		    border-color: black; 
+		    border-top-width: thin; 
+		    border-bottom-width: thin;
+		    border-left-width: 0px; 
+		    border-right-width: 0px; 
+		    text-align: left; 
+		    ">
+		&nbsp;mm
+	    </td>
+	    <td style="
+		    border-style: solid; 
+		    border-color: black; 
+		    border-top-width: thin; 
+		    border-bottom-width: thin;
+		    border-left-width: thin; 
+		    border-right-width: thick; 
+		    text-align: left; 
+		    ">
+		Distance from the headstock's pivot point to the center of the spindle
+	    </td>
+	</tr>
 
-        	<col width="*">
+	<tr style="background-color: LightGray;
+		vertical-align: top; 
+		">
+	    <td style="
+		    border-style: solid; 
+		    border-color: black; 
+		    border-top-width: thin; 
+		    border-bottom-width: thin;
+		    border-left-width: thick; 
+		    border-right-width: 0px; 
+		    text-align: left; 
+		    ">
+		Amplitude Adjuster Lever Arm Length
+	    </td>
+	    <td style="
+		    border-style: solid; 
+		    border-color: black; 
+		    border-top-width: thin; 
+		    border-bottom-width: thin;
+		    border-left-width: 0px; 
+		    border-right-width: 0px; 
+		    text-align: left; 
+		    ">
+		<input 
+		    type="number"
+		    style="font-size:14px; text-align: right; width: 55px; background-color:#FFEE9C" 
+		    name="AALALImp" 
+		    step='0.1' 
+		    placeholder='0.0' 
+		    value=8.0
+		    />
+	    </td>
+	    <td style="
+		    border-style: solid; 
+		    border-color: black; 
+		    border-top-width: thin; 
+		    border-bottom-width: thin;
+		    border-left-width: 0px; 
+		    border-right-width: 0px; 
+		    text-align: left; 
+		    ">
+		&nbsp;in
+	    </td>
+	    <td style="
+		    border-style: solid; 
+		    border-color: black; 
+		    border-top-width: thin; 
+		    border-bottom-width: thin;
+		    border-left-width: 0px; 
+		    border-right-width: 0px; 
+		    text-align: right; 
+		    ">
+		<p id="AALALmm" style="margin: 0px; padding: 0px;"></p>
+	    </td>
+	    <td style="
+		    border-style: solid; 
+		    border-color: black; 
+		    border-top-width: thin; 
+		    border-bottom-width: thin;
+		    border-left-width: 0px; 
+		    border-right-width: 0px; 
+		    text-align: left; 
+		    ">
+		&nbsp;mm
+	    </td>
+	    <td style="
+		    border-style: solid; 
+		    border-color: black; 
+		    border-top-width: thin; 
+		    border-bottom-width: thin;
+		    border-left-width: thin; 
+		    border-right-width: thick; 
+		    text-align: left; 
+		    ">
+		Distance from the amplitude adjuster's pivot point to the center of the spindle
+	    </td>
+	</tr>
 
-			<tr bgcolor="Moccasin">
-				<td colspan="5">
-				    <font color="blue" size="4"><b>
-				        Fixed Values
-				    </b>
-				    </font>
-				</td>
-				<td colspan="999" align="right">
-				    <font color="blue" size="3">
-				    These are based on your machine
-				    </font>
-				</td>
- 			</tr>
+	<tr style="background-color: Moccasin;
+                vertical-align: bottom; 
+                ">
+	    <td colspan="6" style="
+                    border-style: solid; 
+                    border-color: black; 
+                    border-top-width: thick; 
+                    border-bottom-width: medium;
+                    border-left-width: thick; 
+                    border-right-width: thick; 
+                    text-align: left; 
+                    ">
+		<font color="blue" size="4"><b>
+		Amplitude Adjustment
+		</b></font>
+	    </td>
+	</tr>
 
-			<tr bgcolor="LightGray">
-				<td>
-				    Headstock Lever Arm Length
-				</td>
- 				<td align="Right">
- 					<input 
-	 						type="number"
- 							style="font-size:14px; text-align: right; width: 55px; background-color:#FFEE9C" 
- 							name="HSLALImp" 
-							step='0.1' 
-							placeholder='0.0' 
- 							value=12.0
-						/>
- 				</td>
-				<td>
-					&quot;
-				</td>
- 				<td align="Right">
-   			 		<p id="HSLALmm" style="margin: 0px; padding: 0px;"></p>
- 				</td>
-				<td>
-					mm
-				</td>
-				<td>
-					Distance from the headstock's pivot point to the center of the spindle
-				</td>
-			</tr>
+	<tr style="background-color: White;
+		vertical-align: top; 
+		">
+	    <td style="
+		    border-style: solid; 
+		    border-color: black; 
+		    border-top-width: thin; 
+		    border-bottom-width: thin;
+		    border-left-width: thick; 
+		    border-right-width: 0px; 
+		    text-align: left; 
+		    ">
+		Amplitude Adjustment
+	    </td>
+	    <td align="Right">
+		<input 
+		    type="number"
+		    style="font-size:14px; text-align: right; width: 55px; background-color:#FFEE9C" 
+		    name="AA" 
+		    step='0' 
+		    placeholder='0' 
+		    value=100
+		    />
+	    </td>
+	    <td style="
+		    border-style: solid; 
+		    border-color: black; 
+		    border-top-width: thin; 
+		    border-bottom-width: thin;
+		    border-left-width: 0px; 
+		    border-right-width: 0px; 
+		    text-align: left; 
+		    ">
+		&nbsp;%
+	    </td>
+	    <td style="
+		    border-style: solid; 
+		    border-color: black; 
+		    border-top-width: thin; 
+		    border-bottom-width: thin;
+		    border-left-width: 0px; 
+		    border-right-width: 0px; 
+		    text-align: left; 
+		    ">
+	    </td>
+	    </td>
+	    <td style="
+		    border-style: solid; 
+		    border-color: black; 
+		    border-top-width: thin; 
+		    border-bottom-width: thin;
+		    border-left-width: 0px; 
+		    border-right-width: 0px; 
+		    text-align: left; 
+		    ">
+	    </td>
+	    <td style="
+		    border-style: solid; 
+		    border-color: black; 
+		    border-top-width: thin; 
+		    border-bottom-width: thin;
+		    border-left-width: thin; 
+		    border-right-width: thick; 
+		    text-align: left; 
+		    ">
+		At the given diameter, the resulting amplitude of cuts will be this percentage of the rosette's actual amplitude.
+	    </td>
+	</tr>
 
-			<tr bgcolor="LightGray">
-				<td>
-					Amplitude Adjuster Lever Arm Length
-				</td>
- 				<td align="Right">
- 					<input 
-	 						type="number"
- 							style="font-size:14px; text-align: right; width: 55px; background-color:#FFEE9C" 
- 							name="AALALImp" 
-							step='0.1' 
-							placeholder='0.0' 
- 							value=8.0
-						/>
-				</td>
-				<td>
-					&quot;
-				</td>
- 				<td align="Right">
-   			 		<p id="AALALmm" style="margin: 0px; padding: 0px;"></p>
-				</td>
-				<td>
-					mm
-				</td>
-				<td>
-					 Distance from the amplitude adjuster's pivot point to the center of the spindle
-				</td>
-			</tr>
-
-			<tr bgcolor="Moccasin">
-				<td colspan="5">
-				    <font color="blue" size="4"><b>
-				    Amplitude Adjustment
-				    </b></font>
-				</td>
-				<td colspan="999" align="right">
-				    <font color="blue" size="3">
-				    </font>
-				</td>
- 			</tr>
-
-			<tr bgcolor="White">
-				<td>
-					Amplitude Adjustment
-				</td>
- 				<td align="Right">
- 					<input 
-	 						type="number"
- 							style="font-size:14px; text-align: right; width: 55px; background-color:#FFEE9C" 
- 							name="AA" 
-							step='0' 
-							placeholder='0' 
- 							value=100
-						/>
-				</td>
-				<td>
-					%
-				</td>
-				<td colspan="2">
-				</td>
-
-				<td>
-				    At the given diameter, the resulting amplitude of cuts will be this percentage of the rosette's actual amplitude.
-				</td>
-			</tr>
-
-			<tr bgcolor="White">
-				<td>
-					Estimated Rubber Distance Down
-				</td>
- 				<td align="Right">
-   			 		<p id="RDDImp" style="margin: 0px; padding: 0px;"></p>
-				</td>
-				<td>
-					&quot;
-				</td>
- 				<td align="Right">
-   			 		<p id="RDDmm" style="margin: 0px; padding: 0px;"></p>
-				</td>
-				<td>
-					mm
-				</td>
-				<td>
-					The distance the rubber is adjusted down from the center of the spindle.  (This is the red rubber in the picture below.)
+	<tr style="background-color: White;
+		vertical-align: top; 
+		">
+	    <td style="
+		    border-style: solid; 
+		    border-color: black; 
+		    border-top-width: thin; 
+		    border-bottom-width: thick;
+		    border-left-width: thick; 
+		    border-right-width: 0px; 
+		    text-align: left; 
+		    ">
+		Estimated Rubber Distance Down
+	    </td>
+	    <td style="
+		    border-style: solid; 
+		    border-color: black; 
+		    border-top-width: thin; 
+		    border-bottom-width: thick;
+		    border-left-width: 0px; 
+		    border-right-width: 0px; 
+		    text-align: right; 
+		    ">
+		<p id="RDDImp" style="margin: 0px; padding: 0px;"></p>
+	    </td>
+	    <td style="
+		    border-style: solid; 
+		    border-color: black; 
+		    border-top-width: thin; 
+		    border-bottom-width: thick;
+		    border-left-width: 0px; 
+		    border-right-width: 0px; 
+		    text-align: left; 
+		    ">
+		&nbsp;in
+	    </td>
+	    <td style="
+		    border-style: solid; 
+		    border-color: black; 
+		    border-top-width: thin; 
+		    border-bottom-width: thick;
+		    border-left-width: 0px; 
+		    border-right-width: 0px; 
+		    text-align: right; 
+		    ">
+		<p id="RDDmm" style="margin: 0px; padding: 0px;"></p>
+	    </td>
+	    <td style="
+		    border-style: solid; 
+		    border-color: black; 
+		    border-top-width: thin; 
+		    border-bottom-width: thick;
+		    border-left-width: 0px; 
+		    border-right-width: 0px; 
+		    text-align: left; 
+		    ">
+		&nbsp;mm
+	    </td>
+	    <td style="
+		    border-style: solid; 
+		    border-color: black; 
+		    border-top-width: thin; 
+		    border-bottom-width: thick;
+		    border-left-width: thin; 
+		    border-right-width: thick; 
+		    text-align: left; 
+		    ">
+		The distance the rubber is adjusted down from the center of the spindle.  (This is the red rubber in the picture below.)
 					
-					<p style="margin-bottom: 0;"><font color="red">If the rubber is raised above the spindle, then <I>this a negative number</I>.</font>
-				</td>
-			</tr>
-
-		</table>
-	</form>
+		<p style="margin-bottom: 0;"><font color="red">If the rubber is raised above the spindle, then <I>this a negative number</I>.</font>
+	    </td>
+	</tr>
+    </table>
+</form>
 
     <p>
 	<center>

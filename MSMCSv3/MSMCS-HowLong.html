@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
+
+<!-- ################################################### -->
+<!-- Style Sheet for MathJax                                                                 -->
+<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+
+<!-- ################################################### -->
+<!-- Style Sheet for Horizontal Rule - Style 0                                       -->
+ <style>
+    hr.style0 {
+        border: 0;
+        height: 1px;
+        background-image: linear-gradient(to right,
+                rgba(184,134,11, 2),
+                rgba(184,134,11, 2),
+                rgba(184,134,11, 2));
+    }
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for Horizontal Rule - Style 1                                       -->
+ <style>
+    hr.style1 {
+        border: 0;
+        height: 3px;
+        background-image: linear-gradient(to right,
+            rgba(0, 0, 0, 0),
+                rgba(184,134,11, 2),
+            rgba(0, 0, 0, 0));
+    }
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for Horizontal Rule - Style 2                                       -->
+ <style>
+    hr.style2 {
+        border: 0;
+        height: 6px;
+        background-image: linear-gradient(to right,
+            rgba(0, 0, 0, 0),
+                rgba(184,134,11, 2),
+            rgba(0, 0, 0, 0));
+    }
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for indented paragraphs                                             -->
+<style>
+    .indented { padding-left: 33pt; padding-right: 33pt; }
+</style>
+
+<!-- ################################################### -->
+<!-- <body background="Images/Background.png"> -->
+    <font face="Georgia">
+
+<!-- ################################################### -->
+<!-- Style Sheet for header image max size                                         -->
+<!-- ################################################### -->
+<style>
+    img.Image { max-width: 500px;}
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for footer                                                                     -->
+<!-- ################################################### -->
+<style>
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: #E6E6E6;
+   text-align: center;
+}
+</style>
+
+<!-- ################################################### -->
+<!-- Header                                                                                           -->
+<!-- ################################################### -->
+
+<head bgcolor=#E6E6E6>
+    <title>ELFOS</title>
+    <link rel="shortcut icon" type="image/ico" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="Images/favicon.png">
+
+<font face="Georgia">
+
+<table width="100%" border=0>
+        <col width="10%">
+        <col width="*">
+        <col width="10%">
+
+    <tr valign="bottom">
+        <td align="left">
+            <a href = "javascript:history.back()"><img src="Images/BackButton.png" width="30px"></a>
+        </td>
+        <td align="center" valign="top">
+            <font color="DarkBlue" size="6"><a href="MSMCS.html" style="text-decoration: none; color: DarkBlue; "><b>ELFOS</b></a></font>
+        </td>
+        <td align="right">
+            <img src="Images/ELFOS-Logo.png" width="65px" class="Image">
+        </td>
+    </tr>
+</table>
+
+<!-- ################################################### -->
+<!-- Get the values needed -->
+    <script>
+        function calcValues()    {
+
+            var iPPS            = 0;
+            var iPPSPCT         = 0;
+
+            var fDist           = 0.0;
+            var fRev            = 0.0;
+
+            var iPulRev         = 0;
+            var iSpMotorRatio   = 9;
+
+            var fStepover       = 0.001;
+            var fRPM            = 0.0;
+            var fTimeReq        = 0.0;
+
+            var x = document.getElementById("frm1");
+
+        // ###################################################
+        // Get the Spindle Max Speed
+        //
+            iPPS = Number(x.elements[0].value);
+
+        // ###################################################
+        // Get the Spindle Speed Pct
+        //
+            iPPSPCT = Number(x.elements[1].value) / 100;
+
+        // ###################################################
+        // Get the Movement Distance
+        //
+            fDist = Number(x.elements[2].value);
+
+        // ###################################################
+        // Get the Spindle Revoutions
+        //
+            fRev = Number(x.elements[3].value);
+
+        // ###################################################
+        // Get the Driver Pulses / Revolution
+        //
+            iPulRev = Number(x.elements[4].value);
+
+        // ###################################################
+        // Get the Spindle revolutions / Stepper Motor revolution
+        //
+            iSpMotorRatio = Number(x.elements[5].value);
+
+        // ###################################################
+        // Calculate the Values
+        //
+
+        // Stepover
+
+            fStepover = fDist / fRev;
+            document.getElementById("Stepover").innerHTML = fStepover.toFixed(3);
+
+        // Spindle RPM
+
+            fRPM = iPPSPCT * (iPPS * 60) / (iPulRev * iSpMotorRatio);
+            document.getElementById("RPM").innerHTML = fRPM.toFixed(1);
+
+        // Time to Complete
+
+            fTimeReq = fRev / fRPM;
+            document.getElementById("TimeReq").innerHTML = fTimeReq.toFixed(1);
+
+        }
+    </script>
+
+</head>
+
+
+
+</head>
+
+<!-- ################################################### -->
+<!-- Body                                                -->
+<!-- ################################################### -->
+
+<body bgcolor=#E6E6E6>
+
+<p><font color="DarkBlue" size=5><center><b>How Long Will a Synchronized Pass Take?</b></center></font>
+
+<p>This calculator will give you an estimate of how long a synchronized movement should take.
+
+<form id="frm1">
+    <table style="border-collapse: collapse; width: 100%; ">
+        <col width="200px">
+        <col width="60px">
+        <col width="65px">
+        <col width="*">
+
+        <tr style="background-color: Moccasin;
+                vertical-align: bottom;
+                ">
+            <td colspan="4" style="
+                    border-style: solid;
+                    border-color: black;
+                    border-top-width: thick;
+                    border-bottom-width: medium;
+                    border-left-width: thick;
+                    border-right-width: thick;
+                    text-align: left;
+                    ">
+                <font color="blue" size="4"≈><b>
+                    Spindle Speed
+                </b></font>
+            </td>
+        </tr>
+
+        <tr style="background-color: White;
+                vertical-align: top;
+                ">
+            <td style="
+                    border-style: solid;
+                    border-color: black;
+                    border-top-width: thin;
+                    border-bottom-width: thin;
+                    border-left-width: thick;
+                    border-right-width: 0px;
+                    text-align: left;
+                    ">
+                Max Pulses per Sec
+            </td>
+            <td style="
+                    border-style: solid;
+                    border-color: black;
+                    border-top-width: thin;
+                    border-bottom-width: thin;
+                    border-left-width: 0px;
+                    border-right-width: 0px;
+                    text-align: right;
+                    ">
+                <input
+                    type="number"
+                    style="font-size:14px; text-align: right; width: 75px; background-color:#FFEE9C"
+                    name="PPS"
+                    step='1'
+                    placeholder='0'
+                    value=5000
+                    />
+            </td>
+            <td style="
+                    border-style: solid;
+                    border-color: black;
+                    border-top-width: thin;
+                    border-bottom-width: thin;
+                    border-left-width: 0px;
+                    border-right-width: thin;
+                    text-align: left;
+                    ">
+                &nbsp;
+            </td>
+            <td style="
+                    border-style: solid;
+                    border-color: black;
+                    border-top-width: thin;
+                    border-bottom-width: thin;
+                    border-left-width: thin;
+                    border-right-width: thick;
+                    text-align: left;
+                    ">
+                This is set at the top of the speed slider for the spindle.
+            </td>
+        </tr>
+
+        <tr style="background-color: White;
+                vertical-align: top;
+                ">
+            <td style="
+                    border-style: solid;
+                    border-color: black;
+                    border-top-width: thin;
+                    border-bottom-width: thin;
+                    border-left-width: thick;
+                    border-right-width: 0px;
+                    text-align: left;
+                    ">
+                Speed Percentage
+            </td>
+            <td style="
+                    border-style: solid;
+                    border-color: black;
+                    border-top-width: thin;
+                    border-bottom-width: thin;
+                    border-left-width: 0px;
+                    border-right-width: 0px;
+                    text-align: right;
+                    ">
+                <input
+                    type="number"
+                    style="font-size:14px; text-align: right; width: 55px; background-color:#FFEE9C"
+                    name="PPSPCT"
+                    step='1'
+                    placeholder='0'
+                    value=10
+                    />
+            </td>
+            <td style="
+                    border-style: solid;
+                    border-color: black;
+                    border-top-width: thin;
+                    border-bottom-width: thin;
+                    border-left-width: 0px;
+                    border-right-width: thin;
+                    text-align: left;
+                    ">
+                &nbsp;%
+            </td>
+            <td style="
+                    border-style: solid;
+                    border-color: black;
+                    border-top-width: thin;
+                    border-bottom-width: thin;
+                    border-left-width: thin;
+                    border-right-width: thick;
+                    text-align: left;
+                    ">
+                This is the percentage of the maximum speed for the spindle.  It is set on the speed slider for the spindle.
+            </td>
+        </tr>
+
+        <tr style="background-color: Moccasin;
+                vertical-align: bottom;
+                ">
+            <td colspan="4" style="
+                    border-style: solid;
+                    border-color: black;
+                    border-top-width: thick;
+                    border-bottom-width: medium;
+                    border-left-width: thick;
+                    border-right-width: thick;
+                    text-align: left;
+                    ">
+                <font color="blue" size="4"><b>
+                Movement Distance
+                </b></font>
+            </td>
+        </tr>
+
+        <tr style="background-color: White;
+                vertical-align: top;
+                ">
+            <td style="
+                    border-style: solid;
+                    border-color: black;
+                    border-top-width: thin;
+                    border-bottom-width: thin;
+                    border-left-width: thick;
+                    border-right-width: 0px;
+                    text-align: left;
+                    ">
+                Distance
+            </td>
+            <td style="
+                    border-style: solid;
+                    border-color: black;
+                    border-top-width: thin;
+                    border-bottom-width: thin;
+                    border-left-width: 0px;
+                    border-right-width: 0px;
+                    text-align: right;
+                    ">
+                <input
+                    type="number"
+                    style="font-size:14px; text-align: right; width: 75px; background-color:#FFEE9C"
+                    name="Dist"
+                    step='0.001'
+                    placeholder='0.000'
+                    value=1.500
+                    />
+            </td>
+            <td style="
+                    border-style: solid;
+                    border-color: black;
+                    border-top-width: thin;
+                    border-bottom-width: thin;
+                    border-left-width: 0px;
+                    border-right-width: thin;
+                    text-align: left;
+                    ">
+                &nbsp;in
+            </td>
+            <td style="
+                    border-style: solid;
+                    border-color: black;
+                    border-top-width: thin;
+                    border-bottom-width: thin;
+                    border-left-width: thin;
+                    border-right-width: thick;
+                    text-align: left;
+                    ">
+                The distance the cutter is moved (e.g., along the Z axis).
+            </td>
+        </tr>
+
+        <tr style="background-color: White;
+                vertical-align: top;
+                ">
+            <td style="
+                    border-style: solid;
+                    border-color: black;
+                    border-top-width: thin;
+                    border-bottom-width: thin;
+                    border-left-width: thick;
+                    border-right-width: 0px;
+                    text-align: left;
+                    ">
+                Revolutions
+            </td>
+            <td style="
+                    border-style: solid;
+                    border-color: black;
+                    border-top-width: thin;
+                    border-bottom-width: thin;
+                    border-left-width: 0px;
+                    border-right-width: 0px;
+                    text-align: right;
+                    ">
+                <input
+                    type="number"
+                    style="font-size:14px; text-align: right; width: 75px; background-color:#FFEE9C"
+                    name="Rev"
+                    step='0.1'
+                    placeholder='0.0'
+                    value=300
+                    />
+            </td>
+            <td style="
+                    border-style: solid;
+                    border-color: black;
+                    border-top-width: thin;
+                    border-bottom-width: thin;
+                    border-left-width: 0px;
+                    border-right-width: thin;
+                    text-align: left;
+                    ">
+                &nbsp;
+            </td>
+            <td style="
+                    border-style: solid;
+                    border-color: black;
+                    border-top-width: thin;
+                    border-bottom-width: thin;
+                    border-left-width: thin;
+                    border-right-width: thick;
+                    text-align: left;
+                    ">
+                The number of spindle revolutions which will be achieved whilst moving the identified distance.
+            </td>
+        </tr>
+
+        <tr style="background-color: DarkGray;
+                vertical-align: bottom;
+                ">
+            <td colspan="4" style="
+                    border-style: solid;
+                    border-color: black;
+                    border-top-width: thick;
+                    border-bottom-width: medium;
+                    border-left-width: thick;
+                    border-right-width: thick;
+                    text-align: left;
+                    ">
+                <font color="White" size="4"><b>
+                Configuration Values
+                </b></font>
+            </td>
+        </tr>
+
+        <tr style="background-color: LightGray;
+                vertical-align: top;
+                ">
+            <td style="
+                    border-style: solid;
+                    border-color: black;
+                    border-top-width: thin;
+                    border-bottom-width: thin;
+                    border-left-width: thick;
+                    border-right-width: 0px;
+                    text-align: left;
+                    ">
+                Driver Pulses / Rev
+            </td>
+            <td style="
+                    border-style: solid;
+                    border-color: black;
+                    border-top-width: thin;
+                    border-bottom-width: thin;
+                    border-left-width: 0px;
+                    border-right-width: 0px;
+                    text-align: right;
+                    ">
+                <input
+                    type="number"
+                    style="font-size:14px; text-align: right; width: 75px; background-color:#FFEE9C"
+                    name="DrvrPulRev"
+                    step='1'
+                    placeholder='0'
+                    value=6400
+                    />
+            </td>
+            <td style="
+                    border-style: solid;
+                    border-color: black;
+                    border-top-width: thin;
+                    border-bottom-width: thin;
+                    border-left-width: 0px;
+                    border-right-width: thin;
+                    text-align: left;
+                    ">
+                &nbsp;pulses
+            </td>
+            <td style="
+                    border-style: solid;
+                    border-color: black;
+                    border-top-width: thin;
+                    border-bottom-width: thin;
+                    border-left-width: thin;
+                    border-right-width: thick;
+                    text-align: left;
+                    ">
+                <p style="margin-top: 0px;">This is the number of microsteps your driver is set to use per revolution of the stepper motor.
+
+                <p style="margin-bottom: 0px;">6400 is the default for ELFOS on the MDF Rose Engine 2.0.
+            </td>
+        </tr>
+
+        <tr style="background-color: LightGray;
+                vertical-align: top;
+                ">
+            <td style="
+                    border-style: solid;
+                    border-color: black;
+                    border-top-width: thin;
+                    border-bottom-width: thin;
+                    border-left-width: thick;
+                    border-right-width: 0px;
+                    text-align: left;
+                    ">
+                Motor Rev / Spindle Rev
+            </td>
+            <td style="
+                    border-style: solid;
+                    border-color: black;
+                    border-top-width: thin;
+                    border-bottom-width: thin;
+                    border-left-width: 0px;
+                    border-right-width: 0px;
+                    text-align: right;
+                    ">
+                <input
+                    type="number"
+                    style="font-size:14px; text-align: right; width: 55px; background-color:#FFEE9C"
+                    name="SpMotRev"
+                    step='1'
+                    placeholder='0'
+                    value=9
+                    />
+            </td>
+            <td style="
+                    border-style: solid;
+                    border-color: black;
+                    border-top-width: thin;
+                    border-bottom-width: thin;
+                    border-left-width: 0px;
+                    border-right-width: thin;
+                    text-align: left;
+                    ">
+                &nbsp;
+            </td>
+            <td style="
+                    border-style: solid;
+                    border-color: black;
+                    border-top-width: thin;
+                    border-bottom-width: thin;
+                    border-left-width: thin;
+                    border-right-width: thick;
+                    text-align: left;
+                    ">
+                <p style="margin-top: 0px;">This is the number of revolutions of the stepper motor is required to revolve the spindle 1 complete turn.
+
+                <p style="margin-bottom: 0px;">9 is the standard value for ELFOS on the MDF Rose Engine 2.0.
+            </td>
+        </tr>
+
+        <tr style="background-color: DarkBlue;
+                vertical-align: bottom;
+                ">
+            <td colspan="4" style="
+                    border-style: solid;
+                    border-color: black;
+                    border-top-width: thick;
+                    border-bottom-width: medium;
+                    border-left-width: thick;
+                    border-right-width: thick;
+                    text-align: left;
+                    ">
+                <font color=#FFEE9C size="4"><b>
+                Calculated Values
+                </b></font>
+            </td>
+        </tr>
+
+        <tr style="background-color: #E0E6F8;
+                vertical-align: top;
+                ">
+            <td style="
+                    border-style: solid;
+                    border-color: black;
+                    border-top-width: thin;
+                    border-bottom-width: thin;
+                    border-left-width: thick;
+                    border-right-width: 0px;
+                    text-align: left;
+                    ">
+                Stepover
+            </td>
+            <td style="
+                    border-style: solid;
+                    border-color: black;
+                    border-top-width: thin;
+                    border-bottom-width: thin;
+                    border-left-width: 0px;
+                    border-right-width: 0px;
+                    text-align: right;
+                    ">
+                <p id="Stepover" style="margin: 0px; padding: 0px;"></p>
+            </td>
+            <td style="
+                    border-style: solid;
+                    border-color: black;
+                    border-top-width: thin;
+                    border-bottom-width: thin;
+                    border-left-width: 0px;
+                    border-right-width: thin;
+                    text-align: left;
+                    ">
+                &nbsp;in
+            </td>
+            <td style="
+                    border-style: solid;
+                    border-color: black;
+                    border-top-width: thin;
+                    border-bottom-width: thin;
+                    border-left-width: thin;
+                    border-right-width: thick;
+                    text-align: left;
+                    ">
+                The distance the cutter is moved each revolution of the spindle.
+            </td>
+        </tr>
+
+        <tr style="background-color: #E0E6F8;
+                vertical-align: top;
+                ">
+            <td style="
+                    border-style: solid;
+                    border-color: black;
+                    border-top-width: thin;
+                    border-bottom-width: thin;
+                    border-left-width: thick;
+                    border-right-width: 0px;
+                    text-align: left;
+                    ">
+                Spindle RPM
+            </td>
+            <td style="
+                    border-style: solid;
+                    border-color: black;
+                    border-top-width: thin;
+                    border-bottom-width: thin;
+                    border-left-width: 0px;
+                    border-right-width: 0px;
+                    text-align: right;
+                    ">
+                <p id="RPM" style="margin: 0px; padding: 0px;"></p>
+            </td>
+            <td style="
+                    border-style: solid;
+                    border-color: black;
+                    border-top-width: thin;
+                    border-bottom-width: thin;
+                    border-left-width: 0px;
+                    border-right-width: thin;
+                    text-align: left;
+                    ">
+                &nbsp;RPM
+            </td>
+            <td style="
+                    border-style: solid;
+                    border-color: black;
+                    border-top-width: thin;
+                    border-bottom-width: thin;
+                    border-left-width: thin;
+                    border-right-width: thick;
+                    text-align: left;
+                    ">
+                This is the spindle's speed.
+            </td>
+        </tr>
+
+        <tr style="background-color: #E0E6F8;
+                vertical-align: top;
+                ">
+            <td style="
+                    border-style: solid;
+                    border-color: black;
+                    border-top-width: thin;
+                    border-bottom-width: thick;
+                    border-left-width: thick;
+                    border-right-width: 0px;
+                    text-align: left;
+                    ">
+                Time to complete
+            </td>
+            <td style="
+                    border-style: solid;
+                    border-color: black;
+                    border-top-width: thin;
+                    border-bottom-width: thick;
+                    border-left-width: 0px;
+                    border-right-width: 0px;
+                    text-align: right;
+                    ">
+                <p id="TimeReq" style="margin: 0px; padding: 0px;"></p>
+            </td>
+            <td style="
+                    border-style: solid;
+                    border-color: black;
+                    border-top-width: thin;
+                    border-bottom-width: thick;
+                    border-left-width: 0px;
+                    border-right-width: thin;
+                    text-align: left;
+                    ">
+                &nbsp;min
+            </td>
+            <td style="
+                    border-style: solid;
+                    border-color: black;
+                    border-top-width: thin;
+                    border-bottom-width: thick;
+                    border-left-width: thin;
+                    border-right-width: thick;
+                    text-align: left;
+                    ">
+                The estimated time this operation will take.
+            </td>
+        </tr>
+    </table>
+</form>
+
+<p>
+<center>
+    <button autofocus type="button" onclick="calcValues()" style="font-size:20px; background-color: #0404B4; color: white;">
+    Calculate Values
+    </button>
+</center>
+</body>
+</html>
