@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
+
+<!-- ################################################### -->
+<!-- Style Sheet for header image max size                                         -->
+<style>
+    img.Image { max-width: 300px;}
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for Horizontal Rule - Style 1                                       -->
+ <style>
+    hr.style1 {
+        border: 0;
+        height: 3px;
+        background-image: linear-gradient(to right,
+            rgba(0, 0, 0, 0),
+                rgba(184,134,11, 2),
+            rgba(0, 0, 0, 0));
+    }
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for Horizontal Rule - Style 2                                       -->
+ <style>
+    hr.style2 {
+        border: 0;
+        height: 6px;
+        background-image: linear-gradient(to right,
+            rgba(0, 0, 0, 0),
+                rgba(184,134,11, 2),
+            rgba(0, 0, 0, 0));
+    }
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for indented paragraphs                                             -->
+<style>
+    .indented { padding-left: 33pt; padding-right: 33pt; }
+</style>
+
+<!-- ################################################### -->
+<!-- Header                                                                                           -->
+<!-- ################################################### -->
+
+<head bgcolor=#E6E6E6>
+    <title>ELFOS</title>
+    <link rel="shortcut icon" type="image/ico" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="Images/favicon.png">
+
+    <font face="Georgia">
+
+    <table width="100%">
+        <col width="10%">
+        <col width="*">
+        <col width="10%">
+
+        <tr valign="bottom">
+            <td align="left">
+                <a href = "javascript:history.back()"><img src="Images/BackButton.png" width="30px"></a>
+            </td>
+            <td align="center">
+                <font color="DarkBlue" size="6"><a href="index.html" style="text-decoration: none; color: DarkBlue; "><b>ELFOS</b></a></font>
+            </td>
+            <td align="right">
+                <img src="Images/ELFOS-Logo.png" width="65px" class="Image">
+            </td>
+        </tr>
+    </table>
+    
+    <hr>
+</head>
+
+<!-- ################################################### -->
+<!-- Body                                                                                               -->
+<!-- ################################################### -->
+<body bgcolor=#E6E6E6 background="Images/DevBackground.png">
+<font face="Georgia">
+
+<b><font color="darkblue" size="6">Limit Switches and the EStop Function</font></b>
+
+<p><table align="center" width="100%">
+	<col width="*">
+    <col width="150px">
+    
+    <tr valign="top">
+        <td align="left">
+            <font color="DarkBlue">
+            <h2>Normally Open Switches</h2>
+            </font>
+            
+            <p>If you want to have more than one switch for the quick stop function, and you have configured your system to use switches which are <b>normally open</b>, you need to <b><u>wire them in parallel</b></u>. 
+
+            <p style="margin-bottom: 0;">This way, if any of the switches is depressed, the selected pin # is shorted to GND. 
+        </td>
+
+        <td align="right">
+            <a href="Images/LimitSwitches-NO.png" target="_new">
+            <img src="Images/LimitSwitches-NO.png" style="Border:1px Solid DarkGray; padding: 5px 5px; float: left;" width="100%" />
+            </a>
+        </td>
+    </tr>
+
+    <tr valign="top">
+        <td align="left" colspan=999>
+            <hr class="style0">
+        </td>
+    </tr>
+
+    <tr valign="top">
+        <td align="left">
+            <font color="DarkBlue">
+            <h2>Normally Closed Switches</h2>
+            </font>
+
+            <p>If you want to have more than one switch for the quick stop function, and you have configured your system to use switches which are <b>normally closed</b>, you need to <b><u>wire them in series</b></u>. 
+
+            <p style="margin-bottom: 0;">This way, if any of the switches is depressed, the pin # is no longer shorted to GND. 
+        </td>
+
+        <td align="right">
+            <a href="Images/LimitSwitches-NC.png" target="_new">
+            <img src="Images/LimitSwitches-NC.png" style="Border:1px Solid DarkGray; padding: 5px 5px; float: left;" width="100%" />
+            </a>
+        </td>
+    </tr>
+</table>
+
+<!-- ################################################### -->
+<!-- Footer                                                                                             -->
+<!-- ################################################### -->
+<hr>
+<font size="3">
+<table width="100%">
+    <col width="33%">
+    <col width="34%">
+    <col width="33%">
+
+    <tr valign="top">
+        <td align="left">
+            <a href="index-About.html">About us</a>
+        </td>
+        <td align="center">
+            Questions or comments?  Contact us at
+            <br><a href="mailto:ColvinTools@Gmail.com?Subject=General" >ColvinTools@Gmail.com</a>
+        </td>
+        <td align="right">
+            <a href="index-Disclaimers.html">Disclaimers</a>
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>

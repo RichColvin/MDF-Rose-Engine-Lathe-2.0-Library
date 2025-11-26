@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
+
+<!-- ################################################### -->
+<!-- Style Sheet for MathJax                             -->
+<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+
+<!-- ################################################### -->
+<!-- Style Sheet for Horizontal Rule - Style 0           -->
+<style>
+    hr.style0 {
+        border: 0;
+        height: 1px;
+        background-image: linear-gradient(to right,
+            rgba(184,134,11, 2),
+            rgba(184,134,11, 2),
+            rgba(184,134,11, 2));
+    }
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for Horizontal Rule - Style 1           -->
+<style>
+    hr.style1 {
+        border: 0;
+        height: 3px;
+        background-image: linear-gradient(to right,
+            rgba(0, 0, 0, 0),
+            rgba(184,134,11, 2),
+            rgba(0, 0, 0, 0));
+    }
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for Horizontal Rule - Style 2           -->
+<style>
+    hr.style2 {
+        border: 0;
+        height: 6px;
+        background-image: linear-gradient(to right,
+            rgba(0, 0, 0, 0),
+            rgba(184,134,11, 2),
+            rgba(0, 0, 0, 0));
+    }
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for indented paragraphs                 -->
+<style>
+    .indented { padding-left: 33pt; padding-right: 33pt; }
+</style>
+
+<!-- ################################################### -->
+<!-- <body background="Images/Background.png"> -->
+<font face="Georgia">
+
+<!-- ################################################### -->
+<!-- Style Sheet for header image max size                                         -->
+<!-- ################################################### -->
+<style>
+    img.Image { max-width: 500px;}
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for split screen                                                            -->
+<!-- ################################################### -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+    font-family: Georgia;
+    }
+
+.split1 {
+    height: calc(260px);
+    min-width: 450px;
+    max-width: 450px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+    }
+
+.split2 {
+    height: calc(100% - 130px);
+    width: calc(100% - 490px);
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+    }
+
+.split3 {
+    height: calc(100% - 410px);
+    min-width: 450px;
+    max-width: 450px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 280px;
+    }
+
+.left {
+    left: 0;
+    background-color: #111;
+    }
+
+.right {
+    right: 0;
+    background-color: blue;
+    }
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    }
+
+.centered img {
+    width: 150px;
+    border-radius: 50%;
+    }
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for footer                              -->
+<!-- ################################################### -->
+<style>
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #E6E6E6;
+    text-align: center;
+    }
+</style>
+
+<!-- ################################################### -->
+<!-- Header                                              -->
+<!-- ################################################### -->
+
+<head bgcolor=#E6E6E6>
+<title>ELFOS</title>
+<link rel="shortcut icon" type="image/ico" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="Images/favicon.png">
+
+<font face="Georgia">
+
+<table width="100%" border=0>
+    <col width="10%">
+    <col width="*">
+    <col width="10%">
+
+    <tr valign="bottom">
+        <td align="left">
+            &nbsp;
+        </td>
+        <td align="center" valign="top">
+            <font color="DarkBlue" size="6"><a href="index.html" style="text-decoration: none; color: DarkBlue; "><b>ELFOS</b></a></font>
+        </td>
+        <td align="right">
+            <img src="Images/ELFOS-Logo.png" width="65px" class="Image">
+        </td>
+    </tr>
+</table>
+
+</head>
+
+<!-- ################################################### -->
+<!-- Body - Right Side of the Screen                     -->
+<!-- ################################################### -->
+
+<body bgcolor=#E6E6E6 background="Images/DevBackground.png">
+
+<div style="margin: 59px 15px 0px 0px; padding: 0px; border: 0px solid black; text-align: left;  background-color:#E6E6E6; background-image: url(Images/DevBackground.png);" class="split1 right" >
+    
+    <img src = "Images/Screens/Recip-Axial.jpg" width = "450px" class = "Image" usemap="#html1">
+
+<!-- area map based on an image size of 450px wide -->
+    <map name = "html1">
+
+<!-- Home Screen -->
+        <area shape = "rect" coords = "1,1,44,39" 
+            href = "Home.html" target = "self"  />
+
+<!-- Sync Screen -->
+        <area shape = "rect" coords = "70,1,125,39" 
+            href = "Sync.html" target = "_self" />
+
+<!-- Reciprocation Screen -->
+        <area shape = "rect" coords = "127,1,181,39" 
+            href = "Rec-Radial.html" target = "_self" />
+
+<!-- Rose Screen -->
+        <area shape = "rect" coords = "183,1,237,39" 
+            href = "Rose.html" target = "_self" />
+
+<!-- Greek Key Screen -->
+        <area shape = "rect" coords = "239,1,307,39" 
+            href = "Grk.html" target = "_self" />
+
+<!-- Program Screen -->
+        <area shape = "rect" coords = "309,1,377,39" 
+            href = "Pgm.html" target = "_self" />
+
+<!-- Config Screen -->
+        <area shape = "rect" coords = "402,1,450,39" 
+            href = "Config-More.html" target = "self"  />
+
+<!-- Recip Type -->
+        <area shape = "circle" coords = "223,118,13" 
+            href = "Rec-Radial.html" />
+
+        <area shape = "circle" coords = "320,118,13" 
+            href = "Rec-Axial.html" />
+
+    </map>
+</div>
+    
+<!-- ################################################### -->
+<!-- Body - Bottom Right Side of the Screen              -->
+<!-- ################################################### -->
+
+<div style="margin: 330px 5px 5px 5px; padding: 5px; border: 1px solid black; text-align: left;  background-color:#E6E6E6; background-image: url(Images/DevBackground.png);" class="split3 right" >
+
+    <table width="100%">
+        <tr valign="Top">
+            <td valign="top">
+                <table align="Center" border="0">
+                    <tr height="30px">
+                        <td align="Center" bgcolor="#2A4F98" width="85px">
+                            <font color="White" size="2" face="Arial"><b>Enabled</b></font>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td valign="top" width="45%">
+                Indicates that the selected stepper motor is enabled even when not in use.  Touch this to change it to <b>Disabled</b>.
+            </td>
+            <td valign="top" rowspan=3>
+                The <a href="Config-More.html" target="_self">More</a> screen can be used to set this to be continuously Disabled or Enabled.  These buttons temporarily override that configuration setting.
+
+                <p style="margin-bottom: 0;"><b><u>Key Note</u>:</b>When using <a href="https://www.omc-stepperonline.com/digital-stepper-driver-10-42a-20-50vdc-for-nema-17-23-24-stepper-motor-dm542t.html" target="_new">DM542T stepper motor drivers</a>, this needs to be <b>Enabled</b> (especially for work using indexing), otherwise the position will be lost and the movement will not be predictable.
+            </td>
+        </tr>
+
+        <tr><td colspan=2><hr></td></tr>
+
+        <tr valign="Top">
+            <td valign="top">
+                <table align="Center" border="0">
+                    <tr height="30px">
+                        <td align="Center" bgcolor="#CD3C21" width="85px">
+                            <font color="White" size="2" face="Arial"><b>Disabled</b></font>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td valign="top">
+                Indicates that the selected stepper motor is only enabled when in use, and then disabled.  Touch this to change it to <b>Enabled</b>.
+            </td>
+        </tr>
+    </table>
+
+    <hr>
+    <table width="100%">
+        <tr valign="Top">
+            <td>
+                <img src="Images/Buttons/ButtonDarkBlue-In.png" width="50px">
+            </td>
+            <td>
+                Used to determine the direction of cut along the X or Z axis, depending on which is selected.  The pattern will run the pre-determined <b>Axial Distance</b> then stop and wait for return direction instruction.  User chooses whether to cut in both directions (either on the same cut path or on subsequent path) or retract cutter and return to the origin point without cutting.
+            </td>
+        </tr>
+    </table>
+
+    <hr>
+    <table width="100%">
+        <tr valign="Top">
+            <td>
+                <img src="Images/Buttons/ButtonDarkBlue-Stop.png" width="50px">
+            </td>
+            <td>
+                Used to stop the motion of the stepper motor.
+            </td>
+        </tr>
+    </table>
+
+    <hr>
+    <table width="100%">
+        <tr valign="Top">
+            <td>
+                <img src="Images/Buttons/ButtonDarkBlue-Return.png" width="50px">
+            </td>
+            <td>
+                Used to return the spindle or the selected axis to the pattern start point of the previous operation.
+                    
+                <p>When using this function, Be sure to stop and retract the cutter from the cut first.  The return path does not always follow the same path as the initial cut.  (Backlash and other factors come into play here.)
+                    
+                <p style="margin-bottom: 0;">The speed of the return action is set in the <a href="Config-Returns.html">Preferences | Returns</a> screen.
+            </td>
+        </tr>
+    </table>
+
+    <hr>
+    <table width="100%">
+        <tr valign="Top">
+            <td>
+                <img src="Images/Buttons/ButtonDarkBlue-Out.png" width="50px">
+            </td>
+            <td>
+                Used to determine the direction of cut along the X or Z axis, depending on which is selected.  The pattern will run the pre-determined <b>Axial Distance</b> then stop and wait for return direction instruction.  User chooses whether to cut in both directions (either on the same cut path or on subsequent path) or retract cutter and return to the origin point without cutting.
+            </td>
+        </tr>
+    </table>
+</div>
+
+<!-- ################################################### -->
+<!-- Body - Left Side of the Screen                      -->
+<!-- ################################################### -->
+
+    <div style="float: left; margin: 60px 5px 5px 5px; padding: 5px; border: 0px solid black; text-align: left;  background-color:#E6E6E6; background-image: url(Images/DevBackground.png);" class="split2 left" >
+                <table align="Center" border="0">
+        	        <tr height="35px">
+                	    <td align="Center" bgcolor="#2A4F98" width="300px">
+                	        <font color="White" size="4"><b>Reciprocation
+                            Axis Screen<br>(Axial)</b></font>
+                	    </td>
+        	        </tr>
+                </table>
+
+            <p><b>Purpose:</b>  Synchronizes Spindle and Auxiliary Axis to produce a sharp-pointed reciprocating pattern along the circumferential surface of a cylindrical workpiece (typically around the Z axis):</p>
+
+            <table width="100%">
+                <col width="200px">
+                <col width="*">
+                <tr>
+                    <td align="left">
+                        <center>
+                            <img src="Images/Recip03.png" height="30px"  width="200px">
+                        </center>
+                        <img src="Images/Axes.png" height="200px">
+                    </td>
+                </tr>
+            </table>
+
+            <p>It works by alternately reversing the Z, X, M3, or M4 axis direction whilst the spindle continues rotating in the same direction.    The result would be a pattern "wrapped around the object" as it rotated.
+            
+            <p><b><I>Starting with version 3.0.8</I></b>, there is a progress bar displayed just above the bottom row of buttons.
+        
+            <hr class="style1">
+
+            <p><b>Usage Notes:</b> It is important to develop a rhythm of steps which are constantly followed.  Skipping one of the steps will cause unwanted cuts to be added to your piece.
+            
+            <p>Be sure to setup for the first series of cuts to allow the backlash to be absorbed before beginning the cuts.  This is the location where the cutter will return to after each series, so giving a little space is recommended.
+
+            <p>After setting up for the first series of cuts,
+            
+                <ol>
+                    <li>Start the cutter (e.g., the overhead drive)</li>
+                    
+                    <li>Engage the cutter to the desired depth.  Record the setting for this so it can be repeated.</li>
+                    
+                    <li>Start the first series, using either the <img src="Images/Buttons/ButtonDarkBlue-In.png" width="35px" /> or <img src="Images/Buttons/ButtonDarkBlue-Out.png" width="35px" /> button.</li>
+                    
+                    <li>Retract the cutter from the piece.</li>
+                    
+                    <li>Return the cutter to the start position using the <img src="Images/Buttons/ButtonDarkBlue-Return.png" width="35px" /> button.</li>
+                    
+                    <li>Index the cut using one of the 4 indexing buttons.    The one used is not relevant; however it is best to stay with the same one for each set of indexes.</li>
+                    
+                    <table>
+                        <tr height="30px">
+                            <td>
+                                <img src="Images/Buttons/ButtonDarkBlue-In.png" height="30px" />
+                            </td>
+                            <td>
+                                &nbsp;
+                            </td>
+                            <td>
+                                <img src="Images/Buttons/ButtonDarkBlue-Out.png" height="30px" />
+                            </td>
+                            <td>
+                                &nbsp;
+                            </td>
+                            <td align="Center" bgcolor="#2A4F98" width="35px">
+                                <font color="White" size="3" face="Arial"><b>CCW</b></font>
+                            </td>
+                            <td>
+                                &nbsp;
+                            </td>
+                            <td align="Center" bgcolor="#2A4F98" width="35px">
+                                <font color="White" size="3" face="Arial"><b>CW</b></font>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <li>Continue on to the next cut by returning to step 1.</li>
+                </ol>
+
+    <table width="100%">
+        <col width="125px">
+        <col width="*">
+
+<!-- ################################################### -->
+<!-- Controls   -->
+
+        <tr>
+            <td colspan=999>
+                <hr class="style2">
+            </td>
+        </tr>
+
+
+        <tr valign="top">
+            <td>
+                <img src="Images/Buttons/ButtonDarkBlue-In.png" width="35px">
+                <p><img src="Images/Buttons/ButtonDarkBlue-Out.png" width="35px">
+
+                <p><span style="background-color: LightGray"><b>&nbsp;Indexes&nbsp;</b></span>
+            </td>
+
+            <td>
+                <p style="margin-top: 0;">These buttons are used to move the cutter along the Z or X axis to the next pattern starting position.  The amount of movement is set on the <a href="Mov.html">Move Screen</a>.
+                
+                <p>After one indexing is executed, that direction's button will be &quot;lit&quot; (the arrow will change to red).  This makes it easier to index again in the same direction.
+                
+                <p>The value shown in gray indicates the number of times the axis has been indexed. It is decremented each time the stepper motor is moved counter clockwise, and incremented when moved clockwise.
+                                
+                <p style="margin-bottom: 0;"><b>Note:</b>  the speed for the indexing movement is set on the Move Screen.
+
+            </td>
+        </tr>
+
+        <tr valign="top">
+            <td colspan=999>
+                <hr class="style1">
+            </td>
+        </tr>
+
+        <tr valign="top">
+            <td>
+                <table border="0">
+                    <tr height="30px">
+                        <td align="Center" bgcolor="#2A4F98" width="35px">
+                            <font color="White" size="3" face="Arial"><b>CCW</b></font>
+                        </td>
+                    </tr>
+                </table>
+
+                <table border="0">
+                    <tr height="30px">
+                        <td align="Center" bgcolor="#2A4F98" width="35px">
+                            <font color="White" size="3" face="Arial"><b>CW</b></font>
+                        </td>
+                    </tr>
+                </table>
+                
+                <p><span style="background-color: LightGray"><b>&nbsp;Indexes&nbsp;</b></span>
+            </td>
+
+            <td>
+                <p style="margin-top: 0;">These buttons are used to index to the next pattern starting position.  The indexing is for the:
+                    <ul>
+                        <li>Spindle,</li>
+                        <li>M3,</li>
+                        <li>M4, or</li>
+                        <li>Spindle &amp; M3 (in Synchro mode)</li>
+                    </ul>
+                
+                <p>The amount of movement is set on the <a href="Ind.html">Index Screen</a>.
+                
+                <p>After one indexing is executed, that direction's button will be &quot;lit&quot; (the letters will change to red).  This makes it easier to index again in the same direction.
+                
+                <p>The value shown in gray indicates the number of times the axis has been indexed. It is decremented each time the stepper motor is moved counter clockwise, and incremented when moved clockwise.
+                                
+                <p style="margin-bottom: 0;"><b>Note:</b>  the speed for the indexing movement is set on the Index Screen.
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan=999>
+                <hr class="style1">
+            </td>
+        </tr>
+
+        <tr valign="top">
+            <td>
+                <b>Radial</b>
+                <img src="Images/CircleUnChecked.png" width="20px" height="20px">
+            </td>
+            <td>
+                Used to produce the pattern on the circumferential surface.
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan=999>
+                &nbsp;
+            </td>
+        </tr>
+
+        <tr valign="top">
+            <td>
+                <a href="Rec.html" style="text-decoration: none"><font color="black">
+                <b>Axial</b>
+                <img src="Images/CircleChecked.png" width="20px" height="20px">
+                </font></a>
+            </td>
+            <td>
+<!--
+                <div style="float: right; width: 200px; margin: 5px 5px 5px 5px; padding: 5px; border: 1px solid black; text-align: left; background-color:#2A4F98">
+                    <font color="White" size="2">Touch <b>Axial</b> on the screen image to the right to see the details for these axes.</font>
+                </div>
+-->
+
+                Used to produce the pattern on the longitudinal surface.
+            </td>
+        </tr>
+
+<!-- ################################################### -->
+<!-- Presets   -->
+
+        <tr>
+            <td colspan=999>
+                <hr class="style1">
+            </td>
+        </tr>
+
+        <tr>
+            <td align="center" colspan=999>
+                <table width="100%">
+                    <tr>
+                        <td align="right" valign="middle" width="50px">
+                            <b>1</b>
+                        </td>
+                        <td align="left" valign="middle" width="60px">
+                            <img src="Images/CircleChecked.png" width="20px" height="20px">
+                        </td>
+                        <td valign="top" width="300px">
+                            This is the original pattern.
+                        </td>
+                        <td align="left" valign="top" width="*">
+                            <img src="Images/Recip01.png" height="30px" width="150px">
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td align="right" valign="middle">
+                            <b>2</b>
+                        </td>
+                        <td align="left" valign="middle">
+                            <img src="Images/CircleUnChecked.png" width="20px" height="20px">
+                        </td>
+                        <td>
+                            This gives a square wave pattern.
+                        </td>
+                        <td align="left" valign="top">
+                            <img src="Images/Recip02.png" height="30px" width="150px">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td align="right" valign="middle">
+                            <b>3</b>
+                        </td>
+                        <td align="left" valign="middle">
+                            <img src="Images/CircleUnChecked.png" width="20px" height="20px">
+                        </td>
+                        <td>
+                            This gives a sawtooth pattern.
+                        </td>
+                        <td align="left" valign="top">
+                            <img src="Images/Recip03.png" height="30px" width="150px">
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan=999>
+                <hr class="style1">
+            </td>
+        </tr>
+
+        <tr valign="top">
+            <td>
+                <b>No Last Leg</b>
+                <img src="Images/SquareChecked.png" width="20px" height="20px">
+            </td>
+            <td>
+                This option can be used by the artist on pattern 2 to have the system not cut the final vertical leg of the pattern.  This only works for pattern 2.
+            </td>
+        </tr>
+
+<!-- ################################################### -->
+<!-- Variables   -->
+
+        <tr>
+            <td colspan=999>
+                <hr class="style1">
+            </td>
+        </tr>
+
+        <tr valign="top">
+            <td>
+                <span style="background-color: #FFEE9C"><b>&nbsp;Grow +/-&nbsp;</b></span>
+            </td>
+            <td>
+                <p style="margin-top: 0;">This can be used to adjust the waves as the cutter progresses down a conical form.  The values can be positive, 0, or negative.
+                
+                <p>Values are added or subtracted from each leg's length after the first wave.
+
+                <p style="margin-bottom: 0;"><i>NOTE:  The option was introduced in version 3.0.8.</I>                
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan=999>
+                <hr class="style1">
+            </td>
+        </tr>
+
+        <tr valign="top">
+            <td>
+                <span style="background-color: #FFEE9C"><b>&nbsp;Waves&nbsp;</b></span>
+            </td>
+            <td>
+                This sets the number of individual waves to be cut along the cylinder.
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan=999>
+                &nbsp;
+            </td>
+        </tr>
+
+        <tr valign="top">
+            <td>
+                <span style="background-color: #FFEE9C"><b>&nbsp;Spindle Amplitude&nbsp;</b></span>
+            </td>
+            <td>
+                This sets the &quot;height&quot; of each wave in degrees of rotation.
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan=999>
+                &nbsp;
+            </td>
+        </tr>
+
+        <tr valign="top">
+            <td>
+                <span style="background-color: #FFEE9C"><b>&nbsp;Axis Distance&nbsp;</b></span>
+            </td>
+            <td>
+                This determines the width for the entire pattern (amount of linear axis movement) and is dependent upon value entered in the <a href="Config-BAxis.html">Configuration Screen</a> for <b>Distance/360</b> for the axis you are using.
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan=999>
+                <hr class="style1">
+            </td>
+        </tr>
+
+        <tr valign="top">
+            <td>
+                <table border="0">
+                    <tr height="30px">
+                        <td align="Center" bgcolor="#2A4F98" width="75px">
+                            <font color="White" size="2" face="Arial"><b>Synchro</b></font>
+                        </td>
+                    </tr>
+                </table>
+                
+                <p style="margin-bottom: 0;"><span style="background-color: #FFEE9C"><b>
+                &nbsp; Sync % &nbsp;
+                </b></span>
+                
+            </td>
+            <td>
+                <p style="margin-top: 0;">This option is used to run the spindle and M3 stepper motors synchronously at the specified percentages. Negative numbers run the spindle and M3 in opposite directions.
+
+                <p>This option only works if the Synchro function button is enabled (not red).
+
+                <p style="margin-bottom: 0;">This function is useful for activities such as having the spindle and the rosette(s) run at different revolutions per minute (i.e., a second stepper motor is driving the rosette's rotation).
+            </td>
+        </tr>
+        
+<!-- ################################################### -->
+<!-- Stepper Motor Controls   -->
+
+        <tr>
+            <td colspan=999>
+                <hr class="style1">
+            </td>
+        </tr>
+
+        <tr valign="top">
+            <td>
+                <b>Speed</b>
+            </td>
+            <td>
+                The controls on the left and right side of the screen are for controlling the respective stepper motor's speed and acceleration.
+
+                <p>To change the Max Speed, touch the number, and you will be presented with the <a href="NumberPad.html">Number Pad Screen</a>.</p>
+
+                <p>The slider is a red bar that can be moved up to increase the speed, or down to decrease it.
+
+                
+                <p style="margin-bottom: 0;"><b>Want to understand this better?</b>  More details about the stepper motor speeds are on <a href="Speed.html">this page</a>.
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan=999>
+                &nbsp;
+            </td>
+        </tr>
+
+        <tr valign="top">
+            <td>
+                <b>Acceleration</b>
+            </td>
+            <td>
+                The bottom number (5500 on the left; 5000 on the right) is the acceleration for the stepper motor.
+
+                <p>To change this value, touch the number, and you will be presented with the <a href="NumberPad.html">Number Pad Screen</a>.
+
+            </td>
+        </tr>
+
+    </table>
+
+<!-- ################################################### -->
+<!-- Limit Switches -->
+
+    <hr class="style2">
+    <p><font color="DarkBlue" size="4"><b><a name="LimitSwitches">Limit Switches</a></font></b>
+    <p>Limit switches can be used with this function.  The pins used for this are configured on the <a href="Config-Limits.html">Limit Switches Configuration Screen</a>.  (More information about the implementation of limit switches is on that page.)
+
+</div>
+
+<!-- ################################################### -->
+<!-- Footer                                                                                             -->
+<!-- ################################################### -->
+<div class="footer">
+    <hr class="style0">
+    <font size="3">
+    <table width="100%">
+        <col width="75%">
+        <col width="25%">
+
+        <tr valign="top">
+            <td align="left">
+                Questions or comments?  Contact us at
+                <br><a href="mailto:ColvinTools@Gmail.com?Subject=General" >ColvinTools@Gmail.com</a>
+            </td>
+            <td align="right">
+                <a href="../index-Disclaimers.html">Disclaimers</a>
+            </td>
+        </tr>
+    </table>
+</div>
+
+</body>
+</html>

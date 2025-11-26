@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
+
+<!-- ################################################### -->
+<!-- Style Sheet for MathJax                                                                 -->
+<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+
+<!-- ################################################### -->
+<!-- Style Sheet for Horizontal Rule - Style 0                                       -->
+ <style>
+    hr.style0 {
+        border: 0;
+        height: 1px;
+        background-image: linear-gradient(to right,
+                rgba(184,134,11, 2),
+                rgba(184,134,11, 2),
+                rgba(184,134,11, 2));
+    }
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for Horizontal Rule - Style 1                                       -->
+ <style>
+    hr.style1 {
+        border: 0;
+        height: 3px;
+        background-image: linear-gradient(to right,
+            rgba(0, 0, 0, 0),
+                rgba(184,134,11, 2),
+            rgba(0, 0, 0, 0));
+    }
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for Horizontal Rule - Style 2                                       -->
+ <style>
+    hr.style2 {
+        border: 0;
+        height: 6px;
+        background-image: linear-gradient(to right,
+            rgba(0, 0, 0, 0),
+                rgba(184,134,11, 2),
+            rgba(0, 0, 0, 0));
+    }
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for indented paragraphs                                             -->
+<style>
+    .indented { padding-left: 33pt; padding-right: 33pt; }
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for header image max size                                         -->
+<!-- ################################################### -->
+<style>
+    img.Image { max-width: 500px;}
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for split screen                        -->
+<!-- ################################################### -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+    body {
+        font-family: Georgia;
+    }
+
+.split1 {
+  height: 270px;
+  min-width: 450px;
+  max-width: 450px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.split2 {
+  height: calc(100% - 130px);
+  width: calc(100% - 490px);
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.split3 {
+  height: calc(100% - 420px);
+  min-width: 450px;
+  max-width: 450px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 280px;
+}
+
+.left {
+  left: 0;
+  background-color: #111;
+}
+
+.right {
+  right: 0;
+  background-color: blue;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.centered img {
+  width: 150px;
+  border-radius: 50%;
+}
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for footer                                                                     -->
+<!-- ################################################### -->
+<style>
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: #E6E6E6;
+   text-align: center;
+}
+</style>
+
+<!-- ################################################### -->
+<!-- Header                                              -->
+<!-- ################################################### -->
+
+<head bgcolor=#E6E6E6>
+    <title>ELFOS</title>
+    <link rel="shortcut icon" type="image/ico" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="Images/favicon.png">
+
+<font face="Georgia">
+
+<table width="100%" border=0>
+        <col width="10%">
+        <col width="*">
+        <col width="10%">
+
+    <tr valign="bottom">
+        <td align="left">
+            &nbsp;
+        </td>
+        <td align="center" valign="top">
+            <font color="DarkBlue" size="6"><a href="index.html" style="text-decoration: none; color: DarkBlue; "><b>ELFOS</b></a></font>
+        </td>
+        <td align="right">
+            <img src="Images/ELFOS-Logo.png" width="65px" class="Image">
+        </td>
+    </tr>
+</table>
+
+</head>
+
+<!-- ################################################### -->
+<!-- Body - Top Right Side of the Screen                 -->
+<!-- ################################################### -->
+
+<body bgcolor=#E6E6E6 background="Images/DevBackground.png">
+<font face="Georgia">
+<table width="100%">
+<tr><td>
+
+<div style="float: right; width: 455px; margin: 0px 5px 0px 0px; padding: 5px; border: 0px solid black; text-align: center; ">
+    <img src = "Images/Screens/Main1.jpg" width = "450px" class = "Image" usemap="#html1">
+
+<!-- area map based on an image size of 450px wide -->
+    <map name = "html1">
+
+<!-- Home -->
+        <area shape = "rect" coords = "1,1,44,39" 
+            href = "Home.html" target = "self"  />
+
+<!-- Main Screen -->
+        <area shape = "rect" coords = "79,1,133,39" 
+            href = "Main.html" target = "self"  />
+
+<!-- One Screen -->
+        <area shape = "rect" coords = "135,1,189,39" 
+            href = "One.html" target = "self"  />
+
+<!-- Index Screen -->
+        <area shape = "rect" coords = "191,1,245,39" 
+            href = "Ind.html" target = "self"  />
+
+<!-- Move Screen -->
+        <area shape = "rect" coords = "247,1,301,39" 
+            href = "Mov.html" target = "self"  />
+
+<!-- Multi-Sync Screen -->
+        <area shape = "rect" coords = "303,1,371,39" 
+            href = "Multi.html" target = "self"  />
+
+<!-- Config Screen -->
+        <area shape = "rect" coords = "403,1,450,39" 
+            href = "Config-More.html" target = "self"  />
+
+    </map>
+</div>
+
+<!-- ################################################### -->
+<!-- Body - Bottom Right Side of the Screen              -->
+<!-- ################################################### -->
+
+<div style="margin: 350px 5px 5px 5px; padding: 5px; border: 1px solid black; text-align: left;  background-color:#E6E6E6; background-image: url(Images/DevBackground.png);" class="split3 right" >
+    
+    <table width="100%">
+        <tr valign="Top">
+            <td valign="top">
+                <table align="Center" border="0">
+                    <tr height="30px">
+                        <td align="Center" bgcolor="#1482C3" width="85px">
+                                <font color="White" size="2" face="Arial"><b>Enabled</b></font>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td valign="top" width="45%">
+                Indicates that the selected stepper motor is enabled even when not in use.  Touch this to change it to <b>Disabled</b>.
+            </td>
+            <td valign="top" rowspan=3>
+                The <a href="Config-More.html" target="_self">More</a> screen can be used to set this to be continuously Disabled or Enabled.  These buttons temporarily override that configuration setting.
+
+                <p style="margin-bottom: 0;"><b><u>Key Note</u>:</b>When using <a href="https://www.omc-stepperonline.com/digital-stepper-driver-10-42a-20-50vdc-for-nema-17-23-24-stepper-motor-dm542t.html" target="_new">DM542T stepper motor drivers</a>, this needs to be <b>Enabled</b> (especially for work using indexing), otherwise the position will be lost and the movement will not be predictable.
+            </td>
+        </tr>
+
+        <tr><td colspan=2><hr></td></tr>
+
+        <tr valign="Top">
+            <td valign="top">
+                <table align="Center" border="0">
+                    <tr height="30px">
+                        <td align="Center" bgcolor="#CD3C21" width="85px">
+                            <font color="White" size="2" face="Arial"><b>Disabled</b></font>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td valign="top">
+                Indicates that the selected stepper motor is only enabled when in use, and then disabled.  Touch this to change it to <b>Enabled</b>.
+            </td>
+        </tr>
+    </table>
+
+    <hr>
+    <table width="100%">
+        <tr valign="Top">
+            <td>
+                <img src="Images/Buttons/ButtonMain-CCW.png" width="35px">
+            </td>
+            <td>
+                Used to turn the spindle counter-clockwise.  On a traditional lathe, this is considered forward.
+            </td>
+        </tr>
+    </table>
+
+    <hr>
+    <table width="100%">
+        <tr valign="Top">
+            <td>
+                <img src="Images/Buttons/ButtonMain-CW.png" width="35px">
+            </td>
+            <td>
+                Used to turn the spindle clockwise.  On a traditional lathe, this is considered reverse.  To change the direction of the spindle, you must stop it first.  You cannot directly swap between clockwise and counter-clockwise.
+            </td>
+        </tr>
+    </table>
+
+    <hr>
+    <table width="100%">
+        <tr valign="Top">
+            <td>
+                <img src="Images/Buttons/ButtonMain-Stop.png" width="35px">
+            </td>
+            <td>
+                Used to stop the motion of the stepper motor.
+            </td>
+        </tr>
+    </table>
+
+    <hr>
+    <table width="100%">
+        <tr valign="Top">
+            <td>
+                <img src="Images/Buttons/ButtonMain-Return.png" width="35px">
+            </td>
+            <td>
+                Used to return the spindle or the selected axis to the start point of the previous operation.
+                    
+                <p>When using this function, Be sure to stop and retract the cutter from the cut first.  The return path does not always follow the same path as the initial cut.  (Backlash and other factors come into play here.)
+                    
+                <p style="margin-bottom: 0;">The speed of the return action is set in the <a href="Config-Returns.html">Preferences | Returns</a> screen.
+            </td>
+        </tr>
+    </table>
+
+    <hr>
+    <table width="100%">
+        <tr valign="Top">
+            <td>
+                <img src="Images/Buttons/ButtonMain-In.png" width="35px">
+            </td>
+            <td>
+                Used to move the item on the respective axis (e.g., a <a href="https://www.otbok.info/OT%20-%20LnT-Term-CuttingFrame.html" >cutting frame</a>) in the negative direction.  If this is the Z axis, that is to the left; for the X, it is towards the back of the lathe.
+                    
+                <p style="margin-bottom: 0;"><div style="float: right; width: 40px; 1px 1px 1px 1px; padding: 1px; border: 0px solid black; text-align: center; background-color:#White">
+                    <img src="Images/ButtonMain-CW.png" width="100%">
+                </div>
+                    
+                <b><u>Note</u>:</b>  This will display as shown if the M3 or M4 axis is selected, and that axis is set to radial (vs. linear).
+            </td>
+        </tr>
+    </table>
+
+    <hr>
+    <table width="100%">
+        <tr valign="Top">
+            <td>
+                <img src="Images/Buttons/ButtonMain-Out.png" width="35px">
+            </td>
+            <td>
+                Used to move the item on the respective axis (e.g., a <a href="https://www.otbok.info/OT%20-%20LnT-Term-CuttingFrame.html" >cutting frame</a>) in the positive direction.  If this is the Z axis, that is to the right; for the X, it is towards the front of the lathe.
+                    
+                <p style="margin-bottom: 0;"><div style="float: right; width: 40px; 1px 1px 1px 1px; padding: 1px; border: 0px solid black; text-align: center; background-color:#White">
+                    <img src="Images/ButtonMain-CCW.png" width="100%">
+                </div>
+                    
+                <b><u>Note</u>:</b>  This will display as shown if the M3 or M4 axis is selected, and that axis is set to radial (vs. linear).
+            </td>
+        </tr>
+    </table>
+</div>
+
+<!-- ################################################### -->
+<!-- Body - Left Side of the Screen                      -->
+<!-- ################################################### -->
+
+<div style="float: left; margin: 60px 5px 5px 5px; padding: 5px; border: 0px solid black; text-align: left;  background-color:#E6E6E6; background-image: url(Images/DevBackground.png);" class="split2 left" >
+        <table align="Center" border="0">
+            <tr height="35px">
+                <td align="Center" bgcolor="#1482C3" width="300px">
+                    <font color="White" size="4"><b>Main Screen</b></font>
+                </td>
+            </tr>
+        </table>
+
+        <p><b>Purpose:</b>  This screen allows for direct control of
+            <ul>
+                <li>the spindle's speed and direction, and </li>
+                <li>the axis speed and direction for one other, independent stepper motor.</li>
+            </ul>
+
+        <p>This screen is typically used for continuous spindle and/or continuous axis motion (turning or facing cuts, continuous rose engine patterns on cylindrical or face surfaces, etc.).
+
+    <table width="100%">
+        <col width="125px">
+        <col width="*">
+
+<!-- ################################################### -->
+<!-- Stepper Motor Controls   -->
+
+        <tr>
+            <td colspan=999>
+                <hr class="style2">
+            </td>
+        </tr>
+
+        <tr valign="top">
+            <td colspan=999>
+                <table align="left"><tr valign="top"><td width="200px">
+                
+                <table align="left"><tr valign="middle"><td><b>Z</b></td> <td><img src="Images/CircleUnChecked.png" width="20px" height="20px"></td></tr></table>
+                <table align="left"><tr valign="middle"><td><b>X</b></td> <td><img src="Images/CircleUnChecked.png" width="20px" height="20px"></td></tr></table>
+                <table align="left"><tr valign="middle"><td><b>M3</b></td> <td><img src="Images/CircleUnChecked.png" width="20px" height="20px"></td></tr></table>
+                <table align="left"><tr valign="middle"><td><b>M4</b></td> <td><img src="Images/CircleChecked.png" width="20px" height="20px"></td></tr></table>
+                
+                </td>
+                <td>
+                these radio buttons are used to select the axis of movement (vs. the Spindle).
+                
+                <p style="margin-bottom: 0; margin-right: 5px;">The M3 axis is shown in the image as red.  This is due to the Synchro button being engaged; thusly the M3 axis is not available to be controlled separatedly using the controls on the right side of the screen.
+                </td></tr></table>
+            </td>
+        </tr>
+        
+<!-- ################################################### -->
+<!-- Variables   -->
+
+        <tr>
+            <td colspan=999>
+                <hr class="style1">
+            </td>
+        </tr>
+
+        <tr valign="top">
+            <td>
+                <p style="margin-top: 0; padding-left: 5pt;"><img src="Images/Synchro Blue.jpg" width="60px">
+                
+                <p style="margin-bottom: 0;"><span style="background-color: #FFEE9C"><b>
+                &nbsp; Sync % &nbsp;
+                </b></span>
+                
+            </td>
+            <td>
+                <p style="margin-top: 0;">This option is used to run the spindle and M3 stepper motors synchronously at the specified percentages. Negative numbers run the spindle and M3 in opposite directions.
+
+                <p>This option only works if the Synchro function button is enabled (not red).
+
+                <p style="margin-bottom: 0;">This function is useful for activities such as having the spindle and the rosette(s) run at different revolutions per minute (i.e., a second stepper motor is driving the rosette's rotation).
+            </td>
+        </tr>
+        
+<!-- ################################################### -->
+<!-- Speed & Acceleration   -->
+
+        <tr>
+            <td colspan=999>
+                <hr class="style1">
+            </td>
+        </tr>
+
+        <tr valign="top">
+            <td>
+                <b>Speed</b>
+            </td>
+            <td>
+                The controls on the left and right side of the screen are for controlling the respective stepper motor's speed and acceleration.
+
+                <p>To change the Max Speed, touch the number, and you will be presented with the <a href="NumberPad.html">Number Pad Screen</a>.</p>
+
+                <p>The slider is a red bar that can be moved up to increase the speed, or down to decrease it.
+
+                <p style="margin-bottom: 0;"><b>Want to understand this better?</b>  More details about the stepper motor speeds are on <a href="Speed.html">this page</a>.
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan=999>
+                &nbsp;
+            </td>
+        </tr>
+
+        <tr valign="top">
+            <td>
+                <b>Acceleration</b>
+            </td>
+            <td>
+                The bottom number (1024 on the left; 500 on the right) is the acceleration for the stepper motor.
+
+                <p>To change this value, touch the number, and you will be presented with the <a href="NumberPad.html">Number Pad Screen</a>.
+
+            </td>
+        </tr>
+
+    </table>
+
+<!-- ################################################### -->
+<!-- Limit Switches -->
+
+    <hr class="style2">
+    <p><font color="DarkBlue" size="4"><b>M3 and M4 Axes</font></b>
+    <p>If the M3 or M4 is set to be linear movement, the screen will show as below. 
+    
+    <center>
+        <img  src = "Images/Screens/Main4.png" width = "400px">
+    </center>
+
+<!-- ################################################### -->
+<!-- Limit Switches -->
+
+    <hr class="style2">
+    <p><font color="DarkBlue" size="4"><b><a name="LimitSwitches">Limit Switches &amp; EStop</a></font></b>
+    <p>Limit switches can be used with this function.  The pins used for this are configured on the <a href="Config-Limits.html">Limit Switches Configuration Screen</a>.  (More information about the implementation of limit switches is on that page.)
+    
+    <p>If the EStop is engaged when using this function, all the movement buttons will turn red.
+    
+<!-- Limit Switches 
+    <p><center><img  src="Images/EStop_Main.jpg" width = "50%"></center>
+ -->
+
+    <p>To reset:
+        <div style="float: right; width: 40px; 1px 1px 1px 1px; padding: 1px; border: 0px solid black; text-align: center; background-color:#White">
+            <img  src="Images/ButtonEStop-Stop.jpg" width="100%">
+        </div>
+                
+        <ol>
+            <li>Ensure the EStop switch is not closed, and</li>
+            <li>Touch one of the stop buttons.</li>
+        </ol>
+
+</div>
+
+<!-- ################################################### -->
+<!-- Footer                                                                                             -->
+<!-- ################################################### -->
+<div class="footer">
+    <hr class="style0">
+    <font size="3">
+    <table width="100%">
+        <col width="75%">
+        <col width="25%">
+
+        <tr valign="top">
+            <td align="left">
+                Questions or comments?  Contact us at
+                <br><a href="mailto:ColvinTools@Gmail.com?Subject=General" >ColvinTools@Gmail.com</a>
+            </td>
+            <td align="right">
+                <a href="../index-Disclaimers.html">Disclaimers</a>
+            </td>
+        </tr>
+    </table>
+
+</body>
+</html>

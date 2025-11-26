@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
+
+<!-- ################################################### -->
+<!-- Style Sheet for MathJax                             -->
+<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+
+<!-- ################################################### -->
+<!-- Style Sheet for Horizontal Rule - Style 0           -->
+<style>
+    hr.style0 {
+        border: 0;
+        height: 1px;
+        background-image: linear-gradient(to right,
+            rgba(184,134,11, 2),
+            rgba(184,134,11, 2),
+            rgba(184,134,11, 2));
+    }
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for Horizontal Rule - Style 1           -->
+<style>
+    hr.style1 {
+        border: 0;
+        height: 3px;
+        background-image: linear-gradient(to right,
+            rgba(0, 0, 0, 0),
+            rgba(184,134,11, 2),
+            rgba(0, 0, 0, 0));
+    }
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for Horizontal Rule - Style 2           -->
+<style>
+    hr.style2 {
+        border: 0;
+        height: 6px;
+        background-image: linear-gradient(to right,
+            rgba(0, 0, 0, 0),
+            rgba(184,134,11, 2),
+            rgba(0, 0, 0, 0));
+    }
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for indented paragraphs                 -->
+<style>
+    .indented { padding-left: 33pt; padding-right: 33pt; }
+</style>
+
+<!-- ################################################### -->
+<!-- <body background="Images/Background.png"> -->
+<font face="Georgia">
+
+<!-- ################################################### -->
+<!-- Style Sheet for header image max size                                         -->
+<!-- ################################################### -->
+<style>
+    img.Image { max-width: 500px;}
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for split screen                                                            -->
+<!-- ################################################### -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+    font-family: Georgia;
+    }
+
+.split1 {
+    height: calc(260px);
+    min-width: 450px;
+    max-width: 450px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+    }
+
+.split2 {
+    height: calc(100% - 130px);
+    width: calc(100% - 490px);
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+    }
+
+.split3 {
+    height: calc(100% - 410px);
+    min-width: 450px;
+    max-width: 450px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 280px;
+    }
+
+.left {
+    left: 0;
+    background-color: #111;
+    }
+
+.right {
+    right: 0;
+    background-color: blue;
+    }
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    }
+
+.centered img {
+    width: 150px;
+    border-radius: 50%;
+    }
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for footer                              -->
+<!-- ################################################### -->
+<style>
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #E6E6E6;
+    text-align: center;
+    }
+</style>
+
+<!-- ################################################### -->
+<!-- Header                                              -->
+<!-- ################################################### -->
+
+<head bgcolor=#E6E6E6>
+<title>ELFOS</title>
+<link rel="shortcut icon" type="image/ico" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="Images/favicon.png">
+
+<font face="Georgia">
+
+<table width="100%" border=0>
+    <col width="10%">
+    <col width="*">
+    <col width="10%">
+
+    <tr valign="bottom">
+        <td align="left">
+            &nbsp;
+        </td>
+        <td align="center" valign="top">
+            <font color="DarkBlue" size="6"><a href="index.html" style="text-decoration: none; color: DarkBlue; "><b>ELFOS</b></a></font>
+        </td>
+        <td align="right">
+            <img src="Images/ELFOS-Logo.png" width="65px" class="Image">
+        </td>
+    </tr>
+</table>
+
+</head>
+
+<!-- ################################################### -->
+<!-- Body - Right Side of the Screen                     -->
+<!-- ################################################### -->
+
+<body bgcolor=#E6E6E6 background="Images/DevBackground.png">
+
+<div style="margin: 60px 5px 5px 5px; padding: 5px; border: 0px solid black; text-align: left;  background-color:#E6E6E6; background-image: url(Images/DevBackground.png);" class="split1 right" >
+    
+    <img src = "Images/Screens/MultiSync1.jpg" width = "450px" class = "Image" usemap="#html1">
+
+<!-- area map based on an image size of 450px wide -->
+    <map name = "html1">
+
+<!-- Home -->
+        <area shape = "rect" coords = "1,1,44,39" 
+            href = "Home.html" target = "self"  />
+
+<!-- Main Screen -->
+        <area shape = "rect" coords = "79,1,133,39" 
+            href = "Main.html" target = "self"  />
+
+<!-- One Screen -->
+        <area shape = "rect" coords = "135,1,189,39" 
+            href = "One.html" target = "self"  />
+
+<!-- Index Screen -->
+        <area shape = "rect" coords = "191,1,245,39" 
+            href = "Ind.html" target = "self"  />
+
+<!-- Move Screen -->
+        <area shape = "rect" coords = "247,1,301,39" 
+            href = "Mov.html" target = "self"  />
+
+<!-- Multi-Sync Screen -->
+        <area shape = "rect" coords = "303,1,371,39" 
+            href = "Multi.html" target = "self"  />
+
+<!-- Config Screen -->
+        <area shape = "rect" coords = "403,1,450,39" 
+            href = "Config-More.html" target = "self"  />
+
+   </map>
+</div>
+    
+<!-- ################################################### -->
+<!-- Body - Bottom Right Side of the Screen              -->
+<!-- ################################################### -->
+
+<div style="margin: 330px 5px 5px 5px; padding: 5px; border: 1px solid black; text-align: left;  background-color:#E6E6E6; background-image: url(Images/DevBackground.png);" class="split3 right" >
+    <table width="100%">
+        <tr valign="Top">
+            <td>
+                <img src="Images/Buttons/ButtonGreen2-Stop.jpg" width="35px">
+            </td>
+            <td>
+                Used to stop the motion of the stepper motor.
+            </td>
+        </tr>
+    </table>
+
+    <hr>
+    <table width="100%">
+        <tr valign="Top">
+            <td>
+                <table align="Center" border="0" width="125px">
+                    <tr height="30px">
+                        <td align="Center" bgcolor="#28C68B" width="85px">
+                            <font color="Black" size="2" face="Arial"><b>Synchronized
+                            <br>Targets</b></font>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td>
+                Used to initiate the synchronized movement of the selected axes.
+            </td>
+        </tr>
+    </table>
+
+    <hr>
+    <table width="100%">
+        <tr valign="Top">
+	        <td>
+               <img src="Images/Buttons/ButtonGreen2-Return.jpg" width="35px">
+            </td>
+            <td>
+                Used to return the spindle or the selected axis to the start point of the previous operation.
+                    
+                <p>When using this function, Be sure to stop and retract the cutter from the cut first.  The return path does not always follow the same path as the initial cut.  (Backlash and other factors come into play here.)
+                    
+                <p style="margin-bottom: 0;">The speed of the return action is set in the <a href="Config-Returns.html">Preferences | Returns</a> screen.
+            </td>
+        </tr>
+    </table>
+</div>
+
+<!-- ################################################### -->
+<!-- Body - Left Side of the Screen                      -->
+<!-- ################################################### -->
+
+<div style="float: left; margin: 60px 5px 5px 5px; padding: 5px; border: 0px solid black; text-align: left;  background-color:#E6E6E6; background-image: url(Images/DevBackground.png);" class="split2 left" >
+    <table align="Center" border="0">
+        <tr height="35px">
+	        <td align="Center" bgcolor="#28C68B" width="300px">
+               <font color="Black" size="4"><b>MultiSync Screen</b></font>
+            </td>
+        </tr>
+    </table>
+
+    <p><b>Purpose:</b>  This screen allows the turner to run multiple motors synchronously, or individual motors continuously.
+    
+    <p><b><I>Starting with version 3.0.8</I></b>, there is a progress bar displayed just above the bottom row of buttons.
+        
+    <hr class="style1">
+
+    <p><b><i>How long will each synchronized movement take?</i></b>  This <a href="HowLong-MultiSync.html" target="new">calculator</a> can estimate that for you.
+
+    <table width="100%">
+        <col width="125px">
+        <col width="*">
+
+<!-- ################################################### -->
+<!-- Stepper Motor Controls   -->
+
+        <tr>
+            <td colspan=999>
+                <hr class="style2">
+            </td>
+        </tr>
+
+        <tr valign="top">
+            <td>
+                <b>Run Single</b>
+            </td>
+            <td>
+                For a given axis, this button can be used to run that single axis (like on the One screen) in continuous mode.  The motor will run until Stop is pressed.
+                
+                <div style="float: right; width: 250px;
+                        margin-left: 0px; margin-right: 5px; 
+                        margin-top: 0px; margin-bottom: 5px; 
+                        padding-left: 5px; padding-right: 5px;
+                        padding-top: 5px; padding-bottom: 0px; 
+                        border: 1px solid Darkgray; text-align: left;
+                        text-align: left;">
+            	    <img src="Images/Screens/MultiSync2.jpg" alt="no image file" style="width: 100%;" />
+            	    <b><i><font size="2">Pop-up window shown when running a single axis</font></i></b>
+                </div>
+                
+                <p>This is basically the opposite of using 
+                
+                <table align="Center" border="0" width="125px">
+                    <tr height="30px">
+                        <td align="Center" bgcolor="#28C68B" width="85px">
+                            <font color="Black" size="2" face="Arial"><b>Synchronized
+                            <br>Targets</b></font>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan=999>
+                <hr>
+            </td>
+        </tr>
+
+        <tr valign="top">
+            <td>
+                <font size=5><b>&#10003;</b></font>
+            </td>
+            <td>
+                Selects the axes which are run synchronously until each reaches the Target.
+                
+                <p style="margin-bottom: 0;">
+                <table>
+                    <tr>
+                        <td>
+                            <img src="Images/SquareChecked.png" width="25px">
+                        </td>
+                        <td>
+                            &nbsp; Axis is selected to operate.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="Images/SquareUnChecked.png" width="25px">
+                        </td>
+                        <td>
+                            &nbsp; Axis is not selected to operate.
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan=999>
+                <hr>
+            </td>
+        </tr>
+
+        <tr valign="top">
+            <td>
+                <p style="margin-top: 0;"><b>Dir</b>
+                <p>and
+                <p style="margin-bottom: 0;"><b>Target</b>
+            </td>
+            <td>
+                Indicates the direction the motor will run.
+                
+                <p style="margin-bottom: 0;">
+                <table border=1>
+                    <tr valign="Bottom" bgcolor="#28C68B">
+                        <td align="center" width="55px">
+                            <b>Axis
+                            <br>
+                            Type</b>
+                        </td>
+                        <td align="center" colspan=2>
+                            <b>Direction of Motion</b>
+                        </td>
+                        <td align="center" colspan=2>
+                            <b>Target
+                            <br>Measure</b>
+                        </td>
+                    </tr>
+
+                    <tr valign="Middle">
+                        <td rowspan=2>
+                            Linear
+                        </td>
+                        <td width="35px" align="center" valign="middle">
+                            <img src="Images/Buttons/ButtonPink-In.jpg" width="25px">
+                        </td>
+                        <td>
+                            Towards the headstock.
+                        </td>
+                        <td rowspan=2>
+                            Distance
+                        </td>
+                    </tr>
+
+                    <tr valign="Middle">
+                        <td align="center" valign="middle">
+                            <img src="Images/Buttons/ButtonGreen2-Out.jpg" width="25px">
+                        </td>
+                        <td>
+                            Away from the headstock.
+                        </td>
+                    </tr>
+
+                    <tr valign="Middle">
+                        <td rowspan=2>
+                            Radial
+                        </td>
+                        <td align="center" valign="middle">
+                            <img src="Images/Buttons/ButtonPink-CCW.jpg" width="25px">
+                        </td>
+                        <td>
+                            Counter-clockwise.
+                        </td>
+                        <td rowspan=2>
+                            Degrees
+                        </td>
+                    </tr>
+
+                    <tr valign="Middle">
+                        <td align="center" valign="middle">
+                            <img src="Images/Buttons/ButtonGreen2-CW.jpg" width="25px">
+                        </td>
+                        <td>
+                            Clockwise.
+                        </td>
+                    </tr>
+                </table>
+
+                <p>The value of <b>Target</b> depends on the type of axis.
+                    <ul>
+                        <li>Linear axis targets are in <b>distance</b>.  
+                        
+                        <p style="margin-bottom: 0;">This distance is unit-less, and is dependent upon value entered for <b>Distance/360</b> in the <a href="Config-ZAxis.html">Configuration Screen</a> for the axis you are using.</li>
+                        
+                        <br>
+                        <li>Radial axis targets are in <b>degrees</b>.
+                        
+                        <p style="margin-bottom: 0;">It is common for this value to be a multiple of a circle (e.g., 3600 = 10 revolutions).</li>
+                    <ul>
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan=999>
+                <hr>
+            </td>
+        </tr>
+
+        <tr valign="top">
+            <td>
+                <b>Waves</b>
+            </td>
+            <td>
+                (to be completed ...)
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan=999>
+                <hr>
+            </td>
+        </tr>
+
+        <tr valign="top">
+            <td>
+                <table border="0">
+                    <tr height="30px">
+                        <td align="Center" bgcolor="#28C68B" width="75px">
+                            <font color="Black" size="2" face="Arial"><b>Enabled</b></font>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td>
+                Enabling a stepper motor locks it into place, preventing motion along the relevant axis.  One use for this would be to lock the spindle whilst changing a rosette.
+                
+                <p>The stepper motor on a given axis may be enabled even if that is not the axis of movement.
+                 
+                <p>When the Stop button is selected, the stepper motor on this axis is reset to be disabled.
+                 
+                <p style="margin-bottom: 0;">More than one stepper motor may be enabled at a time.
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan=999>
+                &nbsp;
+            </td>
+        </tr>
+
+        <tr valign="top">
+            <td>
+                <table border="0">
+                    <tr height="30px">
+                        <td align="Center" bgcolor="#CD3C21" width="75px">
+                            <font color="Black" size="2" face="Arial"><b>Disabled</b></font>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td>
+                This stepper motor is disabled, allowing for manual adjustment (e.g., manually moving the slide along the Z axis by rotating the leadscrew).
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan=999>
+                <hr>
+            </td>
+        </tr>
+
+        <tr valign="top">
+            <td colspan=999>
+                <p style="margin-top: 0;">To set the MaxSpeed and % of MaxSpeed for a selected axis, click on the row for that axis.   The values shown in the table are read-only.
+                
+                <p>In the screen image shown, the value of MaxSpeed (4500) matches the value above the right slider bar.  Changing that value would relfect a change in the small white box in the table.
+                
+                <p style="margin-bottom: 0;">In that same image, the slider is used to set the % of MaxSpeed (41).
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan=999>
+                &nbsp;
+            </td>
+        </tr>
+
+        <tr valign="top">
+            <td>
+                <b>MaxSpd</b>
+            </td>
+            <td>
+                MaxSpeed for the specific axis.
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan=999>
+                &nbsp;
+            </td>
+        </tr>
+
+        <tr valign="top">
+            <td>
+                <b>&#37;</b>
+            </td>
+            <td>
+                Percentage of MaxSpeed that this axis will run.
+            </td>
+        </tr>
+    </table>
+
+<!-- ################################################### -->
+<!-- Limit Switches -->
+
+    <hr class="style2">
+    <p><font color="DarkBlue" size="4"><b><a name="LimitSwitches">Limit Switches</a></font></b>
+    <p>Limit switches can be used with this function.  The pins used for this are configured on the <a href="Config-Limits.html">Limit Switches Configuration Screen</a>.  (More information about the implementation of limit switches is on that page.)
+</div>
+
+<!-- ################################################### -->
+<!-- Footer                                              -->
+<!-- ################################################### -->
+<div class="footer">
+    <hr class="style0">
+    <font size="3">
+    <table width="100%">
+        <col width="75%">
+        <col width="25%">
+
+        <tr valign="top">
+            <td align="left">
+                Questions or comments?  Contact us at
+                <br><a href="mailto:ColvinTools@Gmail.com?Subject=General" >ColvinTools@Gmail.com</a>
+            </td>
+            <td align="right">
+                <a href="../index-Disclaimers.html">Disclaimers</a>
+            </td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>
