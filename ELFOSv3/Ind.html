@@ -207,7 +207,7 @@ body {
 
 <!-- Multi-Sync Screen -->
         <area shape = "rect" coords = "303,1,371,39" 
-            href = "Multi.html" target = "self"  />
+            href = "MultiSync.html" target = "self"  />
 
 <!-- Config Screen -->
         <area shape = "rect" coords = "403,1,450,39" 
@@ -342,15 +342,22 @@ body {
         </tr>
     </table>
 
-    <p><b>Purpose:</b>  This screen allows indexing any stepper motor used for rotary movement.  It is typically used for the spindle; however such functionality is useful when using other items such as the <a href="https://www.otbok.info/OT%20-%20LnT-Term-SphericalSlide.html" target="_new">spherical slide</a> or a <a href="https://www.otbok.info/OT%20-%20LnT-Term-Chuck-Dome.html" target="_new">dome chuck</a>.
+    <p><b>Purpose:</b>  This screen allows indexing any stepper motor used for rotary movement.  It is typically used for the stepper motor; however such functionality is useful when using other items such as the <a href="https://www.otbok.info/index.php?n=Main.SphericalSlide" target="_new">spherical slide</a> or a <a href="https://www.otbok.info/index.php?n=Main.DomeChuck" target="_new">dome chuck</a>.
 
     <p>If you are wanting to index linearly, use the <a href="Mov.html">Move</a> function.
         
     <p><b><I>Starting with version 3.0.8</I></b>, there is a progress bar displayed just above the bottom row of buttons.
+
+    <hr class="style1">
+
+    <p><b>Spindle</b> <img src="Images/CircleChecked.png" width="20px" height="20px"> &nbsp; <b>M3</b> <img src="Images/CircleUnChecked.png" width="20px" height="20px"> &nbsp; <b>M4</b> <img src="Images/CircleUnChecked.png" width="20px" height="20px">
+
+    <p>In this example screen, only the Spindle can be indexed as it is the only axis configured for radial use in the configuration settings.  If M3 or M4 were configured as radial (vs. linear), they would show up here.
+    
         
     <hr class="style1">
 
-    <p><b>1</b> <img src="Images/CircleUnChecked.png" width="20px" height="20px">, <b>2</b> <img src="Images/CircleUnChecked.png" width="20px" height="20px">, <b>3</b> <img src="Images/CircleChecked.png" width="20px" height="20px">, <b>4</b> <img src="Images/CircleUnChecked.png" width="20px" height="20px">, and <b>5</b> <img src="Images/CircleUnChecked.png" width="20px" height="20px"> may each represent separate saved settings (aka, pre-sets), however the value of <b>1</b> <img src="Images/CircleUnChecked.png" width="20px" height="20px"> is used by the <b>CW</b> and <b>CCW</b> indexing movements on the
+    <p><b>1</b> <img src="Images/CircleUnChecked.png" width="20px" height="20px">, <b>2</b> <img src="Images/CircleChecked.png" width="20px" height="20px">, <b>3</b> <img src="Images/CircleUnChecked.png" width="20px" height="20px">, <b>4</b> <img src="Images/CircleUnChecked.png" width="20px" height="20px">, and <b>5</b> <img src="Images/CircleUnChecked.png" width="20px" height="20px"> may each represent separate saved settings (aka, pre-sets), however the value of <b>1</b> <img src="Images/CircleUnChecked.png" width="20px" height="20px"> is used by the <b>CW</b> and <b>CCW</b> indexing movements on the
         <ul>
             <li><a href="Sync.html">Synchronization Screen</a> and the</li>
             <li><a href="Rec-Axial.html">Reciprocation - Axial Screen</a></li>

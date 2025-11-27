@@ -54,7 +54,7 @@
 </style>
 
 <!-- ################################################### -->
-<!-- Header                                                                                           -->
+<!-- Header                                              -->
 <!-- ################################################### -->
 
 <head bgcolor=#E6E6E6>
@@ -196,7 +196,7 @@
 
 
 <!-- ################################################### -->
-<!-- Body                                                                                               -->
+<!-- Body                                                -->
 <!-- ################################################### -->
 
 <body bgcolor=#E6E6E6  background="Images/DevBackground.png" class="" id="" onload='hideTotal()'>
@@ -218,50 +218,81 @@ Calculations needed for this are based on the data in the table below.  Click on
 
 <p>Input fields are <span style="background-color: #FFEE9C"><b>&nbsp;colored&nbsp;</b></span>.
 
-	<form id="frm1">
-		<table border="1" width="100%">
-			<col width="200px">
+<form id="frm1">
+    <table style="border-collapse: collapse; width: 100%; ">
+		<col width="200px">
+       	<col width="60px">
+       	<col width="35px">
+        <col width="60px">
+    	<col width="35px">
+        <col width="60px">
+        <col width="35px">
+        <col width="60px">
+    	<col width="35px">
+        <col width="*">
 
-        	<col width="60px">
-        	<col width="35px">
+        <tr style="background-color: Moccasin;
+                vertical-align: bottom;
+                ">
+            <td colspan="10" style="
+                    border-style: solid;
+                    border-color: black;
+                    border-top-width: thick;
+                    border-bottom-width: medium;
+                    border-left-width: thick;
+                    border-right-width: thick;
+                    text-align: left;
+                    ">
+				<font color="blue" size="4"≈><b>
+			        Cutter
+			    </b></font>
+			</td>
+ 		</tr>
 
-        	<col width="60px">
-        	<col width="35px">
-
-        	<col width="60px">
-        	<col width="35px">
-
-        	<col width="60px">
-        	<col width="35px">
-
-        	<col width="*">
-
-			<tr bgcolor="Moccasin">
-				<td colspan="999">
-				    <font color="blue" size="4"≈><b>
-				        Cutter
-				    </b></font>
-				</td>
- 			</tr>
-
-			<tr bgcolor="White">
-				<td>
-				    Diameter
-				</td>
- 				<td align="Right">
-   			 		<p id="DiaImp" style="margin: 0px; padding: 0px;"></p>
- 				</td>
-				<td>
-					&quot;
-				</td>
+        <tr style="background-color: White;
+                vertical-align: top;
+                ">
+            <td style="
+                    border-style: solid;
+                    border-color: black;
+                    border-top-width: thin;
+                    border-bottom-width: thin;
+                    border-left-width: thick;
+                    border-right-width: 0px;
+                    text-align: left;
+                    ">
+                Diameter
+			</td>
+            <td style="
+                    border-style: solid;
+                    border-color: black;
+                    border-top-width: thin;
+                    border-bottom-width: thin;
+                    border-left-width: 0px;
+                    border-right-width: 0px;
+                    text-align: right;
+                    ">
+   			 	<p id="DiaImp" style="margin: 0px; padding: 0px;"></p>
+			</td>
+            <td style="
+                    border-style: solid;
+                    border-color: black;
+                    border-top-width: thin;
+                    border-bottom-width: thin;
+                    border-left-width: 0px;
+                    border-right-width: 0px;
+                    text-align: left;
+                    ">
+   			 	&nbsp;in
+			</td>
  				<td align="Right">
  					<input 
-	 						type="number"
- 							style="font-size:14px; text-align: right; width: 55px; background-color:#FFEE9C" 
- 							name="Dia" 
-							step='0.1' 
-							placeholder='0.0' 
- 							value=10.0
+	 					type="number"
+ 						style="font-size:14px; text-align: right; width: 55px; background-color:#FFEE9C" 
+ 						name="Dia" 
+						step='0.1' 
+						placeholder='0.0' 
+ 						value=10.0
 						/>
  				</td>
 				<td>
@@ -272,24 +303,50 @@ Calculations needed for this are based on the data in the table below.  Click on
 				</td>
 			</tr>
 
-			<tr bgcolor="White">
-				<td>
-					Depth of Cut
-				</td>
- 				<td align="Right">
-   			 		<p id="DOCImp" style="margin: 0px; padding: 0px;"></p>
-				</td>
-				<td>
-					&quot;
-				</td>
+        <tr style="background-color: White;
+                vertical-align: top;
+                ">
+            <td style="
+                    border-style: solid;
+                    border-color: black;
+                    border-top-width: thin;
+                    border-bottom-width: thin;
+                    border-left-width: thick;
+                    border-right-width: 0px;
+                    text-align: left;
+                    ">
+                Depth of Cut
+			</td>
+            <td style="
+                    border-style: solid;
+                    border-color: black;
+                    border-top-width: thin;
+                    border-bottom-width: thin;
+                    border-left-width: 0px;
+                    border-right-width: 0px;
+                    text-align: right;
+                    ">
+   			 	<p id="DOCImp" style="margin: 0px; padding: 0px;"></p>
+			</td>
+            <td style="
+                    border-style: solid;
+                    border-color: black;
+                    border-top-width: thin;
+                    border-bottom-width: thin;
+                    border-left-width: 0px;
+                    border-right-width: 0px;
+                    text-align: left;
+                    ">
+   			 	&nbsp;in
+			</td>
  				<td align="Right">
  					<input 
-	 						type="number"
- 							style="font-size:14px; text-align: right; width: 55px; background-color:#FFEE9C" 
- 							name="DOC" 
-							step='0.1' 
-							placeholder='0.0' 
- 							value=0.5
+	 					type="number"
+ 						style="font-size:14px; text-align: right; width: 55px; background-color:#FFEE9C" 
+ 						name="DOC" 
+						step='0.1' 
+						placeholder='0.0' 
+ 						value=0.5
 						/>
 				</td>
 				<td>
@@ -300,45 +357,101 @@ Calculations needed for this are based on the data in the table below.  Click on
 				</td>
 			</tr>
 
-			<tr bgcolor="Moccasin">
-				<td colspan="999">
-				    <font color="blue" size="4"><b>
-				    Pattern
-				    </b></font>
-				</td>
- 			</tr>
+        <tr style="background-color: Moccasin;
+                vertical-align: bottom;
+                ">
+            <td colspan="10" style="
+                    border-style: solid;
+                    border-color: black;
+                    border-top-width: thick;
+                    border-bottom-width: medium;
+                    border-left-width: thick;
+                    border-right-width: thick;
+                    text-align: left;
+                    ">
+				<font color="blue" size="4"><b>
+			    Pattern
+			    </b></font>
+			</td>
+ 		</tr>
 
-			<tr bgcolor="White">
-				<td>
-					Number of Pearls
-				</td>
- 				<td align="Right">
- 					<input 
-	 						type="number"
- 							style="font-size:14px; text-align: right; width: 55px; background-color:#FFEE9C" 
- 							name="Pearls" 
-							step='1' 
-							placeholder='0' 
- 							value=30
+        <tr style="background-color: White;
+                vertical-align: top;
+                ">
+            <td style="
+                    border-style: solid;
+                    border-color: black;
+                    border-top-width: thin;
+                    border-bottom-width: thin;
+                    border-left-width: thick;
+                    border-right-width: 0px;
+                    text-align: left;
+                    ">
+                Number of Pearls
+			</td>
+            <td colspan=3 style="
+                    border-style: solid;
+                    border-color: black;
+                    border-top-width: thin;
+                    border-bottom-width: thin;
+                    border-left-width: 0px;
+                    border-right-width: 0px;
+                    text-align: right;
+                    ">
+   			 	<input 
+	 					type="number"
+ 						style="font-size:14px; text-align: right; width: 55px; background-color:#FFEE9C" 
+ 						name="Pearls" 
+						step='1' 
+						placeholder='0' 
+ 						value=30
 						/>
 				</td>
-				<td colspan="999">
-					This is the number of pearls that would be cut in a complete circuit around the object.  This number is used to calculate the Rough Diameter of the workpiece as well as the move and index settings for the next row.
+            <td colspan=6 style="
+                    border-style: solid;
+                    border-color: black;
+                    border-top-width: thin;
+                    border-bottom-width: thin;
+                    border-left-width: 0px;
+                    border-right-width: thick;
+                    text-align: left;
+                    ">
+					This is the number of pearls that would be cut in a complete circuit around the object.  This number is used to calculate the rough diameter of the workpiece as well as the move and index settings for the next row.
 					
 					<p style="margin-bottom: 0;">Based on the pearling cutter's diameter, this is adjusted to achieve the rough diameter of the piece desired.
 				</td>
 			</tr>
 
-			<tr bgcolor="DarkBlue">
-				<td colspan="999">
-				    <font color=#FFEE9C size="4"><b>
-				    Pearling Values
-				    </b></font>
-				</td>
- 			</tr>
+        <tr style="background-color: DarkBlue;
+                vertical-align: bottom;
+                ">
+            <td colspan="10" style="
+                    border-style: solid;
+                    border-color: black;
+                    border-top-width: thick;
+                    border-bottom-width: medium;
+                    border-left-width: thick;
+                    border-right-width: thick;
+                    text-align: left;
+                    ">
+				<font color=#FFEE9C size="4"><b>
+			    Pearling Values
+			    </b></font>
+			</td>
+ 		</tr>
 
-			<tr bgcolor=#E0E6F8>
-				<td rowspan=2>
+        <tr style="background-color: #E0E6F8;
+                vertical-align: top;
+                ">
+            <td rowspan=2 style="
+                    border-style: solid;
+                    border-color: black;
+                    border-top-width: thin;
+                    border-bottom-width: thin;
+                    border-left-width: thick;
+                    border-right-width: 0px;
+                    text-align: left;
+                    ">
 				</td>
    			 	<td align="Center" colspan=8>
    			 	    <font color="blue"><b>
@@ -349,146 +462,472 @@ Calculations needed for this are based on the data in the table below.  Click on
 				</td>
 			</tr>
 
-			<tr bgcolor=#E0E6F8>
-   			 	<td align="Center" colspan=4>
-   			 	    <font color="blue"><b>
-   			 		Hexagonal
-   			 		</b></font>
-   			 		<br>
-   			 		<a href="Pearling-Images.html" ><img src="Images/PearlHex.png" width="150px"></a>
-   			 	</td>
-   			 	<td align="Center" colspan=4>
-   			 	    <font color="blue"><b>
-   			 		Square
-   			 		</b></font>
-   			 		<br>
-   			 		<a href="Pearling-Images.html" ><img src="Images/PearlSq.png" width="150px"></a>
-   			 	</td>
-			</tr>
+        <tr style="background-color: #E0E6F8;
+                vertical-align: top;
+                ">
+            <td colspan=4 style="
+                    border-style: solid;
+                    border-color: black;
+                    border-top-width: thin;
+                    border-bottom-width: thin;
+                    border-left-width: thin;
+                    border-right-width: thin;
+                    text-align: center;
+                    ">
+   			 	<font color="blue"><b>
+   			 	Hexagonal
+   				</b></font>
+   		 		<br>
+   		 		<a href="Pearling-Images.html" ><img src="Images/PearlHex.png" width="150px"></a>
+   			 </td>
+            <td colspan=4 style="
+                    border-style: solid;
+                    border-color: black;
+                    border-top-width: thin;
+                    border-bottom-width: thin;
+                    border-left-width: thin;
+                    border-right-width: thin;
+                    text-align: center;
+                    ">
+   			 	<font color="blue"><b>
+   			 	Square
+   				</b></font>
+   		 		<br>
+   		 		<a href="Pearling-Images.html" ><img src="Images/PearlSq.png" width="150px"></a>
+   			</td>
+		</tr>
 
-			<tr bgcolor=#E0E6F8>
-				<td>
-					Rough Diameter
-				</td>
-   			 	<td align="right">
-   			 		<p id="HexRoughDiaImp" style="margin: 0px; padding: 0px;"></p>
-   			 	</td>
-				<td>
-					&quot;
-				</td>
-   			 	<td align="right">
-   			 		<p id="HexRoughDia" style="margin: 0px; padding: 0px;"></p>
-   			 	</td>
-				<td>
-					mm
-				</td>
-   			 	<td align="right">
+        <tr style="background-color: #E0E6F8;
+                vertical-align: top;
+                ">
+            <td style="
+                    border-style: solid;
+                    border-color: black;
+                    border-top-width: thin;
+                    border-bottom-width: thin;
+                    border-left-width: thick;
+                    border-right-width: 0px;
+                    text-align: left;
+                    ">
+				Rough Diameter
+			</td>
+            <td style="
+                    border-style: solid;
+                    border-color: black;
+                    border-top-width: thin;
+                    border-bottom-width: thin;
+                    border-left-width: thin;
+                    border-right-width: 0px;
+                    text-align: right;
+                    ">
+   			 	<p id="HexRoughDiaImp" style="margin: 0px; padding: 0px;"></p>
+   			</td>
+            <td style="
+                    border-style: solid;
+                    border-color: black;
+                    border-top-width: thin;
+                    border-bottom-width: thin;
+                    border-left-width: 0px;
+                    border-right-width: 0px;
+                    text-align: left;
+                    ">
+                &nbsp;in
+            </td>
+            <td style="
+                    border-style: solid;
+                    border-color: black;
+                    border-top-width: thin;
+                    border-bottom-width: thin;
+                    border-left-width: 0px;
+                    border-right-width: 0px;
+                    text-align: right;
+                    ">
+   		 		<p id="HexRoughDia" style="margin: 0px; padding: 0px;"></p>
+   		 	</td>
+            <td style="
+                    border-style: solid;
+                    border-color: black;
+                    border-top-width: thin;
+                    border-bottom-width: thin;
+                    border-left-width: 0px;
+                    border-right-width: thin;
+                    text-align: left;
+                    ">
+				&nbsp;mm
+            </td>
+            <td style="
+                    border-style: solid;
+                    border-color: black;
+                    border-top-width: thin;
+                    border-bottom-width: thin;
+                    border-left-width: 0px;
+                    border-right-width: 0px;
+                    text-align: right;
+                    ">
    			 		<p id="SqRoughDiaImp" style="margin: 0px; padding: 0px;"></p>
-   			 	</td>
-				<td>
-					&quot;
-				</td>
+   			 </td>
+            <td style="
+                    border-style: solid;
+                    border-color: black;
+                    border-top-width: thin;
+                    border-bottom-width: thin;
+                    border-left-width: 0px;
+                    border-right-width: 0px;
+                    text-align: left;
+                    ">
+                &nbsp;in
+            </td>
    			 	<td align="right">
    			 		<p id="SqRoughDia" style="margin: 0px; padding: 0px;"></p>
-   			 	</td>
-				<td>
-					mm
-				</td>
-				<td>
-				</td>
-			</tr>
+            </td>
+            <td style="
+                    border-style: solid;
+                    border-color: black;
+                    border-top-width: thin;
+                    border-bottom-width: thin;
+                    border-left-width: 0px;
+                    border-right-width: thin;
+                    text-align: left;
+                    ">
+				&nbsp;mm
+            </td>
+            <td style="
+                    border-style: solid;
+                    border-color: black;
+                    border-top-width: thin;
+                    border-bottom-width: thin;
+                    border-left-width: 0px;
+                    border-right-width: thick;
+                    text-align: right;
+                    ">
+                &nbsp;
+			</td>
+		</tr>
 
-			<tr bgcolor=#E0E6F8>
-				<td>
-					Depth of Cut Diameter
-				</td>
-   			 	<td align="right">
-   			 		<p id="HexDOCDiaImp" style="margin: 0px; padding: 0px;"></p>
-   			 	</td>
-				<td>
-					&quot;
-				</td>
-   			 	<td align="right">
-   			 		<p id="HexDOCDia" style="margin: 0px; padding: 0px;"></p>
-   			 	</td>
-				<td>
-					mm
-				</td>
-   			 	<td align="right">
-   			 		<p id="SqDOCDiaImp" style="margin: 0px; padding: 0px;"></p>
-   			 	</td>
-				<td>
-					&quot;
-				</td>
-   			 	<td align="right">
-   			 		<p id="SqDOCDia" style="margin: 0px; padding: 0px;"></p>
-   			 	</td>
-				<td>
-					mm
-				</td>
-				<td>
-				</td>
-			</tr>
+        <tr style="background-color: #E0E6F8;
+                vertical-align: top;
+                ">
+            <td style="
+                    border-style: solid;
+                    border-color: black;
+                    border-top-width: thin;
+                    border-bottom-width: thin;
+                    border-left-width: thick;
+                    border-right-width: 0px;
+                    text-align: left;
+                    ">
+				Depth of Cut Diameter
+			</td>
+            <td style="
+                    border-style: solid;
+                    border-color: black;
+                    border-top-width: thin;
+                    border-bottom-width: thin;
+                    border-left-width: thin;
+                    border-right-width: 0px;
+                    text-align: right;
+                    ">
+   			 	<p id="HexDOCDiaImp" style="margin: 0px; padding: 0px;"></p>
+   			</td>
+            <td style="
+                    border-style: solid;
+                    border-color: black;
+                    border-top-width: thin;
+                    border-bottom-width: thin;
+                    border-left-width: 0px;
+                    border-right-width: 0px;
+                    text-align: left;
+                    ">
+                &nbsp;in
+            </td>
+            <td style="
+                    border-style: solid;
+                    border-color: black;
+                    border-top-width: thin;
+                    border-bottom-width: thin;
+                    border-left-width: 0px;
+                    border-right-width: 0px;
+                    text-align: right;
+                    ">
+   		 		<p id="HexDOCDia" style="margin: 0px; padding: 0px;"></p>
+            </td>
+            <td style="
+                    border-style: solid;
+                    border-color: black;
+                    border-top-width: thin;
+                    border-bottom-width: thin;
+                    border-left-width: 0px;
+                    border-right-width: 0px;
+                    text-align: left;
+                    ">
+				&nbsp;mm
+            </td>
+            <td style="
+                    border-style: solid;
+                    border-color: black;
+                    border-top-width: thin;
+                    border-bottom-width: thin;
+                    border-left-width: thin;
+                    border-right-width: 0px;
+                    text-align: right;
+                    ">
+   			 	<p id="SqDOCDiaImp" style="margin: 0px; padding: 0px;"></p>
+            </td>
+            <td style="
+                    border-style: solid;
+                    border-color: black;
+                    border-top-width: thin;
+                    border-bottom-width: thin;
+                    border-left-width: 0px;
+                    border-right-width: 0px;
+                    text-align: left;
+                    ">
+				&nbsp;in
+            </td>
+            <td style="
+                    border-style: solid;
+                    border-color: black;
+                    border-top-width: thin;
+                    border-bottom-width: thin;
+                    border-left-width: 0px;
+                    border-right-width: 0px;
+                    text-align: right;
+                    ">
+   		 		<p id="SqDOCDia" style="margin: 0px; padding: 0px;"></p>
+            </td>
+            <td style="
+                    border-style: solid;
+                    border-color: black;
+                    border-top-width: thin;
+                    border-bottom-width: thin;
+                    border-left-width: 0px;
+                    border-right-width: thin;
+                    text-align: left;
+                    ">
+				&nbsp;mm
+            </td>
+            <td style="
+                    border-style: solid;
+                    border-color: black;
+                    border-top-width: thin;
+                    border-bottom-width: thin;
+                    border-left-width: 0px;
+                    border-right-width: thick;
+                    text-align: left;
+                    ">
+                &nbsp;
+			</td>
+		</tr>
 
-			<tr bgcolor=#E0E6F8>
-				<td>
-					Z Axis Move
-				</td>
-   			 	<td align="right">
-   			 		<p id="HexZMoveImp" style="margin: 0px; padding: 0px;"></p>
-   			 	</td>
-				<td>
-					&quot;
-				</td>
-   			 	<td align="right">
-   			 		<p id="HexZMove" style="margin: 0px; padding: 0px;"></p></b>
-   			 	</td>
-				<td>
-					mm
-				</td>
-   			 	<td align="right">
+        <tr style="background-color: #E0E6F8;
+                vertical-align: top;
+                ">
+            <td style="
+                    border-style: solid;
+                    border-color: black;
+                    border-top-width: thin;
+                    border-bottom-width: thin;
+                    border-left-width: thick;
+                    border-right-width: 0px;
+                    text-align: left;
+                    ">
+				Z Axis Move
+			</td>
+            <td style="
+                    border-style: solid;
+                    border-color: black;
+                    border-top-width: thin;
+                    border-bottom-width: thin;
+                    border-left-width: thin;
+                    border-right-width: 0px;
+                    text-align: right;
+                    ">
+   			 	<p id="HexZMoveImp" style="margin: 0px; padding: 0px;"></p>
+   			</td>
+            <td style="
+                    border-style: solid;
+                    border-color: black;
+                    border-top-width: thin;
+                    border-bottom-width: thin;
+                    border-left-width: 0px;
+                    border-right-width: 0px;
+                    text-align: left;
+                    ">
+                &nbsp;in
+            </td>
+            <td style="
+                    border-style: solid;
+                    border-color: black;
+                    border-top-width: thin;
+                    border-bottom-width: thin;
+                    border-left-width: 0px;
+                    border-right-width: 0px;
+                    text-align: right;
+                    ">
+   			 	<p id="HexZMove" style="margin: 0px; padding: 0px;"></p></b>
+            </td>
+            <td style="
+                    border-style: solid;
+                    border-color: black;
+                    border-top-width: thin;
+                    border-bottom-width: thin;
+                    border-left-width: 0px;
+                    border-right-width: 0px;
+                    text-align: left;
+                    ">
+				&nbsp;mm
+            </td>
+            <td style="
+                    border-style: solid;
+                    border-color: black;
+                    border-top-width: thin;
+                    border-bottom-width: thin;
+                    border-left-width: thin;
+                    border-right-width: 0px;
+                    text-align: right;
+                    ">
    			 		<p id="SqZMoveImp" style="margin: 0px; padding: 0px;"></p>
-   			 	</td>
-				<td>
-					&quot;
-				</td>
-   			 	<td align="right">
+            </td>
+            <td style="
+                    border-style: solid;
+                    border-color: black;
+                    border-top-width: thin;
+                    border-bottom-width: thin;
+                    border-left-width: 0px;
+                    border-right-width: 0px;
+                    text-align: left;
+                    ">
+				&nbsp;in
+            </td>
+            <td style="
+                    border-style: solid;
+                    border-color: black;
+                    border-top-width: thin;
+                    border-bottom-width: thin;
+                    border-left-width: 0px;
+                    border-right-width: 0px;
+                    text-align: right;
+                    ">
    			 		<p id="SqZMove" style="margin: 0px; padding: 0px;"></p>
-   			 	</td>
-				<td>
-					mm
-				</td>
-				<td>
+            </td>
+            <td style="
+                    border-style: solid;
+                    border-color: black;
+                    border-top-width: thin;
+                    border-bottom-width: thin;
+                    border-left-width: 0px;
+                    border-right-width: thin;
+                    text-align: left;
+                    ">
+				&nbsp;mm
+            </td>
+            <td style="
+                    border-style: solid;
+                    border-color: black;
+                    border-top-width: thin;
+                    border-bottom-width: thin;
+                    border-left-width: 0px;
+                    border-right-width: thick;
+                    text-align: left;
+                    ">
 				    Distance to the next row
 				</td>
 			</tr>
 
-			<tr bgcolor=#E0E6F8>
-				<td>
-					Spindle Index Degrees
-				</td>
-   			 	<td align="right">
-   			 		<p id="HexSpIdx" style="margin: 0px; padding: 0px;"></p></b>
-   			 	</td>
-				<td>
-					&deg;
-				</td>
-				<td colspan=2>
-				</td>
-   			 	<td align="right">
-   			 		<p id="SqSpIdx" style="margin: 0px; padding: 0px;"></p>
-   			 	</td>
-				<td>
-					&deg;
-				</td>
-				<td colspan=2>
-				</td>
-				<td>
-				</td>
-			</tr>
+        <tr style="background-color: #E0E6F8;
+                vertical-align: top;
+                ">
+            <td style="
+                    border-style: solid;
+                    border-color: black;
+                    border-top-width: thin;
+                    border-bottom-width: thick;
+                    border-left-width: thick;
+                    border-right-width: 0px;
+                    text-align: left;
+                    ">
+				Spindle Index Degrees
+			</td>
+            <td style="
+                    border-style: solid;
+                    border-color: black;
+                    border-top-width: thin;
+                    border-bottom-width: thick;
+                    border-left-width: thin;
+                    border-right-width: 0px;
+                    text-align: right;
+                    ">
+   				<p id="HexSpIdx" style="margin: 0px; padding: 0px;"></p></b>
+   			</td>
+            <td style="
+                    border-style: solid;
+                    border-color: black;
+                    border-top-width: thin;
+                    border-bottom-width: thick;
+                    border-left-width: 0px;
+                    border-right-width: 0px;
+                    text-align: left;
+                    ">
+                &nbsp;&deg;
+            </td>
+            <td colspan=2 style="
+                    border-style: solid;
+                    border-color: black;
+                    border-top-width: thin;
+                    border-bottom-width: thick;
+                    border-left-width: 0px;
+                    border-right-width: 0px;
+                    text-align: left;
+                    ">
+                &nbsp;
+			</td>
+            <td style="
+                    border-style: solid;
+                    border-color: black;
+                    border-top-width: thin;
+                    border-bottom-width: thick;
+                    border-left-width: thin;
+                    border-right-width: 0px;
+                    text-align: right;
+                    ">
+   		 		<p id="SqSpIdx" style="margin: 0px; padding: 0px;"></p>
+   			</td>
+            <td style="
+                    border-style: solid;
+                    border-color: black;
+                    border-top-width: thin;
+                    border-bottom-width: thick;
+                    border-left-width: 0px;
+                    border-right-width: 0px;
+                    text-align: left;
+                    ">
+                &nbsp;&deg;
+            <td colspan=2 style="
+                    border-style: solid;
+                    border-color: black;
+                    border-top-width: thin;
+                    border-bottom-width: thick;
+                    border-left-width: 0px;
+                    border-right-width: thin;
+                    text-align: left;
+                    ">
+                &nbsp;
+			</td>
+            <td style="
+                    border-style: solid;
+                    border-color: black;
+                    border-top-width: thin;
+                    border-bottom-width: thick;
+                    border-left-width: 0px;
+                    border-right-width: thick;
+                    text-align: left;
+                    ">
+                &nbsp;
+			</td>
+		</tr>
 
-		</table>
-	</form>
+	</table>
+</form>
 
     <p>
 	<center>
@@ -677,7 +1116,7 @@ Calculations needed for this are based on the data in the table below.  Click on
 </table>
 
 <!-- ################################################### -->
-<!-- Footer                                                                                             -->
+<!-- Footer                                              -->
 <!-- ################################################### -->
 <hr class="style0">
 <font size="3">
