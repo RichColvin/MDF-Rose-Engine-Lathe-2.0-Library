@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- ################################################### -->
+<!-- HTML5 Compliant                                     -->
+<!-- ################################################### -->
+
+<!-- ##################################################	-->
+<!-- DOCUMENT NOTES				                     	-->
+<!-- 							                        -->
+<!-- This include file is for including the standard	-->
+<!-- settings.					                      	-->
+<!-- 						                           	-->
+<!-- 2025-11-29 - R. Colvin - initial file	          	-->
+<!-- ################################################## -->
+
+<!-- ##################################################	-->
+<!-- Basics for page body				                -->
+<!-- ##################################################	-->
+<!-- 
+<body bgcolor=#E6E6E6>
+<font face="Arial">
+ -->
+
+<!-- ################################################### -->
+<!-- Style Sheet for split screen                        -->
+<!-- ################################################### -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+    font-family: Georgia;
+    }
+
+.split1 {
+    float: right;
+    width: 450px;
+    }
+
+.split2 {
+    float: left;
+    width: calc(100% - 490px);
+    }
+
+.split3 {
+    height: calc(100% - 410px);
+    min-width: 450px;
+    max-width: 450px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 280px;
+    }
+
+.left {
+    left: 0;
+    background-color: #111;
+    }
+
+.right {
+    right: 0;
+    background-color: blue;
+    }
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    }
+
+.centered img {
+    width: 150px;
+    border-radius: 50%;
+    }
+</style>
+
+<!-- ################################################### -->
+<!-- Style Sheet for footer                              -->
+<!-- ################################################### -->
+<style>
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #E6E6E6;
+    text-align: center;
+    }
+</style>
+
+<!-- ##################################################	-->
+<!-- Style Sheet for table cells			            -->
+<!-- ##################################################	-->
+<style>
+td {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+</style>
+
+<!-- ##################################################	-->
+<!-- Style Sheet for heading levels			            -->
+<!-- ##################################################	-->
+<style>
+h1 {
+    color: #191970;
+    margin-bottom: 0;
+}
+</style>
+
+<style>
+h2 {
+    color: #191970;
+    margin-bottom: 0;
+}
+</style>
+
+<style>
+h3 {
+    color: #191970;
+    margin-bottom: 0;
+}
+</style>
+
+<style>
+h4 {
+    color: #191970;
+    margin-bottom: 0;
+}
+</style>
+
+<style>
+h5 {
+    color: #191970;
+    margin-bottom: 0;
+}
+</style>
+
+<!-- ##################################################	-->
+<!-- Style Sheet for header image max size		        -->
+<!-- ##################################################	-->
+<style>
+img.Image { 
+    max-width: 1000px;
+}
+</style>
+
+<!-- ##################################################	-->
+<!-- Style Sheet for indented paragraphs		        -->
+<!-- ##################################################	-->
+<style>
+.indented { 
+    padding-left: 33pt; 
+    padding-right: 33pt; 
+}
+</style>
+
+<!-- ##################################################	-->
+<!-- Style Sheet for text sizes				            -->
+<!-- ##################################################	-->
+<style>
+p.TextSM { 
+    font: 14px Arial; 
+}
+</style>
+
+<style>
+p.TextSMImage { 
+    color: #000000;
+    font: 14px Arial; 
+    margin-top: 0; 
+    margin-bottom: 0; 
+    padding-left: 2pt; 
+    padding-right: 2pt; 
+    text-align: left;
+}
+</style>
+
+<style>
+p.TextMedSM { 
+    font: 14px Arial; 
+}
+</style>
+
+<style>
+p.TextNorm { 
+    font: 16px Arial; 
+}
+</style>
+
+<style>
+p.TextTableHdrNorm { 
+    color: #191970;
+    font: 17px Arial; 
+    margin-top: 0; 
+    margin-bottom: 0; 
+    padding-left: 5pt; 
+    padding-right: 5pt; 
+}
+</style>
+
+<style>
+p.TextMedLG { 
+    font: 20px Arial; 
+}
+</style>
+
+<style>
+p.TextLG { 
+    font: 24px Arial; 
+}
+</style>
+
+<style>
+p.TextTableHdrLg { 
+    color: #191970;
+    font: 24px Arial; 
+    margin-top: 0; 
+    margin-bottom: 0; 
+    padding-left: 5pt; 
+    padding-right: 5pt; 
+}
+</style>
+
+<style>
+p.TextBox {
+    color: #ffffff;
+    font: 24px Arial; 
+    margin-top: 0; 
+    margin-bottom: 0; 
+    margin-left: 0; 
+    margin-right: 0; 
+    padding-top: 3px; 
+    padding-bottom: 3px; 
+    padding-left: 3pt; 
+    padding-right: 3pt; 
+}
+</style>
+
+<style>
+p.TextXL {
+    font: 34px Arial; 
+}
+</style>
+
+<style>
+p.TextPageTitle {
+    color: #191970;
+    font: 34px Arial; 
+    margin-top: 0; 
+    margin-bottom: 0; 
+}
+</style>
+
+<!-- ##################################################	-->
+<!-- Style Sheet for Horizontal Rules			        -->
+<!-- ##################################################	-->
+ <style>
+hr.style0 {
+    background-image: linear-gradient(to right,
+    	rgba(25, 25, 112, 2.00),
+	rgba(25, 25, 112, 2.00),
+	rgba(25, 25, 112, 2.00));
+    border: 0;
+    height: 1px;
+}
+</style>
+
+<style>
+hr.style1 {
+    background-image: linear-gradient(to right,
+	rgba(0, 0, 0, 0),
+	rgba(25, 25, 112, 1.00),
+	rgba(0, 0, 0, 0));
+    border: 0;
+    height: 3px;
+}
+</style>
+
+<style>
+hr.style2 {
+    background-image: linear-gradient(to right,
+	rgba(0, 0, 0, 0),
+	rgba(25, 25, 112, 1.00),
+	rgba(0, 0, 0, 0));
+    border: 0;
+    height: 1.5px;
+}
+</style>
+
+<style>
+hr.style3 {
+    background-image: linear-gradient(to right,
+	rgba(0, 0, 0, 0),
+	rgba(25, 25, 112, 1.00),
+	rgba(0, 0, 0, 0));
+    border: 0;
+    height: 1px;
+}
+</style>
+
+<style>
+hr.style8 {
+    background-color:#191970;
+    border: 0;
+    color: #191970;
+    height: 1.5px;
+    margin-left: 25pt;
+    text-align: left;
+    width: 20%;
+}
+</style>
+
+<style>
+hr.style9 {
+    background-color:#191970;
+    border: 0;
+    color: #191970;
+    height: 3px;
+    margin-left: 15pt;
+    text-align: left;
+    width: 50%;
+}
+</style>
+
+<body style="background-color: #E6E6E6; font: 16px Arial; ">
+
+<!-- ################################################### -->
+<!-- Header                                              -->
+<!-- ################################################### -->
+
+<head bgcolor=#E6E6E6>
+<title>ELFOS</title>
+<link rel="shortcut icon" type="image/ico" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="Images/favicon.png">
+
+<font face="Georgia">
+
+<table width="100%" border=0>
+    <col width="10%">
+    <col width="*">
+    <col width="10%">
+
+    <tr valign="bottom">
+        <td align="left">
+            <b>Ver 4</b>
+        </td>
+        <td align="center" valign="top">
+            <font color="DarkBlue" size="6"><a href="index.html" style="text-decoration: none; color: DarkBlue; "><b>ELFOS</b></a></font>
+        </td>
+        <td align="right">
+            <img src="Images/ELFOS-Logo.png" width="65px" class="Image">
+        </td>
+    </tr>
+</table>
+
+<hr>
+
+</head>
+
+</html>
