@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
+
+<head bgcolor=#E6E6E6>
+<title>ELFOS</title>
+<link rel="shortcut icon" type="image/ico" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="Images/favicon.png">
+
+<body style="background-color: #E6E6E6; font: 16px Arial; ">
+
+<!-- ################################################### -->
+<!-- Code for Including Standard HTML files on the 	 -->
+<!-- server					         -->
+<!-- ################################################### -->
+<script src="library.js"></script>
+
+<script>
+function includeHTML() {
+  var z, i, elmnt, file, xhttp;
+  /* Loop through a collection of all HTML elements: */
+  z = document.getElementsByTagName("*");
+  for (i = 0; i < z.length; i++) {
+    elmnt = z[i];
+    /*search for elements with a certain atrribute:*/
+    file = elmnt.getAttribute("w3-include-html");
+    if (file) {
+      /* Make an HTTP request using the attribute value as the file name: */
+      xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4) {
+          if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+          if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+          /* Remove the attribute, and call this function once more: */
+          elmnt.removeAttribute("w3-include-html");
+          includeHTML();
+        }
+      }
+      xhttp.open("GET", file, true);
+      xhttp.send();
+      /* Exit the function: */
+      return;
+    }
+  }
+}
+</script> 
+
+<!-- ################################################### -->
+<!-- Site Standards Include File        		  		 -->
+<div w3-include-html="include-SiteStandards.html"></div> 
+<script>
+includeHTML();
+</script>
+
+<!-- ################################################### -->
+<!-- Get the values needed -->
+    <script>
+	    function calcValues()    {
+
+			var fmmInch = 0.0393701;
+
+			var fR1Dia = 0;
+			var iPatterns = 0;
+			var iOverlap = 0;
+			
+			var fIndex = 0;
+			var fR2Dia = 0;
+			var fR3Dia = 0;
+			var fR4Dia = 0;
+
+	    	var x = document.getElementById("frm1");
+
+		// ###################################################
+		// Get the R1 Diameter
+		//
+			fR1Dia = Number(x.elements[0].value);
+			
+		// ###################################################
+		// Get the # of Patterns
+		//
+			iPatterns = Number(x.elements[1].value);
+
+		// ###################################################
+		// Get the # of Overlap
+		//
+			iOverlap = Number(x.elements[2].value);
+
+		// ###################################################
+		// Calculate the Values
+		//
+
+			iNetPatterns = iPatterns / (iOverlap + 1);
+
+			fIndex = 360 / iNetPatterns;
+    		document.getElementById("Index").innerHTML = fIndex.toFixed(0);
+
+			fAngleCABdeg = 360 / iNetPatterns;
+			fAngleCABrad = fAngleCABdeg * (Math.PI / 180);
+			fAB = fR1Dia;
+			fBC = Math.tan(fAngleCABrad) * fAB;
+
+			fAngleBCEdeg = (180 - 90 - fAngleCABdeg) / 2;
+			fAngleBCErad = fAngleBCEdeg * (Math.PI / 180);
+			fBE = Math.sin(fAngleBCErad) * fBC;
+
+			fAngleEBCdeg = 180 - 90 - fAngleBCEdeg; 
+			fAngleEBFdeg = 90 - fAngleEBCdeg;
+			fAngleEBFrad = fAngleEBFdeg * (Math.PI / 180);
+			fBF = fBE / Math.cos(fAngleEBFrad);
+			fR2Dia = fBF;
+			
+			fR3Dia = fR1Dia - fR2Dia;
+			fR4Dia = fR3Dia - fR2Dia;
+
+    		document.getElementById("R2Dia").innerHTML = fR2Dia.toFixed(3);
+    		document.getElementById("R3Dia").innerHTML = fR3Dia.toFixed(3);
+    		document.getElementById("R4Dia").innerHTML = fR4Dia.toFixed(3);		
+   		}
+	</script>
+</head>
+
+<!-- ################################################### -->
+<!-- Body                                                -->
+<!-- ################################################### -->
+
+<body bgcolor=#E6E6E6  background="Images/DevBackground.png" class="" id="" onload='hideTotal()'>
+
+<font face="Georgia">
+<h1>Calculations for a Using an ECF</h1>
+
+<p>Use this for designs where the ECF cut diameter is &lt; the pattern outside diameter (R2 &lt; R1). Calculations needed for this are based on the data in the table below.
+
+<p>Input fields are <span style="background-color: #FFEE9C"><b>&nbsp;colored&nbsp;</b></span>.
+
+<form id="frm1">
+<div style=" float: left; Width: 400px; 
+		margin-left: 0px; margin-right: 0px; 
+		margin-top: 0px; margin-bottom: 0px; 
+		padding-left: 5px; padding-right: 5px; 
+		padding-top: 5px; padding-bottom: 5px; 
+    	border: 0px solid darkgray; 
+    	text-align: left;  ">
+    <img src="Images/ECF-TH-Calculations.png" alt="no image file" style="Width: 100%; " />
+</div>
+
+<table style="border-collapse: collapse; float: right">
+	<tr>
+        <td style="width: 100px;
+        		background-color: White;
+        		border-style: solid;
+                border-color: black;
+                border-top-width: thick;
+                border-bottom-width: thin;
+                border-left-width: thick;
+                border-right-width: 0px;
+                text-align: left;
+                ">
+            R1 radius
+		</td>
+        <td style="width: 75px;
+                background-color: White;
+                border-style: solid;
+                border-color: black;
+                border-top-width: thick;
+                border-bottom-width: thin;
+                border-left-width: 0px;
+                border-right-width: 0px;
+                text-align: right;
+                ">
+ 			<input 
+	 			type="number"
+ 				style="font-size:14px; text-align: right; width: 55px; background-color:#FFEE9C" 
+ 				name="R1Dia" 
+				step='0.001' 
+				placeholder='1.500' 
+ 				value=1.500
+				/>
+		</td>
+        <td style="width: 30px;
+                background-color: White;
+                border-style: solid;
+                border-color: black;
+                border-top-width: thick;
+                border-bottom-width: thin;
+                border-left-width: 0px;
+                border-right-width: 0px;
+                text-align: left;
+                ">
+   		 	&nbsp;in
+		</td>
+		<td style="
+                background-color: White;
+                border-style: solid;
+                border-color: black;
+                border-top-width: thick;
+                border-bottom-width: thin;
+                border-left-width: 0px;
+                border-right-width: thick;
+                text-align: left;
+                ">
+			Outer radius of the pattern
+		</td>
+	</tr>
+	<tr>
+        <td style="width: 100px;
+        		background-color: White;
+        		border-style: solid;
+                border-color: black;
+                border-top-width: thin;
+                border-bottom-width: thin;
+                border-left-width: thick;
+                border-right-width: 0px;
+                text-align: left;
+                ">
+            Patterns
+		</td>
+        <td style="width: 75px;
+                background-color: White;
+                border-style: solid;
+                border-color: black;
+                border-top-width: thin;
+                border-bottom-width: thin;
+                border-left-width: 0px;
+                border-right-width: 0px;
+                text-align: right;
+                ">
+ 			<input 
+	 			type="number"
+ 				style="font-size:14px; text-align: right; width: 55px; background-color:#FFEE9C" 
+ 				name="Cuts" 
+				step='1' 
+				placeholder='10' 
+ 				value=40
+				/>
+		</td>
+        <td style="width: 30px;
+                background-color: White;
+                border-style: solid;
+                border-color: black;
+                border-top-width: thin;
+                border-bottom-width: thin;
+                border-left-width: 0px;
+                border-right-width: 0px;
+                text-align: left;
+                ">
+   		 	&nbsp;
+		</td>
+		<td style="
+                background-color: White;
+                border-style: solid;
+                border-color: black;
+                border-top-width: thin;
+                border-bottom-width: thin;
+                border-left-width: 0px;
+                border-right-width: thick;
+                text-align: left;
+                ">
+			Patterns to cut around the circle
+		</td>
+	</tr>
+	<tr>
+        <td style="width: 100px;
+        		background-color: White;
+        		border-style: solid;
+                border-color: black;
+                border-top-width: thin;
+                border-bottom-width: thin;
+                border-left-width: thick;
+                border-right-width: 0px;
+                text-align: left;
+                ">
+            Overlap
+		</td>
+        <td style="width: 75px;
+                background-color: White;
+                border-style: solid;
+                border-color: black;
+                border-top-width: thin;
+                border-bottom-width: thin;
+                border-left-width: 0px;
+                border-right-width: 0px;
+                text-align: right;
+                ">
+ 			<input 
+	 			type="number"
+ 				style="font-size:14px; text-align: right; width: 55px; background-color:#FFEE9C" 
+ 				name="Overlap" 
+				step='1' 
+				placeholder='1' 
+ 				value=0
+				/>
+		</td>
+        <td style="width: 30px;
+                background-color: White;
+                border-style: solid;
+                border-color: black;
+                border-top-width: thin;
+                border-bottom-width: thin;
+                border-left-width: 0px;
+                border-right-width: 0px;
+                text-align: left;
+                ">
+   		 	&nbsp;
+		</td>
+		<td style="
+                background-color: White;
+                border-style: solid;
+                border-color: black;
+                border-top-width: thin;
+                border-bottom-width: thin;
+                border-left-width: 0px;
+                border-right-width: thick;
+                text-align: left;
+                ">
+			<p style="margin-top: 0;">Overlap of the patterns (0=abutted; 1=50%; 2=33%, ...)
+			
+			<table style="width: 100%">
+				<tr>
+					<td>
+						<a href="Images/ECF-TH-0pctOverlap.png"><img src="Images/ECF-TH-0pctOverlap.png" alt="no image file" style="Width: 100px; " /></a>
+						<p style="font: 12px Arial; text-align: left; margin-top: 0; margin-bottom: 0;"><i><b>0 overlap</b> = Abutted</i></p>
+					</td>
+					<td>
+						<a href="Images/ECF-TH-50pctOverlap.png"><img src="Images/ECF-TH-50pctOverlap.png" alt="no image file" style="Width: 100px; " /></a>
+						<p style="font: 12px Arial; text-align: left; margin-top: 0; margin-bottom: 0;"><i><b>1 overlap</b> = 50%</i></p>
+					</td>
+					<td>
+						<a href="Images/ECF-TH-25pctOverlap.png"><img src="Images/ECF-TH-25pctOverlap.png" alt="no image file" style="Width: 100px; " /></a>
+						<p style="font: 12px Arial; text-align: left; margin-top: 0; margin-bottom: 0;"><i><b>3 overlap</b> = 25%</i></p>
+					</td>
+				</tr>
+			</table>
+			
+			<p style="margin-bottom: 0;"><i>Click on any pictures above to see larger versions.</i>
+		</td>
+	</tr>
+
+	<tr>
+        <td style="width: 100px;
+        		background-color: #E0E6F8;
+        		border-style: solid;
+                border-color: black;
+                border-top-width: thin;
+                border-bottom-width: thin;
+                border-left-width: thick;
+                border-right-width: 0px;
+                text-align: left;
+                ">
+            Indexing
+		</td>
+        <td style="width: 75px;
+                background-color: #E0E6F8;
+                border-style: solid;
+                border-color: black;
+                border-top-width: thin;
+                border-bottom-width: thin;
+                border-left-width: 0px;
+                border-right-width: 0px;
+                text-align: right;
+                ">
+   			 <p id="Index" style="margin: 0px; padding: 0px;"></p>
+		</td>
+        <td style="width: 30px;
+                background-color: #E0E6F8;
+                border-style: solid;
+                border-color: black;
+                border-top-width: thin;
+                border-bottom-width: thin;
+                border-left-width: 0px;
+                border-right-width: 0px;
+                text-align: left;
+                ">
+   		 	&nbsp;&deg;
+		</td>
+		<td style="
+                background-color: #E0E6F8;
+                border-style: solid;
+                border-color: black;
+                border-top-width: thin;
+                border-bottom-width: thin;
+                border-left-width: 0px;
+                border-right-width: thick;
+                text-align: left;
+                ">
+			Angle of indexing between patterns.
+		</td>
+	</tr>
+	<tr>
+        <td style="width: 100px;
+        		background-color: #E0E6F8;
+        		border-style: solid;
+                border-color: black;
+                border-top-width: thin;
+                border-bottom-width: thin;
+                border-left-width: thick;
+                border-right-width: 0px;
+                text-align: left;
+                ">
+            R2 radius
+		</td>
+        <td style="width: 75px;
+                background-color: #E0E6F8;
+                border-style: solid;
+                border-color: black;
+                border-top-width: thin;
+                border-bottom-width: thin;
+                border-left-width: 0px;
+                border-right-width: 0px;
+                text-align: right;
+                ">
+   			 <p id="R2Dia" style="margin: 0px; padding: 0px;"></p>
+		</td>
+        <td style="width: 30px;
+                background-color: #E0E6F8;
+                border-style: solid;
+                border-color: black;
+                border-top-width: thin;
+                border-bottom-width: thin;
+                border-left-width: 0px;
+                border-right-width: 0px;
+                text-align: left;
+                ">
+   		 	&nbsp;in
+		</td>
+		<td style="
+                background-color: #E0E6F8;
+                border-style: solid;
+                border-color: black;
+                border-top-width: thin;
+                border-bottom-width: thin;
+                border-left-width: 0px;
+                border-right-width: thick;
+                text-align: left;
+                ">
+			radius to set the rotation of the ECF.
+		</td>
+	</tr>
+	<tr>
+        <td style="width: 100px;
+        		background-color: #E0E6F8;
+        		border-style: solid;
+                border-color: black;
+                border-top-width: thin;
+                border-bottom-width: thin;
+                border-left-width: thick;
+                border-right-width: 0px;
+                text-align: left;
+                ">
+            R3 radius
+		</td>
+        <td style="width: 75px;
+                background-color: #E0E6F8;
+                border-style: solid;
+                border-color: black;
+                border-top-width: thin;
+                border-bottom-width: thin;
+                border-left-width: 0px;
+                border-right-width: 0px;
+                text-align: right;
+                ">
+   			 <p id="R3Dia" style="margin: 0px; padding: 0px;"></p>
+		</td>
+        <td style="width: 30px;
+                background-color: #E0E6F8;
+                border-style: solid;
+                border-color: black;
+                border-top-width: thin;
+                border-bottom-width: thin;
+                border-left-width: 0px;
+                border-right-width: 0px;
+                text-align: left;
+                ">
+   		 	&nbsp;in
+		</td>
+		<td style="
+                background-color: #E0E6F8;
+                border-style: solid;
+                border-color: black;
+                border-top-width: thin;
+                border-bottom-width: thin;
+                border-left-width: 0px;
+                border-right-width: thick;
+                text-align: left;
+                ">
+			Radius to move for the center of rotation of the ECF.
+		</td>
+	</tr>
+	<tr>
+        <td style="width: 100px;
+        		background-color: #E0E6F8;
+        		border-style: solid;
+                border-color: black;
+                border-top-width: thin;
+                border-bottom-width: thick;
+                border-left-width: thick;
+                border-right-width: 0px;
+                text-align: left;
+                ">
+            R4 radius
+		</td>
+        <td style="width: 75px;
+                background-color: #E0E6F8;
+                border-style: solid;
+                border-color: black;
+                border-top-width: thin;
+                border-bottom-width: thick;
+                border-left-width: 0px;
+                border-right-width: 0px;
+                text-align: right;
+                ">
+   			 <p id="R4Dia" style="margin: 0px; padding: 0px;"></p>
+		</td>
+        <td style="width: 30px;
+                background-color: #E0E6F8;
+                border-style: solid;
+                border-color: black;
+                border-top-width: thin;
+                border-bottom-width: thick;
+                border-left-width: 0px;
+                border-right-width: 0px;
+                text-align: left;
+                ">
+   		 	&nbsp;in
+		</td>
+		<td style="
+                background-color: #E0E6F8;
+                border-style: solid;
+                border-color: black;
+                border-top-width: thin;
+                border-bottom-width: thick;
+                border-left-width: 0px;
+                border-right-width: thick;
+                text-align: left;
+                ">
+			Inner radius of the pattern
+		</td>
+	</tr>
+
+	<tr>
+        <td colspan=999 style="
+                border-style: none;
+                border-color: black;
+                border-top-width: 0px;
+                border-bottom-width: 0px;
+                border-left-width: 0px;
+                border-right-width: 0px;
+                text-align: left;
+                ">
+        	&nbsp;
+		</td>
+	</tr>
+</table>
+</form>
+
+<p style="text-align: center;"><button autofocus type="button" onclick="calcValues()" style="font-size:20px; background-color: #0404B4; color: white;">Calculate Values</button></p>
+
+<table style="width: 100%;">
+	<tr>
+		<td>
+			<hr>
+		</td>
+	</tr>
+</table>
+
+<h2>Using This Data</h2>
+<ol>
+	<li>Set the Eccentric Cutting Frame to rotate with radius <b>R2</b>.</li>
+	<li>Set the axis of rotation for the Eccentric Cutting Frame at radius <b>R3</b> away from the center of the piece.</li>
+	<li>To test your setup:
+		<ol type="a">
+			<li>Cut one circle.</li>
+			<li>Rotate the piece 180&deg;.</li>
+			<li style="margin-bottom: 6px;">Cut another circle.</li>
+			<li>The distances between the inside edges of the circles should equal <b>R4</b>.</li>
+			<li>The distances between the outside edges of the circles should equal <b>R1</b>.</li>
+			<li>Adjust as necessary to achieve the desired effect.</li>
+		</ol>.</li>
+</ol>
+
+<!-- ################################################### -->
+<!-- Footer                                              -->
+<!-- ################################################### -->
+<div w3-include-html="include-Footer.html"></div> 
+<script>
+includeHTML();
+</script> 
+</body>
+</html>
